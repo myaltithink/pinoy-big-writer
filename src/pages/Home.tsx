@@ -2,8 +2,8 @@ import { FaStar, FaCog, FaUser } from "react-icons/fa";
 import { MdAssignment } from "react-icons/md";
 import { BsDoorOpenFill } from "react-icons/bs";
 import { PiVaultFill } from "react-icons/pi";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (

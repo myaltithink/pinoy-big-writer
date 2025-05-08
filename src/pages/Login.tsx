@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserStore } from "../stores/useUserStore";
-import {
-  getLocalStorageItem,
-  setLocalStorageItem,
-} from "../utils/localstorage";
+import { setLocalStorageItem } from "../utils/localstorage";
 import { addUser } from "../services/User";
 import type { User } from "../types";
 
@@ -23,14 +20,6 @@ function Login() {
   const [selectedAvatar, setSelectedAvatar] = useState("");
   const navigate = useNavigate();
   const { setUser } = useUserStore();
-
-  useEffect(() => {
-    const user = getLocalStorageItem<User>("user");
-    if (user) {
-      setUser(user);
-      navigate("/home");
-    }
-  }, [navigate, setUser]);
 
   const handleNext = () => {
     if (username.trim()) setStep(2);
@@ -88,7 +77,7 @@ function Login() {
                 key={avatar}
                 src={avatar}
                 alt="avatar"
-                className={`w-32 h-32 rounded-full cursor-pointer border-2 ${
+                className={`w-32 h-32 rounded-full cursor-pointer border-4 ${
                   selectedAvatar === avatar
                     ? "border-yellow-500"
                     : "border-gray-300"
