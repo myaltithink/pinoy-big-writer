@@ -4,6 +4,7 @@ import { useUserStore } from "../stores/useUserStore";
 import { setLocalStorageItem } from "../utils/localstorage";
 import { addUser } from "../services/User";
 import type { User } from "../types";
+import { useAuthRedirect } from "../hooks/useAuthRedirect";
 
 const avatars = [
   "/avatars/avatar1.png",
@@ -25,6 +26,8 @@ function Login() {
     if (username.trim()) setStep(2);
   };
 
+  useAuthRedirect();
+
   const handleFinish = () => {
     if (!selectedAvatar) return;
     const newUser: User = {
@@ -33,6 +36,11 @@ function Login() {
       ranking: 0,
       points: 0,
       achievements: [],
+      progress: {
+        capitalization: [false, false, false],
+        punctuation: [false, false, false],
+        spelling: [false, false, false],
+      },
       isLoggedIn: true,
     };
     addUser(newUser);

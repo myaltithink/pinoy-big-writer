@@ -1,10 +1,13 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthRedirect } from "../hooks/useAuthRedirect";
 
 function Loading() {
   const navigate = useNavigate();
   const [startZoom, setStartZoom] = useState(false);
+
+  useAuthRedirect();
 
   const handleClick = () => {
     if (!startZoom) {
