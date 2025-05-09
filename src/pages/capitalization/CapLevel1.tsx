@@ -262,16 +262,16 @@ function CapLevel1() {
             <div className="flex-grow flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-700 mb-6 font-serif">
               {shuffledWords[index].word}
             </div>
-            <div className="flex justify-center mt-auto">
+            <div className="flex justify-center mt-auto gap-4">
               <button
                 onClick={() => handleAnswer(true)}
-                className="flex-1 bg-green-500 text-white px-6 py-3 hover:bg-green-600 hover:scale-95 transition-transform"
+                className="flex-1 bg-orange-500 text-white px-6 py-3 hover:bg-orange-600 hover:scale-95 transition-transform"
               >
                 Correct
               </button>
               <button
                 onClick={() => handleAnswer(false)}
-                className="flex-1 bg-red-500   text-white px-6 py-3 hover:bg-red-600 hover:scale-95 transition-transform"
+                className="flex-1 bg-orange-700   text-white px-6 py-3 hover:bg-orange-800 hover:scale-95 transition-transform"
               >
                 Incorrect
               </button>
