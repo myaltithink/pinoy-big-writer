@@ -1,4 +1,11 @@
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "../../firebase";
 import type { User } from "../types";
 
@@ -27,4 +34,24 @@ export const getUser = async (username: string) => {
   const querySnapshot = await getDocs(q);
   const user = querySnapshot.docs[0]?.data() as User;
   return user;
+};
+
+export const updateUser = async (
+  username: string,
+  updatedData: Partial<User>
+) => {
+  const usersCol = collection(db, "users");
+  const q = query(usersCol, where("username", "==", username));
+  const querySnapshot = await getDocs(q);
+
+  if (!querySnapshot.empty) {
+    const userRef = querySnapshot.docs[0].ref;
+    try {
+      await updateDoc(userRef, updatedData);
+    } catch (e) {
+      console.error("Error updating document: ", e);
+    }
+  } else {
+    console.error("User not found");
+  }
 };

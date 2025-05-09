@@ -21,3 +21,8 @@ export interface User {
   progress: RoomProgress;
   isLoggedIn: boolean;
 }
+
+export type Word = {
+  word: string;
+  isCorrect: boolean;
+};

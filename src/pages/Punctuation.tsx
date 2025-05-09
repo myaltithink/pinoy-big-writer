@@ -24,7 +24,7 @@ function Punctuation() {
         setUser(localUser);
       }
     }
-    setLevels(user?.progress.capitalization ?? null);
+    setLevels(user?.progress.punctuation ?? null);
   }, [user]);
 
   const renderLevelIcon = (completed: boolean, index: number) => {

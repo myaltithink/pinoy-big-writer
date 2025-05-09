@@ -24,7 +24,7 @@ function Spelling() {
         setUser(localUser);
       }
     }
-    setLevels(user?.progress.capitalization ?? null);
+    setLevels(user?.progress.spelling ?? null);
   }, [user]);
 
   const renderLevelIcon = (completed: boolean, index: number) => {
