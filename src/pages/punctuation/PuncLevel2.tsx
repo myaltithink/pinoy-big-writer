@@ -1,5 +1,3 @@
-import React from "react";
-
 function PuncLevel2() {
   return <div>PuncLevel2</div>;
 }
