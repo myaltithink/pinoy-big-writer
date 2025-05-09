@@ -9,7 +9,6 @@ import { useUserStore } from "../../stores/useUserStore";
 import { useNavigate } from "react-router-dom";
 import { markLevelComplete } from "../../utils/game";
 import useSound from "use-sound";
-import bgSfx from "/sounds/background.mp3";
 import correctSfx from "/sounds/correct.mp3";
 import wrongSfx from "/sounds/wrong.mp3";
 import winSfx from "/sounds/win.mp3";
@@ -29,7 +28,7 @@ function CapLevel1() {
   const [index, setIndex] = useState(0);
   const [stars, setStars] = useState(0);
   const [completed, setCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [timeLeft, setTimeLeft] = useState(120);
   const [gameOver, setGameOver] = useState(false);
   const [shuffledWords, setShuffledWords] = useState<Word[]>([]);
   const [showPenalty, setShowPenalty] = useState(false);
@@ -42,11 +41,6 @@ function CapLevel1() {
   // animation controls for the timer shake
   const timerControls = useAnimation();
 
-  const [play, { stop }] = useSound(bgSfx, {
-    loop: true,
-    volume: 0.5,
-    interrupt: true,
-  });
   const [playCorrect] = useSound(correctSfx, { volume: 1, interrupt: true });
   const [playWrong] = useSound(wrongSfx, { volume: 1, interrupt: true });
   const [playWin] = useSound(winSfx, { volume: 1, interrupt: true });
@@ -55,6 +49,7 @@ function CapLevel1() {
   // shuffle words on mount
   useEffect(() => {
     setShuffledWords(shuffleArray(words));
+
     return () => {
       stop();
     };
@@ -99,8 +94,6 @@ function CapLevel1() {
 
   const handleAnswer = (isUserCorrect: boolean) => {
     if (completed || gameOver || !shuffledWords[index]) return;
-
-    play(); // start bg music
 
     const current = shuffledWords[index];
     const correct = isUserCorrect === current.isCorrect;
@@ -225,7 +218,7 @@ function CapLevel1() {
       </div>
 
       {/* Game Card */}
-      <div className="flex-1 flex flex-col items-center bg-white shadow-lg rounded-lg w-full max-w-md text-center">
+      <div className="flex-1 flex flex-col items-center bg-white shadow-lg p-4 rounded-lg w-full max-w-md text-center">
         {gameOver ? (
           <div className="flex flex-col flex-1 w-full">
             <div className="flex-1 flex flex-col justify-center">
@@ -266,7 +259,7 @@ function CapLevel1() {
           </div>
         ) : shuffledWords.length > 0 ? (
           <div className="flex flex-col flex-1 w-full">
-            <div className="flex-grow flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-700 mb-6">
+            <div className="flex-grow flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-700 mb-6 font-serif">
               {shuffledWords[index].word}
             </div>
             <div className="flex justify-center mt-auto">
@@ -290,7 +283,7 @@ function CapLevel1() {
       </div>
 
       {/* Back Link */}
-      <Link to="/games">
+      <Link to="/games/capitalization">
         <motion.div
           className="w-18 h-18 bg-yellow-500 text-white rounded-full flex items-center justify-center cursor-pointer"
           whileHover={{ scale: 0.9 }}

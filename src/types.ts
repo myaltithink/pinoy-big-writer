@@ -26,3 +26,8 @@ export type Word = {
   word: string;
   isCorrect: boolean;
 };
+
+export type Prompt = {
+  prompt: string;
+  answer: string;
+};
