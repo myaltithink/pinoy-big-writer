@@ -20,11 +20,11 @@ function Overview() {
         }}
       >
         <motion.button
-          className="absolute bottom-5 right-5 flex items-center gap-2 bg-red-400 px-6 py-3 text-white font-bold text-2xl rounded-lg hover:bg-white hover:text-red-400 hover:scale-90"
+          className="absolute bottom-5 right-5 flex items-center gap-2 bg-red-400 px-6 py-3 text-white font-bold text-2xl rounded-lg border-4 border-white shadow-[4px_4px_0_0_#000] hover:bg-white hover:text-red-400 hover:scale-90"
           initial={{ scale: 1 }}
           whileTap={{ scale: 0.9 }}
           animate={{
-            scale: [1, 1.1, 1, 1.1, 1],
+            scale: [1, 1.1],
             transition: {
               duration: 2,
               ease: "easeInOut",
