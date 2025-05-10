@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 .background {
-  background-image: url("/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url("/background.jpg");
+  background-size: contain;
+  background-repeat: repeat-x;
 }
 
 .stripes {

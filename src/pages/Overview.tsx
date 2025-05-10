@@ -8,7 +8,7 @@ function Overview() {
   const { user } = useUserStore();
 
   return (
-    <div className="w-screen h-screen bg-[#ff9288] flex items-center justify-center overflow-hidden">
+    <div className="w-screen h-screen background ff9288] flex items-center justify-center overflow-hidden">
       <motion.div
         className="w-full h-full overview"
         initial={{ y: -100 }}
@@ -20,7 +20,7 @@ function Overview() {
         }}
       >
         <motion.button
-          className="absolute bottom-5 right-5 flex items-center gap-2 bg-yellow-400 px-6 py-3 text-white font-bold text-2xl rounded-lg hover:bg-white hover:text-yellow-400 hover:scale-90"
+          className="absolute bottom-5 right-5 flex items-center gap-2 bg-red-400 px-6 py-3 text-white font-bold text-2xl rounded-lg hover:bg-white hover:text-red-400 hover:scale-90"
           initial={{ scale: 1 }}
           whileTap={{ scale: 0.9 }}
           animate={{

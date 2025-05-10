@@ -22,24 +22,19 @@ function Loading() {
         setUser(localUser);
       }
     }
+
+    const timeout = setTimeout(() => {
+      setStartZoom(true);
+      setTimeout(() => {
+        navigate(user ? "/home" : "/overview");
+      }, 1000); // Wait for zoom animation
+    }, 3000); // Initial delay before zoom
+
+    return () => clearTimeout(timeout);
   }, []);
 
-  const handleClick = () => {
-    if (!startZoom) {
-      setStartZoom(true);
-      if (user) {
-        setTimeout(() => navigate("/home"), 1000); // Navigate after zoom
-      } else {
-        setTimeout(() => navigate("/overview"), 1000); // Navigate after zoom
-      }
-    }
-  };
-
   return (
-    <div
-      className="w-screen h-screen overflow-hidden flex flex-col items-center justify-center background cursor-pointer"
-      onClick={handleClick}
-    >
+    <div className="w-screen h-screen overflow-hidden flex flex-col items-center justify-center background">
       <motion.img
         src="house.png"
         alt="Loading house"
@@ -49,8 +44,8 @@ function Loading() {
           startZoom
             ? {
                 scale: 2.5,
-                x: -20,
-                y: -500,
+                x: 0,
+                y: 0,
                 opacity: 0.5,
                 transition: {
                   duration: 1,
