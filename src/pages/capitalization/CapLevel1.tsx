@@ -27,8 +27,8 @@ const starColors = [
 function CapLevel1() {
   const [index, setIndex] = useState(0);
   const [stars, setStars] = useState(0);
-  const [completed, setCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(120);
+  const [winner, setWinner] = useState(false);
+  const [questionTimeLeft, setQuestionTimeLeft] = useState(10); // 10 seconds per question
   const [gameOver, setGameOver] = useState(false);
   const [shuffledWords, setShuffledWords] = useState<Word[]>([]);
   const [showPenalty, setShowPenalty] = useState(false);
@@ -64,30 +64,49 @@ function CapLevel1() {
 
   // stop bg music if game ends
   useEffect(() => {
-    if (gameOver || completed) stop();
-  }, [gameOver, completed]);
+    if (gameOver || winner) stop();
+  }, [gameOver, winner]);
 
   // countdown timer
   useEffect(() => {
-    if (timeLeft > 0 && !completed) {
-      const t = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+    if (winner || gameOver) return;
+
+    if (questionTimeLeft > 0) {
+      const t = setTimeout(() => setQuestionTimeLeft((t) => t - 1), 1000);
       return () => clearTimeout(t);
-    }
-    if (timeLeft === 0) {
-      setGameOver(true);
-      playLose();
-    }
-  }, [timeLeft, completed]);
+    } else {
+      // Time's up for this question
+      setShowPenalty(true);
+      playWrong();
 
-  // win condition
-  useEffect(() => {
-    if (stars === 10) {
-      playWin();
-      setCompleted(true);
+      setTimeout(() => setShowPenalty(false), 1000);
 
-      onWin();
+      setShowFeedback(true);
+      setLastAnswerCorrect(false);
+
+      setTimeout(() => {
+        setShowFeedback(false);
+
+        const isLastQuestion = index + 1 === shuffledWords.length;
+
+        if (isLastQuestion) {
+          // Handle win or lose condition
+          if (stars === 10) {
+            playWin();
+            setWinner(true);
+            onWin();
+          } else {
+            playLose();
+            setGameOver(true);
+          }
+        } else {
+          // Move to next question
+          setIndex((i) => i + 1);
+          setQuestionTimeLeft(10); // reset timer for next question
+        }
+      }, 1000); // Adjust duration as needed
     }
-  }, [stars]);
+  }, [questionTimeLeft, index, winner, gameOver]);
 
   // trigger shake when penalty applies
   useEffect(() => {
@@ -100,7 +119,7 @@ function CapLevel1() {
   }, [showPenalty, timerControls]);
 
   const handleAnswer = (isUserCorrect: boolean) => {
-    if (completed || gameOver || !shuffledWords[index]) return;
+    if (winner || gameOver || !shuffledWords[index]) return;
 
     const current = shuffledWords[index];
     const correct = isUserCorrect === current.isCorrect;
@@ -109,9 +128,9 @@ function CapLevel1() {
       playCorrect();
       setStars((s) => s + 1);
       setPopKey((k) => k + 1);
-    } else if (!correct) {
+    } else {
       playWrong();
-      setTimeLeft((t) => Math.max(t - 5, 0));
+      setQuestionTimeLeft(10);
       setShowPenalty(true);
       setTimeout(() => setShowPenalty(false), 1000);
     }
@@ -121,12 +140,23 @@ function CapLevel1() {
 
     setTimeout(() => {
       setShowFeedback(false);
-      if (index + 1 === shuffledWords.length) {
-        setCompleted(true);
+
+      const isLastQuestion = index + 1 === shuffledWords.length;
+
+      if (isLastQuestion) {
+        if (stars + (correct ? 1 : 0) === 10) {
+          playWin();
+          setWinner(true);
+          onWin();
+        } else {
+          playLose();
+          setGameOver(true);
+        }
       } else {
         setIndex((i) => i + 1);
+        setQuestionTimeLeft(10);
       }
-    }, 1000); // Adjust duration as needed
+    }, 1000);
   };
 
   const starColor =
@@ -145,8 +175,8 @@ function CapLevel1() {
   const resetGame = () => {
     setIndex(0);
     setStars(0);
-    setTimeLeft(45);
-    setCompleted(false);
+    setQuestionTimeLeft(10);
+    setWinner(false);
     setGameOver(false);
 
     const combined = [
@@ -167,14 +197,26 @@ function CapLevel1() {
     <div className="h-screen w-screen flex flex-col items-center justify-between gap-4 p-4 sm:p-6 capitalization">
       {stars === 10 && <Confetti width={width} height={height} />}
 
+      {showFeedback && (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center text-white text-sm sm:text-base p-4 ${
+            lastAnswerCorrect ? "bg-green-500" : "bg-red-500"
+          }`}
+        >
+          <span className="text-3xl font-bold font-serif text-black">
+            {shuffledWords[index].correctWord}
+          </span>
+        </div>
+      )}
+
       {/* Top Bar */}
-      <div className="w-full max-w-md flex justify-between items-center px-4 py-2 bg-white shadow rounded-lg">
+      <div className="w-full max-w-md flex justify-between items-center px-4 py-2 bg-blue-300 shadow rounded-lg">
         <motion.div
           animate={timerControls}
           initial={{ x: 0 }}
           className="flex flex-col items-center gap-0 relative"
         >
-          {showPenalty && (
+          {/* {showPenalty && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: -10 }}
@@ -184,10 +226,10 @@ function CapLevel1() {
             >
               -5s
             </motion.div>
-          )}
+          )} */}
           <span className="text-black text-xl">⏱️</span>
           <span className="font-semibold text-lg text-gray-700">
-            {timeLeft}s
+            {questionTimeLeft}s
           </span>
         </motion.div>
 
@@ -227,12 +269,12 @@ function CapLevel1() {
       </div>
 
       {/* Instructions */}
-      <div className="max-w-md w-full text-center bg-white shadow p-4 rounded-lg text-sm sm:text-base text-gray-800">
+      <div className="max-w-md w-full text-center bg-blue-300 shadow p-4 rounded-lg text-sm sm:text-base text-gray-800 font-bold">
         Does this word apply the Capitalization Rules correctly?
       </div>
 
       {/* Game Card */}
-      <div className="flex-1 flex flex-col items-center bg-white shadow-lg p-4 rounded-lg w-full max-w-md text-center">
+      <div className="flex-1 flex flex-col items-center bg-blue-300 shadow-lg p-4 rounded-lg w-full max-w-md text-center">
         {gameOver ? (
           <div className="flex flex-col flex-1 w-full">
             <div className="flex-1 flex flex-col justify-center">
@@ -248,7 +290,7 @@ function CapLevel1() {
               Try Again
             </button>
           </div>
-        ) : completed ? (
+        ) : winner ? (
           <div className="flex flex-col flex-1 w-full">
             <div className="flex-1 flex flex-col justify-center">
               <h2 className="text-3xl font-bold text-green-700 mb-4">
@@ -273,21 +315,9 @@ function CapLevel1() {
           </div>
         ) : shuffledWords.length > 0 ? (
           <div className="flex flex-col flex-1 w-full">
-            <div className="flex-grow flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-700 mb-6 font-serif">
+            <div className="flex-grow flex items-center justify-center text-2xl sm:text-3xl font-bold text-black mb-6 font-serif">
               {shuffledWords[index].word}
             </div>
-            {showFeedback && (
-              <div
-                className={`w-full p-3 rounded text-white text-sm sm:text-base mb-4 ${
-                  lastAnswerCorrect ? "bg-green-500/60" : "bg-red-500/60"
-                }`}
-              >
-                Correct version:{" "}
-                <span className="font-semibold">
-                  {shuffledWords[index].correctWord}
-                </span>
-              </div>
-            )}
 
             <div className="flex justify-center mt-auto gap-4">
               <button
@@ -298,7 +328,7 @@ function CapLevel1() {
               </button>
               <button
                 onClick={() => handleAnswer(false)}
-                className="flex-1 bg-blue-500   text-white px-6 py-3 hover:bg-blue-600 hover:scale-95 transition-transform"
+                className="flex-1 bg-orange-500   text-white px-6 py-3 hover:bg-orange-600 hover:scale-95 transition-transform"
               >
                 No
               </button>
