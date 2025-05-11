@@ -134,17 +134,32 @@ function Vault() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 w-full flex items-center justify-around gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50 bg-black/25">
+      <div
+        className={`flex-1 w-full flex items-center justify-around gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50 ${
+          tab === "Practice" ? "bg-black/75" : "bg-black/25"
+        }`}
+      >
         {tab === "Vault" ? (
           <>
             {/* Vault Cards */}
             <VaultCard
               title="Capitalization"
               bg="#FEECAA"
-              iconColor="yellow-400"
+              iconColor="text-yellow-400"
+              path="/vault/capitalization"
             />
-            <VaultCard title="Punctuation" bg="#F8D7D7" iconColor="red-400" />
-            <VaultCard title="Spelling" bg="#E6FECB" iconColor="green-400" />
+            <VaultCard
+              title="Punctuation"
+              bg="#F8D7D7"
+              iconColor="text-red-400"
+              path="/vault/punctuation"
+            />
+            <VaultCard
+              title="Spelling"
+              bg="#E6FECB"
+              iconColor="text-green-400"
+              path="/vault/spelling"
+            />
           </>
         ) : showResults ? (
           <div className="text-white text-3xl text-center">
@@ -246,30 +261,34 @@ function VaultCard({
   title,
   bg,
   iconColor,
+  path,
 }: {
   title: string;
   bg: string;
   iconColor: string;
+  path: string;
 }) {
   return (
-    <motion.div
-      className={`flex flex-col items-center gap-4 p-6 rounded-xl border-6 border-white`}
-      style={{ backgroundColor: bg, cursor: "pointer" }}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      whileHover={{ scale: 0.95 }}
-      transition={{
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-        duration: 0.5,
-      }}
-    >
-      <FaFolderOpen className={`text-[15rem] text-${iconColor}`} />
-      <span className="text-black/75 text-3xl" style={{ fontFamily: "Arco" }}>
-        {title}
-      </span>
-    </motion.div>
+    <Link to={path}>
+      <motion.div
+        className={`flex flex-col items-center gap-4 p-6 rounded-xl border-6 border-white`}
+        style={{ backgroundColor: bg, cursor: "pointer" }}
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        whileHover={{ scale: 0.95 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 10,
+          duration: 0.5,
+        }}
+      >
+        <FaFolderOpen className={`text-[15rem] ${iconColor}`} />
+        <span className="text-black/75 text-3xl" style={{ fontFamily: "Arco" }}>
+          {title}
+        </span>
+      </motion.div>
+    </Link>
   );
 }
 

@@ -32,20 +32,23 @@
 }
 
 .capitalization {
-  background-image: url("/capitalization.png");
+  background-image: url("/capitalization.jpg");
   background-size: contain;
   background-repeat: repeat-x;
+  animation: moveBg 30s linear infinite;
 }
 
 .punctuation {
-  background-image: url("/punctuation.png");
+  background-image: url("/punctuation.jpg");
   background-size: contain;
   background-repeat: repeat-x;
+  animation: moveBg 30s linear infinite;
 }
 .spelling {
-  background-image: url("/spelling.png");
+  background-image: url("/spelling.jpg");
   background-size: contain;
   background-repeat: repeat-x;
+  animation: moveBg 30s linear infinite;
 }
 
 .overview {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { TiHome } from "react-icons/ti";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import useSound from "use-sound";
-import type { User, Achievements } from "../types";
+import type { User, Achievements as Achievement } from "../types";
 
 import doorOpenSfx from "/sounds/door-open.mp3";
 import doorCloseSfx from "/sounds/door-close.mp3";
