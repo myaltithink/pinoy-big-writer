@@ -76,9 +76,9 @@ function Vault() {
           }}
           style={{ cursor: "pointer" }}
         >
-          <FaFolderOpen className="text-[15rem] text-yellow-500" />
+          <FaFolderOpen className="text-[15rem] text-yellow-400" />
           <span
-            className="text-yellow-500 text-3xl"
+            className="text-yellow-400 text-3xl"
             style={{ fontFamily: "Arco" }}
           >
             Capitalization
@@ -97,9 +97,9 @@ function Vault() {
           }}
           style={{ cursor: "pointer" }}
         >
-          <FaFolderOpen className="text-[15rem] text-green-500" />
+          <FaFolderOpen className="text-[15rem] text-green-400" />
           <span
-            className="text-green-500 text-3xl"
+            className="text-green-400 text-3xl"
             style={{ fontFamily: "Arco" }}
           >
             Punctuation
@@ -118,9 +118,9 @@ function Vault() {
           }}
           style={{ cursor: "pointer" }}
         >
-          <FaFolderOpen className="text-[15rem] text-red-500" />
+          <FaFolderOpen className="text-[15rem] text-red-400" />
           <span
-            className="text-red-500 text-3xl"
+            className="text-red-400 text-3xl"
             style={{ fontFamily: "Arco" }}
           >
             Spelling
