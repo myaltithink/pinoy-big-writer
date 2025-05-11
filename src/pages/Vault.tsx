@@ -34,7 +34,7 @@ function Vault() {
         <div className="flex items-center gap-14">
           <Link to="/achievements">
             <motion.div
-              className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
+              className="min-w-[200px] flex justify-between items-center relative bg-black/50  px-4 py-2 rounded-xl cursor-pointer"
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               whileHover={{ scale: 1.05 }}
@@ -55,14 +55,14 @@ function Vault() {
       </div>
       <div className="w-full flex items-center justify-start">
         <span
-          className="text-center text-5xl w-fit  bg-black/50 px-6 py-3 rounded-t-3xl outlined-text flex items-center gap-4"
+          className="text-center text-5xl w-fit  bg-black/50 px-6 py-3 rounded-t-3xl text-white flex items-center gap-4 border-8 border-white "
           style={{ fontFamily: "Arco" }}
         >
           Practice Station
           <HiLightBulb className="inline-block text-[#F3B73F] " />
         </span>
       </div>
-      <div className="flex-1 w-full flex items-center justify-around just gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50 bg-black/25">
+      <div className="flex-1 w-full flex items-center justify-around just gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50">
         <motion.div
           className="flex flex-col items-center gap-4 bg-[#FEECAA] p-6 rounded-xl border-6 border-white"
           initial={{ y: -100, opacity: 0 }}
@@ -78,7 +78,7 @@ function Vault() {
         >
           <FaFolderOpen className="text-[15rem] text-yellow-400" />
           <span
-            className="text-yellow-400 text-3xl"
+            className="text-black/75 text-3xl"
             style={{ fontFamily: "Arco" }}
           >
             Capitalization
@@ -99,7 +99,7 @@ function Vault() {
         >
           <FaFolderOpen className="text-[15rem] text-green-400" />
           <span
-            className="text-green-400 text-3xl"
+            className="text-black/75 text-3xl"
             style={{ fontFamily: "Arco" }}
           >
             Punctuation
@@ -120,7 +120,7 @@ function Vault() {
         >
           <FaFolderOpen className="text-[15rem] text-red-400" />
           <span
-            className="text-red-400 text-3xl"
+            className="text-black/75 text-3xl"
             style={{ fontFamily: "Arco" }}
           >
             Spelling
