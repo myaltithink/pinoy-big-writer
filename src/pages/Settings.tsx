@@ -54,7 +54,7 @@ export default function Settings() {
             </span>
             <button
               className={`relative w-16 h-8 rounded-full transition duration-200 ease-in-out focus:outline-none ${
-                musicEnabled ? "bg-green-500" : "bg-black/25"
+                musicEnabled ? "bg-green-900/75" : "bg-black/25"
               }`}
               onClick={toggleMusic}
             >
@@ -74,7 +74,7 @@ export default function Settings() {
             </span>
             <button
               className={`relative w-16 h-8 rounded-full transition duration-200 ease-in-out focus:outline-none ${
-                clickEnabled ? "bg-green-500" : "bg-black/25"
+                clickEnabled ? "bg-green-900/75" : "bg-black/25"
               }`}
               onClick={toggleClickSound}
             >

@@ -18,14 +18,28 @@ import useSound from "use-sound";
 // 1. Import your door sounds:
 import doorOpenSfx from "/sounds/door-open.mp3";
 import doorCloseSfx from "/sounds/door-close.mp3";
+import { useSoundContext } from "../layouts/SoundProvider";
 
 function Games() {
   const { user, setUser } = useUserStore();
   const [hovered, setHovered] = useState<number | null>(null);
+  const { clickEnabled } = useSoundContext();
+  const [volume, setVolume] = useState<number>(0.5);
 
   // 2. Initialize play functions for open/close
-  const [playOpen] = useSound(doorOpenSfx, { volume: 0.5, interrupt: true });
-  const [playClose] = useSound(doorCloseSfx, { volume: 0.5, interrupt: true });
+  const [playOpen] = useSound(doorOpenSfx, { volume: volume, interrupt: true });
+  const [playClose] = useSound(doorCloseSfx, {
+    volume: volume,
+    interrupt: true,
+  });
+
+  useEffect(() => {
+    if (!clickEnabled) {
+      setVolume(0);
+    } else {
+      setVolume(0.5);
+    }
+  }, [clickEnabled]);
 
   const cards = [
     {
