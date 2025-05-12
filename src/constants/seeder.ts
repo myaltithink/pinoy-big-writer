@@ -1236,258 +1236,199 @@ export const capLevel3 = [
   },
 ];
 
-export const capLevel2 = [
-  {
-    prompt: "the sun is hot in summer",
-    answer: "The sun is hot in summer",
-    correctIndexes: [0],
-  },
-  {
-    prompt: "i went to new york city",
-    answer: "I went to New York City",
-    correctIndexes: [0, 3, 4],
-  },
-  {
-    prompt: "my brother john lives in canada",
-    answer: "My brother John lives in Canada",
-    correctIndexes: [0, 2, 5],
-  },
-  {
-    prompt: "we visited the eiffel tower in paris",
-    answer: "We visited the Eiffel Tower in Paris",
-    correctIndexes: [0, 3, 4, 6],
-  },
-  {
-    prompt: "on monday, sara and i went shopping",
-    answer: "On Monday, Sara and I went shopping",
-    correctIndexes: [0, 1, 3, 5],
-  },
-  {
-    prompt: "he watched harry potter last night",
-    answer: "He watched Harry Potter last night",
-    correctIndexes: [0, 2, 3],
-  },
-  {
-    prompt: "we saw the golden gate bridge in san francisco",
-    answer: "We saw the Golden Gate Bridge in San Francisco",
-    correctIndexes: [0, 3, 4, 5, 7, 8],
-  },
-  {
-    prompt: "my favorite month is december",
-    answer: "My favorite month is December",
-    correctIndexes: [0, 4],
-  },
-  {
-    prompt: "he studies at harvard university",
-    answer: "He studies at Harvard University",
-    correctIndexes: [0, 3, 4],
-  },
-  {
-    prompt: "they went to london last summer",
-    answer: "They went to London last summer",
-    correctIndexes: [0, 3],
-  },
-  {
-    prompt: "she likes to read jane austen novels",
-    answer: "She likes to read Jane Austen novels",
-    correctIndexes: [0, 4, 5],
-  },
-  {
-    prompt: "we celebrated thanksgiving in november",
-    answer: "We celebrated Thanksgiving in November",
-    correctIndexes: [0, 2, 4],
-  },
-  {
-    prompt: "the capital of france is paris",
-    answer: "The capital of France is Paris",
-    correctIndexes: [0, 3, 5],
-  },
-  {
-    prompt: "i have a cat named whiskers",
-    answer: "I have a cat named Whiskers",
-    correctIndexes: [0, 5],
-  },
-  {
-    prompt: "they live on elm street",
-    answer: "They live on Elm Street",
-    correctIndexes: [0, 3],
-  },
-  {
-    prompt: "we visited mount fuji in japan",
-    answer: "We visited Mount Fuji in Japan",
-    correctIndexes: [0, 2, 3, 5],
-  },
-  {
-    prompt: "my aunt mary is a doctor",
-    answer: "My aunt Mary is a doctor",
-    correctIndexes: [0, 2],
-  },
-  {
-    prompt: "he enjoys watching national geographic",
-    answer: "He enjoys watching National Geographic",
-    correctIndexes: [0, 3, 4],
-  },
-  {
-    prompt: "she bought a new iphone yesterday",
-    answer: "She bought a new iPhone yesterday",
-    correctIndexes: [0, 4],
-  },
-  {
-    prompt: "we are going to disneyland next week",
-    answer: "We are going to Disneyland next week",
-    correctIndexes: [0, 3],
-  },
-  {
-    prompt: "the first day of the week is monday",
-    answer: "The first day of the week is Monday",
-    correctIndexes: [0, 6],
-  },
-  {
-    prompt: "i love eating italian food",
-    answer: "I love eating Italian food",
-    correctIndexes: [0, 3],
-  },
-  {
-    prompt: "they went to see the statue of liberty",
-    answer: "They went to see the Statue of Liberty",
-    correctIndexes: [0, 5, 6],
-  },
-  {
-    prompt: "my cousin michael is a teacher",
-    answer: "My cousin Michael is a teacher",
-    correctIndexes: [0, 2],
-  },
-  {
-    prompt: "she is reading a book by j.r.r. tolkien",
-    answer: "She is reading a book by J.R.R. Tolkien",
-    correctIndexes: [0, 6, 7],
-  },
-  {
-    prompt: "we are planning a trip to hawaii",
-    answer: "We are planning a trip to Hawaii",
-    correctIndexes: [0, 5],
-  },
-  {
-    prompt: "the president lives in the white house",
-    answer: "The President lives in the White House",
-    correctIndexes: [0, 5, 6],
-  },
-  {
-    prompt: "i enjoy listening to beatles songs",
-    answer: "I enjoy listening to Beatles songs",
-    correctIndexes: [0, 4],
-  },
-  {
-    prompt: "they visited the great wall of china",
-    answer: "They visited the Great Wall of China",
-    correctIndexes: [0, 3, 4, 6],
-  },
-  {
-    prompt: "my uncle george works at google",
-    answer: "My uncle George works at Google",
-    correctIndexes: [0, 2, 5],
-  },
-  {
-    prompt: "she is learning to play the piano",
-    answer: "She is learning to play the Piano",
-    correctIndexes: [0, 6],
-  },
-  {
-    prompt: "we went camping in yosemite national park",
-    answer: "We went camping in Yosemite National Park",
-    correctIndexes: [0, 4, 5, 6],
-  },
-  {
-    prompt: "the movie starts at six o'clock",
-    answer: "The movie starts at Six o'clock",
-    correctIndexes: [0, 4],
-  },
-  {
-    prompt: "i like drinking coca-cola",
-    answer: "I like drinking Coca-Cola",
-    correctIndexes: [0, 3],
-  },
-  {
-    prompt: "they went to a museum of modern art",
-    answer: "They went to a Museum of Modern Art",
-    correctIndexes: [0, 4, 5, 6],
-  },
-  {
-    prompt: "my sister emily is a student",
-    answer: "My sister Emily is a student",
-    correctIndexes: [0, 2],
-  },
-  {
-    prompt: "he is reading the new york times",
-    answer: "He is reading The New York Times",
-    correctIndexes: [0, 3, 4, 5],
-  },
-  {
-    prompt: "we are planning to visit niagara falls",
-    answer: "We are planning to visit Niagara Falls",
-    correctIndexes: [0, 5, 6],
-  },
-  {
-    prompt: "the queen of england lives in buckingham palace",
-    answer: "The Queen of England lives in Buckingham Palace",
-    correctIndexes: [0, 3, 7, 8],
-  },
-  {
-    prompt: "i enjoy watching disney movies",
-    answer: "I enjoy watching Disney movies",
-    correctIndexes: [0, 3],
-  },
-  {
-    prompt: "they traveled to the amazon rainforest",
-    answer: "They traveled to the Amazon Rainforest",
-    correctIndexes: [0, 3, 4],
-  },
-  {
-    prompt: "my neighbor mr. smith is very kind",
-    answer: "My neighbor Mr. Smith is very kind",
-    correctIndexes: [0, 2, 3],
-  },
-  {
-    prompt: "she is studying to become a nurse",
-    answer: "She is studying to become a Nurse",
-    correctIndexes: [0, 6],
-  },
-  {
-    prompt: "we are going to see a broadway show",
-    answer: "We are going to see a Broadway show",
-    correctIndexes: [0, 5],
-  },
-  {
-    prompt: "the capital of italy is rome",
-    answer: "The capital of Italy is Rome",
-    correctIndexes: [0, 3, 5],
-  },
-  {
-    prompt: "i like to drink iced tea",
-    answer: "I like to drink Iced Tea",
-    correctIndexes: [0, 4],
-  },
-  {
-    prompt: "they visited the louvre museum in paris",
-    answer: "They visited the Louvre Museum in Paris",
-    correctIndexes: [0, 3, 4, 6],
-  },
-  {
-    prompt: "my friend jessica is a programmer",
-    answer: "My friend Jessica is a programmer",
-    correctIndexes: [0, 2],
-  },
-  {
-    prompt: "he is reading a book about world war ii",
-    answer: "He is reading a book about World War II",
-    correctIndexes: [0, 6, 7, 8],
-  },
-  {
-    prompt: "we are planning a road trip across america",
-    answer: "We are planning a road trip across America",
-    correctIndexes: [0, 6],
-  },
-];
+export const capLevel2 = {
+  tier1: [
+    {
+      prompt: "the book is on the shelf",
+      answer: "The book is on the shelf",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "a car stopped near the store",
+      answer: "A car stopped near the store",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "the child played with a ball",
+      answer: "The child played with a ball",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "he sat on a wooden chair",
+      answer: "He sat on a wooden chair",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "i drank a glass of cold water",
+      answer: "I drank a glass of cold water",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "the cake smells delicious",
+      answer: "The cake smells delicious",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "a flower bloomed in the garden",
+      answer: "A flower bloomed in the garden",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "she dropped the pen on the floor",
+      answer: "She dropped the pen on the floor",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "i heard the sound of a bell",
+      answer: "I heard the sound of a bell",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "he bought a new laptop last weekend",
+      answer: "He bought a new laptop last weekend",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "the doctor examined the patient carefully",
+      answer: "The doctor examined the patient carefully",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "a dog barked loudly in the yard",
+      answer: "A dog barked loudly in the yard",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "she wore a red dress to the party",
+      answer: "She wore a red dress to the party",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "i saw a bird flying over the roof",
+      answer: "I saw a bird flying over the roof",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "the teacher gave homework to the students",
+      answer: "The teacher gave homework to the students",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "monday is my favorite day of the week",
+      answer: "Monday is my favorite day of the week",
+      correctIndexes: [0],
+    },
+    {
+      prompt: "google is one of the most popular search engines",
+      answer: "Google is one of the most popular search engines",
+      correctIndexes: [0],
+    },
+  ],
+  tier2: [
+    {
+      prompt: "michael jordan played basketball for the chicago bulls",
+      answer: "Michael Jordan played basketball for the Chicago Bulls",
+      correctIndexes: [0, 2],
+    },
+    {
+      prompt: "new york city is known for its tall skyscrapers",
+      answer: "New York City is known for its tall skyscrapers",
+      correctIndexes: [0, 1, 2],
+    },
+    {
+      prompt: "the amazon river is the second longest river in the world",
+      answer: "The Amazon River is the second longest river in the world",
+      correctIndexes: [0, 1, 2],
+    },
+    {
+      prompt: "jennifer lopez performed at the super bowl",
+      answer: "Jennifer Lopez performed at the Super Bowl",
+      correctIndexes: [0, 1, 6],
+    },
+    {
+      prompt: "eiffel tower is located in paris, france",
+      answer: "Eiffel Tower is located in Paris, France",
+      correctIndexes: [0, 1, 5, 7],
+    },
+    {
+      prompt: "thanksgiving is celebrated in november",
+      answer: "Thanksgiving is celebrated in November",
+      correctIndexes: [0, 4],
+    },
+    {
+      prompt: "mount everest is the tallest mountain on earth",
+      answer: "Mount Everest is the tallest mountain on Earth",
+      correctIndexes: [0, 1, 7],
+    },
+    {
+      prompt: "harvard university is located in massachusetts",
+      answer: "Harvard University is located in Massachusetts",
+      correctIndexes: [0, 1, 5],
+    },
+  ],
+  tier3: [
+    {
+      prompt: "i met john and sarah at the morgan library",
+      answer: "I met John and Sarah at the Morgan Library",
+      correctIndexes: [0, 2, 4, 7, 8],
+    },
+    {
+      prompt: "google and microsoft are tech giants",
+      answer: "Google and Microsoft are tech giants",
+      correctIndexes: [0, 2],
+    },
+    {
+      prompt: "we traveled to paris during spring break",
+      answer: "We traveled to Paris during Spring Break",
+      correctIndexes: [0, 3, 5],
+    },
+    {
+      prompt: "uncle ben always made the best pancakes",
+      answer: "Uncle Ben always made the best Pancakes",
+      correctIndexes: [0, 2, 7],
+    },
+    {
+      prompt: "apple announced the new iphone in california",
+      answer: "Apple announced the new iPhone in California",
+      correctIndexes: [0, 5, 7],
+    },
+    {
+      prompt: "luna saw a shooting star over mount fuji",
+      answer: "Luna saw a shooting star over Mount Fuji",
+      correctIndexes: [0, 7, 8],
+    },
+    {
+      prompt: "the great wall is in china",
+      answer: "The Great Wall is in China",
+      correctIndexes: [0, 1, 4],
+    },
+    {
+      prompt: "i watched titanic with emily last night",
+      answer: "I watched Titanic with Emily last night",
+      correctIndexes: [0, 2, 4],
+    },
+    {
+      prompt: "santa claus comes every christmas eve",
+      answer: "Santa Claus comes every Christmas Eve",
+      correctIndexes: [0, 1, 4, 5],
+    },
+    {
+      prompt: "harvard and yale are ivy league schools",
+      answer: "Harvard and Yale are Ivy League schools",
+      correctIndexes: [0, 2, 4, 5],
+    },
+    {
+      prompt: "mr. smith teaches history on mondays",
+      answer: "Mr. Smith teaches History on Mondays",
+      correctIndexes: [0, 1, 3, 5],
+    },
+    {
+      prompt: "the amazon river is the longest in south america",
+      answer: "The Amazon River is the longest in South America",
+      correctIndexes: [0, 1, 2, 7, 8],
+    },
+  ],
+};
 
 export const practiceQuestions: Question[] = [
   {

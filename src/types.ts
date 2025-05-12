@@ -37,3 +37,9 @@ export type Question = {
   choices: string[];
   answerIndex: number;
 };
+
+export interface Word2 {
+  prompt: string;
+  answer: string;
+  correctIndexes: number[];
+}
