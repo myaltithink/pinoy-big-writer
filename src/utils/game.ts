@@ -19,7 +19,6 @@ const roomToAchievementMap: Record<Room, Achievements> = {
   punctuation: "completedAllPunctuation",
   spelling: "completedAllSpelling",
 };
-
 export async function markLevelComplete(
   username: string,
   room: Room,
@@ -32,52 +31,52 @@ export async function markLevelComplete(
     return;
   }
 
-  // 1. Mark the level
   const updatedRoomLevels: LevelProgress = user.progress[room].map(
     (done, idx) => (idx === levelIndex ? true : done)
   ) as LevelProgress;
 
-  // 2. Build new progress
   const newRoomProgress: RoomProgress = {
     ...user.progress,
     [room]: updatedRoomLevels,
   };
 
-  // 3. Prepare updated achievements list
   const achievements = [...user.achievements];
+  let additionalPoints = 0;
 
-  // 3a. Per-level achievement
+  // Per-level achievement
   const levelKey = `completed${capitalize(room)}Level${
     levelIndex + 1
   }` as Achievements;
+
   if (updatedRoomLevels[levelIndex] && !achievements.includes(levelKey)) {
     achievements.push(levelKey);
     console.log(`Achievement unlocked: ${levelKey}`);
+    additionalPoints += 10; // ✅ Add 10 points for new level completion
   }
 
-  // 3b. Full-room completion achievement
+  // Full-room achievement
   const fullKey = roomToAchievementMap[room];
   if (updatedRoomLevels.every((v) => v) && !achievements.includes(fullKey)) {
     achievements.push(fullKey);
     console.log(`Achievement unlocked: ${fullKey}`);
+    additionalPoints += 30; // ✅ Optional: Add bonus points for full room
   }
 
-  // 4. Prepare updated user object
   const updatedUser: User = {
     ...user,
     progress: newRoomProgress,
     achievements,
+    points: user.points + additionalPoints, // ✅ Update user points
   };
 
-  // 5. Local update
   setLocalStorageItem("user", updatedUser);
   setUserState(updatedUser);
 
-  // 6. Sync to Firestore
   try {
     await updateUser(username, {
       progress: newRoomProgress,
       achievements: updatedUser.achievements,
+      points: updatedUser.points, // ✅ Sync new points to backend
     });
     console.log(`Progress synced for ${room}[${levelIndex}]`);
   } catch (e) {

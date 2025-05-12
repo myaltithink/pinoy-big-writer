@@ -1,15 +1,20 @@
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { TiHome } from "react-icons/ti";
+import { FaFolderOpen } from "react-icons/fa6";
 import { FaCaretLeft, FaRegStar, FaStar, FaLock } from "react-icons/fa";
 import { useUserStore } from "../stores/useUserStore";
-import { useEffect, useState } from "react";
-import type { User, LevelProgress } from "../types";
 import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "../utils/localstorage";
+import type { User, LevelProgress } from "../types";
+import { RxLetterCaseCapitalize } from "react-icons/rx";
+import { SiGoogleslides } from "react-icons/si";
+import { BsDoorOpenFill } from "react-icons/bs";
 
-const levelsName = ["Level 1", "Level 2", "Level 3"];
+const levelsName = ["Beginner", "Advance", "Intermediate"];
 
 function Punctuation() {
   const { user, setUser } = useUserStore();
@@ -24,7 +29,7 @@ function Punctuation() {
         setUser(localUser);
       }
     }
-    setLevels(user?.progress.punctuation ?? null);
+    setLevels(user?.progress.capitalization ?? null);
   }, [user]);
 
   const renderLevelIcon = (completed: boolean, index: number) => {
@@ -39,33 +44,59 @@ function Punctuation() {
           whileHover={{ x: [0, -3, 3, -3, 3, 0] }}
           transition={{ duration: 0.6 }}
         >
-          <FaLock className="text-9xl text-gray-500" />
+          <FaLock className="text-9xl text-gray-600" />
         </motion.div>
       );
     }
     return completed ? (
-      <FaStar key={index} className="text-9xl text-red-500" />
+      <FaStar key={index} className="text-9xl text-red-400" />
     ) : (
-      <FaRegStar key={index} className="text-9xl text-red-500" />
+      <FaRegStar key={index} className="text-9xl text-red-400" />
     );
   };
 
   return (
-    <div className="min-h-screen flex flex-col gap-8 items-center justify-around bg-white p-4 font-sans punctuation">
-      {/* Title */}
-      <motion.div
-        className="flex justify-center bg-red-500 px-6 py-3 rounded-xl"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        <span className="text-5xl font-serif font-bold text-white">
-          Punctuation Palace
-        </span>
-      </motion.div>
+    <div className="w-screen h-screen flex flex-col items-center punctuation p-8">
+      {/* Top bar */}
+      <div className="w-[90%] flex justify-end">
+        <div className="flex items-center gap-14">
+          <Link to="/achievements">
+            <motion.div
+              className="min-w-[200px] flex justify-between items-center bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.5,
+              }}
+            >
+              <span className="text-white" style={{ fontFamily: "Arco" }}>
+                {user?.points}
+              </span>
+              <FaStar className="text-[#F3B73F] text-2xl" />
+            </motion.div>
+          </Link>
+        </div>
+      </div>
 
-      {/* Main Buttons */}
-      <div className=" mx-auto flex items-center justify-around w-full font-serif gap-6">
+      {/* Tabs */}
+      <div className="w-full flex items-center justify-start">
+        <span
+          className={`text-3xl bg-black/50 px-6 py-3 rounded-t-3xl text-white flex items-center gap-4 border-8 border-black/50 cursor-pointer`}
+          style={{ fontFamily: "Arco" }}
+        >
+          Punctuation Palace
+          <span className="text-5xl w-fit h-fit text-white bg-red-400 rounded-full p-2 flex items-center justify-center">
+            !
+          </span>
+        </span>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 w-full flex items-center justify-around gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50 bg-[#F8D7D7]/25">
         {levels?.map((completed, idx) => {
           const unlocked = idx === 0 || levels[idx - 1];
 
@@ -73,12 +104,15 @@ function Punctuation() {
           const levelContent = (
             <motion.div
               key={idx}
-              className="w-32 flex flex-col items-center p-2 cursor-pointer gap-4"
+              className="min-w-32 flex flex-col items-center p-4 cursor-pointer gap-4 "
               whileHover={unlocked ? { scale: 1.2 } : {}}
             >
               {renderLevelIcon(completed, idx)}
               {unlocked && (
-                <span className="text-center text-3xl text-red-500 font-semibold break-words">
+                <span
+                  className="text-center text-3xl text-black/75 font-semibold break-words"
+                  style={{ fontFamily: "Arco" }}
+                >
                   {levelsName[idx]}
                 </span>
               )}
@@ -95,23 +129,61 @@ function Punctuation() {
         })}
       </div>
 
-      {/* Back Link */}
+      {/* Home Button */}
       <Link to="/games">
         <motion.div
-          className="w-24 h-24 bg-red-500 text-white rounded-full flex items-center justify-center cursor-pointer"
+          className="w-16 h-16 bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           whileHover={{ scale: 0.8 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            duration: 0.5,
+          }}
         >
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center justify-center"
           >
-            <FaCaretLeft className="w-8 h-8" />
+            <BsDoorOpenFill className="w-8 h-8" />
           </motion.div>
         </motion.div>
       </Link>
     </div>
+  );
+}
+
+function VaultCard({
+  title,
+  bg,
+  iconColor,
+}: {
+  title: string;
+  bg: string;
+  iconColor: string;
+}) {
+  return (
+    <motion.div
+      className={`flex flex-col items-center gap-4 p-6 rounded-xl border-6 border-white`}
+      style={{ backgroundColor: bg, cursor: "pointer" }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      whileHover={{ scale: 0.95 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+        duration: 0.5,
+      }}
+    >
+      <FaFolderOpen className={`text-[15rem] text-${iconColor}`} />
+      <span className="text-black/75 text-3xl" style={{ fontFamily: "Arco" }}>
+        {title}
+      </span>
+    </motion.div>
   );
 }
 
