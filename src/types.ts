@@ -1,7 +1,16 @@
 export type Achievements =
   | "completedAllCapitalization"
   | "completedAllPunctuation"
-  | "completedAllSpelling";
+  | "completedAllSpelling"
+  | "completedCapitalizationLevel1"
+  | "completedCapitalizationLevel2"
+  | "completedCapitalizationLevel3"
+  | "completedPunctuationLevel1"
+  | "completedPunctuationLevel2"
+  | "completedPunctuationLevel3"
+  | "completedSpellingLevel1"
+  | "completedSpellingLevel2"
+  | "completedSpellingLevel3";
 
 export type Room = "capitalization" | "punctuation" | "spelling";
 

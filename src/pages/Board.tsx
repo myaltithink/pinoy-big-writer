@@ -1,33 +1,132 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { TiHome } from "react-icons/ti";
-import { HiLightBulb } from "react-icons/hi";
-import {
-  FaFolderOpen,
-  FaPenToSquare,
-  FaRankingStar,
-  FaStar,
-} from "react-icons/fa6";
+import { FaPenToSquare, FaStar, FaLock } from "react-icons/fa6";
 import { useUserStore } from "../stores/useUserStore";
 import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "../utils/localstorage";
-import type { User, Question } from "../types";
-import { practiceQuestions } from "../constants/seeder";
-import { RiMedal2Fill, RiMedalFill } from "react-icons/ri";
-import {
-  collection,
-  getDocs,
-  orderBy,
-  query,
-  FirestoreError,
-} from "firebase/firestore";
-import { db } from "../../firebase"; // Assuming you have your Firebase config and db instance here
-import { addUser, getUsers, getUser, updateUser } from "../services/User"; // Import your Firebase functions
+import type { User, Achievements } from "../types";
+import { FirestoreError } from "firebase/firestore";
+import { getUsers } from "../services/User"; // Import your Firebase functions
 
 type Tab = "Ranking" | "Achievements";
+
+// Define the structure for an achievement card
+interface AchievementCardProps {
+  title: string;
+  description: string;
+  date?: string;
+  imageSrc: string;
+  achieved: boolean;
+}
+
+// Mapping of achievement keys to display-friendly names and images
+const allAchievementsDisplayData: Record<
+  Achievements,
+  Omit<AchievementCardProps, "date" | "achieved">
+> = {
+  completedAllCapitalization: {
+    title: "Capitalization Champion",
+    description: "Completed all Capitalization exercises.",
+    imageSrc: "/achievements/capital-trophy.png", // Replace with actual path
+  },
+  completedAllPunctuation: {
+    title: "Punctuation Champion",
+    description: "Completed all Punctuation exercises.",
+    imageSrc: "/achievements/punctuation-trophy.png", // Replace with actual path
+  },
+  completedAllSpelling: {
+    title: "Spelling Champion",
+    description: "Completed all Spelling exercises.",
+    imageSrc: "/achievements/spell-trophy.png", // Replace with actual path
+  },
+  completedCapitalizationLevel1: {
+    title: "Capitalization Beginner",
+    description: "Completed the first Capitalization exercise.",
+    imageSrc: "/achievements/bronze-medal.png", // Replace with actual path
+  },
+  completedCapitalizationLevel2: {
+    title: "Capitalization Advance",
+    description: "Completed the second Capitalization exercise.",
+    imageSrc: "/achievements/silver-medal.png", // Replace with actual path
+  },
+  completedCapitalizationLevel3: {
+    title: "Capitalization Intermediate",
+    description: "Completed the third Capitalization exercise.",
+    imageSrc: "/achievements/gold-medal.png", // Replace with actual path
+  },
+  completedPunctuationLevel1: {
+    title: "Punctuation Beginner",
+    description: "Completed the first Punctuation exercise.",
+    imageSrc: "/achievements/bronze-medal.png", // Replace with actual path
+  },
+  completedPunctuationLevel2: {
+    title: "Punctuation Advance",
+    description: "Completed the second Punctuation exercise.",
+    imageSrc: "/achievements/silver-medal.png", // Replace with actual path
+  },
+  completedPunctuationLevel3: {
+    title: "Punctuation Intermediate",
+    description: "Completed the third Punctuation exercise.",
+    imageSrc: "/achievements/gold-medal.png", // Replace with actual path
+  },
+  completedSpellingLevel1: {
+    title: "Spelling Beginner",
+    description: "Completed the first Spelling exercise.",
+    imageSrc: "/achievements/bronze-medal.png", // Replace with actual path
+  },
+  completedSpellingLevel2: {
+    title: "Spelling Advance",
+    description: "Completed the second Spelling exercise.",
+    imageSrc: "/achievements/silver-medal.png", // Replace with actual path
+  },
+  completedSpellingLevel3: {
+    title: "Spelling Intermediate",
+    description: "Completed the third Spelling exercise.",
+    imageSrc: "/achievements/gold-medal.png", // Replace with actual path
+  },
+};
+
+function AchievementCard({
+  title,
+  description,
+  date,
+  imageSrc,
+  achieved,
+}: AchievementCardProps) {
+  return (
+    <div
+      className={`w-full flex items-center justify-center relative rounded-md overflow-hidden shadow-lg max-w-xs ${
+        achieved ? "bg-black/75" : ""
+      }`}
+    >
+      <div
+        className={`absolute top-0 left-0 w-full h-full ${
+          achieved ? "" : "bg-black/75"
+        } transition-opacity duration-300 flex items-center justify-center`}
+      >
+        {!achieved && <FaLock className="text-white text-7xl z-50" />}
+      </div>
+      <img
+        src={imageSrc}
+        alt={title}
+        className={`w-[75%] h-auto object-cover ${
+          achieved ? "" : "brightness-50 blur-sm"
+        }`}
+      />
+      <div className="absolute bottom-0 left-0 w-full bg-black/75 text-white p-2">
+        <h3 className="font-bold text-base" style={{ fontFamily: "Arco" }}>
+          {title}
+        </h3>
+        <p className="text-xs">{description}</p>
+        {date && <p className="text-xs italic mt-1">{date}</p>}
+      </div>
+    </div>
+  );
+}
 
 function Board() {
   const { user, setUser } = useUserStore();
@@ -43,7 +142,10 @@ function Board() {
   );
   const [currentUserName, setCurrentUserName] = useState<string | null>(null);
   const [allUsers, setAllUsers] = useState<User[]>([]); // State to hold all users
-  // const usersCollectionRef = collection(db, "users"); // Reference to your users collection - No longer needed
+  const [userAchievements, setUserAchievements] = useState<Achievements[]>([]);
+  const [displayedAchievementsData, setDisplayedAchievementsData] = useState<
+    AchievementCardProps[]
+  >([]);
 
   useEffect(() => {
     const currentTab = path.substring(7);
@@ -56,16 +158,14 @@ function Board() {
   }, [path]);
 
   useEffect(() => {
-    console.log(tab);
-  }, [tab]);
-
-  useEffect(() => {
     if (!user) {
       const localUser = getLocalStorageItem<User>("user");
       if (localUser) {
         setLocalStorageItem("user", localUser);
         setUser(localUser);
       }
+    } else if (user?.achievements) {
+      setUserAchievements(user.achievements);
     }
 
     // --- Function to fetch and sort users from Firebase using your getUsers function ---
@@ -129,6 +229,16 @@ function Board() {
     fetchAndSortUsers();
   }, [user]);
 
+  useEffect(() => {
+    const achievementsToDisplay: AchievementCardProps[] = Object.entries(
+      allAchievementsDisplayData
+    ).map(([key, data]) => ({
+      ...data,
+      achieved: userAchievements.includes(key as Achievements),
+    }));
+    setDisplayedAchievementsData(achievementsToDisplay);
+  }, [userAchievements]);
+
   return (
     <div className="w-screen h-screen flex flex-col items-center board p-8">
       {/* Tabs */}
@@ -162,6 +272,7 @@ function Board() {
       {/* Content */}
       <div
         className={`flex-1 w-full flex items-start justify-around gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50 bg-black/75`}
+        style={{ overflowY: "auto" }} // Added overflowY for scrolling if needed
       >
         {tab === "Ranking" ? (
           <div className="flex w-full h-full gap-8">
@@ -294,8 +405,10 @@ function Board() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col gap-4 text-white text-2xl w-[60%]">
-            {/** Achievements */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full overflow-y-auto">
+            {displayedAchievementsData.map((achievement, index) => (
+              <AchievementCard key={index} {...achievement} />
+            ))}
           </div>
         )}
       </div>
@@ -309,7 +422,7 @@ function Board() {
           whileHover={{ scale: 0.8 }}
           transition={{
             type: "spring",
-            stiffness: 100,
+            stiffness: 10,
             damping: 10,
             duration: 0.5,
           }}
@@ -324,41 +437,6 @@ function Board() {
         </motion.div>
       </Link>
     </div>
-  );
-}
-
-function VaultCard({
-  title,
-  bg,
-  iconColor,
-  path,
-}: {
-  title: string;
-  bg: string;
-  iconColor: string;
-  path: string;
-}) {
-  return (
-    <Link to={path}>
-      <motion.div
-        className={`flex flex-col items-center gap-4 p-6 rounded-xl border-6 border-white`}
-        style={{ backgroundColor: bg, cursor: "pointer" }}
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        whileHover={{ scale: 0.95 }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-          duration: 0.5,
-        }}
-      >
-        <FaFolderOpen className={`text-[15rem] ${iconColor}`} />
-        <span className="text-black/75 text-3xl" style={{ fontFamily: "Arco" }}>
-          {title}
-        </span>
-      </motion.div>
-    </Link>
   );
 }
 
