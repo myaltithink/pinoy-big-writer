@@ -278,7 +278,7 @@ function CapLevel2() {
           </div>
         ) : gameOver ? (
           <div className="text-white text-3xl text-center">
-            <p style={{ fontFamily: "Arco" }}>Time's Up!</p>
+            <p style={{ fontFamily: "Arco" }}>Game Over!</p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <button
               onClick={handleRestart}
@@ -290,7 +290,7 @@ function CapLevel2() {
           </div>
         ) : completed ? (
           <div className="text-white text-3xl text-center">
-            <p style={{ fontFamily: "Arco" }}>Quiz Complete!</p>
+            <p style={{ fontFamily: "Arco" }}>Game Complete!</p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <div className="flex mt-4 gap-4 justify-center">
               <button

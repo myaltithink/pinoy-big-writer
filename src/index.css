@@ -51,6 +51,13 @@
   animation: moveBg 30s linear infinite;
 }
 
+.board {
+  background-image: url("/board.jpg");
+  background-size: contain;
+  background-repeat: repeat-x;
+  animation: moveBg 30s linear infinite;
+}
+
 .overview {
   background-image: url("/overview.png");
   background-size: contain;
@@ -61,4 +68,8 @@
 .outlined-text {
   color: rgba(0, 0, 0, 0.5);
   -webkit-text-stroke: 2px white;
+}
+
+.outlined {
+  -webkit-text-stroke: 2px black;
 }

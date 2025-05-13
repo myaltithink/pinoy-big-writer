@@ -31,6 +31,7 @@ import SoundProvider from "./layouts/SoundProvider";
 import CapVault from "./pages/capitalization/CapVault";
 import PuncVault from "./pages/punctuation/PuncVault";
 import SpellVault from "./pages/spelling/SpellVault";
+import Board from "./pages/Board";
 
 const App = () => {
   return (
@@ -48,7 +49,6 @@ const App = () => {
             <Route path="/vault" element={<Vault />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/achievements" element={<Achievement />} />
             <Route path="/games" element={<Games />} />
             <Route path="/games/capitalization" element={<Capitalization />} />
             <Route path="/games/punctuation" element={<Punctuation />} />
@@ -78,6 +78,8 @@ const App = () => {
             <Route path="/vault/capitalization" element={<CapVault />} />
             <Route path="/vault/punctuation" element={<PuncVault />} />
             <Route path="/vault/spelling" element={<SpellVault />} />
+
+            <Route path="/board/*" element={<Board />} />
           </Route>
 
           {/* 404 */}

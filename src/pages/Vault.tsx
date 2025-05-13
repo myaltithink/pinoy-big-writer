@@ -85,7 +85,7 @@ function Vault() {
       {/* Top bar */}
       <div className="w-[90%] flex justify-end">
         <div className="flex items-center gap-14">
-          <Link to="/achievements">
+          <Link to="/board/achievements">
             <motion.div
               className="min-w-[200px] flex justify-between items-center bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
               initial={{ y: -100, opacity: 0 }}
@@ -283,8 +283,11 @@ function VaultCard({
           duration: 0.5,
         }}
       >
-        <FaFolderOpen className={`text-[15rem] ${iconColor}`} />
-        <span className="text-black/75 text-3xl" style={{ fontFamily: "Arco" }}>
+        <FaFolderOpen className={`text-[15rem] ${iconColor} `} />
+        <span
+          className="text-black/75 text-3xl "
+          style={{ fontFamily: "Arco" }}
+        >
           {title}
         </span>
       </motion.div>

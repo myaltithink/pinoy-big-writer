@@ -32,7 +32,7 @@ export default function Home() {
     <div className="flex flex-col gap-8 w-screen h-screen background p-8">
       <div className="w-[90%] flex justify-end ">
         <div className="flex items-center gap-14">
-          <Link to="/ranking">
+          <Link to="/board/ranking">
             <motion.div
               className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
               initial={{ y: -100 }}
@@ -50,7 +50,7 @@ export default function Home() {
               <FaPenToSquare className="text-[#F3B73F] text-2xl" />
             </motion.div>
           </Link>
-          <Link to="/achievements">
+          <Link to="/board/achievements">
             <motion.div
               className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
               initial={{ y: -100 }}

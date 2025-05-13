@@ -1328,7 +1328,7 @@ export const capLevel2 = {
     {
       prompt: "michael jordan played basketball for the chicago bulls",
       answer: "Michael Jordan played basketball for the Chicago Bulls",
-      correctIndexes: [0, 2],
+      correctIndexes: [0, 1, 6, 7],
     },
     {
       prompt: "new york city is known for its tall skyscrapers",
@@ -1343,12 +1343,7 @@ export const capLevel2 = {
     {
       prompt: "jennifer lopez performed at the super bowl",
       answer: "Jennifer Lopez performed at the Super Bowl",
-      correctIndexes: [0, 1, 6],
-    },
-    {
-      prompt: "eiffel tower is located in paris, france",
-      answer: "Eiffel Tower is located in Paris, France",
-      correctIndexes: [0, 1, 5, 7],
+      correctIndexes: [0, 1, 5, 6],
     },
     {
       prompt: "thanksgiving is celebrated in november",
@@ -1400,7 +1395,7 @@ export const capLevel2 = {
     {
       prompt: "the great wall is in china",
       answer: "The Great Wall is in China",
-      correctIndexes: [0, 1, 4],
+      correctIndexes: [0, 1, 2, 5],
     },
     {
       prompt: "i watched titanic with emily last night",

@@ -258,7 +258,7 @@ function CapLevel1() {
         ) : completed || gameOver ? (
           <div className="text-white text-3xl text-center">
             <p style={{ fontFamily: "Arco" }}>
-              Quiz {completed ? "Complete" : "Over"}!
+              Game {completed ? "Complete" : "Over"}!
             </p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <button
