@@ -13,6 +13,8 @@ import {
 } from "../utils/localstorage";
 import type { User } from "../types";
 import { formatRank } from "../utils/format";
+import { FirestoreError } from "firebase/firestore";
+import { getUsers } from "../services/User";
 
 export default function Home() {
   const { user, setUser } = useUserStore();
@@ -27,6 +29,41 @@ export default function Home() {
       }
     }
   }, [user]);
+
+  useEffect(() => {
+    const doFetchRank = async () => {
+      try {
+        const usersData = await getUsers();
+        // sort descending by points
+        const sorted = usersData
+          .map((u) => ({ username: u.username, points: u.points || 0 }))
+          .sort((a, b) => b.points - a.points);
+        // find my position
+        const me = sorted.findIndex((u) => u.username === user?.username);
+        if (me >= 0) {
+          const newRank = me + 1;
+          const newPoints = sorted[me].points;
+          // write into store + localStorage
+          const updated: User = {
+            ...user!,
+            ranking: newRank,
+            points: newPoints,
+          };
+          setUser(updated);
+          setLocalStorageItem("user", updated);
+        }
+      } catch (e) {
+        console.error("Error fetching rank in Home:", e);
+        if (e instanceof FirestoreError) {
+          console.error(e.code, e.message);
+        }
+      }
+    };
+
+    if (user) {
+      doFetchRank();
+    }
+  }, [user, setUser]);
 
   return (
     <div className="flex flex-col gap-8 w-screen h-screen background p-8">

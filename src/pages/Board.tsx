@@ -219,8 +219,6 @@ function Board() {
             setCurrentUserPoints(user.points || 0);
             setCurrentUserName(user.username);
           }
-        } else {
-          setCurrentUserName("Guest"); // Or handle the case where no user is logged in
         }
       } catch (error) {
         console.error("Error fetching and sorting users from Firebase:", error);
