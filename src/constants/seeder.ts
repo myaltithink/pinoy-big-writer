@@ -2643,12 +2643,12 @@ export const allAchievementsDisplayData: Record<
     imageSrc: "/achievements/bronze-medal.png", // Replace with actual path
   },
   completedCapitalizationLevel2: {
-    title: "Capitalization Advance",
+    title: "Capitalization Intermediate",
     description: "Completed the second Capitalization exercise.",
     imageSrc: "/achievements/silver-medal.png", // Replace with actual path
   },
   completedCapitalizationLevel3: {
-    title: "Capitalization Intermediate",
+    title: "Capitalization Advance",
     description: "Completed the third Capitalization exercise.",
     imageSrc: "/achievements/gold-medal.png", // Replace with actual path
   },
@@ -2658,12 +2658,12 @@ export const allAchievementsDisplayData: Record<
     imageSrc: "/achievements/bronze-medal.png", // Replace with actual path
   },
   completedPunctuationLevel2: {
-    title: "Punctuation Advance",
+    title: "Punctuation Intermediate",
     description: "Completed the second Punctuation exercise.",
     imageSrc: "/achievements/silver-medal.png", // Replace with actual path
   },
   completedPunctuationLevel3: {
-    title: "Punctuation Intermediate",
+    title: "Punctuation Advance",
     description: "Completed the third Punctuation exercise.",
     imageSrc: "/achievements/gold-medal.png", // Replace with actual path
   },
@@ -2673,12 +2673,12 @@ export const allAchievementsDisplayData: Record<
     imageSrc: "/achievements/bronze-medal.png", // Replace with actual path
   },
   completedSpellingLevel2: {
-    title: "Spelling Advance",
+    title: "Spelling Intermediate",
     description: "Completed the second Spelling exercise.",
     imageSrc: "/achievements/silver-medal.png", // Replace with actual path
   },
   completedSpellingLevel3: {
-    title: "Spelling Intermediate",
+    title: "Spelling Advance",
     description: "Completed the third Spelling exercise.",
     imageSrc: "/achievements/gold-medal.png", // Replace with actual path
   },

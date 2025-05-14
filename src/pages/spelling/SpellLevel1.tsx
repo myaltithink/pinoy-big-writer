@@ -394,7 +394,7 @@ function SpellLevel1() {
       </div>
 
       {/* Home Button */}
-      <Link to="/games/capitalization">
+      <Link to="/games/spelling">
         <motion.div
           className="w-16 h-16 bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4"
           initial={{ y: -100, opacity: 0 }}

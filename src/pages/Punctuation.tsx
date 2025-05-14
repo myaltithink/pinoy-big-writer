@@ -14,7 +14,7 @@ import { RxLetterCaseCapitalize } from "react-icons/rx";
 import { SiGoogleslides } from "react-icons/si";
 import { BsDoorOpenFill } from "react-icons/bs";
 
-const levelsName = ["Beginner", "Advance", "Intermediate"];
+const levelsName = ["Beginner", "Intermediate", "Advance"];
 
 function Punctuation() {
   const { user, setUser } = useUserStore();
