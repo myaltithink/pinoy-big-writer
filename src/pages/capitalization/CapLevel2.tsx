@@ -10,6 +10,13 @@ import { markLevelComplete } from "../../utils/game";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import { MdTimer } from "react-icons/md";
+import useSound from "use-sound";
+import { useSoundContext } from "../../layouts/SoundProvider";
+
+const correctSoundPath = "/sounds/correct.mp3";
+const wrongSoundPath = "/sounds/wrong.mp3";
+const winSoundPath = "/sounds/win.mp3";
+const loseSoundPath = "/sounds/lose.mp3";
 
 const starColors = [
   "text-blue-500",
@@ -35,6 +42,18 @@ function CapLevel2() {
   const navigate = useNavigate();
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
+  const { clickEnabled } = useSoundContext(); // Get clickEnabled from the context
+
+  const [playCorrectSound] = useSound(correctSoundPath, {
+    soundEnabled: clickEnabled,
+  });
+  const [playWrongSound] = useSound(wrongSoundPath, {
+    soundEnabled: clickEnabled,
+  });
+  const [playWinSound] = useSound(winSoundPath, { soundEnabled: clickEnabled });
+  const [playLoseSound] = useSound(loseSoundPath, {
+    soundEnabled: clickEnabled,
+  });
 
   useEffect(() => {
     const tier1 = allWords?.tier1 || [];
@@ -63,6 +82,7 @@ function CapLevel2() {
     }
     if (timeLeft === 0 && !showFeedback) {
       setShowFeedback(true);
+      if (clickEnabled) playWrongSound(); // Play wrong sound on time out if enabled
       setTimeout(() => {
         if (index + 1 < shuffledWords.length && stars < 10) {
           setIndex((i) => i + 1);
@@ -71,6 +91,7 @@ function CapLevel2() {
           setShowFeedback(false);
         } else {
           setGameOver(true);
+          if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
         }
       }, 3000); // Show feedback for 3 seconds
     }
@@ -83,16 +104,20 @@ function CapLevel2() {
     shuffledWords,
     stars,
     showFeedback,
+    clickEnabled,
+    playWrongSound,
+    playLoseSound,
   ]);
 
   useEffect(() => {
     if (stars === 10 && !completed) {
       setCompleted(true);
+      if (clickEnabled) playWinSound(); // Play win sound on completion if enabled
       if (user?.username) {
         markLevelComplete(user.username, "capitalization", 1, setUser);
       }
     }
-  }, [stars, user, setUser, completed]);
+  }, [stars, user, setUser, completed, clickEnabled, playWinSound]);
 
   const toggleWord = (i: number) => {
     if (!showFeedback) {
@@ -118,6 +143,7 @@ function CapLevel2() {
 
     setTimeout(() => {
       if (selected === correct) {
+        if (clickEnabled) playCorrectSound(); // Play correct sound if enabled
         setTimeLeft((t) => Math.max(t + 5, 0));
         setStars((s) => s + 1); // Increment stars regardless of the previous count
         setPopKey((k) => k + 1);
@@ -132,8 +158,10 @@ function CapLevel2() {
           setCompleted(true);
         } else {
           setGameOver(true);
+          if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
         }
       } else {
+        if (clickEnabled) playWrongSound(); // Play wrong sound if enabled
         if (index + 1 < shuffledWords.length && stars < 10) {
           setIndex((i) => i + 1);
           setSelectedIndexes([]);
@@ -143,6 +171,7 @@ function CapLevel2() {
           setCompleted(true);
         } else {
           setGameOver(true);
+          if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
         }
       }
     }, 2000);

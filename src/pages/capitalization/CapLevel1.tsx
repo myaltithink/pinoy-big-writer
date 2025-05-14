@@ -11,6 +11,13 @@ import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import { FaCaretLeft } from "react-icons/fa6";
 import { MdTimer } from "react-icons/md";
+import useSound from "use-sound";
+import { useSoundContext } from "../../layouts/SoundProvider";
+
+const correctSoundPath = "/sounds/correct.mp3";
+const wrongSoundPath = "/sounds/wrong.mp3";
+const winSoundPath = "/sounds/win.mp3";
+const loseSoundPath = "/sounds/lose.mp3";
 
 const starColors = [
   "text-blue-500",
@@ -36,6 +43,18 @@ function CapLevel1() {
   const { user, setUser } = useUserStore();
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
+  const { clickEnabled } = useSoundContext(); // Get clickEnabled from the context
+
+  const [playCorrectSound] = useSound(correctSoundPath, {
+    soundEnabled: clickEnabled,
+  });
+  const [playWrongSound] = useSound(wrongSoundPath, {
+    soundEnabled: clickEnabled,
+  });
+  const [playWinSound] = useSound(winSoundPath, { soundEnabled: clickEnabled });
+  const [playLoseSound] = useSound(loseSoundPath, {
+    soundEnabled: clickEnabled,
+  });
 
   useEffect(() => {
     const combined = [
@@ -56,19 +75,23 @@ function CapLevel1() {
         setSelected(false); // Automatically mark as incorrect
         setIsCorrect(false);
         setFeedbackWord(shuffledWords[index].correctWord);
+        playWrongSound();
         setTimeout(() => {
           setSelected(null);
           setIsCorrect(null);
           setFeedbackWord(null);
           if (index + 1 === shuffledWords.length && stars < 10) {
             setGameOver(true);
+            playLoseSound();
           } else if (index + 1 < shuffledWords.length) {
             setIndex((i) => i + 1);
             setTimeLeft(10); // Reset timer for the next question
           } else if (stars === 10) {
             setCompleted(true);
+            playWinSound();
           } else {
             setGameOver(true);
+            playLoseSound();
           }
         }, 2000);
       }
@@ -81,16 +104,20 @@ function CapLevel1() {
     index,
     shuffledWords,
     stars,
+    playWrongSound,
+    playLoseSound,
+    playWinSound,
   ]);
 
   useEffect(() => {
     if (stars === 10 && !completed) {
       setCompleted(true);
+      playWinSound();
       if (user?.username) {
         markLevelComplete(user.username, "capitalization", 0, setUser);
       }
     }
-  }, [stars, user, setUser, completed]);
+  }, [stars, user, setUser, completed, playWinSound]);
 
   const handleAnswer = (choice: boolean) => {
     if (selected !== null || completed || gameOver || showInstructions) return;
@@ -101,6 +128,7 @@ function CapLevel1() {
     setFeedbackWord(shuffledWords[index].correctWord);
 
     if (correct) {
+      playCorrectSound();
       setStars((s) => s + 1);
       setPopKey((k) => k + 1);
       setTimeout(() => {
@@ -109,14 +137,17 @@ function CapLevel1() {
         setFeedbackWord(null);
         if (stars === 10) {
           setCompleted(true);
+          playWinSound();
         } else if (index + 1 < shuffledWords.length) {
           setIndex((i) => i + 1);
           setTimeLeft(10); // Reset timer for the next question
         } else {
           setGameOver(true); // If all questions are done but not 10 stars
+          playLoseSound();
         }
       }, 2000);
     } else {
+      playWrongSound();
       setTimeout(() => {
         setSelected(null);
         setIsCorrect(null);
@@ -126,6 +157,7 @@ function CapLevel1() {
           setTimeLeft(10); // Reset timer for the next question
         } else if (stars < 10) {
           setGameOver(true);
+          playLoseSound();
         }
       }, 2000);
     }
