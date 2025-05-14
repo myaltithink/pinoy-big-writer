@@ -67,11 +67,17 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-8 w-screen h-screen background p-8">
-      <div className="w-[90%] flex justify-end ">
+      <div className="self-center w-[90%] flex justify-between ">
+        <div className="flex items-center justify-center gap-4 bg-black/50 rounded-xl px-4 py-2">
+          <img src={user?.avatar} alt="" className="w-10 h-10  rounded-full " />
+          <span className="text-2xl text-white" style={{ fontFamily: "Arco" }}>
+            {user?.username}
+          </span>
+        </div>
         <div className="flex items-center gap-14">
           <Link to="/board/ranking">
             <motion.div
-              className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
+              className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-4 rounded-xl cursor-pointer"
               initial={{ y: -100 }}
               animate={{ y: 0 }}
               whileHover={{ scale: 1.05 }}
@@ -89,7 +95,7 @@ export default function Home() {
           </Link>
           <Link to="/board/achievements">
             <motion.div
-              className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-2 rounded-xl cursor-pointer"
+              className="min-w-[200px] flex justify-between items-center relative bg-black/50 px-4 py-4 rounded-xl cursor-pointer"
               initial={{ y: -100 }}
               animate={{ y: 0 }}
               whileHover={{ scale: 1.05 }}

@@ -200,7 +200,7 @@ export default function Profile() {
               damping: 10,
               duration: 0.5,
             }}
-            className="w-full h-full flex flex-col items-center justify-around bg-black/75 text-white  rounded-xl gap-4 py-3"
+            className="w-full h-full flex flex-col items-center justify-around bg-black/75 text-white rounded-xl gap-4 py-3"
           >
             {/* Change Password UI */}
             <div className="w-full flex flex-col items-center gap-2 mt-4 px-6">
