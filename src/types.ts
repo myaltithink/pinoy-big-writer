@@ -63,3 +63,10 @@ export interface AchievementCardProps {
   imageSrc: string;
   achieved: boolean;
 }
+
+export interface SpellingCorrection {
+  incorrect: string;
+  correct: string;
+  incorrect_alt: string;
+  definition: string;
+}

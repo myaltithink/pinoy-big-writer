@@ -2704,3 +2704,498 @@ export const allAchievementsDisplayData: Record<
     imageSrc: "/achievements/pbw-trophy.png", // Replace with actual path
   },
 };
+
+export const spellLevel1 = [
+  {
+    incorrect: "Sandwitch",
+    correct: "Sandwich",
+    incorrect_alt: "Sandwetch",
+    definition:
+      "It’s something you eat, often filled with meat, cheese, or veggies between slices of bread.",
+  },
+  {
+    incorrect: "Sakses",
+    correct: "Success",
+    incorrect_alt: "Succsess",
+    definition:
+      "It’s what you achieve when you reach your goal or win a challenge!",
+  },
+  {
+    incorrect: "Thankfull",
+    correct: "Thankful",
+    incorrect_alt: "Tankful",
+    definition:
+      "It’s how you feel when you appreciate something or someone who helped you.",
+  },
+  {
+    incorrect: "Freind",
+    correct: "Friend",
+    incorrect_alt: "Frend",
+    definition: "Someone you trust, talk to, and share good times with.",
+  },
+  {
+    incorrect: "Meet",
+    correct: "Meat",
+    incorrect_alt: "Meatt",
+    definition:
+      "It’s food that comes from animals, like beef, chicken, or pork.",
+  },
+  {
+    incorrect: "Letuce",
+    correct: "Lettuce",
+    incorrect_alt: "Lattuce",
+    definition: "A leafy green vegetable often used in salads and sandwiches.",
+  },
+  {
+    incorrect: "Reciept",
+    correct: "Receipt",
+    incorrect_alt: "Receit",
+    definition:
+      "A piece of paper you get after making a purchase, showing what you bought and how much you paid.",
+  },
+  {
+    incorrect: "Coleague",
+    correct: "Colleague",
+    incorrect_alt: "Collleague",
+    definition: "A person you work with, often in the same company or team.",
+  },
+  {
+    incorrect: "Beautifull",
+    correct: "Beautiful",
+    incorrect_alt: "Beatiful",
+    definition:
+      "A word used to describe something or someone that is visually attractive or pleasing.",
+  },
+  {
+    incorrect: "Miscelaneous",
+    correct: "Miscellaneous",
+    incorrect_alt: "Miscillaneous",
+    definition:
+      "A word used to describe a collection of various items, often mixed and not related.",
+  },
+  {
+    incorrect: "Completly",
+    correct: "Completely",
+    incorrect_alt: "Compleatly",
+    definition: "Entirely or fully, with nothing left out.",
+  },
+  {
+    incorrect: "Consious",
+    correct: "Conscious",
+    incorrect_alt: "Concsious",
+    definition: "Being aware of one's surroundings, thoughts, and feelings.",
+  },
+  {
+    incorrect: "Dissapoint",
+    correct: "Disappoint",
+    incorrect_alt: "Dissappoint",
+    definition: "To fail to meet the hopes or expectations of someone.",
+  },
+  {
+    incorrect: "Efficent",
+    correct: "Efficient",
+    incorrect_alt: "Effecient",
+    definition: "Being effective without wasting time or effort.",
+  },
+  {
+    incorrect: "Equiped",
+    correct: "Equipped",
+    incorrect_alt: "Equipt",
+    definition: "To be supplied with the necessary items.",
+  },
+  {
+    incorrect: "Foriegn",
+    correct: "Foreign",
+    incorrect_alt: "Forign",
+    definition: "Something from a different country or unfamiliar place.",
+  },
+  {
+    incorrect: "Gratefull",
+    correct: "Grateful",
+    incorrect_alt: "Greatful",
+    definition: "Feeling thankful or appreciative.",
+  },
+  {
+    incorrect: "Haras",
+    correct: "Harass",
+    incorrect_alt: "Harras",
+    definition: "To repeatedly annoy or bother someone.",
+  },
+  {
+    incorrect: "Ilegible",
+    correct: "Illegible",
+    incorrect_alt: "Illegeble",
+    definition: "Impossible to read due to poor handwriting or print.",
+  },
+  {
+    incorrect: "Liason",
+    correct: "Liaison",
+    incorrect_alt: "Liasson",
+    definition: "A person who helps organizations or groups work together.",
+  },
+  {
+    incorrect: "Noticable",
+    correct: "Noticeable",
+    incorrect_alt: "Noticible",
+    definition: "Easy to see or detect.",
+  },
+  {
+    incorrect: "Oppurtunity",
+    correct: "Opportunity",
+    incorrect_alt: "Oppertunity",
+    definition: "A chance for progress or achievement.",
+  },
+  {
+    incorrect: "Permenant",
+    correct: "Permanent",
+    incorrect_alt: "Permanant",
+    definition: "Lasting or intended to last indefinitely without change.",
+  },
+  {
+    incorrect: "Playwrite",
+    correct: "Playwright",
+    incorrect_alt: "Playrite",
+    definition: "A person who writes plays.",
+  },
+  {
+    incorrect: "Proffesional",
+    correct: "Professional",
+    incorrect_alt: "Profesional",
+    definition: "Someone who is skilled or qualified in their field of work.",
+  },
+  {
+    incorrect: "Questionaire",
+    correct: "Questionnaire",
+    incorrect_alt: "Questionare",
+    definition: "A set of questions for gathering information.",
+  },
+  {
+    incorrect: "Recieve",
+    correct: "Receive",
+    incorrect_alt: "Receive",
+    definition: "To be given or presented with something.",
+  },
+  {
+    incorrect: "Tehcnology",
+    correct: "Technology",
+    incorrect_alt: "Technolgy",
+    definition:
+      "The application of scientific knowledge for practical purposes.",
+  },
+  {
+    incorrect: "Thier",
+    correct: "Their",
+    incorrect_alt: "There",
+    definition: "Belonging to them.",
+  },
+  {
+    incorrect: "Disipline",
+    correct: "Discipline",
+    incorrect_alt: "Discpline",
+    definition:
+      "The practice of training people to obey rules or a code of behavior.",
+  },
+  {
+    incorrect: "Embarass",
+    correct: "Embarrass",
+    incorrect_alt: "Embaras",
+    definition: "To cause someone to feel awkward or ashamed.",
+  },
+  {
+    incorrect: "Experiance",
+    correct: "Experience",
+    incorrect_alt: "Experence",
+    definition: "Practical contact with and observation of facts or events.",
+  },
+  {
+    incorrect: "Fullfill",
+    correct: "Fulfill",
+    incorrect_alt: "Fulfil",
+    definition: "To bring to completion or reality; achieve or realize.",
+  },
+  {
+    incorrect: "Garantee",
+    correct: "Guarantee",
+    incorrect_alt: "Guarentee",
+    definition: "A formal promise that certain conditions will be fulfilled.",
+  },
+  {
+    incorrect: "Heirarchy",
+    correct: "Hierarchy",
+    incorrect_alt: "Hierarcy",
+    definition:
+      "A system in which people or things are ranked according to status or authority.",
+  },
+  {
+    incorrect: "Humourous",
+    correct: "Humorous",
+    incorrect_alt: "Humoros",
+    definition: "Causing laughter and amusement.",
+  },
+  {
+    incorrect: "Irresistable",
+    correct: "Irresistible",
+    incorrect_alt: "Irresitable",
+    definition: "Too attractive and tempting to be resisted.",
+  },
+  {
+    incorrect: "Lisence",
+    correct: "License",
+    incorrect_alt: "Licence",
+    definition: "A permit from an authority to own or use something.",
+  },
+  {
+    incorrect: "Maintainance",
+    correct: "Maintenance",
+    incorrect_alt: "Mantainance",
+    definition: "The process of keeping something in good condition.",
+  },
+  {
+    incorrect: "Manuever",
+    correct: "Maneuver",
+    incorrect_alt: "Manuver",
+    definition: "A movement or series of moves requiring skill and care.",
+  },
+  {
+    incorrect: "Medievil",
+    correct: "Medieval",
+    incorrect_alt: "Medeival",
+    definition: "Relating to the Middle Ages.",
+  },
+  {
+    incorrect: "Minature",
+    correct: "Miniature",
+    incorrect_alt: "Miniaturee",
+    definition: "A smaller version of something.",
+  },
+  {
+    incorrect: "Noticable",
+    correct: "Noticeable",
+    incorrect_alt: "Noticible",
+    definition: "Easily seen or detected.",
+  },
+  {
+    incorrect: "Occasionly",
+    correct: "Occasionally",
+    incorrect_alt: "Ocasionally",
+    definition: "At infrequent or irregular intervals.",
+  },
+  {
+    incorrect: "Persistant",
+    correct: "Persistent",
+    incorrect_alt: "Persistant",
+    definition: "Continuing firmly or obstinately in a course of action.",
+  },
+  {
+    incorrect: "Playwrite",
+    correct: "Playwright",
+    incorrect_alt: "Playrite",
+    definition: "A person who writes plays.",
+  },
+  {
+    incorrect: "Preffered",
+    correct: "Preferred",
+    incorrect_alt: "Prefered",
+    definition: "Liked or chosen above all others.",
+  },
+  {
+    incorrect: "Rythm",
+    correct: "Rhythm",
+    incorrect_alt: "Rhythim",
+    definition: "A strong, regular, repeated pattern of movement or sound.",
+  },
+  {
+    incorrect: "Sophmore",
+    correct: "Sophomore",
+    incorrect_alt: "Sofomore",
+    definition: "A student in the second year of high school or college.",
+  },
+  {
+    incorrect: "Aritmetic",
+    correct: "Arithmetic",
+    incorrect_alt: "Arithmatic",
+    definition:
+      "The branch of mathematics dealing with numbers and operations.",
+  },
+  {
+    incorrect: "Artifical",
+    correct: "Artificial",
+    incorrect_alt: "Artifficial",
+    definition:
+      "Made or produced by human beings rather than occurring naturally.",
+  },
+  {
+    incorrect: "Aspiraton",
+    correct: "Aspiration",
+    incorrect_alt: "Aspiratione",
+    definition: "A hope or ambition of achieving something.",
+  },
+  {
+    incorrect: "Asignement",
+    correct: "Assignment",
+    incorrect_alt: "Asignment",
+    definition: "A task or piece of work assigned to someone.",
+  },
+  {
+    incorrect: "Assistence",
+    correct: "Assistance",
+    incorrect_alt: "Asistance",
+    definition: "Help or support.",
+  },
+  {
+    incorrect: "Asociation",
+    correct: "Association",
+    incorrect_alt: "Assocciation",
+    definition: "A group of people organized for a joint purpose.",
+  },
+  {
+    incorrect: "Asumption",
+    correct: "Assumption",
+    incorrect_alt: "Assumpsion",
+    definition:
+      "A thing that is accepted as true without proof, often used as a starting point for reasoning or discussion.",
+  },
+  {
+    incorrect: "Aritmetic",
+    correct: "Arithmetic",
+    incorrect_alt: "Arithmatic",
+    definition:
+      "The branch of mathematics dealing with numbers and operations.",
+  },
+  {
+    incorrect: "Artifical",
+    correct: "Artificial",
+    incorrect_alt: "Artifficial",
+    definition:
+      "Made or produced by human beings rather than occurring naturally.",
+  },
+  {
+    incorrect: "Aspiraton",
+    correct: "Aspiration",
+    incorrect_alt: "Aspiratione",
+    definition: "A hope or ambition of achieving something.",
+  },
+  {
+    incorrect: "Asignement",
+    correct: "Assignment",
+    incorrect_alt: "Asignment",
+    definition: "A task or piece of work assigned to someone.",
+  },
+  {
+    incorrect: "Assistence",
+    correct: "Assistance",
+    incorrect_alt: "Asistance",
+    definition: "Help or support.",
+  },
+  {
+    incorrect: "Asociation",
+    correct: "Association",
+    incorrect_alt: "Assocciation",
+    definition: "A group of people organized for a joint purpose.",
+  },
+  {
+    incorrect: " Asumption",
+    correct: "Assumption",
+    incorrect_alt: " Assumpsion",
+    definition: "A thing that is accepted as true without proof.",
+  },
+  {
+    incorrect: "Asma",
+    correct: "Asthma",
+    incorrect_alt: "Astmah",
+    definition: "A respiratory condition marked by spasms in the bronchi.",
+  },
+  {
+    incorrect: "Atmospere",
+    correct: "Atmosphere",
+    incorrect_alt: "Atmossphere",
+    definition:
+      "The envelope of gases surrounding the earth or another planet.",
+  },
+  {
+    incorrect: "Attendence",
+    correct: "Attendance",
+    incorrect_alt: "Atendence",
+    definition: "The act of being present at a place.",
+  },
+  {
+    incorrect: "Atraction",
+    correct: "Attraction",
+    incorrect_alt: "Attracttion",
+    definition:
+      "The action or power of evoking interest or liking for someone or something.",
+  },
+  {
+    incorrect: "Audence",
+    correct: "Audience",
+    incorrect_alt: "Audiance",
+    definition: "A group of people gathered to watch or listen to something.",
+  },
+  {
+    incorrect: "Authenic",
+    correct: "Authentic",
+    incorrect_alt: "Authenthic",
+    definition: "Of undisputed origin; genuine.",
+  },
+  {
+    incorrect: "Automattic",
+    correct: "Automatic",
+    incorrect_alt: "Autometic",
+    definition: "Working by itself with little or no direct human control.",
+  },
+  {
+    incorrect: "Availible",
+    correct: "Available",
+    incorrect_alt: "Avaiable",
+    definition: "Ready for use or accessible.",
+  },
+  {
+    incorrect: "Aviaton",
+    correct: "Aviation",
+    incorrect_alt: "Avation",
+    definition: "The operation of aircraft.",
+  },
+  {
+    incorrect: "Awaraness",
+    correct: "Awareness",
+    incorrect_alt: "Awereness",
+    definition: "Knowledge or perception of a situation or fact.",
+  },
+  {
+    incorrect: "Backround",
+    correct: "Background",
+    incorrect_alt: "Backgroun",
+    definition: "The area or scenery behind the main object of contemplation.",
+  },
+  {
+    incorrect: "Bankrupcy",
+    correct: "Bankruptcy",
+    incorrect_alt: "Bankrputcy",
+    definition:
+      "The legal status of a person or entity that cannot repay debts.",
+  },
+  {
+    incorrect: "Becuse",
+    correct: "Because",
+    incorrect_alt: "Becaus",
+    definition: "For the reason that; since.",
+  },
+  {
+    incorrect: "Begining",
+    correct: "Beginning",
+    incorrect_alt: "Begginning",
+    definition: "The point in time at which something starts.",
+  },
+  {
+    incorrect: "Behavour",
+    correct: "Behavior",
+    incorrect_alt: "Behavier",
+    definition: "The way in which one acts or conducts oneself.",
+  },
+  {
+    incorrect: "Beleive",
+    correct: "Believe",
+    incorrect_alt: "Belive",
+    definition: "To accept something as true.",
+  },
+];
