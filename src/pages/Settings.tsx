@@ -14,6 +14,24 @@ import { SiGoogleslides } from "react-icons/si";
 import { FaCog } from "react-icons/fa";
 import { useSoundContext } from "../layouts/SoundProvider";
 
+// Placeholder for image import (replace with actual image paths)
+import anjenethImage from "/anjeneth.png";
+import cherImage from "/cher.png";
+import madisonImage from "/madison.png";
+import micaelaImage from "/micaela.png";
+
+interface Creator {
+  name: string;
+  image: string | null; // Allow for no image
+}
+
+const creators: Creator[] = [
+  { name: "Anjeneth Mariano", image: anjenethImage },
+  { name: "Cher Bautista", image: cherImage },
+  { name: "Madison Reyes", image: madisonImage },
+  { name: "Micaela Salvador", image: micaelaImage },
+];
+
 export default function Settings() {
   const { user, setUser } = useUserStore();
   const { toggleMusic, toggleClickSound, musicEnabled, clickEnabled } =
@@ -96,32 +114,62 @@ export default function Settings() {
                 className="text-white underline text-xl"
                 style={{ fontFamily: "Arco" }}
               >
-                Concept:
+                Creators:
               </span>
-              <span
-                className="text-white text-xl"
-                style={{ fontFamily: "Arco" }}
-              >
-                Anjeneth Mariano
-              </span>
-              <span
-                className="text-white text-xl"
-                style={{ fontFamily: "Arco" }}
-              >
-                Cher Bautista
-              </span>
-              <span
-                className="text-white text-xl"
-                style={{ fontFamily: "Arco" }}
-              >
-                Madison Reyes
-              </span>
-              <span
-                className="text-white text-xl"
-                style={{ fontFamily: "Arco" }}
-              >
-                Micaela Salvador
-              </span>
+              <div className="flex gap-8">
+                <div className="flex flex-col gap-2">
+                  {creators
+                    .slice(0, Math.ceil(creators.length / 2))
+                    .map((creator) => (
+                      <div
+                        key={creator.name}
+                        className="flex items-center gap-2"
+                      >
+                        {creator.image && (
+                          <div className="w-30 h-30 rounded-full overflow-hidden border-4 border-white bg-black/50">
+                            <img
+                              src={creator.image}
+                              alt={creator.name}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
+                        )}
+                        <span
+                          className="text-white text-xl"
+                          style={{ fontFamily: "Arco" }}
+                        >
+                          {creator.name}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+                <div className="flex flex-col gap-2">
+                  {creators
+                    .slice(Math.ceil(creators.length / 2))
+                    .map((creator) => (
+                      <div
+                        key={creator.name}
+                        className="flex items-center gap-2"
+                      >
+                        {creator.image && (
+                          <div className="w-30 h-30 rounded-full overflow-hidden border-4 border-white bg-black/50">
+                            <img
+                              src={creator.image}
+                              alt={creator.name}
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
+                        )}
+                        <span
+                          className="text-white text-xl"
+                          style={{ fontFamily: "Arco" }}
+                        >
+                          {creator.name}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
