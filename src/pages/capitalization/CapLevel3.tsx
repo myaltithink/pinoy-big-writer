@@ -396,7 +396,7 @@ function CapLevel3() {
                 onChange={handleInputChange}
                 className=" w-full border-6 text-5xl font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-yellow-800/25 disabled:opacity-50"
-                placeholder="Enter the correctly capitalized sentence"
+                placeholder="Type your answer here"
                 disabled={completed || gameOver || showFeedback}
               />
             </form>

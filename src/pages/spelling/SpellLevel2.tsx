@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { correctWordQuestions as allQuestions } from "../../constants/seeder"; // Renamed import
+import { spellLevel2 as allQuestions } from "../../constants/seeder"; // Renamed import
 import type { CorrectWordQuestion } from "../../types"; // Updated type import
 import { shuffleArray } from "../../utils/array";
 import { Link } from "react-router-dom";
@@ -116,7 +116,7 @@ function SpellLevel2() {
       setCompleted(true);
       playWinSound();
       if (user?.username) {
-        markLevelComplete(user.username, "spelling", 0, setUser); // Changed level type
+        markLevelComplete(user.username, "spelling", 1, setUser); // Changed level type
       }
     }
   }, [stars, user, setUser, completed, playWinSound]);

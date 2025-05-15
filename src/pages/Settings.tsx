@@ -105,7 +105,10 @@ export default function Settings() {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <span className="text-5xl text-white" style={{ fontFamily: "Arco" }}>
+          <span
+            className="text-center text-5xl text-white"
+            style={{ fontFamily: "Arco" }}
+          >
             Credits
           </span>
           <div className="flex items-start justify-around gap-8 w-full">

@@ -3,6 +3,7 @@ import type {
   Achievements,
   AchievementCardProps,
   CorrectWordQuestion,
+  ScrambledWordQuestion,
 } from "../types";
 
 export const capLevel1 = {
@@ -3205,7 +3206,7 @@ export const spellLevel1 = [
   },
 ];
 
-export const correctWordQuestions: CorrectWordQuestion[] = [
+export const spellLevel2: CorrectWordQuestion[] = [
   {
     question: "I’m not sure if ______ going to the concert tonight.",
     options: ["There", "Their", "They're"],
@@ -3411,5 +3412,380 @@ export const correctWordQuestions: CorrectWordQuestion[] = [
     question: "Her shoes perfectly ______ her dress.",
     options: ["Compliment", "Complement"],
     correctAnswer: "Complement",
+  },
+];
+
+export const spellLevel3: ScrambledWordQuestion[] = [
+  {
+    scrambled: "zveourend",
+    answer: "Rendezvous",
+  },
+  {
+    scrambled: "teonemdeun",
+    answer: "Denouement",
+  },
+  {
+    scrambled: "atoxpjuition",
+    answer: "Juxtaposition",
+  },
+  {
+    scrambled: "ahscotrapet",
+    answer: "Catastrophe",
+  },
+  {
+    scrambled: "evesrriov",
+    answer: "Reservoir",
+  },
+  {
+    scrambled: "nsgioideun",
+    answer: "Indigenous",
+  },
+  {
+    scrambled: "gtineenilcne",
+    answer: "Intelligence",
+  },
+  {
+    scrambled: "ncfhidraeke",
+    answer: "Handkerchief",
+  },
+  {
+    scrambled: "ctqaneiacn",
+    answer: "Acquaintance",
+  },
+  {
+    scrambled: "poaaoinmteo",
+    answer: "Onomatopoeia",
+  },
+  {
+    scrambled: "etliracatu",
+    answer: "Articulate",
+  },
+  {
+    scrambled: "ecrceoenh",
+    answer: "Coherence",
+  },
+  {
+    scrambled: "poxsjeuta",
+    answer: "Juxtapose",
+  },
+  {
+    scrambled: "tasuteabntsi",
+    answer: "Substantiate",
+  },
+  {
+    scrambled: "ltcoyunseeqn",
+    answer: "Consequently",
+  },
+  {
+    scrambled: "lnthvereesse",
+    answer: "Nevertheless",
+  },
+  {
+    scrambled: "ohfrurmrete",
+    answer: "Furthermore",
+  },
+  {
+    scrambled: "tebial",
+    answer: "Albeit",
+  },
+  {
+    scrambled: "orefhreet",
+    answer: "Therefore",
+  },
+  {
+    scrambled: "siauomgbu",
+    answer: "Ambiguous",
+  },
+  {
+    scrambled: "nuredadt",
+    answer: "Redundant",
+  },
+  {
+    scrambled: "aleivb",
+    answer: "Viable",
+  },
+  {
+    scrambled: "ltcryai",
+    answer: "Clarity",
+  },
+  {
+    scrambled: "ecdirble",
+    answer: "Credible",
+  },
+  {
+    scrambled: "sisamhep",
+    answer: "Emphasis",
+  },
+  {
+    scrambled: "etansore",
+    answer: "Resonate",
+  },
+  {
+    scrambled: "tquonlee",
+    answer: "Eloquent",
+  },
+  {
+    scrambled: "naecedc",
+    answer: "Cadence",
+  },
+  {
+    scrambled: "idtocni",
+    answer: "Diction",
+  },
+  {
+    scrambled: "nonctoaiton",
+    answer: "Connotation",
+  },
+  {
+    scrambled: "natontedoi",
+    answer: "Denotation",
+  },
+  {
+    scrambled: "crevseteppi",
+    answer: "Perspective",
+  },
+  {
+    scrambled: "garmetun",
+    answer: "Argument",
+  },
+  {
+    scrambled: "ertufe",
+    answer: "Refute",
+  },
+  {
+    scrambled: "turlbtea",
+    answer: "Rebuttal",
+  },
+  {
+    scrambled: "asib",
+    answer: "Bias",
+  },
+  {
+    scrambled: "acfllya",
+    answer: "Fallacy",
+  },
+  {
+    scrambled: "uiaoncrcelmt",
+    answer: "Counterclaim",
+  },
+  {
+    scrambled: "ehssis",
+    answer: "Thesis",
+  },
+  {
+    scrambled: "ntlieuo",
+    answer: "Outline",
+  },
+  {
+    scrambled: "nrnstiatoi",
+    answer: "Transition",
+  },
+  {
+    scrambled: "rehppsaara",
+    answer: "Paraphrase",
+  },
+  {
+    scrambled: "zyenhthseis",
+    answer: "Synthesize",
+  },
+  {
+    scrambled: "szmraieuum",
+    answer: "Summarize",
+  },
+  {
+    scrambled: "cnirefeen",
+    answer: "Inference",
+  },
+  {
+    scrambled: "mpotcailin",
+    answer: "Implication",
+  },
+  {
+    scrambled: "etno",
+    answer: "Tone",
+  },
+  {
+    scrambled: "domo",
+    answer: "Mood",
+  },
+  {
+    scrambled: "yegolarl",
+    answer: "Allegory",
+  },
+  {
+    scrambled: "soybmmlsi",
+    answer: "Symbolism",
+  },
+  {
+    scrambled: "hopretam",
+    answer: "Metaphor",
+  },
+  {
+    scrambled: "leisim",
+    answer: "Simile",
+  },
+  {
+    scrambled: "oniyr",
+    answer: "Irony",
+  },
+  {
+    scrambled: "ilslaonu",
+    answer: "Allusion",
+  },
+  {
+    scrambled: "wfhoasrdoe",
+    answer: "Foreshadow",
+  },
+  {
+    scrambled: "rietraanv",
+    answer: "Narrative",
+  },
+  {
+    scrambled: "iionetxpso",
+    answer: "Exposition",
+  },
+  {
+    scrambled: "lnsetoiuro",
+    answer: "Resolution",
+  },
+  {
+    scrambled: "imalxc",
+    answer: "Climax",
+  },
+  {
+    scrambled: "osntitgrapo",
+    answer: "Protagonist",
+  },
+  {
+    scrambled: "gtnaonasti",
+    answer: "Antagonist",
+  },
+  {
+    scrambled: "oguidael",
+    answer: "Dialogue",
+  },
+  {
+    scrambled: "nugelomoo",
+    answer: "Monologue",
+  },
+  {
+    scrambled: "eonvisir",
+    answer: "Revision",
+  },
+  {
+    scrambled: "tigdine",
+    answer: "Editing",
+  },
+  {
+    scrambled: "uclnyef",
+    answer: "Fluency",
+  },
+  {
+    scrambled: "cveoi",
+    answer: "Voice",
+  },
+  {
+    scrambled: "sytel",
+    answer: "Style",
+  },
+  {
+    scrambled: "tnxasy",
+    answer: "Syntax",
+  },
+  {
+    scrambled: "rsuutrect",
+    answer: "Structure",
+  },
+  {
+    scrambled: "trleiaobnao",
+    answer: "Elaboration",
+  },
+  {
+    scrambled: "ntsgnibmraoir",
+    answer: "Brainstorming",
+  },
+  {
+    scrambled: "eiqtucir",
+    answer: "Critique",
+  },
+  {
+    scrambled: "sliaayns",
+    answer: "Analysis",
+  },
+  {
+    scrambled: "tjcniutsoiifa",
+    answer: "Justification",
+  },
+  {
+    scrambled: "tgoanrctumeuern",
+    answer: "Counterargument",
+  },
+  {
+    scrambled: "npeieitotr",
+    answer: "Repetition",
+  },
+  {
+    scrambled: "riesvsueap",
+    answer: "Persuasive",
+  },
+  {
+    scrambled: "tiromafneiv",
+    answer: "Informative",
+  },
+  {
+    scrambled: "lnoytexrapa",
+    answer: "Explanatory",
+  },
+  {
+    scrambled: "tsiecvedipr",
+    answer: "Descriptive",
+  },
+  {
+    scrambled: "ieakhtncl",
+    answer: "Technical",
+  },
+  {
+    scrambled: "ideccama",
+    answer: "Academic",
+  },
+  {
+    scrambled: "ltncyialaia",
+    answer: "Analytical",
+  },
+  {
+    scrambled: "feiylepxm",
+    answer: "Exemplify",
+  },
+  {
+    scrambled: "tpeneirrt",
+    answer: "Interpret",
+  },
+  {
+    scrambled: "laetroumf",
+    answer: "Formulate",
+  },
+  {
+    scrambled: "esertcurtur",
+    answer: "Restructure",
+  },
+  {
+    scrambled: "aahpsngirapr",
+    answer: "Paraphrasing",
+  },
+  {
+    scrambled: "ercehenco",
+    answer: "Coherence",
+  },
+  {
+    scrambled: "alrvoabeiet",
+    answer: "Elaborative",
+  },
+  {
+    scrambled: "roevwevi",
+    answer: "Overview",
+  },
+  {
+    scrambled: "ioutlne",
+    answer: "Outline",
   },
 ];

@@ -76,3 +76,8 @@ export type CorrectWordQuestion = {
   options: string[];
   correctAnswer: string;
 };
+
+export interface ScrambledWordQuestion {
+  scrambled: string;
+  answer: string;
+}
