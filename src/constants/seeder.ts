@@ -6,6 +6,7 @@ import type {
   ScrambledWordQuestion,
   ChoicesQuestion,
   QuizChoice,
+  Word3,
 } from "../types";
 
 export const capLevel1 = {
@@ -4854,5 +4855,408 @@ export const puncLevel2: QuizChoice[] = [
       "The play was long and at times confusing but ultimately thought-provoking!",
     ],
     answerIndex: 0,
+  },
+];
+
+export const puncLevel3: Word3[] = [
+  {
+    incorrectSentence: "where are you going",
+    correctSentence: "Where are you going?",
+  },
+  {
+    incorrectSentence: "the cat sat on the mat",
+    correctSentence: "The cat sat on the mat.",
+  },
+  {
+    incorrectSentence: "she said hello to him",
+    correctSentence: 'She said, "Hello," to him.',
+  },
+  {
+    incorrectSentence: "are you feeling okay today",
+    correctSentence: "Are you feeling okay today?",
+  },
+  {
+    incorrectSentence: "my favorite color is blue",
+    correctSentence: "My favorite color is blue.",
+  },
+  {
+    incorrectSentence: "they went to the park yesterday",
+    correctSentence: "They went to the park yesterday.",
+  },
+  {
+    incorrectSentence: "what a beautiful day it is",
+    correctSentence: "What a beautiful day it is!",
+  },
+  {
+    incorrectSentence: "please close the door behind you",
+    correctSentence: "Please close the door behind you.",
+  },
+  {
+    incorrectSentence: "i like coffee and tea",
+    correctSentence: "I like coffee and tea.",
+  },
+  {
+    incorrectSentence: "have you seen my keys anywhere",
+    correctSentence: "Have you seen my keys anywhere?",
+  },
+  {
+    incorrectSentence: "the book is on the table",
+    correctSentence: "The book is on the table.",
+  },
+  {
+    incorrectSentence: "he asked if i was coming to the party",
+    correctSentence: "He asked if I was coming to the party.",
+  },
+  {
+    incorrectSentence: "that movie was really exciting",
+    correctSentence: "That movie was really exciting!",
+  },
+  {
+    incorrectSentence: "could you please help me with this",
+    correctSentence: "Could you please help me with this?",
+  },
+  {
+    incorrectSentence: "we are going to the beach tomorrow",
+    correctSentence: "We are going to the beach tomorrow.",
+  },
+  {
+    incorrectSentence: "she enjoys reading novels and short stories",
+    correctSentence: "She enjoys reading novels and short stories.",
+  },
+  {
+    incorrectSentence: "what time does the train arrive",
+    correctSentence: "What time does the train arrive?",
+  },
+  {
+    incorrectSentence: "the flowers in the garden are blooming",
+    correctSentence: "The flowers in the garden are blooming.",
+  },
+  {
+    incorrectSentence: "he exclaimed what a surprise",
+    correctSentence: 'He exclaimed, "What a surprise!"',
+  },
+  {
+    incorrectSentence: "don't forget your umbrella it's raining",
+    correctSentence: "Don't forget your umbrella; it's raining.",
+  },
+  {
+    incorrectSentence: "my brother lives in london england",
+    correctSentence: "My brother lives in London, England.",
+  },
+  {
+    incorrectSentence: "did you finish your homework yet",
+    correctSentence: "Did you finish your homework yet?",
+  },
+  {
+    incorrectSentence: "the food at the restaurant was delicious",
+    correctSentence: "The food at the restaurant was delicious.",
+  },
+  {
+    incorrectSentence: "she wondered where he had gone",
+    correctSentence: "She wondered where he had gone.",
+  },
+  {
+    incorrectSentence: "how kind of you to help",
+    correctSentence: "How kind of you to help!",
+  },
+  {
+    incorrectSentence: "let's go for a walk shall we",
+    correctSentence: "Let's go for a walk, shall we?",
+  },
+  {
+    incorrectSentence: "they are planning a trip to italy next year",
+    correctSentence: "They are planning a trip to Italy next year.",
+  },
+  {
+    incorrectSentence: "he likes to play basketball and soccer",
+    correctSentence: "He likes to play basketball and soccer.",
+  },
+  {
+    incorrectSentence: "when will the meeting start",
+    correctSentence: "When will the meeting start?",
+  },
+  {
+    incorrectSentence: "the old house on the hill is empty",
+    correctSentence: "The old house on the hill is empty.",
+  },
+  {
+    incorrectSentence: "she whispered it's a secret",
+    correctSentence: 'She whispered, "It\'s a secret."',
+  },
+  {
+    incorrectSentence: "be careful the floor is wet",
+    correctSentence: "Be careful; the floor is wet.",
+  },
+  {
+    incorrectSentence: "the capital of france is paris",
+    correctSentence: "The capital of France is Paris.",
+  },
+  {
+    incorrectSentence: "have you ever been to australia",
+    correctSentence: "Have you ever been to Australia?",
+  },
+  {
+    incorrectSentence: "the music was loud and energetic",
+    correctSentence: "The music was loud and energetic.",
+  },
+  {
+    incorrectSentence: "he wondered what the answer could be",
+    correctSentence: "He wondered what the answer could be.",
+  },
+  {
+    incorrectSentence: "what an amazing performance",
+    correctSentence: "What an amazing performance!",
+  },
+  {
+    incorrectSentence: "if you need anything just let me know",
+    correctSentence: "If you need anything, just let me know.",
+  },
+  {
+    incorrectSentence: "we saw a bear in the woods",
+    correctSentence: "We saw a bear in the woods.",
+  },
+  {
+    incorrectSentence: "she enjoys listening to classical music and jazz",
+    correctSentence: "She enjoys listening to classical music and jazz.",
+  },
+  {
+    incorrectSentence: "where did you buy that shirt",
+    correctSentence: "Where did you buy that shirt?",
+  },
+  {
+    incorrectSentence: "the tall tree swayed in the wind",
+    correctSentence: "The tall tree swayed in the wind.",
+  },
+  {
+    incorrectSentence: "he shouted watch out",
+    correctSentence: 'He shouted, "Watch out!"',
+  },
+  {
+    incorrectSentence: "despite the rain they continued their hike",
+    correctSentence: "Despite the rain, they continued their hike.",
+  },
+  {
+    incorrectSentence: "my aunt lives in miami florida",
+    correctSentence: "My aunt lives in Miami, Florida.",
+  },
+  {
+    incorrectSentence: "are they coming to the party tonight",
+    correctSentence: "Are they coming to the party tonight?",
+  },
+  {
+    incorrectSentence: "the cake she baked was delicious",
+    correctSentence: "The cake she baked was delicious.",
+  },
+  {
+    incorrectSentence: "he asked where i had been all day",
+    correctSentence: "He asked where I had been all day.",
+  },
+  {
+    incorrectSentence: "how wonderful to see you again",
+    correctSentence: "How wonderful to see you again!",
+  },
+  {
+    incorrectSentence: "let's try that new restaurant tonight okay",
+    correctSentence: "Let's try that new restaurant tonight, okay?",
+  },
+  {
+    incorrectSentence: "they are studying spanish and german",
+    correctSentence: "They are studying Spanish and German.",
+  },
+  {
+    incorrectSentence: "what is the capital of japan",
+    correctSentence: "What is the capital of Japan?",
+  },
+  {
+    incorrectSentence: "the stars in the sky were so bright",
+    correctSentence: "The stars in the sky were so bright.",
+  },
+  {
+    incorrectSentence: "she exclaimed that's incredible",
+    correctSentence: 'She exclaimed, "That\'s incredible!"',
+  },
+  {
+    incorrectSentence: "because it was late we decided to go home",
+    correctSentence: "Because it was late, we decided to go home.",
+  },
+  {
+    incorrectSentence: "my cousin lives in seattle washington",
+    correctSentence: "My cousin lives in Seattle, Washington.",
+  },
+  {
+    incorrectSentence: "have you read that new book by your favorite author",
+    correctSentence: "Have you read that new book by your favorite author?",
+  },
+  {
+    incorrectSentence: "the children played happily in the playground",
+    correctSentence: "The children played happily in the playground.",
+  },
+  {
+    incorrectSentence: "he wondered what time it was",
+    correctSentence: "He wondered what time it was.",
+  },
+  {
+    incorrectSentence: "what a lovely surprise this is",
+    correctSentence: "What a lovely surprise this is!",
+  },
+  {
+    incorrectSentence: "if you have any questions please ask",
+    correctSentence: "If you have any questions, please ask.",
+  },
+  {
+    incorrectSentence: "we visited the museum and the art gallery",
+    correctSentence: "We visited the museum and the art gallery.",
+  },
+  {
+    incorrectSentence: "she enjoys painting and drawing in her free time",
+    correctSentence: "She enjoys painting and drawing in her free time.",
+  },
+  {
+    incorrectSentence: "where did you go on your vacation",
+    correctSentence: "Where did you go on your vacation?",
+  },
+  {
+    incorrectSentence: "the river flowed gently through the valley",
+    correctSentence: "The river flowed gently through the valley.",
+  },
+  {
+    incorrectSentence: "he whispered i have a secret to tell you",
+    correctSentence: 'He whispered, "I have a secret to tell you."',
+  },
+  {
+    incorrectSentence: "even though it was cold they went swimming",
+    correctSentence: "Even though it was cold, they went swimming.",
+  },
+  {
+    incorrectSentence: "my uncle lives in london ontario canada",
+    correctSentence: "My uncle lives in London, Ontario, Canada.",
+  },
+  {
+    incorrectSentence: "are they going to the concert on saturday",
+    correctSentence: "Are they going to the concert on Saturday?",
+  },
+  {
+    incorrectSentence: "the song on the radio was very catchy",
+    correctSentence: "The song on the radio was very catchy.",
+  },
+  {
+    incorrectSentence: "she asked if i knew the way",
+    correctSentence: "She asked if I knew the way.",
+  },
+  {
+    incorrectSentence: "how exciting the fireworks were",
+    correctSentence: "How exciting the fireworks were!",
+  },
+  {
+    incorrectSentence: "let's meet for lunch tomorrow at noon",
+    correctSentence: "Let's meet for lunch tomorrow at noon.",
+  },
+  {
+    incorrectSentence: "they are learning french and italian",
+    correctSentence: "They are learning French and Italian.",
+  },
+  {
+    incorrectSentence: "what is the highest mountain in the world",
+    correctSentence: "What is the highest mountain in the world?",
+  },
+  {
+    incorrectSentence: "the clouds in the sky looked like cotton candy",
+    correctSentence: "The clouds in the sky looked like cotton candy.",
+  },
+  {
+    incorrectSentence: "he exclaimed that's amazing news",
+    correctSentence: 'He exclaimed, "That\'s amazing news!"',
+  },
+  {
+    incorrectSentence: "although it was difficult they persevered",
+    correctSentence: "Although it was difficult, they persevered.",
+  },
+  {
+    incorrectSentence: "my friend lives in sydney australia",
+    correctSentence: "My friend lives in Sydney, Australia.",
+  },
+  {
+    incorrectSentence: "have you seen the new art exhibit at the gallery",
+    correctSentence: "Have you seen the new art exhibit at the gallery?",
+  },
+  {
+    incorrectSentence: "the birds sang sweetly in the trees",
+    correctSentence: "The birds sang sweetly in the trees.",
+  },
+  {
+    incorrectSentence: "she wondered what he was thinking",
+    correctSentence: "She wondered what he was thinking.",
+  },
+  {
+    incorrectSentence: "what a relief to finally finish the project",
+    correctSentence: "What a relief to finally finish the project!",
+  },
+  {
+    incorrectSentence: "if you see him can you give him this message",
+    correctSentence: "If you see him, can you give him this message?",
+  },
+  {
+    incorrectSentence: "we enjoyed the hike and the beautiful scenery",
+    correctSentence: "We enjoyed the hike and the beautiful scenery.",
+  },
+  {
+    incorrectSentence: "she likes to bake cookies and cakes on weekends",
+    correctSentence: "She likes to bake cookies and cakes on weekends.",
+  },
+  {
+    incorrectSentence: "where will you be this summer",
+    correctSentence: "Where will you be this summer?",
+  },
+  {
+    incorrectSentence: "the old stone wall surrounded the garden",
+    correctSentence: "The old stone wall surrounded the garden.",
+  },
+  {
+    incorrectSentence: "he shouted get out of here",
+    correctSentence: 'He shouted, "Get out of here!"',
+  },
+  {
+    incorrectSentence: "because of the storm the power went out",
+    correctSentence: "Because of the storm, the power went out.",
+  },
+  {
+    incorrectSentence: "my neighbor lives in tokyo japan",
+    correctSentence: "My neighbor lives in Tokyo, Japan.",
+  },
+  {
+    incorrectSentence: "are they planning to visit us soon",
+    correctSentence: "Are they planning to visit us soon?",
+  },
+  {
+    incorrectSentence: "the story she told was very interesting",
+    correctSentence: "The story she told was very interesting.",
+  },
+  {
+    incorrectSentence: "he asked if i needed any help",
+    correctSentence: "He asked if I needed any help.",
+  },
+  {
+    incorrectSentence: "how strange that nobody answered the door",
+    correctSentence: "How strange that nobody answered the door!",
+  },
+  {
+    incorrectSentence: "let's try a different approach this time shall we",
+    correctSentence: "Let's try a different approach this time, shall we?",
+  },
+  {
+    incorrectSentence: "they are interested in history and archaeology",
+    correctSentence: "They are interested in history and archaeology.",
+  },
+  {
+    incorrectSentence: "what is the longest river in the world",
+    correctSentence: "What is the longest river in the world?",
+  },
+  {
+    incorrectSentence: "the stars twinkled in the dark night sky",
+    correctSentence: "The stars twinkled in the dark night sky.",
+  },
+  {
+    incorrectSentence: "she exclaimed that's fantastic news",
+    correctSentence: 'She exclaimed, "That\'s fantastic news!"',
   },
 ];

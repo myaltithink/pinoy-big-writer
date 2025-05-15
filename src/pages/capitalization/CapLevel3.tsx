@@ -371,14 +371,18 @@ function CapLevel3() {
             </div>
           </div>
         ) : shuffledSentences.length > 0 ? (
-          <div className="w-[80%] flex flex-col gap-6 text-white items-center">
+          <div className="w-[60%] flex flex-col gap-6 text-white items-center">
             {!showFeedback && (
               <p className="text-5xl font-medium text-white text-center">
                 {shuffledSentences[index].incorrectSentence}
               </p>
             )}
             {showFeedback && (
-              <p className="text-5xl font-medium text-green-400 text-center">
+              <p
+                className={`text-5xl font-medium text-center ${
+                  isCorrect ? "text-green-500" : "text-red-500"
+                }`}
+              >
                 {feedbackSentence}
               </p>
             )}
@@ -402,7 +406,7 @@ function CapLevel3() {
             </form>
             <button
               onClick={handleAnswer}
-              className={`bg-blue-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl ${
+              className={`w-full bg-blue-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl ${
                 completed || gameOver || showFeedback || !userAnswer.trim()
                   ? "bg-gray-500"
                   : ""

@@ -359,6 +359,7 @@ function SpellLevel3() {
                 e.preventDefault();
                 handleSubmitAnswer();
               }}
+              className="w-full"
             >
               <input
                 ref={inputRef}
@@ -373,7 +374,7 @@ function SpellLevel3() {
             </form>
             <button
               onClick={handleSubmitAnswer}
-              className={`px-6 py-3 rounded-xl hover:scale-95 transition text-xl ${
+              className={`w-full px-6 py-3 rounded-xl hover:scale-95 transition text-xl ${
                 isCorrect !== null || typedAnswer.trim() === ""
                   ? "bg-gray-500 text-gray-300"
                   : "bg-blue-500 text-white"
