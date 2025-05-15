@@ -81,3 +81,14 @@ export interface ScrambledWordQuestion {
   scrambled: string;
   answer: string;
 }
+
+export type ChoicesQuestion = {
+  questionText: string;
+  choices: { [key: string]: string };
+  correctAnswer: string;
+};
+
+export type QuizChoice = {
+  options: string[];
+  answerIndex: number;
+};

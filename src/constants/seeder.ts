@@ -4,6 +4,8 @@ import type {
   AchievementCardProps,
   CorrectWordQuestion,
   ScrambledWordQuestion,
+  ChoicesQuestion,
+  QuizChoice,
 } from "../types";
 
 export const capLevel1 = {
@@ -3787,5 +3789,1070 @@ export const spellLevel3: ScrambledWordQuestion[] = [
   {
     scrambled: "ioutlne",
     answer: "Outline",
+  },
+];
+
+export const puncLevel1: ChoicesQuestion[] = [
+  {
+    questionText: "Used to separate items in a list.",
+    choices: { A: ";", B: ".", C: ",", D: "-" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Indicates a pause or a missing part of a sentence.",
+    choices: { A: ":", B: "...", C: '" "', D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to introduce a list, an explanation, or a quotation.",
+    choices: { A: ";", B: ":", C: "-", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Connects two closely related independent clauses.",
+    choices: { A: ",", B: ";", C: '" "', D: "?" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Used to join two or more words to form a compound adjective or noun.",
+    choices: { A: ":", B: "-", C: "...", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to enclose direct speech or quotations.",
+    choices: { A: "' '", B: '" "', C: ",", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used at the end of an exclamatory sentence.",
+    choices: { A: "?", B: ".", C: "!", D: ";" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Used at the end of an interrogative sentence.",
+    choices: { A: ".", B: "?", C: "!", D: "," },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Separates the day of the month from the year in an American date format.",
+    choices: { A: ";", B: "-", C: ",", D: ":" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Used after a salutation in a formal letter.",
+    choices: { A: ",", B: ";", C: ":", D: "." },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      "Indicates a sudden break or interruption in thought or speech.",
+    choices: { A: '" "', B: "...", C: "-", D: ";" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Used to set off nonessential clauses or phrases in a sentence.",
+    choices: { A: ".", B: ",", C: ":", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Connects parts of compound words that are not always written together.",
+    choices: { A: ";", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to show possession.",
+    choices: { A: "'", B: '" "', C: ",", D: "." },
+    correctAnswer: "A",
+  },
+  {
+    questionText: "Separates hours from minutes.",
+    choices: { A: ",", B: ".", C: ":", D: "-" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Can be used to emphasize a word or phrase.",
+    choices: { A: ";", B: "!", C: ",", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to indicate omitted letters in contractions.",
+    choices: { A: '" "', B: "'", C: "...", D: ":" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Separates independent clauses when they are not joined by a coordinating conjunction.",
+    choices: { A: ",", B: ";", C: ".", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to introduce examples.",
+    choices: { A: ",", B: ":", C: "-", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Can indicate a range of numbers or dates.",
+    choices: { A: ";", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to set off direct addresses.",
+    choices: { A: ".", B: ",", C: ":", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Shows that something belongs to one person or thing.",
+    choices: { A: "'s", B: "s'", C: '"s"', D: "s-" },
+    correctAnswer: "A",
+  },
+  {
+    questionText:
+      "Shows that something belongs to more than one person or thing (usually ending in 's').",
+    choices: { A: "'s", B: "s'", C: '"s"', D: "s-" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: 'Used to create compound nouns like "mother-in-law".',
+    choices: { A: ":", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      'Often used before words like "however," "therefore," and "consequently" when they connect two independent clauses.',
+    choices: { A: ",", B: ";", C: ".", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Indicates a trailing off of thought or speech.",
+    choices: { A: '" "', B: "...", C: "-", D: ";" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Used to enclose titles of short works like articles, poems, and short stories.",
+    choices: { A: '" "', B: "' '", C: ",", D: "." },
+    correctAnswer: "A",
+  },
+  {
+    questionText:
+      "Used to enclose titles of longer works like books, movies, and magazines.",
+    choices: { A: '" "', B: "italics", C: ",", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Separates parts of an address.",
+    choices: { A: ";", B: "-", C: ",", D: ":" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Used to clarify or explain the first part of a sentence.",
+    choices: { A: ",", B: ":", C: "-", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      'Can be used to create compound adjectives before a noun (e.g., "well-written").',
+    choices: { A: ";", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Used to set off appositives (nouns or noun phrases that rename another noun).",
+    choices: { A: ".", B: ",", C: ":", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Indicates a direct question.",
+    choices: { A: ".", B: "?", C: "!", D: ";" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to show a strong feeling or emotion.",
+    choices: { A: "?", B: ".", C: "!", D: "," },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      "Separates the month and day from the year in an American date format.",
+    choices: { A: ";", B: "-", C: ",", D: ":" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Used after the closing in a formal letter.",
+    choices: { A: ",", B: ";", C: ":", D: "." },
+    correctAnswer: "A",
+  },
+  {
+    questionText: "Indicates a pause shorter than a period.",
+    choices: { A: ";", B: "...", C: ",", D: "-" },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      "Connects words that are closely related in meaning or function.",
+    choices: { A: ":", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to introduce a formal quotation.",
+    choices: { A: ",", B: ":", C: "-", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Can be used to create compound verbs (though less common).",
+    choices: { A: ";", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Used to set off interjections (words expressing strong emotion).",
+    choices: { A: ".", B: ",", C: ":", D: "!" },
+    correctAnswer: "D",
+  },
+  {
+    questionText:
+      "Shows a plural possessive where the noun does not end in 's' (e.g., children's).",
+    choices: { A: "'s", B: "s'", C: '"s"', D: "s-" },
+    correctAnswer: "A",
+  },
+  {
+    questionText: "Used to indicate a span or range (e.g., pages 10-20).",
+    choices: { A: ":", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Often used to separate items in a series that already contain commas.",
+    choices: { A: ",", B: ";", C: ".", D: "!" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Indicates that something has been left out of a quotation.",
+    choices: { A: '" "', B: "[...]", C: "-", D: ";" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Used to enclose slang words or expressions when writing formally.",
+    choices: { A: "' '", B: '" "', C: ",", D: "." },
+    correctAnswer: "A",
+  },
+  {
+    questionText: "Separates the parts of a web address.",
+    choices: { A: ",", B: ".", C: ":", D: "/" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to create prefixes (e.g., un-happy).",
+    choices: { A: ":", B: "-", C: "...", D: '" "' },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to introduce a formal statement or resolution.",
+    choices: { A: ",", B: ":", C: "-", D: "." },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Indicates a brief pause within a sentence, often to separate clauses.",
+    choices: { A: ";", B: "...", C: ",", D: "-" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Used at the end of a declarative sentence.",
+    choices: {
+      A: "question mark",
+      B: "period",
+      C: "exclamation point",
+      D: "comma",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Separates items in a list of three or more things.",
+    choices: { A: "semicolon", B: "period", C: "comma", D: "hyphen" },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      "Indicates a trailing off or that something has been omitted.",
+    choices: {
+      A: "colon",
+      B: "ellipsis",
+      C: "quotation marks",
+      D: "exclamation point",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Introduces a list or an explanation.",
+    choices: { A: "semicolon", B: "colon", C: "hyphen", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Joins two or more words to form a compound adjective before a noun.",
+    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Encloses direct speech.",
+    choices: { A: "apostrophe", B: "quotation marks", C: "comma", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used to show possession.",
+    choices: {
+      A: "quotation marks",
+      B: "apostrophe",
+      C: "comma",
+      D: "question mark",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used at the end of an interrogative sentence.",
+    choices: {
+      A: "period",
+      B: "question mark",
+      C: "exclamation point",
+      D: "semicolon",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Used after a salutation in a formal letter.",
+    choices: { A: "comma", B: "semicolon", C: "colon", D: "period" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Indicates a pause or a break in thought.",
+    choices: {
+      A: "quotation marks",
+      B: "ellipsis",
+      C: "hyphen",
+      D: "semicolon",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Sets off nonessential clauses or phrases.",
+    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: ' Connects parts of compound words like "sister-in-law".',
+    choices: {
+      A: "semicolon",
+      B: "hyphen",
+      C: "ellipsis",
+      D: "quotation marks",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: ' Shows omitted letters in contractions like "don\'t".',
+    choices: { A: "quotation marks", B: "apostrophe", C: "comma", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Separates hours and minutes when writing time.",
+    choices: { A: "comma", B: "period", C: "colon", D: "hyphen" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: " Used at the end of an emphatic statement.",
+    choices: {
+      A: "question mark",
+      B: "period",
+      C: "exclamation point",
+      D: "comma",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: " Indicates a direct address.",
+    choices: { A: "quotation marks", B: "comma", C: "ellipsis", D: "colon" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      ' Used before words like "however" and "therefore" when they connect independent clauses.',
+    choices: {
+      A: "comma",
+      B: "semicolon",
+      C: "period",
+      D: "exclamation point",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Introduces examples or explanations.",
+    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Can indicate a range of numbers or years.",
+    choices: {
+      A: "semicolon",
+      B: "hyphen",
+      C: "ellipsis",
+      D: "quotation marks",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Sets off appositives (renaming nouns).",
+    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: ' Shows singular possession (e.g., "the dog\'s bone").',
+    choices: {
+      A: "apostrophe s",
+      B: "s apostrophe",
+      C: "quotation marks s",
+      D: "s hyphen",
+    },
+    correctAnswer: "A",
+  },
+  {
+    questionText:
+      " Shows plural possession for nouns ending in 's' (e.g., \"the students' desks\").",
+    choices: {
+      A: "apostrophe s",
+      B: "s apostrophe",
+      C: "quotation marks s",
+      D: "s hyphen",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: ' Used to create compound nouns like "passer-by".',
+    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      " Often used in bibliographies to separate parts of a citation.",
+    choices: {
+      A: "comma",
+      B: "semicolon",
+      C: "period",
+      D: "exclamation point",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Indicates a thought that is interrupted or incomplete.",
+    choices: {
+      A: "quotation marks",
+      B: "ellipsis",
+      C: "hyphen",
+      D: "semicolon",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Encloses titles of short works like songs or articles.",
+    choices: { A: "quotation marks", B: "apostrophe", C: "comma", D: "period" },
+    correctAnswer: "A",
+  },
+  {
+    questionText: " Used to set off introductory phrases.",
+    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Separates the city and state in an address.",
+    choices: { A: "semicolon", B: "hyphen", C: "comma", D: "colon" },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      " Used to provide further detail or explanation after an independent clause.",
+    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: ' Can be used to create prefixes like "pre-war".',
+    choices: {
+      A: "semicolon",
+      B: "hyphen",
+      C: "ellipsis",
+      D: "quotation marks",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      " Sets off parenthetical elements that are closely related to the sentence.",
+    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Used to ask a direct question.",
+    choices: {
+      A: "period",
+      B: "question mark",
+      C: "exclamation point",
+      D: "semicolon",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Expresses strong emotion or surprise.",
+    choices: {
+      A: "question mark",
+      B: "period",
+      C: "exclamation point",
+      D: "comma",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: " Separates the month and day of the month.",
+    choices: { A: "semicolon", B: "hyphen", C: "comma", D: "colon" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: " Used after the closing of an informal letter.",
+    choices: { A: "comma", B: "semicolon", C: "colon", D: "period" },
+    correctAnswer: "A",
+  },
+  {
+    questionText: " Indicates a very short pause within a sentence.",
+    choices: { A: "semicolon", B: "ellipsis", C: "comma", D: "hyphen" },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      " Connects words that function together as a single modifier before a noun.",
+    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Introduces a formal quotation.",
+    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Can be used to create compound verbs (less common).",
+    choices: {
+      A: "semicolon",
+      B: "hyphen",
+      C: "ellipsis",
+      D: "quotation marks",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: ' Sets off interjections like "Wow!"',
+    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
+    correctAnswer: "D",
+  },
+  {
+    questionText:
+      ' Shows plural possession for irregular nouns (e.g., "the children\'s toys").',
+    choices: {
+      A: "apostrophe s",
+      B: "s apostrophe",
+      C: "quotation marks s",
+      D: "s hyphen",
+    },
+    correctAnswer: "A",
+  },
+  {
+    questionText: " Used to indicate a score or ratio.",
+    choices: { A: "comma", B: "hyphen", C: "ellipsis", D: "colon" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      " Separates independent clauses linked by a conjunctive adverb.",
+    choices: {
+      A: "comma",
+      B: "semicolon",
+      C: "period",
+      D: "exclamation point",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Indicates missing words in a quotation.",
+    choices: {
+      A: "quotation marks",
+      B: "ellipsis",
+      C: "hyphen",
+      D: "semicolon",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Encloses words used in a special or ironic sense.",
+    choices: { A: "apostrophe", B: "quotation marks", C: "comma", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Separates parts of an email address.",
+    choices: { A: "comma", B: "period", C: "colon", D: "hyphen" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Used to create suffixes (less common).",
+    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
+    correctAnswer: "B",
+  },
+  {
+    questionText: " Introduces a formal resolution or motion.",
+    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      " Indicates a contrast or a connection between two parts of a sentence.",
+    choices: { A: "semicolon", B: "ellipsis", C: "comma", D: "hyphen" },
+    correctAnswer: "A",
+  },
+  {
+    questionText:
+      "Connects two independent clauses that are closely related in meaning.",
+    choices: {
+      A: "comma",
+      B: "semicolon",
+      C: "quotation marks",
+      D: "question mark",
+    },
+    correctAnswer: "B",
+  },
+];
+
+export const puncLevel2: QuizChoice[] = [
+  {
+    options: [
+      "Despite the heavy rain; the game continued.",
+      "Despite the heavy rain, the game continued.",
+      "Despite the heavy rain the game continued.",
+      "Despite the heavy rain: the game continued.",
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      '"To be or not to be" that is the question.',
+      '"To be or not to be," that is the question.',
+      '"To be or not to be"; that is the question.',
+      '"To be or not to be" that is the question!',
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      "The old house stood on a hill overlooking the valley it was quite a sight.",
+      "The old house stood on a hill overlooking the valley; it was quite a sight.",
+      "The old house stood on a hill overlooking the valley, it was quite a sight.",
+      "The old house stood on a hill overlooking the valley: it was quite a sight.",
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      'She asked, "Are we there yet?"',
+      'She asked "Are we there yet?"',
+      'She asked; "Are we there yet?"',
+      'She asked. "Are we there yet?"',
+    ],
+    answerIndex: 3,
+  },
+  {
+    options: [
+      "The recipe called for flour sugar and eggs.",
+      "The recipe called for flour, sugar, and eggs.",
+      "The recipe called for flour; sugar; and eggs.",
+      "The recipe called for flour: sugar: and eggs.",
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      "He was a well known, respected author.",
+      "He was a well-known respected author.",
+      "He was a well-known, respected author.",
+      "He was a well known respected author.",
+    ],
+    answerIndex: 2,
+  },
+  {
+    options: [
+      "The movie was long and boring... I almost fell asleep.",
+      "The movie was long and boring, I almost fell asleep.",
+      "The movie was long and boring; I almost fell asleep.",
+      "The movie was long and boring I almost fell asleep.",
+    ],
+    answerIndex: 2,
+  },
+  {
+    options: [
+      "My favorite colors are blue green and yellow.",
+      "My favorite colors are: blue, green, and yellow.",
+      "My favorite colors are blue, green, and yellow!",
+      "My favorite colors are; blue, green, and yellow.",
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      "The cat jumped onto the table and then it knocked over the vase.",
+      "The cat jumped onto the table, and then it knocked over the vase.",
+      "The cat jumped onto the table; and then it knocked over the vase.",
+      "The cat jumped onto the table: and then it knocked over the vase.",
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      'She exclaimed "That\'s incredible!"',
+      'She exclaimed, "That\'s incredible!"',
+      'She exclaimed; "That\'s incredible!"',
+      'She exclaimed. "That\'s incredible!"',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "For sale: antique desk, excellent condition.",
+      "For sale; antique desk, excellent condition.",
+      "For sale, antique desk, excellent condition.",
+      "For sale. antique desk, excellent condition.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "He couldn't decide whether to go left or right.",
+      "He couldn't decide whether to go left, or right.",
+      "He couldn't decide whether to go left; or right.",
+      "He couldn't decide whether to go left... or right.",
+    ],
+    answerIndex: 3,
+  },
+  {
+    options: [
+      "The company's goals were clear: increase profit, expand market share, and improve customer satisfaction.",
+      "The company's goals were clear; increase profit, expand market share, and improve customer satisfaction.",
+      "The company's goals were clear, increase profit, expand market share, and improve customer satisfaction.",
+      "The company's goals were clear... increase profit, expand market share, and improve customer satisfaction.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      '"I think," she said, "that this is the right way."',
+      '"I think she said that this is the right way."',
+      '"I think" she said "that this is the right way."',
+      '"I think; she said; that this is the right way."',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The car, a vintage convertible, was parked in the driveway.",
+      "The car a vintage convertible was parked in the driveway.",
+      "The car; a vintage convertible; was parked in the driveway.",
+      "The car: a vintage convertible: was parked in the driveway.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "He hesitated... then he finally answered the question.",
+      "He hesitated, then he finally answered the question.",
+      "He hesitated; then he finally answered the question.",
+      "He hesitated then he finally answered the question.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The report concluded that further research was needed.",
+      "The report concluded: that further research was needed.",
+      "The report concluded; that further research was needed.",
+      "The report concluded, that further research was needed.",
+    ],
+    answerIndex: 3,
+  },
+  {
+    options: [
+      "She enjoyed reading, hiking, and baking.",
+      "She enjoyed reading hiking and baking.",
+      "She enjoyed reading; hiking; and baking.",
+      " She enjoyed reading: hiking: and baking.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The speaker emphasized three key points honesty integrity and hard work.",
+      "The speaker emphasized three key points: honesty, integrity, and hard work.",
+      "The speaker emphasized three key points; honesty, integrity, and hard work.",
+      "The speaker emphasized three key points, honesty, integrity, and hard work.",
+    ],
+    answerIndex: 1,
+  },
+  {
+    options: [
+      '"Well," he began, "it\'s a long story."',
+      '"Well he began it\'s a long story."',
+      '"Well;" he began; "it\'s a long story."',
+      '"Well," he began "it\'s a long story."',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The dog barked loudly, wagged its tail, and jumped around.",
+      "The dog barked loudly; wagged its tail; and jumped around.",
+      "The dog barked loudly: wagged its tail: and jumped around.",
+      "The dog barked loudly wagged its tail and jumped around.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      '"I\'m so glad to see you," she exclaimed with a smile.',
+      '"I\'m so glad to see you"; she exclaimed with a smile.',
+      '"I\'m so glad to see you." she exclaimed with a smile.',
+      '"I\'m so glad to see you" she exclaimed with a smile!',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The old car sputtered, coughed, and finally stopped running.",
+      "The old car sputtered; coughed; and finally stopped running.",
+      "The old car sputtered: coughed: and finally stopped running.",
+      "The old car sputtered coughed and finally stopped running.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      'She asked him, "Where did you go?"',
+      'She asked him; "Where did you go?"',
+      'She asked him. "Where did you go?"',
+      'She asked him "Where did you go"!',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The store sold apples, bananas, and oranges, all locally grown.",
+      "The store sold apples; bananas; and oranges; all locally grown.",
+      "The store sold apples: bananas: and oranges: all locally grown.",
+      "The store sold apples bananas and oranges all locally grown.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "He was a well-respected member of the community.",
+      "He was a well respected member of the community.",
+      "He was a well, respected member of the community.",
+      "He was a well; respected member of the community.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The movie was exciting, suspenseful, and ultimately satisfying—a great experience.",
+      "The movie was exciting; suspenseful; and ultimately satisfying; a great experience.",
+      "The movie was exciting: suspenseful: and ultimately satisfying: a great experience.",
+      "The movie was exciting suspenseful and ultimately satisfying a great experience.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "My favorite subjects are history, science, and literature; they are all so interesting.",
+      "My favorite subjects are history; science; and literature, they are all so interesting.",
+      "My favorite subjects are history: science: and literature: they are all so interesting.",
+      "My favorite subjects are history science and literature they are all so interesting.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The rain stopped, the sun came out, and a rainbow appeared.",
+      "The rain stopped; the sun came out; and a rainbow appeared.",
+      "The rain stopped: the sun came out: and a rainbow appeared.",
+      "The rain stopped the sun came out and a rainbow appeared!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      '"Wow, that\'s an amazing view!" she exclaimed.',
+      '"Wow"; that\'s an amazing view!"; she exclaimed.',
+      '"Wow." that\'s an amazing view!" she exclaimed.',
+      '"Wow that\'s an amazing view" she exclaimed?',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "For rent: a small apartment, newly renovated.",
+      "For rent; a small apartment; newly renovated.",
+      "For rent, a small apartment, newly renovated.",
+      "For rent a small apartment newly renovated!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "He wasn't sure if he should laugh... or cry.",
+      "He wasn't sure if he should laugh, or cry?",
+      "He wasn't sure if he should laugh; or cry.",
+      "He wasn't sure if he should laugh or cry!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The company announced major changes: a new CEO, a revised strategy, and a focus on innovation.",
+      "The company announced major changes; a new CEO; a revised strategy; and a focus on innovation.",
+      "The company announced major changes, a new CEO, a revised strategy, and a focus on innovation.",
+      "The company announced major changes... a new CEO, a revised strategy, and a focus on innovation.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      '"If you need anything," he said, "don\'t hesitate to call."',
+      '"If you need anything he said don\'t hesitate to call."',
+      '"If you need anything"; he said; "don\'t hesitate to call."',
+      '"If you need anything," he said "don\'t hesitate to call"!',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The building, a historic landmark, was recently restored.",
+      "The building a historic landmark was recently restored!",
+      "The building; a historic landmark; was recently restored.",
+      "The building: a historic landmark: was recently restored.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "She thought about it for a moment, then she made her decision.",
+      "She thought about it for amoment; then she made her decision.",
+      "She thought about it for a moment: then she made her decision.",
+      "She thought about it for a moment then she made her decision!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The study indicated several key findings: more research was needed.",
+      "The study indicated several key findings; more research was needed.",
+      "The study indicated several key findings, more research was needed.",
+      "The study indicated several key findings... more research was needed.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "He enjoyed swimming, hiking, and camping—all outdoor activities.",
+      "He enjoyed swimming; hiking; and camping; all outdoor activities.",
+      "He enjoyed swimming: hiking: and camping: all outdoor activities.",
+      "He enjoyed swimming hiking and camping all outdoor activities!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The speaker outlined three main points: clarity, conciseness, and confidence.",
+      "The speaker outlined three main points; clarity; conciseness; and confidence.",
+      "The speaker outlined three main points, clarity, conciseness, and confidence.",
+      "The speaker outlined three main points clarity conciseness and confidence!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      '"Well, I never!" she exclaimed in surprise.',
+      '"Well; I never!"; she exclaimed in surprise.',
+      '"Well." I never!" she exclaimed in surprise.',
+      '"Well I never" she exclaimed in surprise?',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The cake recipe called for flour, sugar, butter, and eggs—simple ingredients.",
+      "The cake recipe called for flour; sugar; butter; and eggs; simple ingredients.",
+      "The cake recipe called for flour: sugar: butter: and eggs: simple ingredients.",
+      "The cake recipe called for flour sugar butter and eggs simple ingredients!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      'She wondered aloud, "Is it going to rain today?"',
+      'She wondered aloud; "Is it going to rain today?"',
+      'She wondered aloud. "Is it going to rain today?"',
+      'She wondered aloud "Is it going to rain today"!',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The old house creaked, groaned, and settled as the wind blew.",
+      "The old house creaked; groaned; and settled; as the wind blew.",
+      "The old house creaked: groaned: and settled: as the wind blew.",
+      "The old house creaked groaned and settled as the wind blew!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      'He asked politely, "Could you please help me?"',
+      'He asked politely; "Could you please help me?"',
+      'He asked politely. "Could you please help me?"',
+      'He asked politely "Could you please help me"!',
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The picnic included sandwiches, fruit, and drinks, all packed carefully.",
+      "The picnic included sandwiches; fruit; and drinks; all packed carefully.",
+      "The picnic included sandwiches: fruit: and drinks: all packed carefully.",
+      "The picnic included sandwiches fruit and drinks all packed carefully!",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The artist was known for his bold, colorful paintings.",
+      "The artist was known for his bold colorful paintings!",
+      "The artist was known for his bold; colorful paintings.",
+      "The artist was known for his bold: colorful paintings.",
+    ],
+    answerIndex: 0,
+  },
+  {
+    options: [
+      "The play was long and at times confusing—but ultimately thought-provoking.",
+      "The play was long and at times confusing; but ultimately thought-provoking.",
+      "The play was long and at times confusing: but ultimately thought-provoking.",
+      "The play was long and at times confusing but ultimately thought-provoking!",
+    ],
+    answerIndex: 0,
   },
 ];
