@@ -317,8 +317,8 @@ function PuncLevel3() {
             </span>
             <p className="text-justify text-3xl font-medium">
               Type the sentence exactly as it should be punctuated. You have 30
-              seconds per question. Get a minimum of 7 stars (correct answers)
-              out of 10 to complete the level.
+              seconds per question. Get at least 7 correct answers out of 10 to
+              complete the
             </p>
             <button
               onClick={handleStartGame}
