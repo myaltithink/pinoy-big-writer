@@ -31,7 +31,7 @@ function PuncLevel3() {
   const [index, setIndex] = useState(0);
   const [stars, setStars] = useState(0);
   const [completed, setCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(20); // Timer per question (20 seconds)
+  const [timeLeft, setTimeLeft] = useState(30); // Timer per question (30 seconds)
   const [gameOver, setGameOver] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState<Word3[]>([]);
   const [typedSentence, setTypedSentence] = useState("");
@@ -95,7 +95,7 @@ function PuncLevel3() {
             playLoseSound();
           } else if (index + 1 < shuffledQuestions.length) {
             setIndex((i) => i + 1);
-            setTimeLeft(20);
+            setTimeLeft(30);
             if (inputRef.current) {
               inputRef.current.focus();
             }
@@ -160,7 +160,7 @@ function PuncLevel3() {
           playWinSound();
         } else if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
-          setTimeLeft(20);
+          setTimeLeft(30);
           if (inputRef.current) {
             inputRef.current.focus();
           }
@@ -177,7 +177,7 @@ function PuncLevel3() {
         setTypedSentence("");
         if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
-          setTimeLeft(20);
+          setTimeLeft(30);
           if (inputRef.current) {
             inputRef.current.focus();
           }
@@ -193,7 +193,7 @@ function PuncLevel3() {
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
-    setTimeLeft(20);
+    setTimeLeft(30);
     setCompleted(false);
     setGameOver(false);
     setIsCorrect(null);
@@ -212,7 +212,7 @@ function PuncLevel3() {
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
-    setTimeLeft(20);
+    setTimeLeft(30);
     setCompleted(false);
     setGameOver(false);
     setIsCorrect(null);
@@ -302,7 +302,7 @@ function PuncLevel3() {
               Instructions
             </span>
             <p className="text-justify font-medium">
-              Type the sentence exactly as it should be punctuated. You have 20
+              Type the sentence exactly as it should be punctuated. You have 30
               seconds per question. Get 10 correct sentences to complete the
               level.
             </p>

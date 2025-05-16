@@ -264,1060 +264,216 @@ export const capLevel1: Word[] = [
   },
 ];
 
-export const capLevel3 = {
-  tier1: [
-    {
-      incorrectSentence: "i saw jose rizal in a book.",
-      correctSentence: "I saw Jose Rizal in a book.",
-    },
-    {
-      incorrectSentence: "she visited boracay last summer.",
-      correctSentence: "She visited Boracay last summer.",
-    },
-    {
-      incorrectSentence: "he likes jollibee meals.",
-      correctSentence: "He likes Jollibee meals.",
-    },
-    {
-      incorrectSentence: "they live in cebu.",
-      correctSentence: "They live in Cebu.",
-    },
-    {
-      incorrectSentence: "we love sinulog festival.",
-      correctSentence: "We love Sinulog festival.",
-    },
-    {
-      incorrectSentence: "my sister admires liza soberano.",
-      correctSentence: "My sister admires Liza Soberano.",
-    },
-    {
-      incorrectSentence: "you should visit tagaytay.",
-      correctSentence: "You should visit Tagaytay.",
-    },
-    {
-      incorrectSentence: "i saw the mayon volcano.",
-      correctSentence: "I saw the Mayon Volcano.",
-    },
-    {
-      incorrectSentence: "she watched it’s showtime.",
-      correctSentence: "She watched It’s Showtime.",
-    },
-    {
-      incorrectSentence: "he works at abs-cbn.",
-      correctSentence: "He works at ABS-CBN.",
-    },
-    {
-      incorrectSentence: "we toured intramuros.",
-      correctSentence: "We toured Intramuros.",
-    },
-    {
-      incorrectSentence: "they went to palawan.",
-      correctSentence: "They went to Palawan.",
-    },
-    {
-      incorrectSentence: "i enjoy adobo a lot.",
-      correctSentence: "I enjoy Adobo a lot.",
-    },
-    {
-      incorrectSentence: "she met vice ganda once.",
-      correctSentence: "She met Vice Ganda once.",
-    },
-    {
-      incorrectSentence: "he drives a toyota vios.",
-      correctSentence: "He drives a Toyota Vios.",
-    },
-    {
-      incorrectSentence: "we attended pahiyas festival.",
-      correctSentence: "We attended Pahiyas festival.",
-    },
-    {
-      incorrectSentence: "they liked the sm mall.",
-      correctSentence: "They liked the SM Mall.",
-    },
-    {
-      incorrectSentence: "i follow atom araullo online.",
-      correctSentence: "I follow Atom Araullo online.",
-    },
-    {
-      incorrectSentence: "he studies in ateneo.",
-      correctSentence: "He studies in Ateneo.",
-    },
-    {
-      incorrectSentence: "she teaches at up diliman.",
-      correctSentence: "She teaches at UP Diliman.",
-    },
-    {
-      incorrectSentence: "we climbed mt. pulag.",
-      correctSentence: "We climbed Mt. Pulag.",
-    },
-    {
-      incorrectSentence: "i visited luneta park.",
-      correctSentence: "I visited Luneta Park.",
-    },
-    {
-      incorrectSentence: "they crossed san juanico bridge.",
-      correctSentence: "They crossed San Juanico Bridge.",
-    },
-    {
-      incorrectSentence: "he listens to ben&ben.",
-      correctSentence: "He listens to Ben&Ben.",
-    },
-    {
-      incorrectSentence: "she wore a barong tagalog.",
-      correctSentence: "She wore a Barong Tagalog.",
-    },
-    {
-      incorrectSentence: "i saw a movie at sm megamall.",
-      correctSentence: "I saw a movie at SM Megamall.",
-    },
-    {
-      incorrectSentence: "we joined the panagbenga parade.",
-      correctSentence: "We joined the Panagbenga parade.",
-    },
-    {
-      incorrectSentence: "he met ninoy aquino’s son.",
-      correctSentence: "He met Ninoy Aquino’s son.",
-    },
-    {
-      incorrectSentence: "she works in makati.",
-      correctSentence: "She works in Makati.",
-    },
-    {
-      incorrectSentence: "i passed by rizal park.",
-      correctSentence: "I passed by Rizal Park.",
-    },
-    {
-      incorrectSentence: "they love lechon cebu.",
-      correctSentence: "They love Lechon Cebu.",
-    },
-    {
-      incorrectSentence: "my cousin lives in davao.",
-      correctSentence: "My cousin lives in Davao.",
-    },
-    {
-      incorrectSentence: "we flew to baguio.",
-      correctSentence: "We flew to Baguio.",
-    },
-    {
-      incorrectSentence: "i visited coron last week.",
-      correctSentence: "I visited Coron last week.",
-    },
-    {
-      incorrectSentence: "he saw sarah geronimo perform.",
-      correctSentence: "He saw Sarah Geronimo perform.",
-    },
-    {
-      incorrectSentence: "she teaches at la salle.",
-      correctSentence: "She teaches at La Salle.",
-    },
-    {
-      incorrectSentence: "we ate at mang inasal.",
-      correctSentence: "We ate at Mang Inasal.",
-    },
-    {
-      incorrectSentence: "i saw fireworks in taguig.",
-      correctSentence: "I saw fireworks in Taguig.",
-    },
-    {
-      incorrectSentence: "he reads the philippine star.",
-      correctSentence: "He reads the Philippine Star.",
-    },
-    {
-      incorrectSentence: "she shopped at greenbelt.",
-      correctSentence: "She shopped at Greenbelt.",
-    },
-    {
-      incorrectSentence: "we visited banaue rice terraces.",
-      correctSentence: "We visited Banaue Rice Terraces.",
-    },
-    {
-      incorrectSentence: "they saw the taal volcano.",
-      correctSentence: "They saw the Taal Volcano.",
-    },
-    {
-      incorrectSentence: "i traveled to ilocos norte.",
-      correctSentence: "I traveled to Ilocos Norte.",
-    },
-    {
-      incorrectSentence: "she stayed in pangasinan.",
-      correctSentence: "She stayed in Pangasinan.",
-    },
-    {
-      incorrectSentence: "we passed through zambales.",
-      correctSentence: "We passed through Zambales.",
-    },
-    {
-      incorrectSentence: "he rode the lrt.",
-      correctSentence: "He rode the LRT.",
-    },
-    {
-      incorrectSentence: "i listened to moira dela torre.",
-      correctSentence: "I listened to Moira Dela Torre.",
-    },
-    {
-      incorrectSentence: "she cooked kare-kare.",
-      correctSentence: "She cooked Kare-Kare.",
-    },
-    {
-      incorrectSentence: "we watched eat bulaga.",
-      correctSentence: "We watched Eat Bulaga.",
-    },
-    {
-      incorrectSentence: "he bought shoes at landmark.",
-      correctSentence: "He bought shoes at Landmark.",
-    },
-    {
-      incorrectSentence: "i drank san miguel beer.",
-      correctSentence: "I drank San Miguel Beer.",
-    },
-    {
-      incorrectSentence: "they danced to tinikling.",
-      correctSentence: "They danced to Tinikling.",
-    },
-    {
-      incorrectSentence: "we toured enchanted kingdom.",
-      correctSentence: "We toured Enchanted Kingdom.",
-    },
-    {
-      incorrectSentence: "she wore a filipiniana.",
-      correctSentence: "She wore a Filipiniana.",
-    },
-    {
-      incorrectSentence: "he saw manny pacquiao.",
-      correctSentence: "He saw Manny Pacquiao.",
-    },
-    {
-      incorrectSentence: "i visited the national museum.",
-      correctSentence: "I visited the National Museum.",
-    },
-    {
-      incorrectSentence: "we rode a boat in el nido.",
-      correctSentence: "We rode a boat in El Nido.",
-    },
-    {
-      incorrectSentence: "she studied at ust.",
-      correctSentence: "She studied at UST.",
-    },
-    {
-      incorrectSentence: "he plays for gilas pilipinas.",
-      correctSentence: "He plays for Gilas Pilipinas.",
-    },
-    {
-      incorrectSentence: "they saw a show at araneta coliseum.",
-      correctSentence: "They saw a show at Araneta Coliseum.",
-    },
-    {
-      incorrectSentence: "i went to divisoria.",
-      correctSentence: "I went to Divisoria.",
-    },
-    {
-      incorrectSentence: "she bought mangoes from guimaras.",
-      correctSentence: "She bought mangoes from Guimaras.",
-    },
-    {
-      incorrectSentence: "we walked along roxas boulevard.",
-      correctSentence: "We walked along Roxas Boulevard.",
-    },
-    {
-      incorrectSentence: "he joined the kadayawan festival.",
-      correctSentence: "He joined the Kadayawan festival.",
-    },
-    {
-      incorrectSentence: "i heard mass at quiapo church.",
-      correctSentence: "I heard mass at Quiapo Church.",
-    },
-    {
-      incorrectSentence: "she saw a concert in moa arena.",
-      correctSentence: "She saw a concert in MOA Arena.",
-    },
-    {
-      incorrectSentence: "we explored bicol region.",
-      correctSentence: "We explored Bicol Region.",
-    },
-    {
-      incorrectSentence: "he stayed in general santos.",
-      correctSentence: "He stayed in General Santos.",
-    },
-    {
-      incorrectSentence: "they found a beach in pagudpud.",
-      correctSentence: "They found a beach in Pagudpud.",
-    },
-    {
-      incorrectSentence: "i enjoyed halo-halo.",
-      correctSentence: "I enjoyed Halo-Halo.",
-    },
-    {
-      incorrectSentence: "she loves anne curtis.",
-      correctSentence: "She loves Anne Curtis.",
-    },
-    {
-      incorrectSentence: "he visited pampanga.",
-      correctSentence: "He visited Pampanga.",
-    },
-    {
-      incorrectSentence: "we drove through nueva ecija.",
-      correctSentence: "We drove through Nueva Ecija.",
-    },
-    {
-      incorrectSentence: "i saw a market in antipolo.",
-      correctSentence: "I saw a market in Antipolo.",
-    },
-    {
-      incorrectSentence: "they relaxed in siargao.",
-      correctSentence: "They relaxed in Siargao.",
-    },
-    {
-      incorrectSentence: "she likes sharon cuneta.",
-      correctSentence: "She likes Sharon Cuneta.",
-    },
-    {
-      incorrectSentence: "he watched a game at smart araneta.",
-      correctSentence: "He watched a game at Smart Araneta.",
-    },
-    {
-      incorrectSentence: "we crossed edsa.",
-      correctSentence: "We crossed EDSA.",
-    },
-    {
-      incorrectSentence: "i met someone from zamboanga.",
-      correctSentence: "I met someone from Zamboanga.",
-    },
-    {
-      incorrectSentence: "she flew with cebu pacific.",
-      correctSentence: "She flew with Cebu Pacific.",
-    },
-    {
-      incorrectSentence: "we camped at lake sebu.",
-      correctSentence: "We camped at Lake Sebu.",
-    },
-    {
-      incorrectSentence: "they visited clark pampanga.",
-      correctSentence: "They visited Clark Pampanga.",
-    },
-    {
-      incorrectSentence: "i walked in bonifacio global city.",
-      correctSentence: "I walked in Bonifacio Global City.",
-    },
-    {
-      incorrectSentence: "he trains at philsports arena.",
-      correctSentence: "He trains at PhilSports Arena.",
-    },
-    {
-      incorrectSentence: "she joined the ati-atihan.",
-      correctSentence: "She joined the Ati-Atihan.",
-    },
-    {
-      incorrectSentence: "we saw sandara park online.",
-      correctSentence: "We saw Sandara Park online.",
-    },
-    {
-      incorrectSentence: "they bought tickets to peta theater.",
-      correctSentence: "They bought tickets to PETA Theater.",
-    },
-    {
-      incorrectSentence: "i saw a statue of lapu-lapu.",
-      correctSentence: "I saw a statue of Lapu-Lapu.",
-    },
-    {
-      incorrectSentence: "she passed by ortigas.",
-      correctSentence: "She passed by Ortigas.",
-    },
-    {
-      incorrectSentence: "we stayed near batangas port.",
-      correctSentence: "We stayed near Batangas Port.",
-    },
-    {
-      incorrectSentence: "they climbed mt. apo.",
-      correctSentence: "They climbed Mt. Apo.",
-    },
-    {
-      incorrectSentence: "i bought pearls from mindoro.",
-      correctSentence: "I bought pearls from Mindoro.",
-    },
-    {
-      incorrectSentence: "he visited the people power monument.",
-      correctSentence: "He visited the People Power Monument.",
-    },
-    {
-      incorrectSentence: "she booked a room in okada manila.",
-      correctSentence: "She booked a room in Okada Manila.",
-    },
-    {
-      incorrectSentence: "we saw charo santos speak.",
-      correctSentence: "We saw Charo Santos speak.",
-    },
-    {
-      incorrectSentence: "i rode a boat to camiguin.",
-      correctSentence: "I rode a boat to Camiguin.",
-    },
-    {
-      incorrectSentence: "he enjoyed food in binondo.",
-      correctSentence: "He enjoyed food in Binondo.",
-    },
-    {
-      incorrectSentence: "she met the mayor of pasig.",
-      correctSentence: "She met the mayor of Pasig.",
-    },
-    {
-      incorrectSentence: "we attended a play.",
-      correctSentence: "We attended a play.",
-    },
-    {
-      incorrectSentence: "they saw fireworks at sm by the bay.",
-      correctSentence: "They saw fireworks at SM By The Bay.",
-    },
-    {
-      incorrectSentence: "i love food from kapampangan cuisine.",
-      correctSentence: "I love food from Kapampangan Cuisine.",
-    },
-  ],
-  tier2: [
-    {
-      incorrectSentence: "i live in new york.",
-      correctSentence: "I live in New York.",
-    },
-    {
-      incorrectSentence: "she works at google.",
-      correctSentence: "She works at Google.",
-    },
-    {
-      incorrectSentence: "we visited central park yesterday.",
-      correctSentence: "We visited Central Park yesterday.",
-    },
-    {
-      incorrectSentence: "he bought a toyota car.",
-      correctSentence: "He bought a Toyota car.",
-    },
-    {
-      incorrectSentence: "my friend anna loves to paint.",
-      correctSentence: "My friend Anna loves to paint.",
-    },
-    {
-      incorrectSentence: "i have a meeting with dr. smith.",
-      correctSentence: "I have a meeting with Dr. Smith.",
-    },
-    {
-      incorrectSentence: "we ate lunch at mcdonald's.",
-      correctSentence: "We ate lunch at McDonald's.",
-    },
-    {
-      incorrectSentence: "they traveled to japan last year.",
-      correctSentence: "They traveled to Japan last year.",
-    },
-    {
-      incorrectSentence: "the book was written by mark twain.",
-      correctSentence: "The book was written by Mark Twain.",
-    },
-    {
-      incorrectSentence: "i watched a movie on netflix.",
-      correctSentence: "I watched a movie on Netflix.",
-    },
-    {
-      incorrectSentence: "sarah is learning how to cook.",
-      correctSentence: "Sarah is learning how to cook.",
-    },
-    {
-      incorrectSentence: "the event is on monday.",
-      correctSentence: "The event is on Monday.",
-    },
-    {
-      incorrectSentence: "we stayed at the hilton hotel.",
-      correctSentence: "We stayed at the Hilton Hotel.",
-    },
-    {
-      incorrectSentence: "he studies at oxford university.",
-      correctSentence: "He studies at Oxford University.",
-    },
-    {
-      incorrectSentence: "my cousin lives in texas.",
-      correctSentence: "My cousin lives in Texas.",
-    },
-    {
-      incorrectSentence: "she read a story about king arthur.",
-      correctSentence: "She read a story about King Arthur.",
-    },
-    {
-      incorrectSentence: "we are going to disneyland next summer.",
-      correctSentence: "We are going to Disneyland next summer.",
-    },
-    {
-      incorrectSentence: "i spoke with mr. lee yesterday.",
-      correctSentence: "I spoke with Mr. Lee yesterday.",
-    },
-    {
-      incorrectSentence: "the painting is by van gogh.",
-      correctSentence: "The painting is by Van Gogh.",
-    },
-    {
-      incorrectSentence: "we watched a play at the globe theatre.",
-      correctSentence: "We watched a play at the Globe Theatre.",
-    },
-    {
-      incorrectSentence: "i have a cat named luna.",
-      correctSentence: "I have a cat named Luna.",
-    },
-    {
-      incorrectSentence: "she visited the eiffel tower.",
-      correctSentence: "She visited the Eiffel Tower.",
-    },
-    {
-      incorrectSentence: "he listens to coldplay every day.",
-      correctSentence: "He listens to Coldplay every day.",
-    },
-    {
-      incorrectSentence: "they moved to san francisco.",
-      correctSentence: "They moved to San Francisco.",
-    },
-    {
-      incorrectSentence: "my favorite subject is history.",
-      correctSentence: "My favorite subject is History.",
-    },
-    {
-      incorrectSentence: "we flew with american airlines.",
-      correctSentence: "We flew with American Airlines.",
-    },
-    {
-      incorrectSentence: "he’s reading a book by j.k. rowling.",
-      correctSentence: "He’s reading a book by J.K. Rowling.",
-    },
-    {
-      incorrectSentence: "the dog is called buddy.",
-      correctSentence: "The dog is called Buddy.",
-    },
-    {
-      incorrectSentence: "she went to see taylor swift in concert.",
-      correctSentence: "She went to see Taylor Swift in concert.",
-    },
-    {
-      incorrectSentence: "i watched the olympics last year.",
-      correctSentence: "I watched the Olympics last year.",
-    },
-    {
-      incorrectSentence: "we bought tickets for star wars.",
-      correctSentence: "We bought tickets for Star Wars.",
-    },
-    {
-      incorrectSentence: "james loves playing soccer.",
-      correctSentence: "James loves playing soccer.",
-    },
-    {
-      incorrectSentence: "my aunt lives in australia.",
-      correctSentence: "My aunt lives in Australia.",
-    },
-    {
-      incorrectSentence: "we saw a bear at yellowstone.",
-      correctSentence: "We saw a bear at Yellowstone.",
-    },
-    {
-      incorrectSentence: "i like listening to bts.",
-      correctSentence: "I like listening to BTS.",
-    },
-    {
-      incorrectSentence: "she graduated from stanford.",
-      correctSentence: "She graduated from Stanford.",
-    },
-    {
-      incorrectSentence: "he drinks pepsi with dinner.",
-      correctSentence: "He drinks Pepsi with dinner.",
-    },
-    {
-      incorrectSentence: "we toured the white house.",
-      correctSentence: "We toured the White House.",
-    },
-    {
-      incorrectSentence: "i’ll meet you at union station.",
-      correctSentence: "I’ll meet you at Union Station.",
-    },
-    {
-      incorrectSentence: "she works for nasa.",
-      correctSentence: "She works for NASA.",
-    },
-    {
-      incorrectSentence: "we stayed in los angeles.",
-      correctSentence: "We stayed in Los Angeles.",
-    },
-    {
-      incorrectSentence: "he was born in march.",
-      correctSentence: "He was born in March.",
-    },
-    {
-      incorrectSentence: "my birthday is in december.",
-      correctSentence: "My birthday is in December.",
-    },
-    {
-      incorrectSentence: "i’m watching a show called stranger things.",
-      correctSentence: "I’m watching a show called Stranger Things.",
-    },
-    {
-      incorrectSentence: "the president is meeting with congress.",
-      correctSentence: "The president is meeting with Congress.",
-    },
-    {
-      incorrectSentence: "she teaches at lincoln high school.",
-      correctSentence: "She teaches at Lincoln High School.",
-    },
-    {
-      incorrectSentence: "we took a photo near the golden gate bridge.",
-      correctSentence: "We took a photo near the Golden Gate Bridge.",
-    },
-    {
-      incorrectSentence: "i’m reading the great gatsby.",
-      correctSentence: "I’m reading The Great Gatsby.",
-    },
-    {
-      incorrectSentence: "we traveled by united airlines.",
-      correctSentence: "We traveled by United Airlines.",
-    },
-    {
-      incorrectSentence: "he got a job at facebook.",
-      correctSentence: "He got a job at Facebook.",
-    },
-    {
-      incorrectSentence: "i visited mount everest in a dream.",
-      correctSentence: "I visited Mount Everest in a dream.",
-    },
-    {
-      incorrectSentence: "my sister loves harry potter.",
-      correctSentence: "My sister loves Harry Potter.",
-    },
-    {
-      incorrectSentence: "he met captain america at the comic con.",
-      correctSentence: "He met Captain America at the Comic Con.",
-    },
-    {
-      incorrectSentence: "i watched breaking bad last weekend.",
-      correctSentence: "I watched Breaking Bad last weekend.",
-    },
-    {
-      incorrectSentence: "they went to las vegas.",
-      correctSentence: "They went to Las Vegas.",
-    },
-    {
-      incorrectSentence: "she took a photo with santa claus.",
-      correctSentence: "She took a photo with Santa Claus.",
-    },
-    {
-      incorrectSentence: "i want to learn spanish.",
-      correctSentence: "I want to learn Spanish.",
-    },
-    {
-      incorrectSentence: "he speaks french fluently.",
-      correctSentence: "He speaks French fluently.",
-    },
-    {
-      incorrectSentence: "we’re planning a trip to rome.",
-      correctSentence: "We’re planning a trip to Rome.",
-    },
-    {
-      incorrectSentence: "my mom reads the bible every day.",
-      correctSentence: "My mom reads the Bible every day.",
-    },
-    {
-      incorrectSentence: "i met queen elizabeth once.",
-      correctSentence: "I met Queen Elizabeth once.",
-    },
-    {
-      incorrectSentence: "the painting hangs in the louvre museum.",
-      correctSentence: "The painting hangs in the Louvre Museum.",
-    },
-    {
-      incorrectSentence: "he takes classes at mit.",
-      correctSentence: "He takes classes at MIT.",
-    },
-    {
-      incorrectSentence: "i got an email from professor jones.",
-      correctSentence: "I got an email from Professor Jones.",
-    },
-    {
-      incorrectSentence: "my team supports manchester united.",
-      correctSentence: "My team supports Manchester United.",
-    },
-    {
-      incorrectSentence: "we watched a match at wembley stadium.",
-      correctSentence: "We watched a match at Wembley Stadium.",
-    },
-    {
-      incorrectSentence: "she volunteers for the red cross.",
-      correctSentence: "She volunteers for the Red Cross.",
-    },
-    {
-      incorrectSentence: "i saw elon musk on tv.",
-      correctSentence: "I saw Elon Musk on TV.",
-    },
-    {
-      incorrectSentence: "they read articles from the new york times.",
-      correctSentence: "They read articles from The New York Times.",
-    },
-    {
-      incorrectSentence: "he’s going to harvard medical school.",
-      correctSentence: "He’s going to Harvard Medical School.",
-    },
-    {
-      incorrectSentence: "we visited the statue of liberty.",
-      correctSentence: "We visited the Statue of Liberty.",
-    },
-    {
-      incorrectSentence: "she reads national geographic every month.",
-      correctSentence: "She reads National Geographic every month.",
-    },
-    {
-      incorrectSentence: "he drives a ford mustang.",
-      correctSentence: "He drives a Ford Mustang.",
-    },
-    {
-      incorrectSentence: "i flew into jfk airport.",
-      correctSentence: "I flew into JFK Airport.",
-    },
-    {
-      incorrectSentence: "he listens to ed sheeran.",
-      correctSentence: "He listens to Ed Sheeran.",
-    },
-    {
-      incorrectSentence: "i bought shoes from nike.",
-      correctSentence: "I bought shoes from Nike.",
-    },
-    {
-      incorrectSentence: "the kids play minecraft after school.",
-      correctSentence: "The kids play Minecraft after school.",
-    },
-    {
-      incorrectSentence: "he loves watching the avengers.",
-      correctSentence: "He loves watching The Avengers.",
-    },
-    {
-      incorrectSentence: "i’m saving for a trip to london.",
-      correctSentence: "I’m saving for a trip to London.",
-    },
-    {
-      incorrectSentence: "we toured buckingham palace.",
-      correctSentence: "We toured Buckingham Palace.",
-    },
-    {
-      incorrectSentence: "she works as a software engineer.",
-      correctSentence: "She works as a Software Engineer.",
-    },
-    {
-      incorrectSentence: "i met michael jordan once.",
-      correctSentence: "I met Michael Jordan once.",
-    },
-    {
-      incorrectSentence: "they bought coffee from starbucks.",
-      correctSentence: "They bought coffee from Starbucks.",
-    },
-    {
-      incorrectSentence: "we drove through nevada.",
-      correctSentence: "We drove through Nevada.",
-    },
-    {
-      incorrectSentence: "she sang at the grammy awards.",
-      correctSentence: "She sang at the Grammy Awards.",
-    },
-    {
-      incorrectSentence: "i watched the lion king on broadway.",
-      correctSentence: "I watched The Lion King on Broadway.",
-    },
-    {
-      incorrectSentence: "he reads time magazine.",
-      correctSentence: "He reads Time Magazine.",
-    },
-    {
-      incorrectSentence: "my friend studies biology.",
-      correctSentence: "My friend studies Biology.",
-    },
-    {
-      incorrectSentence: "they watched the world cup.",
-      correctSentence: "They watched the World Cup.",
-    },
-    {
-      incorrectSentence: "i saw a painting by picasso.",
-      correctSentence: "I saw a painting by Picasso.",
-    },
-    {
-      incorrectSentence: "he applied to columbia university.",
-      correctSentence: "He applied to Columbia University.",
-    },
-    {
-      incorrectSentence: "we saw a documentary on national history day.",
-      correctSentence: "We saw a documentary on National History Day.",
-    },
-    {
-      incorrectSentence: "i follow bbc news.",
-      correctSentence: "I follow BBC News.",
-    },
-    {
-      incorrectSentence: "she likes italian food.",
-      correctSentence: "She likes Italian food.",
-    },
-    {
-      incorrectSentence: "they took a photo in new zealand.",
-      correctSentence: "They took a photo in New Zealand.",
-    },
-    {
-      incorrectSentence: "he joined the u.s. navy.",
-      correctSentence: "He joined the U.S. Navy.",
-    },
-    {
-      incorrectSentence: "i read the washington post this morning.",
-      correctSentence: "I read The Washington Post this morning.",
-    },
-    {
-      incorrectSentence: "she painted a portrait of abraham lincoln.",
-      correctSentence: "She painted a portrait of Abraham Lincoln.",
-    },
-    {
-      incorrectSentence: "he visited mount rushmore.",
-      correctSentence: "He visited Mount Rushmore.",
-    },
-    {
-      incorrectSentence: "i saw a show at madison square garden.",
-      correctSentence: "I saw a show at Madison Square Garden.",
-    },
-  ],
-  tier3: [
-    {
-      incorrectSentence:
-        "today, we went to manila and enjoyed the view of the bay.",
-      correctSentence:
-        "Today, we went to Manila and enjoyed the view of the bay.",
-    },
-    {
-      incorrectSentence:
-        "yesterday, my cousins visited cebu and tried the lechon there.",
-      correctSentence:
-        "Yesterday, my cousins visited Cebu and tried the lechon there.",
-    },
-    {
-      incorrectSentence:
-        "everyday, i walk to quiapo and buy candles for prayer.",
-      correctSentence: "Everyday, I walk to Quiapo and buy candles for prayer.",
-    },
-    {
-      incorrectSentence:
-        "earlier, we rode a jeepney going to pasig and stopped by a carinderia.",
-      correctSentence:
-        "Earlier, we rode a jeepney going to Pasig and stopped by a carinderia.",
-    },
-    {
-      incorrectSentence: "later, we will visit baguio and try strawberry taho.",
-      correctSentence: "Later, we will visit Baguio and try strawberry taho.",
-    },
-    {
-      incorrectSentence:
-        "tonight, my family will travel to ilocos and see the windmills.",
-      correctSentence:
-        "Tonight, my family will travel to Ilocos and see the windmills.",
-    },
-    {
-      incorrectSentence:
-        "tomorrow, i will book a trip to palawan and swim in the lagoons.",
-      correctSentence:
-        "Tomorrow, I will book a trip to Palawan and swim in the lagoons.",
-    },
-    {
-      incorrectSentence: "last, we stayed in davao and met friendly locals.",
-      correctSentence: "Last, we stayed in Davao and met friendly locals.",
-    },
-    {
-      incorrectSentence:
-        "soon, we’ll explore zamboanga and see colorful vintas.",
-      correctSentence: "Soon, we’ll explore Zamboanga and see colorful vintas.",
-    },
-    {
-      incorrectSentence: "now, we are heading to vigan and riding a kalesa.",
-      correctSentence: "Now, we are heading to Vigan and riding a kalesa.",
-    },
-    {
-      incorrectSentence:
-        "suddenly, we passed by tagaytay and saw taal volcano.",
-      correctSentence: "Suddenly, we passed by Tagaytay and saw Taal Volcano.",
-    },
-    {
-      incorrectSentence: "then, we drove to laguna and dipped in hot springs.",
-      correctSentence: "Then, we drove to Laguna and dipped in hot springs.",
-    },
-    {
-      incorrectSentence:
-        "always, i enjoy visiting batangas and snorkeling in the beach.",
-      correctSentence:
-        "Always, I enjoy visiting Batangas and snorkeling in the beach.",
-    },
-    {
-      incorrectSentence: "usually, we go to bataan and learn about history.",
-      correctSentence: "Usually, we go to Bataan and learn about history.",
-    },
-    {
-      incorrectSentence: "sometimes, we go to pampanga and eat sisig.",
-      correctSentence: "Sometimes, we go to Pampanga and eat sisig.",
-    },
-    {
-      incorrectSentence:
-        "recently, i watched a parade in marikina and saw beautiful shoes.",
-      correctSentence:
-        "Recently, I watched a parade in Marikina and saw beautiful shoes.",
-    },
-    {
-      incorrectSentence:
-        "officially, we started our tour in cavite and explored historical sites.",
-      correctSentence:
-        "Officially, we started our tour in Cavite and explored historical sites.",
-    },
-    {
-      incorrectSentence:
-        "quietly, we entered tarlac and prayed at the monastery.",
-      correctSentence:
-        "Quietly, we entered Tarlac and prayed at the monastery.",
-    },
-    {
-      incorrectSentence:
-        "finally, we arrived in rizal and took pictures of the view.",
-      correctSentence:
-        "Finally, we arrived in Rizal and took pictures of the view.",
-    },
-    {
-      incorrectSentence:
-        "happily, i joined the fiesta in quezon and danced with the locals.",
-      correctSentence:
-        "Happily, I joined the fiesta in Quezon and danced with the locals.",
-    },
-    {
-      incorrectSentence:
-        "excitedly, we explored camiguin and visited the sunken cemetery.",
-      correctSentence:
-        "Excitedly, we explored Camiguin and visited the sunken cemetery.",
-    },
-    {
-      incorrectSentence:
-        "yesterday, my uncle worked in makati and stayed in a hotel.",
-      correctSentence:
-        "Yesterday, my uncle worked in Makati and stayed in a hotel.",
-    },
-    {
-      incorrectSentence:
-        "today, we passed by alabang and had lunch at a food park.",
-      correctSentence:
-        "Today, we passed by Alabang and had lunch at a food park.",
-    },
-    {
-      incorrectSentence:
-        "sometimes, my parents go to muntinlupa and buy furniture.",
-      correctSentence:
-        "Sometimes, my parents go to Muntinlupa and buy furniture.",
-    },
-    {
-      incorrectSentence:
-        "later, i will visit pasay and see the convention center.",
-      correctSentence:
-        "Later, I will visit Pasay and see the convention center.",
-    },
-    {
-      incorrectSentence:
-        "earlier, we bought pasalubong in san fernando and brought them home.",
-      correctSentence:
-        "Earlier, we bought pasalubong in San Fernando and brought them home.",
-    },
-    {
-      incorrectSentence:
-        "now, we are relaxing in antipolo and enjoying suman and mangoes.",
-      correctSentence:
-        "Now, we are relaxing in Antipolo and enjoying suman and mangoes.",
-    },
-    {
-      incorrectSentence:
-        "before, i lived in caloocan and went to school nearby.",
-      correctSentence: "Before, I lived in Caloocan and went to school nearby.",
-    },
-    {
-      incorrectSentence:
-        "afterwards, we went to navotas and watched the fishing boats.",
-      correctSentence:
-        "Afterwards, we went to Navotas and watched the fishing boats.",
-    },
-    {
-      incorrectSentence: "later, we passed through malabon and ate pancit.",
-      correctSentence: "Later, we passed through Malabon and ate pancit.",
-    },
-    {
-      incorrectSentence: "i visited baguio last summer.",
-      correctSentence: "I visited Baguio last summer.",
-    },
-    {
-      incorrectSentence: "we went to palawan for our vacation.",
-      correctSentence: "We went to Palawan for our vacation.",
-    },
-    {
-      incorrectSentence: "my cousin lives in cebu.",
-      correctSentence: "My cousin lives in Cebu.",
-    },
-    {
-      incorrectSentence: "they traveled to boracay for the weekend.",
-      correctSentence: "They traveled to Boracay for the weekend.",
-    },
-    {
-      incorrectSentence: "our school held a field trip in intramuros.",
-      correctSentence: "Our school held a field trip in Intramuros.",
-    },
-    {
-      incorrectSentence: "i bought mangoes from guimaras.",
-      correctSentence: "I bought mangoes from Guimaras.",
-    },
-    {
-      incorrectSentence: "my aunt works in makati.",
-      correctSentence: "My aunt works in Makati.",
-    },
-    {
-      incorrectSentence: "they stayed in davao for a week.",
-      correctSentence: "They stayed in Davao for a week.",
-    },
-    {
-      incorrectSentence: "we explored ilocos norte last april.",
-      correctSentence: "We explored Ilocos Norte last April.",
-    },
-    {
-      incorrectSentence: "the festival in marinduque was colorful.",
-      correctSentence: "The festival in Marinduque was colorful.",
-    },
-    {
-      incorrectSentence: "he flew to zamboanga yesterday.",
-      correctSentence: "He flew to Zamboanga yesterday.",
-    },
-    {
-      incorrectSentence: "she grew up in tagaytay.",
-      correctSentence: "She grew up in Tagaytay.",
-    },
-    {
-      incorrectSentence: "my uncle teaches in quezon city.",
-      correctSentence: "My uncle teaches in Quezon City.",
-    },
-    {
-      incorrectSentence: "we went shopping in greenhills.",
-      correctSentence: "We went shopping in Greenhills.",
-    },
-    {
-      incorrectSentence: "she studies at ateneo de manila university.",
-      correctSentence: "She studies at Ateneo de Manila University.",
-    },
-    {
-      incorrectSentence: "we passed by san juan on our way home.",
-      correctSentence: "We passed by San Juan on our way home.",
-    },
-    {
-      incorrectSentence: "he was born in roxas city.",
-      correctSentence: "He was born in Roxas City.",
-    },
-    {
-      incorrectSentence: "we ate lunch in laguna.",
-      correctSentence: "We ate lunch in Laguna.",
-    },
-    {
-      incorrectSentence: "my teacher is from pampanga.",
-      correctSentence: "My teacher is from Pampanga.",
-    },
-    {
-      incorrectSentence: "i attended a seminar in bohol.",
-      correctSentence: "I attended a seminar in Bohol.",
-    },
-  ],
-};
+export const capLevel3: Word3[] = [
+  {
+    incorrectSentence: "i saw jose rizal in a book.",
+    correctSentence: "I saw Jose Rizal in a book.",
+  },
+  {
+    incorrectSentence: "she visited boracay last summer.",
+    correctSentence: "She visited Boracay last summer.",
+  },
+  {
+    incorrectSentence: "he likes jollibee meals.",
+    correctSentence: "He likes Jollibee meals.",
+  },
+  {
+    incorrectSentence: "we love sinulog festival.",
+    correctSentence: "We love Sinulog festival.",
+  },
+  {
+    incorrectSentence: "you should visit tagaytay.",
+    correctSentence: "You should visit Tagaytay.",
+  },
+  {
+    incorrectSentence: "we toured intramuros.",
+    correctSentence: "We toured Intramuros.",
+  },
+  {
+    incorrectSentence: "he drives a toyota vios.",
+    correctSentence: "He drives a Toyota Vios.",
+  },
+  {
+    incorrectSentence: "i enjoy chicken adobo a lot.",
+    correctSentence: "I enjoy Chicken Adobo a lot.",
+  },
+  {
+    incorrectSentence: "he works at abs-cbn.",
+    correctSentence: "He works at ABS-CBN.",
+  },
+  {
+    incorrectSentence: "she teaches at up diliman.",
+    correctSentence: "She teaches at UP Diliman.",
+  },
+  {
+    incorrectSentence: "i saw a movie at sm megamall.",
+    correctSentence: "I saw a movie at SM Megamall.",
+  },
+  {
+    incorrectSentence: "he saw sarah geronimo perform.",
+    correctSentence: "He saw Sarah Geronimo perform.",
+  },
+  {
+    incorrectSentence: "he reads the philippine star.",
+    correctSentence: "He reads The Philippine Star.",
+  },
+  {
+    incorrectSentence: "we visited banaue rice terraces.",
+    correctSentence: "We visited Banaue Rice Terraces.",
+  },
+  {
+    incorrectSentence: "they bought tickets to peta theater center.",
+    correctSentence: "They bought tickets to PETA Theater Center.",
+  },
+  {
+    incorrectSentence: "i have a meeting with dr. smith.",
+    correctSentence: "I have a meeting with Dr. Smith.",
+  },
+  {
+    incorrectSentence: "we ate lunch at mcdonald's.",
+    correctSentence: "We ate lunch at McDonald's.",
+  },
+  {
+    incorrectSentence: "they traveled to japan last year.",
+    correctSentence: "They traveled to Japan last year.",
+  },
+  {
+    incorrectSentence: "i watched a movie on netflix.",
+    correctSentence: "I watched a movie on Netflix.",
+  },
+  {
+    incorrectSentence: "he studies at oxford university.",
+    correctSentence: "He studies at Oxford University.",
+  },
+  {
+    incorrectSentence: "i spoke with mr. lee yesterday.",
+    correctSentence: "I spoke with Mr. Lee yesterday.",
+  },
+  {
+    incorrectSentence: "i have a cat named luna.",
+    correctSentence: "I have a cat named Luna.",
+  },
+  {
+    incorrectSentence: "james loves playing soccer.",
+    correctSentence: "James loves playing soccer.",
+  },
+  {
+    incorrectSentence: "she works for nasa.",
+    correctSentence: "She works for NASA.",
+  },
+  {
+    incorrectSentence: "we stayed in los angeles.",
+    correctSentence: "We stayed in Los Angeles.",
+  },
+  {
+    incorrectSentence: "he was born in march.",
+    correctSentence: "He was born in March.",
+  },
+  {
+    incorrectSentence: "i’m watching a show called stranger things.",
+    correctSentence: "I’m watching a show called Stranger Things.",
+  },
+  {
+    incorrectSentence: "we traveled by united airlines.",
+    correctSentence: "We traveled by United Airlines.",
+  },
+  {
+    incorrectSentence: "he got a job at facebook.",
+    correctSentence: "He got a job at Facebook.",
+  },
+  {
+    incorrectSentence: "my sister loves harry potter.",
+    correctSentence: "My sister loves Harry Potter.",
+  },
+  {
+    incorrectSentence: "i want to learn spanish.",
+    correctSentence: "I want to learn Spanish.",
+  },
+  {
+    incorrectSentence: "she volunteers for the red cross.",
+    correctSentence: "She volunteers for the Red Cross.",
+  },
+  {
+    incorrectSentence: "he reads time magazine.",
+    correctSentence: "He reads Time Magazine.",
+  },
+  {
+    incorrectSentence: "they bought coffee from starbucks.",
+    correctSentence: "They bought coffee from Starbucks.",
+  },
+  {
+    incorrectSentence: "he visited mount rushmore.",
+    correctSentence: "He visited Mount Rushmore.",
+  },
+  {
+    incorrectSentence:
+      "yesterday, my cousins visited cebu and tried the lechon there.",
+    correctSentence:
+      "Yesterday, my cousins visited Cebu and tried the lechon there.",
+  },
+  {
+    incorrectSentence: "later, we will visit baguio and try strawberry taho.",
+    correctSentence: "Later, we will visit Baguio and try strawberry taho.",
+  },
+  {
+    incorrectSentence:
+      "recently, i watched a parade in marikina and saw beautiful shoes.",
+    correctSentence:
+      "Recently, I watched a parade in Marikina and saw beautiful shoes.",
+  },
+  {
+    incorrectSentence: "i visited baguio last summer.",
+    correctSentence: "I visited Baguio last summer.",
+  },
+  {
+    incorrectSentence: "my cousin lives in cebu.",
+    correctSentence: "My cousin lives in Cebu.",
+  },
+  {
+    incorrectSentence: "the festival in marinduque was colorful.",
+    correctSentence: "The festival in Marinduque was colorful.",
+  },
+  {
+    incorrectSentence: "my uncle teaches in quezon city.",
+    correctSentence: "My uncle teaches in Quezon City.",
+  },
+  {
+    incorrectSentence: "she studies at ateneo de manila university.",
+    correctSentence: "She studies at Ateneo de Manila University.",
+  },
+  {
+    incorrectSentence: "the church in antipolo is beautiful.",
+    correctSentence: "The church in Antipolo is beautiful.",
+  },
+  {
+    incorrectSentence: "the market in divisoria is crowded.",
+    correctSentence: "The market in Divisoria is crowded.",
+  },
+  {
+    incorrectSentence: "they went to rizal park during independence day.",
+    correctSentence: "They went to Rizal Park during Independence Day.",
+  },
+  {
+    incorrectSentence:
+      "we watched the concert at smart araneta coliseum last saturday.",
+    correctSentence:
+      "We watched the concert at Smart Araneta Coliseum last Saturday.",
+  },
+  {
+    incorrectSentence: "san miguel corporation opened a new branch in cebu.",
+    correctSentence: "San Miguel Corporation opened a new branch in Cebu.",
+  },
+  {
+    incorrectSentence: "my class is going on a field trip this august.",
+    correctSentence: "My class is going on a field trip this August.",
+  },
+  {
+    incorrectSentence:
+      "senator robredo visited bicol university for a youth forum.",
+    correctSentence:
+      "Senator Robredo visited Bicol University for a youth forum.",
+  },
+];
 
 export const capLevel2: Word2[] = [
   {

@@ -30,7 +30,7 @@ function CapLevel3() {
   const [index, setIndex] = useState(0);
   const [stars, setStars] = useState(0);
   const [completed, setCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(20);
+  const [timeLeft, setTimeLeft] = useState(30); // Changed initial time to 30 seconds
   const [gameOver, setGameOver] = useState(false);
   const [shuffledSentences, setShuffledSentences] = useState<Word3[]>([]);
   const [popKey, setPopKey] = useState(0);
@@ -60,17 +60,8 @@ function CapLevel3() {
   });
 
   useEffect(() => {
-    const tier1 = allWords?.tier1 || [];
-    const tier2 = allWords?.tier2 || [];
-    const tier3 = allWords?.tier3 || [];
-
-    const selectedWords = [
-      ...shuffleArray(tier1).slice(0, 4),
-      ...shuffleArray(tier2).slice(0, 4),
-      ...shuffleArray(tier3).slice(0, 2),
-    ];
-
-    setShuffledSentences(shuffleArray<Word3>(selectedWords as Word3[]));
+    const selectedWords = shuffleArray(allWords).slice(0, 10);
+    setShuffledSentences(selectedWords as Word3[]);
   }, []);
 
   useEffect(() => {
@@ -93,7 +84,7 @@ function CapLevel3() {
         if (questionsAnswered + 1 < 10 && stars < 10) {
           setIndex((i) => i + 1);
           setUserAnswer("");
-          setTimeLeft(20);
+          setTimeLeft(30); // Reset time to 30 seconds
           setShowFeedback(false);
           setIsCorrect(false);
           setFeedbackSentence("");
@@ -167,7 +158,7 @@ function CapLevel3() {
         if (questionsAnswered + 1 < 10 && stars < 10) {
           setIndex((i) => i + 1);
           setUserAnswer("");
-          setTimeLeft(20);
+          setTimeLeft(30); // Reset time to 30 seconds
           setShowFeedback(false);
           setIsCorrect(false);
           setFeedbackSentence("");
@@ -183,7 +174,7 @@ function CapLevel3() {
         if (questionsAnswered + 1 < 10 && stars < 10) {
           setIndex((i) => i + 1);
           setUserAnswer("");
-          setTimeLeft(20);
+          setTimeLeft(30); // Reset time to 30 seconds
           setShowFeedback(false);
           setIsCorrect(false);
           setFeedbackSentence("");
@@ -202,21 +193,13 @@ function CapLevel3() {
   };
 
   const handleRestart = () => {
-    const tier1 = allWords?.tier1 || [];
-    const tier2 = allWords?.tier2 || [];
-    const tier3 = allWords?.tier3 || [];
-
-    const selectedWords = [
-      ...shuffleArray(tier1).slice(0, 4),
-      ...shuffleArray(tier2).slice(0, 4),
-      ...shuffleArray(tier3).slice(0, 2),
-    ];
+    const selectedWords = shuffleArray(allWords).slice(0, 10);
     setIndex(0);
     setStars(0);
-    setTimeLeft(20);
+    setTimeLeft(30); // Reset time to 30 seconds
     setCompleted(false);
     setGameOver(false);
-    setShuffledSentences(shuffleArray<Word3>(selectedWords as Word3[]));
+    setShuffledSentences(selectedWords as Word3[]);
     setUserAnswer("");
     setShowInstructions(true);
     setShowFeedback(false);
@@ -226,23 +209,15 @@ function CapLevel3() {
   };
 
   const handleStartGame = () => {
-    const tier1 = allWords?.tier1 || [];
-    const tier2 = allWords?.tier2 || [];
-    const tier3 = allWords?.tier3 || [];
-
-    const selectedWords = [
-      ...shuffleArray(tier1).slice(0, 4),
-      ...shuffleArray(tier2).slice(0, 4),
-      ...shuffleArray(tier3).slice(0, 2),
-    ];
+    const selectedWords = shuffleArray(allWords).slice(0, 10);
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
-    setTimeLeft(20);
+    setTimeLeft(30); // Reset time to 30 seconds
     setCompleted(false);
     setGameOver(false);
     setUserAnswer("");
-    setShuffledSentences(shuffleArray<Word3>(selectedWords as Word3[]));
+    setShuffledSentences(selectedWords as Word3[]);
     setShowFeedback(false);
     setIsCorrect(false);
     setFeedbackSentence("");
@@ -326,7 +301,8 @@ function CapLevel3() {
               Instructions
             </span>
             <p className="text-justify font-medium">
-              Type the sentence with correct capitalization. You have 20 seconds
+              Type the sentence with correct capitalization. You have 30 seconds{" "}
+              {/* Updated time in instructions */}
               per question. Get 10 correct answers to complete the level.
             </p>
             <button
@@ -399,7 +375,7 @@ function CapLevel3() {
                 value={userAnswer}
                 onChange={handleInputChange}
                 className=" w-full border-6 text-5xl font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl
-              focus:outline-none focus:ring-2 focus:ring-yellow-800/25 disabled:opacity-50"
+                  focus:outline-none focus:ring-2 focus:ring-yellow-800/25 disabled:opacity-50"
                 placeholder="Type your answer here"
                 disabled={completed || gameOver || showFeedback}
               />
