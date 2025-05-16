@@ -61,8 +61,8 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
   });
   const [playSpelling, { sound: spellSound }] = useSound(spellingSfx, {
     loop: true,
-    volume: 0.5,
     interrupt: true,
+    volume: location.pathname === "/games/spelling/level-3" ? 0.1 : 0.5,
   });
 
   // Save preferences

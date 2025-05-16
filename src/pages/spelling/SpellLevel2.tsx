@@ -34,7 +34,7 @@ function SpellLevel2() {
   const [index, setIndex] = useState(0);
   const [stars, setStars] = useState(0);
   const [completed, setCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(10); // Timer per question
+  const [timeLeft, setTimeLeft] = useState(15); // Timer per question - CHANGED TO 15
   const [gameOver, setGameOver] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -98,7 +98,7 @@ function SpellLevel2() {
             }
           } else if (index + 1 < shuffledQuestions.length) {
             setIndex((i) => i + 1);
-            setTimeLeft(10); // Reset timer for the next question
+            setTimeLeft(15); // Reset timer for the next question - CHANGED TO 15
           }
         }, 2000);
       }
@@ -141,7 +141,7 @@ function SpellLevel2() {
         setIsCorrect(null);
         if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
-          setTimeLeft(10); // Reset timer for the next question
+          setTimeLeft(15); // Reset timer for the next question - CHANGED TO 15
         } else {
           // All questions answered, check for completion
           if (stars >= minStarsToPass) {
@@ -160,7 +160,7 @@ function SpellLevel2() {
         setIsCorrect(null);
         if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
-          setTimeLeft(10); // Reset timer for the next question
+          setTimeLeft(15); // Reset timer for the next question - CHANGED TO 15
         } else {
           // All questions answered, check for completion
           if (stars >= minStarsToPass) {
@@ -179,7 +179,7 @@ function SpellLevel2() {
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
-    setTimeLeft(10);
+    setTimeLeft(15); // Initial timer - CHANGED TO 15
     setCompleted(false);
     setGameOver(false);
     setSelectedAnswer(null);
@@ -197,7 +197,7 @@ function SpellLevel2() {
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
-    setTimeLeft(10);
+    setTimeLeft(15); // Restart timer - CHANGED TO 15
     setCompleted(false);
     setGameOver(false);
     setSelectedAnswer(null);
@@ -285,7 +285,7 @@ function SpellLevel2() {
               Instructions
             </span>
             <p className="text-justify font-medium">
-              Choose the correct answer to the question. You have 10 seconds per
+              Choose the correct answer to the question. You have 15 seconds per
               question. Get at least 7 correct answers out of 10 to complete the
               level.
             </p>
