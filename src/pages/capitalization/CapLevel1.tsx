@@ -12,6 +12,7 @@ import { FaCaretLeft } from "react-icons/fa6";
 import { MdTimer } from "react-icons/md";
 import useSound from "use-sound";
 import { useSoundContext } from "../../layouts/SoundProvider";
+import { useNavigate } from "react-router-dom";
 
 const correctSoundPath = "/sounds/correct.mp3";
 const wrongSoundPath = "/sounds/wrong.mp3";
@@ -38,6 +39,8 @@ function CapLevel1() {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [feedbackWord, setFeedbackWord] = useState<string | null>(null);
   const [popKey, setPopKey] = useState(0);
+
+  const navigate = useNavigate();
 
   const { user, setUser } = useUserStore();
   const { width, height } = useWindowSize();
@@ -339,13 +342,33 @@ function CapLevel1() {
               Game {completed ? "Complete" : "Over"}!
             </p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
-            <button
-              onClick={handleRestart}
-              className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
-              style={{ fontFamily: "Arco" }}
-            >
-              Try Again
-            </button>
+            {completed && (
+              <div className="flex mt-4 gap-4 justify-center">
+                <button
+                  onClick={handleRestart}
+                  className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  Play Again
+                </button>
+                <button
+                  onClick={() => navigate("/games/capitalization/level-2")}
+                  className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  Continue
+                </button>
+              </div>
+            )}
+            {!completed && (
+              <button
+                onClick={handleRestart}
+                className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                style={{ fontFamily: "Arco" }}
+              >
+                Try Again
+              </button>
+            )}
           </div>
         ) : shuffledWords.length > 0 && index < shuffledWords.length ? (
           <div className="w-[60%] flex flex-col gap-6 text-white">

@@ -315,7 +315,7 @@ export const capLevel3: Word3[] = [
   },
   {
     incorrectSentence: "he reads the philippine star.",
-    correctSentence: "He reads The Philippine Star.",
+    correctSentence: "He reads the Philippine Star.",
   },
   {
     incorrectSentence: "we visited banaue rice terraces.",

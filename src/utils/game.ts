@@ -32,6 +32,7 @@ export async function markLevelComplete(
     return;
   }
 
+  const currentLevelStatus = user.progress[room]?.[levelIndex];
   const updatedRoomLevels: LevelProgress = user.progress[room].map(
     (done, idx) => (idx === levelIndex ? true : done)
   ) as LevelProgress;
@@ -44,17 +45,24 @@ export async function markLevelComplete(
   const achievements = [...user.achievements];
   let additionalPoints = 0;
 
-  // Points based on stars achieved (maximum 10 stars)
-  const pointsForStars = Math.min(starsAchieved, 10) * 5; // Example: 5 points per star
-  additionalPoints += pointsForStars;
-  console.log(`Points for ${starsAchieved} stars: ${pointsForStars}`);
+  // Points based on stars achieved only if the level was not already completed
+  if (!currentLevelStatus) {
+    // Points based on stars achieved (maximum 10 stars)
+    const pointsForStars = Math.min(starsAchieved, 10) * 5; // Example: 5 points per star
+    additionalPoints += pointsForStars;
+    console.log(`Points for ${starsAchieved} stars: ${pointsForStars}`);
+  }
 
   // Per-level achievement
   const levelKey = `completed${capitalize(room)}Level${
     levelIndex + 1
   }` as Achievements;
 
-  if (updatedRoomLevels[levelIndex] && !achievements.includes(levelKey)) {
+  if (
+    updatedRoomLevels[levelIndex] &&
+    !achievements.includes(levelKey) &&
+    !currentLevelStatus
+  ) {
     achievements.push(levelKey);
     console.log(`Achievement unlocked: ${levelKey}`);
     additionalPoints += 10; // Add 10 points for new level completion

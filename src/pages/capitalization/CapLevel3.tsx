@@ -81,7 +81,7 @@ function CapLevel3() {
       setFeedbackSentence(shuffledSentences[index]?.correctSentence || "");
       if (clickEnabled) playWrongSound();
       setTimeout(() => {
-        if (questionsAnswered + 1 < 10 && stars < 10) {
+        if (questionsAnswered + 1 < 10) {
           setIndex((i) => i + 1);
           setUserAnswer("");
           setTimeLeft(30); // Reset time to 30 seconds
@@ -119,14 +119,28 @@ function CapLevel3() {
   }, [showFeedback, inputRef]);
 
   useEffect(() => {
-    if (stars === 10 && !completed) {
-      setCompleted(true);
-      if (clickEnabled) playWinSound();
-      if (user?.username) {
-        markLevelComplete(user.username, "capitalization", 2, setUser);
+    if (questionsAnswered === 10) {
+      if (stars >= 7 && stars <= 10 && !completed) {
+        setCompleted(true);
+        if (clickEnabled) playWinSound();
+        if (user?.username) {
+          markLevelComplete(user.username, "capitalization", 2, setUser, stars);
+        }
+      } else if (!gameOver) {
+        setGameOver(true);
+        if (clickEnabled) playLoseSound();
       }
     }
-  }, [stars, user, setUser, completed, clickEnabled, playWinSound]);
+  }, [
+    stars,
+    user,
+    setUser,
+    completed,
+    clickEnabled,
+    playWinSound,
+    gameOver,
+    questionsAnswered,
+  ]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserAnswer(e.target.value);
@@ -147,7 +161,7 @@ function CapLevel3() {
     const isAnswerCorrect = userAnswer.trim() === currentSentence.trim();
     setIsCorrect(isAnswerCorrect);
     setFeedbackSentence(currentSentence);
-    setUserAnswer(currentSentence); // Directly put the correct sentence in the input
+    // setUserAnswer(currentSentence); // Directly put the correct sentence in the input
 
     setTimeout(() => {
       if (isAnswerCorrect) {
@@ -155,7 +169,7 @@ function CapLevel3() {
         setTimeLeft((t) => Math.max(t + 5, 0));
         setStars((s) => s + 1);
         setPopKey((k) => k + 1);
-        if (questionsAnswered + 1 < 10 && stars < 10) {
+        if (questionsAnswered + 1 < 10) {
           setIndex((i) => i + 1);
           setUserAnswer("");
           setTimeLeft(30); // Reset time to 30 seconds
@@ -163,15 +177,15 @@ function CapLevel3() {
           setIsCorrect(false);
           setFeedbackSentence("");
           setQuestionsAnswered((prev) => prev + 1);
-        } else if (stars === 10) {
+        } else if (stars >= 7 && stars <= 10 && !completed) {
           setCompleted(true);
-        } else {
+        } else if (!gameOver) {
           setGameOver(true);
           if (clickEnabled) playLoseSound();
         }
       } else {
         if (clickEnabled) playWrongSound();
-        if (questionsAnswered + 1 < 10 && stars < 10) {
+        if (questionsAnswered + 1 < 10) {
           setIndex((i) => i + 1);
           setUserAnswer("");
           setTimeLeft(30); // Reset time to 30 seconds
@@ -182,9 +196,9 @@ function CapLevel3() {
           if (inputRef.current) {
             inputRef.current.focus();
           }
-        } else if (stars === 10) {
+        } else if (stars >= 7 && stars <= 10 && !completed) {
           setCompleted(true);
-        } else {
+        } else if (!gameOver) {
           setGameOver(true);
           if (clickEnabled) playLoseSound();
         }
@@ -228,13 +242,13 @@ function CapLevel3() {
   };
 
   const starColor =
-    stars <= 2
+    stars < 2
       ? starColors[0]
-      : stars <= 4
+      : stars < 4
       ? starColors[1]
-      : stars <= 6
+      : stars < 6
       ? starColors[2]
-      : stars <= 8
+      : stars < 8
       ? starColors[3]
       : starColors[4];
 
@@ -301,9 +315,8 @@ function CapLevel3() {
               Instructions
             </span>
             <p className="text-justify font-medium">
-              Type the sentence with correct capitalization. You have 30 seconds{" "}
-              {/* Updated time in instructions */}
-              per question. Get 10 correct answers to complete the level.
+              Type the sentence with correct capitalization. You have 30 seconds
+              per question. Get a minimum of 7 stars and a maximum of 10 stars
             </p>
             <button
               onClick={handleStartGame}
@@ -336,13 +349,6 @@ function CapLevel3() {
                 style={{ fontFamily: "Arco" }}
               >
                 Play Again
-              </button>
-              <button
-                onClick={() => navigate("/games/capitalization/level-4")}
-                className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
-                style={{ fontFamily: "Arco" }}
-              >
-                Continue
               </button>
             </div>
           </div>
