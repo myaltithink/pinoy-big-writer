@@ -33,8 +33,8 @@ export interface User {
 }
 
 export type Word = {
-  word: string;
-  isCorrect: boolean;
+  text: string;
+  shouldCapitalize: boolean;
   correctWord: string;
 };
 

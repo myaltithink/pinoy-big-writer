@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { capLevel1 as words } from "../../constants/seeder";
+import { capLevel1 as allWords } from "../../constants/seeder"; // Assuming your flat array is named 'capLevel1'
 import type { Word } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link } from "react-router-dom";
@@ -56,12 +56,8 @@ function CapLevel1() {
   });
 
   useEffect(() => {
-    const combined = [
-      ...shuffleArray(words.tier1).slice(0, 4),
-      ...shuffleArray(words.tier2).slice(0, 3),
-      ...shuffleArray(words.tier3).slice(0, 3),
-    ];
-    setShuffledWords(combined);
+    const selectedWords = shuffleArray(allWords).slice(0, 10); // Take the first 10 shuffled words
+    setShuffledWords(selectedWords);
   }, []);
 
   useEffect(() => {
@@ -121,12 +117,13 @@ function CapLevel1() {
   const handleAnswer = (choice: boolean) => {
     if (selected !== null || completed || gameOver || showInstructions) return;
 
-    const correct = choice === shuffledWords[index].isCorrect;
+    const shouldBeCapitalized = shuffledWords[index].shouldCapitalize;
+    const isUserCorrect = choice === shouldBeCapitalized;
     setSelected(choice);
-    setIsCorrect(correct);
+    setIsCorrect(isUserCorrect);
     setFeedbackWord(shuffledWords[index].correctWord);
 
-    if (correct) {
+    if (isUserCorrect) {
       playCorrectSound();
       setStars((s) => s + 1);
       setPopKey((k) => k + 1);
@@ -172,12 +169,8 @@ function CapLevel1() {
     setSelected(null);
     setIsCorrect(null);
     setFeedbackWord(null);
-    const combined = [
-      ...shuffleArray(words.tier1).slice(0, 4),
-      ...shuffleArray(words.tier2).slice(0, 3),
-      ...shuffleArray(words.tier3).slice(0, 3),
-    ];
-    setShuffledWords(combined);
+    const selectedWords = shuffleArray(allWords).slice(0, 10); // Take the first 10 shuffled words
+    setShuffledWords(selectedWords);
   };
 
   const handleRestart = () => {
@@ -190,12 +183,8 @@ function CapLevel1() {
     setSelected(null);
     setIsCorrect(null);
     setFeedbackWord(null);
-    const combined = [
-      ...shuffleArray(words.tier1).slice(0, 4),
-      ...shuffleArray(words.tier2).slice(0, 3),
-      ...shuffleArray(words.tier3).slice(0, 3),
-    ];
-    setShuffledWords(combined);
+    const selectedWords = shuffleArray(allWords).slice(0, 10); // Take the first 10 shuffled words
+    setShuffledWords(selectedWords);
   };
 
   const starColor =
@@ -273,10 +262,10 @@ function CapLevel1() {
               Instructions
             </span>
             <p className="text-justify font-medium">
-              Identify whether the given word is correctly capitalized or not.
-              Click "Correct" if it is, and "Incorrect" if it is not. You have
-              10 seconds per question. Get 10 correct answers to complete the
-              level.
+              Click “Capitalize” if the word should start with a capital letter
+              or be capitalized, and click “Lowercase” if the words should
+              remain written in lowercase. You have 10 seconds per question. Get
+              10 correct answers to complete the level.
             </p>
             <button
               onClick={handleStartGame}
@@ -311,7 +300,7 @@ function CapLevel1() {
                   {feedbackWord}
                 </span>
               ) : (
-                shuffledWords[index].word
+                shuffledWords[index].text
               )}
             </p>
             <div className="grid gap-4" style={{ fontFamily: "Arco" }}>
@@ -333,7 +322,7 @@ function CapLevel1() {
                     className={`${bgClass} border-2 border-white text-2xl font-medium px-4 py-3 rounded-lg text-left transition`}
                     disabled={selected !== null}
                   >
-                    {choice ? "Correct" : "Incorrect"}
+                    {choice ? "Capitalize" : "Lowercase"}
                   </button>
                 );
               })}
