@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { spellLevel1 as allWords } from "../../constants/seeder"; // Renamed import
 import { shuffleArray } from "../../utils/array";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserStore } from "../../stores/useUserStore";
 import { markLevelComplete } from "../../utils/game";
 import Confetti from "react-confetti";
@@ -43,11 +43,13 @@ function SpellLevel1() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [popKey, setPopKey] = useState(0);
+  const [questionCount, setQuestionCount] = useState(0); // Track the number of questions asked
 
   const { user, setUser } = useUserStore();
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
   const { clickEnabled } = useSoundContext(); // Get clickEnabled from the context
+  const navigate = useNavigate();
 
   const [playCorrectSound] = useSound(correctSoundPath, {
     soundEnabled: clickEnabled,
@@ -77,6 +79,11 @@ function SpellLevel1() {
       };
     });
     setShuffledQuestions(shuffleArray(questions));
+    setQuestionCount(0); // Reset question count on new game
+    setStars(0); // Reset stars on new game
+    setCompleted(false);
+    setGameOver(false);
+    setIndex(0);
   }, [allWords]); // Added allWords to the dependency array
 
   useEffect(() => {
@@ -84,7 +91,8 @@ function SpellLevel1() {
       !showInstructions &&
       !completed &&
       !gameOver &&
-      shuffledQuestions.length > 0
+      shuffledQuestions.length > 0 &&
+      questionCount < 10
     ) {
       if (timeLeft > 0) {
         const timer = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
@@ -97,19 +105,22 @@ function SpellLevel1() {
         setTimeout(() => {
           setSelectedAnswer(null);
           setIsCorrect(null);
-          if (index + 1 === shuffledQuestions.length && stars < 10) {
-            setGameOver(true);
-            playLoseSound();
-          } else if (index + 1 < shuffledQuestions.length) {
+          if (questionCount + 1 === 10) {
+            if (stars >= 7) {
+              setCompleted(true);
+              playWinSound();
+              if (user?.username) {
+                markLevelComplete(user.username, "spelling", 0, setUser, stars); // Changed level type
+              }
+            } else {
+              setGameOver(true);
+              playLoseSound();
+            }
+          } else {
             setIndex((i) => i + 1);
             setTimeLeft(10); // Reset timer for the next question
-          } else if (stars === 10) {
-            setCompleted(true);
-            playWinSound();
-          } else {
-            setGameOver(true);
-            playLoseSound();
           }
+          setQuestionCount((count) => count + 1);
         }, 2000);
       }
     }
@@ -124,20 +135,25 @@ function SpellLevel1() {
     playWrongSound,
     playLoseSound,
     playWinSound,
+    user,
+    setUser,
+    questionCount,
   ]);
 
   useEffect(() => {
-    if (stars === 10 && !completed) {
-      setCompleted(true);
-      playWinSound();
-      if (user?.username) {
-        markLevelComplete(user.username, "spelling", 0, setUser); // Changed level type
-      }
+    if (completed && user?.username) {
+      markLevelComplete(user.username, "spelling", 0, setUser, stars);
     }
-  }, [stars, user, setUser, completed, playWinSound]);
+  }, [completed, user, setUser]);
 
   const handleAnswer = (answer: string) => {
-    if (selectedAnswer !== null || completed || gameOver || showInstructions)
+    if (
+      selectedAnswer !== null ||
+      completed ||
+      gameOver ||
+      showInstructions ||
+      questionCount >= 10
+    )
       return;
 
     setSelectedAnswer(answer);
@@ -152,29 +168,38 @@ function SpellLevel1() {
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
-        if (stars === 10) {
-          setCompleted(true);
-          playWinSound();
-        } else if (index + 1 < shuffledQuestions.length) {
+        if (questionCount + 1 === 10) {
+          if (stars >= 7) {
+            setCompleted(true);
+            playWinSound();
+          } else {
+            setGameOver(true);
+            playLoseSound();
+          }
+        } else {
           setIndex((i) => i + 1);
           setTimeLeft(10); // Reset timer for the next question
-        } else {
-          setGameOver(true); // If all questions are done but not 10 stars
-          playLoseSound();
         }
+        setQuestionCount((count) => count + 1);
       }, 2000);
     } else {
       playWrongSound();
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
-        if (index + 1 < shuffledQuestions.length) {
+        if (questionCount + 1 === 10) {
+          if (stars >= 7) {
+            setCompleted(true);
+            playWinSound();
+          } else {
+            setGameOver(true);
+            playLoseSound();
+          }
+        } else {
           setIndex((i) => i + 1);
           setTimeLeft(10); // Reset timer for the next question
-        } else if (stars < 10) {
-          setGameOver(true);
-          playLoseSound();
         }
+        setQuestionCount((count) => count + 1);
       }, 2000);
     }
   };
@@ -188,6 +213,7 @@ function SpellLevel1() {
     setGameOver(false);
     setSelectedAnswer(null);
     setIsCorrect(null);
+    setQuestionCount(0);
 
     // Take the first 10 words and shuffle them
     const selectedWords = shuffleArray(allWords).slice(0, 10);
@@ -216,6 +242,7 @@ function SpellLevel1() {
     setGameOver(false);
     setSelectedAnswer(null);
     setIsCorrect(null);
+    setQuestionCount(0);
     // Take the first 10 words and shuffle them
     const selectedWords = shuffleArray(allWords).slice(0, 10);
 
@@ -252,56 +279,60 @@ function SpellLevel1() {
       {completed && <Confetti width={width} height={height} />}
       <div className="flex-1 w-full flex flex-col items-center justify-center gap-8 p-8 border-8 rounded-xl border-black/50 bg-black/75">
         {/* Top Bar (Conditional Rendering) */}
-        {!showInstructions && !completed && !gameOver && (
-          <div className="w-[60%] flex justify-between items-center mb-6">
-            <motion.div
-              animate={timerControls}
-              initial={{ x: 0 }}
-              className="flex flex-col items-center gap-0 relative"
-            >
-              <MdTimer className="text-red-500 text-2xl" />
-              <span
-                className="font-semibold text-2xl text-white"
-                style={{ fontFamily: "Arco" }}
+        {!showInstructions &&
+          !completed &&
+          !gameOver &&
+          shuffledQuestions.length > 0 &&
+          questionCount < 10 && (
+            <div className="w-[60%] flex justify-between items-center mb-6">
+              <motion.div
+                animate={timerControls}
+                initial={{ x: 0 }}
+                className="flex flex-col items-center gap-0 relative"
               >
-                {timeLeft}s
-              </span>
-            </motion.div>
-            <motion.div
-              key={popKey}
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 0.3 }}
-              className="relative w-16 h-16"
-            >
-              <svg className="w-full h-full transform -rotate-90">
-                <circle
-                  cx="32"
-                  cy="32"
-                  r="28"
-                  stroke="#e5e7eb"
-                  strokeWidth="8"
-                  fill="none"
-                />
-                <motion.circle
-                  cx="32"
-                  cy="32"
-                  r="28"
-                  stroke="currentColor"
-                  strokeWidth="8"
-                  fill="none"
-                  className={starColor}
-                  strokeDasharray={176.4}
-                  strokeDashoffset={176.4 - (176.4 * progress) / 100}
-                  transition={{ duration: 0.5 }}
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
-                {stars}⭐
-              </div>
-            </motion.div>
-          </div>
-        )}
+                <MdTimer className="text-red-500 text-2xl" />
+                <span
+                  className="font-semibold text-2xl text-white"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  {timeLeft}s
+                </span>
+              </motion.div>
+              <motion.div
+                key={popKey}
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.5, 1] }}
+                transition={{ duration: 0.3 }}
+                className="relative w-16 h-16"
+              >
+                <svg className="w-full h-full transform -rotate-90">
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="28"
+                    stroke="#e5e7eb"
+                    strokeWidth="8"
+                    fill="none"
+                  />
+                  <motion.circle
+                    cx="32"
+                    cy="32"
+                    r="28"
+                    stroke="currentColor"
+                    strokeWidth="8"
+                    fill="none"
+                    className={starColor}
+                    strokeDasharray={176.4}
+                    strokeDashoffset={176.4 - (176.4 * progress) / 100}
+                    transition={{ duration: 0.5 }}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
+                  {stars}⭐
+                </div>
+              </motion.div>
+            </div>
+          )}
 
         {showInstructions ? (
           <div className="flex flex-col gap-4 text-white text-2xl w-[60%]">
@@ -310,8 +341,8 @@ function SpellLevel1() {
             </span>
             <p className="text-justify font-medium">
               Read the definition and choose the correct spelling. You have 10
-              seconds per question. Get 7 correct answers out of 10 to complete
-              the level.
+              seconds per question. Get at least 7 correct answers out of 10 to
+              complete the level.
             </p>
             <button
               onClick={handleStartGame}
@@ -327,17 +358,37 @@ function SpellLevel1() {
               Game {completed ? "Complete" : "Over"}!
             </p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
-            <button
-              onClick={handleRestart}
-              className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
-              style={{ fontFamily: "Arco" }}
-            >
-              Try Again
-            </button>
+            {completed && (
+              <div className="flex mt-4 gap-4 justify-center">
+                <button
+                  onClick={handleRestart}
+                  className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  Play Again
+                </button>
+                <button
+                  onClick={() => navigate("/games/spelling/level-2")}
+                  className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  Continue
+                </button>
+              </div>
+            )}
+            {!completed && (
+              <button
+                onClick={handleRestart}
+                className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                style={{ fontFamily: "Arco" }}
+              >
+                Try Again
+              </button>
+            )}
           </div>
-        ) : shuffledQuestions.length > 0 ? (
+        ) : shuffledQuestions.length > 0 && questionCount < 10 ? (
           <div className="w-[60%] flex flex-col gap-6 text-white">
-            <p className="text-3xl font-medium italic">
+            <p className="text-3xl font-medium">
               {index + 1}. {shuffledQuestions[index].definition}
             </p>
             <div className="grid gap-4">
