@@ -54,8 +54,8 @@ const App = () => {
   }
 
   return (
-    <SoundProvider>
-      <Router>
+    <Router>
+      <SoundProvider>
         <Routes>
           {/* Public routes */}
           <Route path="/" element={<Loading />} />
@@ -104,8 +104,8 @@ const App = () => {
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
-    </SoundProvider>
+      </SoundProvider>
+    </Router>
   );
 };
 

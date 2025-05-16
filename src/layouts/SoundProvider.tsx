@@ -1,7 +1,12 @@
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import useSound from "use-sound";
+
 import clickSfx from "/sounds/click.mp3";
-import bgSfx from "/sounds/background.mp3";
+import defaultSfx from "/sounds/default.mp3";
+import capitalizationSfx from "/sounds/capitalization.mp3";
+import punctuationSfx from "/sounds/punctuation.mp3";
+import spellingSfx from "/sounds/spelling.mp3";
 
 interface SoundContextType {
   toggleMusic: () => void;
@@ -25,6 +30,8 @@ interface SoundProviderProps {
 }
 
 const SoundProvider = ({ children }: SoundProviderProps) => {
+  const location = useLocation();
+
   const [musicEnabled, setMusicEnabled] = useState(() =>
     JSON.parse(localStorage.getItem("musicEnabled") || "true")
   );
@@ -34,21 +41,31 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
 
   const [playClick] = useSound(clickSfx, { volume: 0.5 });
 
-  const [playOnce, { sound: soundOnce }] = useSound(bgSfx, {
-    loop: false,
+  const [playDefault, { sound: defaultSound }] = useSound(defaultSfx, {
+    loop: true,
     volume: 0.5,
     interrupt: true,
   });
-
-  const [playLoop, { sound: loopSound }] = useSound(bgSfx, {
+  const [playCapitalization, { sound: capSound }] = useSound(
+    capitalizationSfx,
+    {
+      loop: true,
+      volume: 0.5,
+      interrupt: true,
+    }
+  );
+  const [playPunctuation, { sound: puncSound }] = useSound(punctuationSfx, {
+    loop: true,
+    volume: 0.5,
+    interrupt: true,
+  });
+  const [playSpelling, { sound: spellSound }] = useSound(spellingSfx, {
     loop: true,
     volume: 0.5,
     interrupt: true,
   });
 
-  const hasStarted = useRef(false);
-
-  // Save states to localStorage
+  // Save preferences
   useEffect(() => {
     localStorage.setItem("musicEnabled", JSON.stringify(musicEnabled));
   }, [musicEnabled]);
@@ -57,57 +74,63 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
     localStorage.setItem("clickEnabled", JSON.stringify(clickEnabled));
   }, [clickEnabled]);
 
+  // Toggle click sound
+  const toggleClickSound = () => {
+    setClickEnabled((prev: boolean) => !prev);
+  };
+
+  // Toggle music
   const toggleMusic = () => {
     setMusicEnabled((prev: boolean) => {
       const newState = !prev;
       if (!newState) {
-        loopSound?.stop();
-        soundOnce?.stop();
-        hasStarted.current = false;
+        defaultSound?.stop();
+        capSound?.stop();
+        puncSound?.stop();
+        spellSound?.stop();
       }
       return newState;
     });
   };
 
-  const toggleClickSound = () => {
-    setClickEnabled((prev: boolean) => !prev);
-  };
-
+  // Play click on user interaction
   useEffect(() => {
     const handleClick = () => {
       if (clickEnabled) playClick();
-
-      if (!hasStarted.current && musicEnabled) {
-        hasStarted.current = true;
-        playOnce();
-      }
     };
-
     document.addEventListener("click", handleClick);
-
     return () => {
       document.removeEventListener("click", handleClick);
-      // Only stop music if musicEnabled becomes false
-      if (!musicEnabled) {
-        soundOnce?.stop();
-        loopSound?.stop();
-      }
     };
-  }, [clickEnabled, musicEnabled, playClick, playOnce, loopSound, soundOnce]);
+  }, [clickEnabled, playClick]);
 
+  // Route-based music logic
   useEffect(() => {
-    if (soundOnce) {
-      soundOnce.on("end", () => {
-        if (musicEnabled) {
-          playLoop();
-        }
-      });
+    if (!musicEnabled) return;
+
+    // Stop all existing music
+    defaultSound?.stop();
+    capSound?.stop();
+    puncSound?.stop();
+    spellSound?.stop();
+
+    if (location.pathname.startsWith("/games/capitalization")) {
+      playCapitalization();
+    } else if (location.pathname.startsWith("/games/punctuation")) {
+      playPunctuation();
+    } else if (location.pathname.startsWith("/games/spelling")) {
+      playSpelling();
+    } else {
+      playDefault();
     }
 
     return () => {
-      soundOnce?.off("end");
+      defaultSound?.stop();
+      capSound?.stop();
+      puncSound?.stop();
+      spellSound?.stop();
     };
-  }, [soundOnce, musicEnabled, playLoop]);
+  }, [location.pathname, musicEnabled]);
 
   return (
     <SoundContext.Provider
