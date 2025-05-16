@@ -37,6 +37,7 @@ function CapLevel2() {
   const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
   const [showInstructions, setShowInstructions] = useState(true);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [questionsAnswered, setQuestionsAnswered] = useState(0);
 
   const { user, setUser } = useUserStore();
   const navigate = useNavigate();
@@ -66,16 +67,17 @@ function CapLevel2() {
       timeLeft > 0 &&
       !completed &&
       !gameOver &&
-      !showFeedback
+      !showFeedback &&
+      questionsAnswered < 10
     ) {
       const timer = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
       return () => clearTimeout(timer);
     }
-    if (timeLeft === 0 && !showFeedback) {
+    if (timeLeft === 0 && !showFeedback && questionsAnswered < 10) {
       setShowFeedback(true);
       if (clickEnabled) playWrongSound(); // Play wrong sound on time out if enabled
       setTimeout(() => {
-        if (index + 1 < shuffledWords.length && stars < 10) {
+        if (index + 1 < shuffledWords.length && questionsAnswered < 9) {
           setIndex((i) => i + 1);
           setSelectedIndexes([]);
           setTimeLeft(15);
@@ -85,6 +87,9 @@ function CapLevel2() {
           if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
         }
       }, 3000); // Show feedback for 3 seconds
+    } else if (timeLeft === 0 && questionsAnswered >= 10 && !completed) {
+      setGameOver(true);
+      if (clickEnabled) playLoseSound();
     }
   }, [
     timeLeft,
@@ -98,17 +103,30 @@ function CapLevel2() {
     clickEnabled,
     playWrongSound,
     playLoseSound,
+    questionsAnswered,
   ]);
 
   useEffect(() => {
-    if (stars === 10 && !completed) {
+    if (stars >= 7 && stars <= 10 && questionsAnswered === 10 && !completed) {
       setCompleted(true);
       if (clickEnabled) playWinSound(); // Play win sound on completion if enabled
       if (user?.username) {
-        markLevelComplete(user.username, "capitalization", 1, setUser);
+        markLevelComplete(user.username, "capitalization", 1, setUser, stars);
       }
+    } else if (questionsAnswered === 10 && stars < 7 && !gameOver) {
+      setGameOver(true);
+      if (clickEnabled) playLoseSound();
     }
-  }, [stars, user, setUser, completed, clickEnabled, playWinSound]);
+  }, [
+    stars,
+    user,
+    setUser,
+    completed,
+    clickEnabled,
+    playWinSound,
+    questionsAnswered,
+    gameOver,
+  ]);
 
   const toggleWord = (i: number) => {
     if (!showFeedback) {
@@ -124,45 +142,40 @@ function CapLevel2() {
       gameOver ||
       showInstructions ||
       showFeedback ||
-      !shuffledWords[index]
+      !shuffledWords[index] ||
+      questionsAnswered >= 10
     )
       return;
+
     setShowFeedback(true);
     const current = shuffledWords[index];
     const selected = [...selectedIndexes].sort().join(",");
     const correct = [...current.correctIndexes].sort().join(",");
 
     setTimeout(() => {
+      setQuestionsAnswered((prev) => prev + 1);
       if (selected === correct) {
         if (clickEnabled) playCorrectSound(); // Play correct sound if enabled
         setTimeLeft((t) => Math.max(t + 5, 0));
-        setStars((s) => s + 1); // Increment stars regardless of the previous count
+        setStars((s) => s + 1);
         setPopKey((k) => k + 1);
-        if (index + 1 < shuffledWords.length && stars < 9) {
-          // Check against 9 because stars will be incremented
+        if (questionsAnswered < 9 && index + 1 < shuffledWords.length) {
           setIndex((i) => i + 1);
           setSelectedIndexes([]);
           setTimeLeft(15);
           setShowFeedback(false);
-        } else if (stars >= 9) {
-          // Completion logic based on the *new* star count
-          setCompleted(true);
-        } else {
-          setGameOver(true);
-          if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
+        } else if (questionsAnswered >= 9) {
+          setShowFeedback(false);
         }
       } else {
         if (clickEnabled) playWrongSound(); // Play wrong sound if enabled
-        if (index + 1 < shuffledWords.length && stars < 10) {
+        if (questionsAnswered < 9 && index + 1 < shuffledWords.length) {
           setIndex((i) => i + 1);
           setSelectedIndexes([]);
           setTimeLeft(15);
           setShowFeedback(false);
-        } else if (stars === 10) {
-          setCompleted(true);
-        } else {
-          setGameOver(true);
-          if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
+        } else if (questionsAnswered >= 9) {
+          setShowFeedback(false);
         }
       }
     }, 2000);
@@ -178,6 +191,7 @@ function CapLevel2() {
     setSelectedIndexes([]);
     setShowInstructions(true);
     setShowFeedback(false);
+    setQuestionsAnswered(0);
   };
 
   const handleStartGame = () => {
@@ -190,6 +204,7 @@ function CapLevel2() {
     setSelectedIndexes([]);
     setShuffledWords(shuffleArray<Word2>(allWords));
     setShowFeedback(false);
+    setQuestionsAnswered(0);
   };
 
   const starColor =
@@ -209,56 +224,59 @@ function CapLevel2() {
     <div className="w-screen h-screen flex flex-col items-center background p-8">
       {completed && <Confetti width={width} height={height} />}
       <div className="flex-1 w-full flex flex-col items-center justify-center gap-8 p-8 border-8 rounded-xl border-black/50 bg-black/75">
-        {!showInstructions && !completed && !gameOver && (
-          <div className="w-[60%] flex justify-between items-center mb-6">
-            <motion.div
-              animate={timerControls}
-              initial={{ x: 0 }}
-              className="flex flex-col items-center gap-0 relative"
-            >
-              <MdTimer className="text-red-500 text-2xl" />
-              <span
-                className="font-semibold text-2xl text-white"
-                style={{ fontFamily: "Arco" }}
+        {!showInstructions &&
+          !completed &&
+          !gameOver &&
+          questionsAnswered < 10 && (
+            <div className="w-[60%] flex justify-between items-center mb-6">
+              <motion.div
+                animate={timerControls}
+                initial={{ x: 0 }}
+                className="flex flex-col items-center gap-0 relative"
               >
-                {timeLeft}s
-              </span>
-            </motion.div>
-            <motion.div
-              key={popKey}
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 0.3 }}
-              className="relative w-16 h-16"
-            >
-              <svg className="w-full h-full transform -rotate-90">
-                <circle
-                  cx="32"
-                  cy="32"
-                  r="28"
-                  stroke="#e5e7eb"
-                  strokeWidth="8"
-                  fill="none"
-                />
-                <motion.circle
-                  cx="32"
-                  cy="32"
-                  r="28"
-                  stroke="currentColor"
-                  strokeWidth="8"
-                  fill="none"
-                  className={starColor}
-                  strokeDasharray={176.4}
-                  strokeDashoffset={176.4 - (176.4 * progress) / 100}
-                  transition={{ duration: 0.5 }}
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
-                {stars}⭐
-              </div>
-            </motion.div>
-          </div>
-        )}
+                <MdTimer className="text-red-500 text-2xl" />
+                <span
+                  className="font-semibold text-2xl text-white"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  {timeLeft}s
+                </span>
+              </motion.div>
+              <motion.div
+                key={popKey}
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.5, 1] }}
+                transition={{ duration: 0.3 }}
+                className="relative w-16 h-16"
+              >
+                <svg className="w-full h-full transform -rotate-90">
+                  <circle
+                    cx="32"
+                    cy="32"
+                    r="28"
+                    stroke="#e5e7eb"
+                    strokeWidth="8"
+                    fill="none"
+                  />
+                  <motion.circle
+                    cx="32"
+                    cy="32"
+                    r="28"
+                    stroke="currentColor"
+                    strokeWidth="8"
+                    fill="none"
+                    className={starColor}
+                    strokeDasharray={176.4}
+                    strokeDashoffset={176.4 - (176.4 * progress) / 100}
+                    transition={{ duration: 0.5 }}
+                  />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
+                  {stars}⭐
+                </div>
+              </motion.div>
+            </div>
+          )}
 
         {showInstructions ? (
           <div className="flex flex-col gap-4 text-white text-2xl w-[60%]">
@@ -267,8 +285,8 @@ function CapLevel2() {
             </span>
             <p className="text-justify font-medium">
               Click the words that should be correctly capitalized. You have 15
-              seconds per question. Get 10 correct answers to complete the
-              level.
+              seconds per question. Get at least 7 correct answers out of 10 to
+              complete the level.
             </p>
             <button
               onClick={handleStartGame}
@@ -311,7 +329,7 @@ function CapLevel2() {
               </button>
             </div>
           </div>
-        ) : shuffledWords.length > 0 ? (
+        ) : shuffledWords.length > 0 && questionsAnswered < 10 ? (
           <div className="w-[60%] flex flex-col gap-6 text-white items-center">
             <div className="flex flex-wrap items-center justify-center gap-2 text-4xl font-medium text-yellow-400 mb-2">
               {shuffledWords[index].prompt.split(" ").map((word, i) => (
@@ -321,9 +339,10 @@ function CapLevel2() {
                   className={`px-2 py-1 rounded transition-all duration-150 border-2 border-white ${
                     showFeedback
                       ? shuffledWords[index].correctIndexes.includes(i)
-                        ? "bg-green-400 text-white capitalize" // Correct capitalization
-                        : selectedIndexes.includes(i) &&
-                          !shuffledWords[index].correctIndexes.includes(i)
+                        ? selectedIndexes.includes(i)
+                          ? "bg-green-400 text-white capitalize" // Correct capitalization and selected
+                          : "bg-red-500 text-white" // Correct capitalization but not selected
+                        : selectedIndexes.includes(i)
                         ? "bg-red-500 text-white" // Incorrect selection
                         : "bg-white/20" // Not a correct answer, and not incorrectly selected
                       : selectedIndexes.includes(i)
@@ -338,7 +357,7 @@ function CapLevel2() {
             </div>
             <button
               onClick={handleAnswer}
-              className="bg-blue-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+              className="w-full bg-blue-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
               style={{ fontFamily: "Arco" }}
               disabled={completed || gameOver || showFeedback}
             >

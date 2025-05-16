@@ -697,7 +697,7 @@ export const capLevel2: Word2[] = [
   {
     prompt: "the eiffel tower, notre dame, and louvre museum are in paris.",
     answer: "The Eiffel Tower, Notre Dame, and Louvre Museum are in Paris.",
-    correctIndexes: [0, 1, 2, 3, 4, 6, 7],
+    correctIndexes: [0, 1, 2, 3, 4, 6, 7, 10],
   },
   {
     prompt: "jeff bezos, elon musk, and mark zuckerberg are tech billionaires.",
