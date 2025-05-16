@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { capLevel3 as allWords } from "../../constants/seeder";
 import type { Word3 } from "../../types";
 import { shuffleArray } from "../../utils/array";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaCaretLeft } from "react-icons/fa6";
 import { useUserStore } from "../../stores/useUserStore";
 import { markLevelComplete } from "../../utils/game";
@@ -42,7 +42,6 @@ function CapLevel3() {
   const [feedbackSentence, setFeedbackSentence] = useState("");
 
   const { user, setUser } = useUserStore();
-  const navigate = useNavigate();
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
   const inputRef = useRef<HTMLInputElement>(null);
