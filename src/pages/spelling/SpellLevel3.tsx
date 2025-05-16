@@ -113,13 +113,13 @@ function SpellLevel3() {
         setTimeout(() => {
           setIsCorrect(null);
           setTypedAnswer("");
-          if (index + 1 === shuffledQuestions.length && stars < 10) {
+          if (index + 1 === shuffledQuestions.length && stars < 7) {
             setGameOver(true);
             playLoseSound();
           } else if (index + 1 < shuffledQuestions.length) {
             setIndex((i) => i + 1);
             setTimeLeft(20);
-          } else if (stars === 10) {
+          } else if (stars >= 7) {
             setCompleted(true);
             playWinSound();
           } else {
@@ -143,11 +143,11 @@ function SpellLevel3() {
   ]);
 
   useEffect(() => {
-    if (stars === 10 && !completed) {
+    if (stars >= 7 && !completed) {
       setCompleted(true);
       playWinSound();
       if (user?.username) {
-        markLevelComplete(user.username, "spelling", 2, setUser);
+        markLevelComplete(user.username, "spelling", 2, setUser, stars);
       }
     }
   }, [stars, user, setUser, completed, playWinSound]);
@@ -171,12 +171,12 @@ function SpellLevel3() {
       setTimeout(() => {
         setIsCorrect(null);
         setTypedAnswer("");
-        if (stars === 10) {
-          setCompleted(true);
-          playWinSound();
-        } else if (index + 1 < shuffledQuestions.length) {
+        if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
           setTimeLeft(20);
+        } else if (stars + 1 >= 7) {
+          setCompleted(true);
+          playWinSound();
         } else {
           setGameOver(true);
           playLoseSound();
@@ -190,7 +190,7 @@ function SpellLevel3() {
         if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
           setTimeLeft(20);
-        } else if (stars < 10) {
+        } else if (stars < 7) {
           setGameOver(true);
           playLoseSound();
         }
@@ -304,7 +304,8 @@ function SpellLevel3() {
             <p className="text-justify font-medium">
               Listen to the word, and then type the correct spelling of the word
               shown with scrambled letters. You have 20 seconds per question.
-              Get 7 correct answers out of 10 to complete the level.
+              Get a minimum of 7 correct answers out of 10 to complete the
+              level.
             </p>
             <button
               onClick={handleStartGame}
@@ -320,13 +321,26 @@ function SpellLevel3() {
               Game {completed ? "Complete" : "Over"}!
             </p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
-            <button
-              onClick={handleRestart}
-              className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
-              style={{ fontFamily: "Arco" }}
-            >
-              Try Again
-            </button>
+            {completed && (
+              <div className="flex mt-4 gap-4 justify-center">
+                <button
+                  onClick={handleRestart}
+                  className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  Play Again
+                </button>
+              </div>
+            )}
+            {!completed && (
+              <button
+                onClick={handleRestart}
+                className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                style={{ fontFamily: "Arco" }}
+              >
+                Try Again
+              </button>
+            )}
           </div>
         ) : shuffledQuestions.length > 0 ? (
           <div className="w-[60%] flex flex-col gap-6 text-white items-center">
