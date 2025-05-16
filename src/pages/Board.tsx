@@ -43,9 +43,7 @@ function AchievementCard({
         }`}
       />
       <div className="absolute bottom-0 left-0 w-full bg-black/75 text-white p-2">
-        <h3 className="font-bold text-base" style={{ fontFamily: "Arco" }}>
-          {title}
-        </h3>
+        <h3 className="font-bold text-lg">{title}</h3>
         <p className="text-xs">{description}</p>
         {date && <p className="text-xs italic mt-1">{date}</p>}
       </div>
@@ -348,6 +346,12 @@ function Board() {
                   {currentUserPoints !== null ? currentUserPoints : "-"} Points
                 </p>
               </div>
+              <button
+                className="bg-yellow-500 text-white px-8 py-4 rounded-xl  text-xl hover:scale-90 mt-4"
+                style={{ fontFamily: "Arco" }}
+              >
+                Download Certificate
+              </button>
             </div>
           </div>
         ) : (

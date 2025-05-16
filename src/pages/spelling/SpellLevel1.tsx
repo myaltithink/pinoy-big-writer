@@ -340,7 +340,7 @@ function SpellLevel1() {
             <p className="text-3xl font-medium italic">
               {index + 1}. {shuffledQuestions[index].definition}
             </p>
-            <div className="grid gap-4" style={{ fontFamily: "Arco" }}>
+            <div className="grid gap-4">
               {shuffledQuestions[index].options.map((option, idx) => {
                 let bgClass = "bg-white/20";
                 if (selectedAnswer !== null) {

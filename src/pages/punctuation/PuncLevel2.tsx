@@ -302,10 +302,7 @@ function PuncLevel2() {
             <p className="text-3xl font-medium " style={{ fontFamily: "Arco" }}>
               Choose the correctly punctuated sentence.
             </p>
-            <div
-              className="grid grid-cols-2 gap-4"
-              style={{ fontFamily: "Arco" }}
-            >
+            <div className="grid grid-cols-2 gap-4">
               {shuffledQuestions[index].options.map((option, optionIndex) => {
                 let bgClass = "bg-white/20";
                 if (selectedAnswerIndex !== null) {
