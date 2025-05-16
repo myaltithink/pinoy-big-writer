@@ -8,6 +8,7 @@ import type {
   QuizChoice,
   Word3,
   Word,
+  Word2,
 } from "../types";
 
 export const capLevel1: Word[] = [
@@ -1318,194 +1319,274 @@ export const capLevel3 = {
   ],
 };
 
-export const capLevel2 = {
-  tier1: [
-    {
-      prompt: "the book is on the shelf",
-      answer: "The book is on the shelf",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "a car stopped near the store",
-      answer: "A car stopped near the store",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "the child played with a ball",
-      answer: "The child played with a ball",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "he sat on a wooden chair",
-      answer: "He sat on a wooden chair",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "i drank a glass of cold water",
-      answer: "I drank a glass of cold water",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "the cake smells delicious",
-      answer: "The cake smells delicious",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "a flower bloomed in the garden",
-      answer: "A flower bloomed in the garden",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "she dropped the pen on the floor",
-      answer: "She dropped the pen on the floor",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "i heard the sound of a bell",
-      answer: "I heard the sound of a bell",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "he bought a new laptop last weekend",
-      answer: "He bought a new laptop last weekend",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "the doctor examined the patient carefully",
-      answer: "The doctor examined the patient carefully",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "a dog barked loudly in the yard",
-      answer: "A dog barked loudly in the yard",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "she wore a red dress to the party",
-      answer: "She wore a red dress to the party",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "i saw a bird flying over the roof",
-      answer: "I saw a bird flying over the roof",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "the teacher gave homework to the students",
-      answer: "The teacher gave homework to the students",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "monday is my favorite day of the week",
-      answer: "Monday is my favorite day of the week",
-      correctIndexes: [0],
-    },
-    {
-      prompt: "google is one of the most popular search engines",
-      answer: "Google is one of the most popular search engines",
-      correctIndexes: [0],
-    },
-  ],
-  tier2: [
-    {
-      prompt: "michael jordan played basketball for the chicago bulls",
-      answer: "Michael Jordan played basketball for the Chicago Bulls",
-      correctIndexes: [0, 1, 6, 7],
-    },
-    {
-      prompt: "new york city is known for its tall skyscrapers",
-      answer: "New York City is known for its tall skyscrapers",
-      correctIndexes: [0, 1, 2],
-    },
-    {
-      prompt: "the amazon river is the second longest river in the world",
-      answer: "The Amazon River is the second longest river in the world",
-      correctIndexes: [0, 1, 2],
-    },
-    {
-      prompt: "jennifer lopez performed at the super bowl",
-      answer: "Jennifer Lopez performed at the Super Bowl",
-      correctIndexes: [0, 1, 5, 6],
-    },
-    {
-      prompt: "thanksgiving is celebrated in november",
-      answer: "Thanksgiving is celebrated in November",
-      correctIndexes: [0, 4],
-    },
-    {
-      prompt: "mount everest is the tallest mountain on earth",
-      answer: "Mount Everest is the tallest mountain on Earth",
-      correctIndexes: [0, 1, 7],
-    },
-    {
-      prompt: "harvard university is located in massachusetts",
-      answer: "Harvard University is located in Massachusetts",
-      correctIndexes: [0, 1, 5],
-    },
-  ],
-  tier3: [
-    {
-      prompt: "i met john and sarah at the morgan library",
-      answer: "I met John and Sarah at the Morgan Library",
-      correctIndexes: [0, 2, 4, 7, 8],
-    },
-    {
-      prompt: "google and microsoft are tech giants",
-      answer: "Google and Microsoft are tech giants",
-      correctIndexes: [0, 2],
-    },
-    {
-      prompt: "we traveled to paris during spring break",
-      answer: "We traveled to Paris during Spring Break",
-      correctIndexes: [0, 3, 5],
-    },
-    {
-      prompt: "uncle ben always made the best pancakes",
-      answer: "Uncle Ben always made the best Pancakes",
-      correctIndexes: [0, 2, 7],
-    },
-    {
-      prompt: "apple announced the new iphone in california",
-      answer: "Apple announced the new iPhone in California",
-      correctIndexes: [0, 5, 7],
-    },
-    {
-      prompt: "luna saw a shooting star over mount fuji",
-      answer: "Luna saw a shooting star over Mount Fuji",
-      correctIndexes: [0, 7, 8],
-    },
-    {
-      prompt: "the great wall is in china",
-      answer: "The Great Wall is in China",
-      correctIndexes: [0, 1, 2, 5],
-    },
-    {
-      prompt: "i watched titanic with emily last night",
-      answer: "I watched Titanic with Emily last night",
-      correctIndexes: [0, 2, 4],
-    },
-    {
-      prompt: "santa claus comes every christmas eve",
-      answer: "Santa Claus comes every Christmas Eve",
-      correctIndexes: [0, 1, 4, 5],
-    },
-    {
-      prompt: "harvard and yale are ivy league schools",
-      answer: "Harvard and Yale are Ivy League schools",
-      correctIndexes: [0, 2, 4, 5],
-    },
-    {
-      prompt: "mr. smith teaches history on mondays",
-      answer: "Mr. Smith teaches History on Mondays",
-      correctIndexes: [0, 1, 3, 5],
-    },
-    {
-      prompt: "the amazon river is the longest in south america",
-      answer: "The Amazon River is the longest in South America",
-      correctIndexes: [0, 1, 2, 7, 8],
-    },
-  ],
-};
+export const capLevel2: Word2[] = [
+  {
+    prompt: "michael jordan played basketball for the chicago bulls.",
+    answer: "Michael Jordan played basketball for the Chicago Bulls.",
+    correctIndexes: [0, 1, 6, 7],
+  },
+  {
+    prompt: "new york city is known for its tall skyscrapers.",
+    answer: "New York City is known for its tall skyscrapers.",
+    correctIndexes: [0, 1, 2],
+  },
+  {
+    prompt: "google is one of the most popular search engines.",
+    answer: "Google is one of the most popular search engines.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "the amazon river is the second longest river in the world.",
+    answer: "The Amazon River is the second longest river in the world.",
+    correctIndexes: [0, 1, 2],
+  },
+  {
+    prompt: "jennifer lopez performed at the super bowl.",
+    answer: "Jennifer Lopez performed at the Super Bowl.",
+    correctIndexes: [0, 1, 5, 6],
+  },
+  {
+    prompt: "nasa launched another rocket.",
+    answer: "NASA launched another rocket.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "eiffel tower is located in paris, france.",
+    answer: "Eiffel Tower is located in Paris, France.",
+    correctIndexes: [0, 1, 5, 6],
+  },
+  {
+    prompt: "thanksgiving is celebrated in november.",
+    answer: "Thanksgiving is celebrated in November.",
+    correctIndexes: [0, 4],
+  },
+  {
+    prompt: "mount everest is the tallest mountain on earth.",
+    answer: "Mount Everest is the tallest mountain on Earth.",
+    correctIndexes: [0, 1, 7],
+  },
+  {
+    prompt: "harvard university is located in massachusetts.",
+    answer: "Harvard University is located in Massachusetts.",
+    correctIndexes: [0, 1, 5],
+  },
+  {
+    prompt: "the teacher gave homework to the students.",
+    answer: "The teacher gave homework to the students.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "i saw a bird flying over the roof.",
+    answer: "I saw a bird flying over the roof.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "he bought a new laptop last weekend.",
+    answer: "He bought a new laptop last weekend.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "the doctor examined the patient carefully.",
+    answer: "The doctor examined the patient carefully.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "a dog barked loudly in the yard.",
+    answer: "A dog barked loudly in the yard.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "she wore a red dress to the party.",
+    answer: "She wore a red dress to the party.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "i met john and sarah at the morgan library.",
+    answer: "I met John and Sarah at the Morgan Library.",
+    correctIndexes: [0, 2, 4, 7, 8],
+  },
+  {
+    prompt: "we watched the lion king at the theater.",
+    answer: "We watched the Lion King at the theater.",
+    correctIndexes: [0, 3, 4],
+  },
+  {
+    prompt: "shaquille o’neal played for the lakers.",
+    answer: "Shaquille O’Neal played for the Lakers.",
+    correctIndexes: [0, 1, 5],
+  },
+  {
+    prompt: "the empire state building is tall.",
+    answer: "The Empire State Building is tall.",
+    correctIndexes: [0, 1, 2],
+  },
+  {
+    prompt: "i listened to k-pop from bts.",
+    answer: "I listened to K-pop from BTS.",
+    correctIndexes: [0, 3, 5],
+  },
+  {
+    prompt: "the little boy sings beautifully.",
+    answer: "The little boy sings beautifully.",
+    correctIndexes: [0],
+  },
+  {
+    prompt: "malala yousafzai won a nobel prize.",
+    answer: "Malala Yousafzai won a Nobel Prize.",
+    correctIndexes: [0, 1, 4, 5],
+  },
+  {
+    prompt: "new year begins in january.",
+    answer: "New Year begins in January.",
+    correctIndexes: [0, 1, 4],
+  },
+  {
+    prompt: "barack obama was the president.",
+    answer: "Barack Obama was the president.",
+    correctIndexes: [0, 1],
+  },
+  {
+    prompt: "we saw mount everest in a documentary.",
+    answer: "We saw Mount Everest in a documentary.",
+    correctIndexes: [0, 2, 3],
+  },
+  {
+    prompt: "martin luther king gave a powerful speech.",
+    answer: "Martin Luther King gave a powerful speech.",
+    correctIndexes: [0, 1, 2],
+  },
+  {
+    prompt: "j.k. rowling wrote harry potter.",
+    answer: "J.K. Rowling wrote Harry Potter.",
+    correctIndexes: [0, 1, 3, 4],
+  },
+  {
+    prompt: "pikachu is from pokémon.",
+    answer: "Pikachu is from Pokémon.",
+    correctIndexes: [0, 3],
+  },
+  {
+    prompt: "steve jobs founded apple.",
+    answer: "Steve Jobs founded Apple.",
+    correctIndexes: [0, 1, 3],
+  },
+  {
+    prompt: "walt disney created mickey mouse.",
+    answer: "Walt Disney created Mickey Mouse.",
+    correctIndexes: [0, 1, 3, 4],
+  },
+  {
+    prompt: "i watched iron man at the movie theater.",
+    answer: "I watched Iron Man at the movie theater.",
+    correctIndexes: [0, 2, 3],
+  },
+  {
+    prompt: "siri and alexa are voice assistants.",
+    answer: "Siri and Alexa are voice assistants.",
+    correctIndexes: [0, 2],
+  },
+  {
+    prompt: "mr. tanaka teaches japanese on tuesdays.",
+    answer: "Mr. Tanaka teaches Japanese on Tuesdays.",
+    correctIndexes: [0, 1, 3, 5],
+  },
+  {
+    prompt: "we ate at jollibee near greenbelt.",
+    answer: "We ate at Jollibee near Greenbelt.",
+    correctIndexes: [0, 3, 5],
+  },
+  {
+    prompt: "emma and oliver won the math contest.",
+    answer: "Emma and Oliver won the Math contest.",
+    correctIndexes: [0, 2, 5],
+  },
+  {
+    prompt:
+      "michael jordan, scottie pippen, and dennis rodman played for the chicago bulls.",
+    answer:
+      "Michael Jordan, Scottie Pippen, and Dennis Rodman played for the Chicago Bulls.",
+    correctIndexes: [0, 1, 2, 3, 5, 6, 10, 11],
+  },
+  {
+    prompt:
+      "mr. brown, mrs. smith, and dr. adams attended the abc board meeting.",
+    answer:
+      "Mr. Brown, Mrs. Smith, and Dr. Adams attended the ABC board meeting.",
+    correctIndexes: [0, 1, 2, 3, 5, 6, 9],
+  },
+  {
+    prompt:
+      "harry potter, ron weasley, and hermione granger studied at hogwarts school.",
+    answer:
+      "Harry Potter, Ron Weasley, and Hermione Granger studied at Hogwarts School.",
+    correctIndexes: [0, 1, 2, 3, 5, 6, 9, 10],
+  },
+  {
+    prompt:
+      "batman, superman, and wonder woman are part of the justice league.",
+    answer:
+      "Batman, Superman, and Wonder Woman are part of the Justice League.",
+    correctIndexes: [0, 1, 3, 4, 9, 10],
+  },
+  {
+    prompt: "we visited big ben, london bridge, and the london tower.",
+    answer: "We visited Big Ben, London Bridge, and the London Tower.",
+    correctIndexes: [0, 2, 3, 4, 5, 8, 9],
+  },
+  {
+    prompt: "adele, ed sheeran, and bruno mars won grammy awards.",
+    answer: "Adele, Ed Sheeran, and Bruno Mars won Grammy Awards.",
+    correctIndexes: [0, 1, 2, 4, 5, 7, 8],
+  },
+  {
+    prompt: "the eiffel tower, notre dame, and louvre museum are in paris.",
+    answer: "The Eiffel Tower, Notre Dame, and Louvre Museum are in Paris.",
+    correctIndexes: [0, 1, 2, 3, 4, 6, 7],
+  },
+  {
+    prompt: "jeff bezos, elon musk, and mark zuckerberg are tech billionaires.",
+    answer: "Jeff Bezos, Elon Musk, and Mark Zuckerberg are tech billionaires.",
+    correctIndexes: [0, 1, 2, 3, 5, 6],
+  },
+  {
+    prompt: "i bought souvenirs in bangkok, chiang mai, and phuket.",
+    answer: "I bought souvenirs in Bangkok, Chiang Mai, and Phuket.",
+    correctIndexes: [0, 4, 5, 6, 8],
+  },
+  {
+    prompt:
+      "marvel studios released avengers: endgame, black panther, and doctor strange.",
+    answer:
+      "Marvel Studios released Avengers: Endgame, Black Panther, and Doctor Strange.",
+    correctIndexes: [0, 1, 3, 4, 5, 6, 8, 9],
+  },
+  {
+    prompt:
+      "dr. martin luther king jr. gave the “i have a dream“ speech in washington, d.c.",
+    answer:
+      "Dr. Martin Luther King Jr. gave the “I have a dream“ speech in Washington, D.C.",
+    correctIndexes: [0, 1, 2, 3, 4, 7, 13, 14],
+  },
+  {
+    prompt:
+      "the empire state building lights up during independence day, christmas, and new year's eve.",
+    answer:
+      "The Empire State Building lights up during Independence Day, Christmas, and New Year's Eve.",
+    correctIndexes: [0, 1, 2, 3, 7, 8, 9, 11, 12, 13],
+  },
+  {
+    prompt: "nba finals, super bowl, and world series are major sports events.",
+    answer: "NBA Finals, Super Bowl, and World Series are major sports events.",
+    correctIndexes: [0, 1, 2, 3, 5, 6],
+  },
+  {
+    prompt:
+      "queen elizabeth ii, prince charles, and princess diana are part of the royal family.",
+    answer:
+      "Queen Elizabeth II, Prince Charles, and Princess Diana are part of the Royal Family.",
+    correctIndexes: [0, 1, 2, 3, 4, 6, 7, 12, 13],
+  },
+];
 
 export const practiceQuestions: Question[] = [
   {

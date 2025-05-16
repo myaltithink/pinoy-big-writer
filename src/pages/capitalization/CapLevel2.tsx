@@ -56,17 +56,8 @@ function CapLevel2() {
   });
 
   useEffect(() => {
-    const tier1 = allWords?.tier1 || [];
-    const tier2 = allWords?.tier2 || [];
-    const tier3 = allWords?.tier3 || [];
-
-    const selectedWords = [
-      ...shuffleArray(tier1).slice(0, 4),
-      ...shuffleArray(tier2).slice(0, 4),
-      ...shuffleArray(tier3).slice(0, 2),
-    ];
-
-    setShuffledWords(shuffleArray<Word2>(selectedWords as Word2[]));
+    // Directly use the flat array 'allWords'
+    setShuffledWords(shuffleArray<Word2>(allWords));
   }, []);
 
   useEffect(() => {
@@ -178,36 +169,18 @@ function CapLevel2() {
   };
 
   const handleRestart = () => {
-    const tier1 = allWords?.tier1 || [];
-    const tier2 = allWords?.tier2 || [];
-    const tier3 = allWords?.tier3 || [];
-
-    const selectedWords = [
-      ...shuffleArray(tier1).slice(0, 4),
-      ...shuffleArray(tier2).slice(0, 4),
-      ...shuffleArray(tier3).slice(0, 2),
-    ];
     setIndex(0);
     setStars(0);
     setTimeLeft(15);
     setCompleted(false);
     setGameOver(false);
-    setShuffledWords(shuffleArray<Word2>(selectedWords as Word2[]));
+    setShuffledWords(shuffleArray<Word2>(allWords));
     setSelectedIndexes([]);
     setShowInstructions(true);
     setShowFeedback(false);
   };
 
   const handleStartGame = () => {
-    const tier1 = allWords?.tier1 || [];
-    const tier2 = allWords?.tier2 || [];
-    const tier3 = allWords?.tier3 || [];
-
-    const selectedWords = [
-      ...shuffleArray(tier1).slice(0, 4),
-      ...shuffleArray(tier2).slice(0, 4),
-      ...shuffleArray(tier3).slice(0, 2),
-    ];
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
@@ -215,7 +188,7 @@ function CapLevel2() {
     setCompleted(false);
     setGameOver(false);
     setSelectedIndexes([]);
-    setShuffledWords(shuffleArray<Word2>(selectedWords as Word2[]));
+    setShuffledWords(shuffleArray<Word2>(allWords));
     setShowFeedback(false);
   };
 
