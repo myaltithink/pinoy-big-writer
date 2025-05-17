@@ -2321,640 +2321,474 @@ export const spellLevel3: ScrambledWordQuestion[] = [
 
 export const puncLevel1: ChoicesQuestion[] = [
   {
-    questionText: "Used to separate items in a list.",
-    choices: { A: ";", B: ".", C: ",", D: "-" },
+    questionText: "Which punctuation ends a statement?",
+    choices: { A: "Question mark", B: "!", C: "Period", D: "," },
     correctAnswer: "C",
   },
   {
-    questionText: "Indicates a pause or a missing part of a sentence.",
-    choices: { A: ":", B: "...", C: '" "', D: "!" },
+    questionText: "Choose the correct punctuation: She is reading a book___",
+    choices: { A: "?", B: ".", C: ",", D: "!" },
     correctAnswer: "B",
   },
   {
-    questionText: "Used to introduce a list, an explanation, or a quotation.",
-    choices: { A: ";", B: ":", C: "-", D: "." },
+    questionText: "Which symbol is used to end a declarative sentence?",
+    choices: { A: ":", B: ".", C: "!", D: ";" },
     correctAnswer: "B",
   },
   {
-    questionText: "Connects two closely related independent clauses.",
-    choices: { A: ",", B: ";", C: '" "', D: "?" },
-    correctAnswer: "B",
+    questionText: "What punctuation is missing? The sun is hot___",
+    choices: { A: ":", B: ";", C: "!", D: "." },
+    correctAnswer: "D",
   },
   {
-    questionText:
-      "Used to join two or more words to form a compound adjective or noun.",
-    choices: { A: ":", B: "-", C: "...", D: "!" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to enclose direct speech or quotations.",
-    choices: { A: "' '", B: '" "', C: ",", D: "." },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used at the end of an exclamatory sentence.",
-    choices: { A: "?", B: ".", C: "!", D: ";" },
+    questionText: "A period is used at the ___ of a sentence.",
+    choices: { A: "Middle", B: "Start", C: "End", D: "Pause" },
     correctAnswer: "C",
   },
   {
-    questionText: "Used at the end of an interrogative sentence.",
-    choices: { A: ".", B: "?", C: "!", D: "," },
+    questionText: "Where do you place a period?",
+    choices: {
+      A: "After a question",
+      B: "After a statement",
+      C: "After an exclamation",
+      D: "After a name",
+    },
     correctAnswer: "B",
   },
   {
-    questionText:
-      "Separates the day of the month from the year in an American date format.",
-    choices: { A: ";", B: "-", C: ",", D: ":" },
+    questionText: "The period is used in which type of sentence?",
+    choices: {
+      A: "Exclamatory",
+      B: "Imperative",
+      C: "Declarative",
+      D: "Interrogative",
+    },
     correctAnswer: "C",
   },
   {
-    questionText: "Used after a salutation in a formal letter.",
-    choices: { A: ",", B: ";", C: ":", D: "." },
+    questionText: "Which of these uses a period correctly?",
+    choices: {
+      A: "What a great day.",
+      B: "Do you like ice cream.",
+      C: "Please bring your bag.",
+      D: "Wow.",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "I love music__",
+    choices: { A: "!", B: "?", C: ",", D: "." },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Which is not a time to use a period?",
+    choices: {
+      A: "End of a command",
+      B: "End of a statement",
+      C: "After a greeting",
+      D: "After abbreviations",
+    },
     correctAnswer: "C",
   },
   {
-    questionText:
-      "Indicates a sudden break or interruption in thought or speech.",
-    choices: { A: '" "', B: "...", C: "-", D: ";" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Used to set off nonessential clauses or phrases in a sentence.",
-    choices: { A: ".", B: ",", C: ":", D: "!" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Connects parts of compound words that are not always written together.",
-    choices: { A: ";", B: "-", C: "...", D: '" "' },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to show possession.",
-    choices: { A: "'", B: '" "', C: ",", D: "." },
+    questionText: "Choose the correct punctuation: The dog barked loudly__",
+    choices: { A: ".", B: ";", C: ":", D: "?" },
     correctAnswer: "A",
   },
   {
-    questionText: "Separates hours from minutes.",
-    choices: { A: ",", B: ".", C: ":", D: "-" },
+    questionText: "Finish this sentence: We went to the park__",
+    choices: { A: "!", B: "?", C: ":", D: "." },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Which is a correct sentence?",
+    choices: {
+      A: "I saw a bird",
+      B: "I saw a bird!",
+      C: "I saw a bird.",
+      D: "I saw a bird?",
+    },
     correctAnswer: "C",
   },
   {
-    questionText: "Can be used to emphasize a word or phrase.",
-    choices: { A: ";", B: "!", C: ",", D: "." },
+    questionText: "Where do you put a period in this sentence? “I like apples”",
+    choices: {
+      A: "I like apples",
+      B: "I like apples!",
+      C: "I like apples.",
+      D: "I like apples?",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "A period is most commonly used:",
+    choices: {
+      A: "At the start",
+      B: "At the middle",
+      C: "After shouting",
+      D: "At the end",
+    },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Which punctuation shows a question?",
+    choices: { A: "!", B: "?", C: ":", D: ";" },
     correctAnswer: "B",
   },
   {
-    questionText: "Used to indicate omitted letters in contractions.",
-    choices: { A: '" "', B: "'", C: "...", D: ":" },
+    questionText: "Choose the correct punctuation: Are you okay__",
+    choices: { A: "!", B: ".", C: "?", D: "," },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "What punctuation goes at the end of a question?",
+    choices: {
+      A: "Period",
+      B: "Comma",
+      C: "Exclamation point",
+      D: "Question mark",
+    },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Which sentence ends with a question mark?",
+    choices: {
+      A: "I like it",
+      B: "Can you help me",
+      C: "That’s great",
+      D: "Are you ready?",
+    },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "A question mark is used to:",
+    choices: {
+      A: "Show a command",
+      B: "Ask a question",
+      C: "End a sentence",
+      D: "Join two thoughts",
+    },
     correctAnswer: "B",
   },
   {
-    questionText:
-      "Separates independent clauses when they are not joined by a coordinating conjunction.",
-    choices: { A: ",", B: ";", C: ".", D: "!" },
+    questionText: "What symbol is a question mark?",
+    choices: { A: ".", B: "?", C: ":", D: ";" },
     correctAnswer: "B",
   },
   {
-    questionText: "Used to introduce examples.",
-    choices: { A: ",", B: ":", C: "-", D: "." },
+    questionText: "Which is a correct sentence with a question mark?",
+    choices: {
+      A: "Where are you.",
+      B: "Where are you?",
+      C: "Where are you!",
+      D: "Where are you,",
+    },
     correctAnswer: "B",
   },
   {
-    questionText: "Can indicate a range of numbers or dates.",
-    choices: { A: ";", B: "-", C: "...", D: '" "' },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to set off direct addresses.",
-    choices: { A: ".", B: ",", C: ":", D: "!" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Shows that something belongs to one person or thing.",
-    choices: { A: "'s", B: "s'", C: '"s"', D: "s-" },
+    questionText: "Choose the right mark: Did you see that__",
+    choices: { A: "?", B: "!", C: ":", D: "," },
     correctAnswer: "A",
   },
   {
-    questionText:
-      "Shows that something belongs to more than one person or thing (usually ending in 's').",
-    choices: { A: "'s", B: "s'", C: '"s"', D: "s-" },
+    questionText: "A question mark ends:",
+    choices: {
+      A: "A list",
+      B: "A command",
+      C: "A question",
+      D: "An exclamation",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "What does “?” mean?",
+    choices: { A: "Stop", B: "Ask", C: "Yell", D: "Pause" },
     correctAnswer: "B",
   },
   {
-    questionText: 'Used to create compound nouns like "mother-in-law".',
-    choices: { A: ":", B: "-", C: "...", D: '" "' },
+    questionText: "You ask, “Where is the cat__”",
+    choices: { A: ".", B: ":", C: ";", D: "?" },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Choose the proper sentence:",
+    choices: {
+      A: "Is he coming",
+      B: "Is he coming.",
+      C: "Is he coming?",
+      D: "Is he coming!",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Which is a question?",
+    choices: {
+      A: "He is tired",
+      B: "Did he go home",
+      C: "She is running",
+      D: "The bird flies",
+    },
     correctAnswer: "B",
   },
   {
-    questionText:
-      'Often used before words like "however," "therefore," and "consequently" when they connect two independent clauses.',
-    choices: { A: ",", B: ";", C: ".", D: "!" },
-    correctAnswer: "B",
+    questionText: "Use a question mark with:",
+    choices: { A: "Commands", B: "Statements", C: "Questions", D: "Yelling" },
+    correctAnswer: "C",
   },
   {
-    questionText: "Indicates a trailing off of thought or speech.",
-    choices: { A: '" "', B: "...", C: "-", D: ";" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Used to enclose titles of short works like articles, poems, and short stories.",
-    choices: { A: '" "', B: "' '", C: ",", D: "." },
+    questionText: "What punctuation should follow: “Can I join you___”",
+    choices: { A: "?", B: ".", C: ",", D: "!" },
     correctAnswer: "A",
   },
   {
-    questionText:
-      "Used to enclose titles of longer works like books, movies, and magazines.",
-    choices: { A: '" "', B: "italics", C: ",", D: "." },
+    questionText: "Which punctuation shows strong feeling?",
+    choices: { A: ",", B: ".", C: "?", D: "!" },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Choose the correct punctuation: Watch out___",
+    choices: { A: ",", B: "?", C: ".", D: "!" },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "An exclamation point is used to show:",
+    choices: { A: "A list", B: "Excitement", C: "A question", D: "A pause" },
     correctAnswer: "B",
   },
   {
-    questionText: "Separates parts of an address.",
-    choices: { A: ";", B: "-", C: ",", D: ":" },
-    correctAnswer: "C",
-  },
-  {
-    questionText: "Used to clarify or explain the first part of a sentence.",
-    choices: { A: ",", B: ":", C: "-", D: "." },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      'Can be used to create compound adjectives before a noun (e.g., "well-written").',
-    choices: { A: ";", B: "-", C: "...", D: '" "' },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Used to set off appositives (nouns or noun phrases that rename another noun).",
-    choices: { A: ".", B: ",", C: ":", D: "!" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Indicates a direct question.",
-    choices: { A: ".", B: "?", C: "!", D: ";" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to show a strong feeling or emotion.",
-    choices: { A: "?", B: ".", C: "!", D: "," },
-    correctAnswer: "C",
-  },
-  {
-    questionText:
-      "Separates the month and day from the year in an American date format.",
-    choices: { A: ";", B: "-", C: ",", D: ":" },
-    correctAnswer: "C",
-  },
-  {
-    questionText: "Used after the closing in a formal letter.",
-    choices: { A: ",", B: ";", C: ":", D: "." },
+    questionText: "Which sentence is correct?",
+    choices: {
+      A: "I love ice cream!",
+      B: "I love ice cream!",
+      C: "I love ice cream?",
+      D: "I love ice cream.",
+    },
     correctAnswer: "A",
   },
   {
-    questionText: "Indicates a pause shorter than a period.",
-    choices: { A: ";", B: "...", C: ",", D: "-" },
+    questionText: "The exclamation point is used at the ___ of the sentence.",
+    choices: { A: "Start", B: "Middle", C: "End", D: "After a list" },
     correctAnswer: "C",
   },
   {
-    questionText:
-      "Connects words that are closely related in meaning or function.",
-    choices: { A: ":", B: "-", C: "...", D: '" "' },
+    questionText: "What punctuation is missing? That was amazing___",
+    choices: { A: ",", B: ".", C: "?", D: "!" },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Use an exclamation point for:",
+    choices: {
+      A: "Lists",
+      B: "Commands with emotion",
+      C: "Dates",
+      D: "Dialogue tags",
+    },
     correctAnswer: "B",
   },
   {
-    questionText: "Used to introduce a formal quotation.",
-    choices: { A: ",", B: ":", C: "-", D: "." },
+    questionText: "Select the correct use of an exclamation mark:",
+    choices: {
+      A: "I like pizza",
+      B: "I like pizza.",
+      C: "I like pizza!",
+      D: "I like pizza?",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Which of these shows excitement?",
+    choices: { A: "Hello.", B: "Hello!", C: "Hello,", D: "Hello?" },
     correctAnswer: "B",
   },
   {
-    questionText: "Can be used to create compound verbs (though less common).",
-    choices: { A: ";", B: "-", C: "...", D: '" "' },
-    correctAnswer: "B",
+    questionText: "Choose the proper punctuation: Run faster___",
+    choices: { A: ".", B: "?", C: "!", D: ":" },
+    correctAnswer: "C",
   },
   {
-    questionText:
-      "Used to set off interjections (words expressing strong emotion).",
+    questionText: "An exclamation point can follow:",
+    choices: {
+      A: "Statements",
+      B: "Questions",
+      C: "Interjections",
+      D: "Dates",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: 'How do you write: "Wow" with feeling?',
+    choices: { A: "Wow.", B: "Wow,", C: "Wow?", D: "Wow!" },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Identify the correct sentence:",
+    choices: {
+      A: "Stop right there!",
+      B: "Stop right there!",
+      C: "Stop right there.",
+      D: "Stop right there?",
+    },
+    correctAnswer: "A",
+  },
+  {
+    questionText: "You use “!” when you want to:",
+    choices: {
+      A: "Ask something",
+      B: "Pause",
+      C: "Show emotion",
+      D: "Introduce a list",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: 'What punctuation ends: "I can’t believe it___"',
     choices: { A: ".", B: ",", C: ":", D: "!" },
     correctAnswer: "D",
   },
   {
-    questionText:
-      "Shows a plural possessive where the noun does not end in 's' (e.g., children's).",
-    choices: { A: "'s", B: "s'", C: '"s"', D: "s-" },
-    correctAnswer: "A",
-  },
-  {
-    questionText: "Used to indicate a span or range (e.g., pages 10-20).",
-    choices: { A: ":", B: "-", C: "...", D: '" "' },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Often used to separate items in a series that already contain commas.",
-    choices: { A: ",", B: ";", C: ".", D: "!" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Indicates that something has been left out of a quotation.",
-    choices: { A: '" "', B: "[...]", C: "-", D: ";" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Used to enclose slang words or expressions when writing formally.",
-    choices: { A: "' '", B: '" "', C: ",", D: "." },
-    correctAnswer: "A",
-  },
-  {
-    questionText: "Separates the parts of a web address.",
-    choices: { A: ",", B: ".", C: ":", D: "/" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to create prefixes (e.g., un-happy).",
-    choices: { A: ":", B: "-", C: "...", D: '" "' },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to introduce a formal statement or resolution.",
-    choices: { A: ",", B: ":", C: "-", D: "." },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Indicates a brief pause within a sentence, often to separate clauses.",
-    choices: { A: ";", B: "...", C: ",", D: "-" },
-    correctAnswer: "C",
-  },
-  {
-    questionText: "Used at the end of a declarative sentence.",
-    choices: {
-      A: "question mark",
-      B: "period",
-      C: "exclamation point",
-      D: "comma",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Separates items in a list of three or more things.",
-    choices: { A: "semicolon", B: "period", C: "comma", D: "hyphen" },
+    questionText: "Which punctuation separates items in a list?",
+    choices: { A: ";", B: ":", C: ",", D: "." },
     correctAnswer: "C",
   },
   {
     questionText:
-      "Indicates a trailing off or that something has been omitted.",
-    choices: {
-      A: "colon",
-      B: "ellipsis",
-      C: "quotation marks",
-      D: "exclamation point",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Introduces a list or an explanation.",
-    choices: { A: "semicolon", B: "colon", C: "hyphen", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      "Joins two or more words to form a compound adjective before a noun.",
-    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Encloses direct speech.",
-    choices: { A: "apostrophe", B: "quotation marks", C: "comma", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used to show possession.",
-    choices: {
-      A: "quotation marks",
-      B: "apostrophe",
-      C: "comma",
-      D: "question mark",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used at the end of an interrogative sentence.",
-    choices: {
-      A: "period",
-      B: "question mark",
-      C: "exclamation point",
-      D: "semicolon",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Used after a salutation in a formal letter.",
-    choices: { A: "comma", B: "semicolon", C: "colon", D: "period" },
-    correctAnswer: "C",
-  },
-  {
-    questionText: "Indicates a pause or a break in thought.",
-    choices: {
-      A: "quotation marks",
-      B: "ellipsis",
-      C: "hyphen",
-      D: "semicolon",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: "Sets off nonessential clauses or phrases.",
-    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: ' Connects parts of compound words like "sister-in-law".',
-    choices: {
-      A: "semicolon",
-      B: "hyphen",
-      C: "ellipsis",
-      D: "quotation marks",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: ' Shows omitted letters in contractions like "don\'t".',
-    choices: { A: "quotation marks", B: "apostrophe", C: "comma", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Separates hours and minutes when writing time.",
-    choices: { A: "comma", B: "period", C: "colon", D: "hyphen" },
-    correctAnswer: "C",
-  },
-  {
-    questionText: " Used at the end of an emphatic statement.",
-    choices: {
-      A: "question mark",
-      B: "period",
-      C: "exclamation point",
-      D: "comma",
-    },
-    correctAnswer: "C",
-  },
-  {
-    questionText: " Indicates a direct address.",
-    choices: { A: "quotation marks", B: "comma", C: "ellipsis", D: "colon" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      ' Used before words like "however" and "therefore" when they connect independent clauses.',
-    choices: {
-      A: "comma",
-      B: "semicolon",
-      C: "period",
-      D: "exclamation point",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Introduces examples or explanations.",
-    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Can indicate a range of numbers or years.",
-    choices: {
-      A: "semicolon",
-      B: "hyphen",
-      C: "ellipsis",
-      D: "quotation marks",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Sets off appositives (renaming nouns).",
-    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: ' Shows singular possession (e.g., "the dog\'s bone").',
-    choices: {
-      A: "apostrophe s",
-      B: "s apostrophe",
-      C: "quotation marks s",
-      D: "s hyphen",
-    },
-    correctAnswer: "A",
-  },
-  {
-    questionText:
-      " Shows plural possession for nouns ending in 's' (e.g., \"the students' desks\").",
-    choices: {
-      A: "apostrophe s",
-      B: "s apostrophe",
-      C: "quotation marks s",
-      D: "s hyphen",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: ' Used to create compound nouns like "passer-by".',
-    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      " Often used in bibliographies to separate parts of a citation.",
-    choices: {
-      A: "comma",
-      B: "semicolon",
-      C: "period",
-      D: "exclamation point",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Indicates a thought that is interrupted or incomplete.",
-    choices: {
-      A: "quotation marks",
-      B: "ellipsis",
-      C: "hyphen",
-      D: "semicolon",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Encloses titles of short works like songs or articles.",
-    choices: { A: "quotation marks", B: "apostrophe", C: "comma", D: "period" },
-    correctAnswer: "A",
-  },
-  {
-    questionText: " Used to set off introductory phrases.",
-    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Separates the city and state in an address.",
-    choices: { A: "semicolon", B: "hyphen", C: "comma", D: "colon" },
-    correctAnswer: "C",
-  },
-  {
-    questionText:
-      " Used to provide further detail or explanation after an independent clause.",
-    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: ' Can be used to create prefixes like "pre-war".',
-    choices: {
-      A: "semicolon",
-      B: "hyphen",
-      C: "ellipsis",
-      D: "quotation marks",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      " Sets off parenthetical elements that are closely related to the sentence.",
-    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Used to ask a direct question.",
-    choices: {
-      A: "period",
-      B: "question mark",
-      C: "exclamation point",
-      D: "semicolon",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Expresses strong emotion or surprise.",
-    choices: {
-      A: "question mark",
-      B: "period",
-      C: "exclamation point",
-      D: "comma",
-    },
-    correctAnswer: "C",
-  },
-  {
-    questionText: " Separates the month and day of the month.",
-    choices: { A: "semicolon", B: "hyphen", C: "comma", D: "colon" },
-    correctAnswer: "C",
-  },
-  {
-    questionText: " Used after the closing of an informal letter.",
-    choices: { A: "comma", B: "semicolon", C: "colon", D: "period" },
-    correctAnswer: "A",
-  },
-  {
-    questionText: " Indicates a very short pause within a sentence.",
-    choices: { A: "semicolon", B: "ellipsis", C: "comma", D: "hyphen" },
-    correctAnswer: "C",
-  },
-  {
-    questionText:
-      " Connects words that function together as a single modifier before a noun.",
-    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Introduces a formal quotation.",
-    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Can be used to create compound verbs (less common).",
-    choices: {
-      A: "semicolon",
-      B: "hyphen",
-      C: "ellipsis",
-      D: "quotation marks",
-    },
-    correctAnswer: "B",
-  },
-  {
-    questionText: ' Sets off interjections like "Wow!"',
-    choices: { A: "period", B: "comma", C: "colon", D: "exclamation point" },
+      "Choose the correct punctuation: I bought apples__ oranges, and bananas.",
+    choices: { A: ":", B: ";", C: ".", D: "," },
     correctAnswer: "D",
   },
   {
-    questionText:
-      ' Shows plural possession for irregular nouns (e.g., "the children\'s toys").',
+    questionText: "What punctuation is missing? After lunch__ we went outside.",
+    choices: { A: ".", B: ";", C: "!", D: "," },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Use a comma to:",
     choices: {
-      A: "apostrophe s",
-      B: "s apostrophe",
-      C: "quotation marks s",
-      D: "s hyphen",
+      A: "End a sentence",
+      B: "Show surprise",
+      C: "Separate ideas",
+      D: "Ask a question",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Where does the comma go? First we ate dinner",
+    choices: {
+      A: "First we, ate dinner",
+      B: "First, we ate dinner",
+      C: "First we ate, dinner",
+      D: "First we ate dinner,",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText: "Which sentence is correct?",
+    choices: {
+      A: "Yes, I will go.",
+      B: "Yes I will go.",
+      C: "Yes. I will, go.",
+      D: "Yes I, will go.",
     },
     correctAnswer: "A",
   },
   {
-    questionText: " Used to indicate a score or ratio.",
-    choices: { A: "comma", B: "hyphen", C: "ellipsis", D: "colon" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      " Separates independent clauses linked by a conjunctive adverb.",
+    questionText: "Choose the correctly punctuated list:",
     choices: {
-      A: "comma",
-      B: "semicolon",
-      C: "period",
-      D: "exclamation point",
+      A: "We saw lions and tigers, bears",
+      B: "We saw lions, and tigers and bears",
+      C: "We saw lions and, tigers and bears",
+      D: "We saw lions, tigers, and bears",
     },
-    correctAnswer: "B",
+    correctAnswer: "D",
   },
   {
-    questionText: " Indicates missing words in a quotation.",
+    questionText: "Commas are used:",
     choices: {
-      A: "quotation marks",
-      B: "ellipsis",
-      C: "hyphen",
-      D: "semicolon",
+      A: "To end sentences",
+      B: "Before questions",
+      C: "To separate items",
+      D: "To show excitement",
     },
-    correctAnswer: "B",
+    correctAnswer: "C",
   },
   {
-    questionText: " Encloses words used in a special or ironic sense.",
-    choices: { A: "apostrophe", B: "quotation marks", C: "comma", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Separates parts of an email address.",
-    choices: { A: "comma", B: "period", C: "colon", D: "hyphen" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Used to create suffixes (less common).",
-    choices: { A: "colon", B: "hyphen", C: "ellipsis", D: "quotation marks" },
-    correctAnswer: "B",
-  },
-  {
-    questionText: " Introduces a formal resolution or motion.",
-    choices: { A: "comma", B: "colon", C: "hyphen", D: "period" },
-    correctAnswer: "B",
-  },
-  {
-    questionText:
-      " Indicates a contrast or a connection between two parts of a sentence.",
-    choices: { A: "semicolon", B: "ellipsis", C: "comma", D: "hyphen" },
+    questionText: "Select the correct use:",
+    choices: {
+      A: "Before leaving, check your bag.",
+      B: "Before, leaving check your bag.",
+      C: "Before leaving check, your bag.",
+      D: "Before leaving check your bag",
+    },
     correctAnswer: "A",
   },
   {
     questionText:
-      "Connects two independent clauses that are closely related in meaning.",
+      "What punctuation is used after introductory words like “However” or “Yes”?",
+    choices: { A: ".", B: ":", C: ";", D: "," },
+    correctAnswer: "D",
+  },
+  {
+    questionText: "Which is punctuated correctly?",
     choices: {
-      A: "comma",
-      B: "semicolon",
-      C: "quotation marks",
-      D: "question mark",
+      A: "No I don’t want to.",
+      B: "No I, don’t want to.",
+      C: "No, I don’t want to.",
+      D: "No. I don’t want to",
+    },
+    correctAnswer: "C",
+  },
+  {
+    questionText:
+      "Where do commas go? We went to school the library and the store",
+    choices: {
+      A: "We went to school, the library and the store",
+      B: "We went to school, the library, and the store",
+      C: "We went, to school the library, and the store",
+      D: "We went to school the library, and, the store",
     },
     correctAnswer: "B",
+  },
+  {
+    questionText: "Choose the correct sentence:",
+    choices: {
+      A: "Well, that was fun.",
+      B: "Well that, was fun.",
+      C: "Well that was fun,",
+      D: "Well, that, was fun",
+    },
+    correctAnswer: "A",
+  },
+  {
+    questionText: "Commas are helpful when:",
+    choices: {
+      A: "Separating parts of a sentence",
+      B: "Ending a command",
+      C: "Asking something",
+      D: "Starting a question",
+    },
+    correctAnswer: "A",
+  },
+  {
+    questionText:
+      "What punctuation is missing? After the game__ we got ice cream.",
+    choices: { A: ".", B: "?", C: ",", D: ";" },
+    correctAnswer: "C",
+  },
+  {
+    questionText: "Find the correct sentence:",
+    choices: {
+      A: "Wait let me help.",
+      B: "Wait, let me help.",
+      C: "Wait let me, help.",
+      D: "Wait. Let me help",
+    },
+    correctAnswer: "B",
+  },
+  {
+    questionText:
+      "Which punctuation is used before a conjunction like “but” or “and”?",
+    choices: { A: ":", B: ";", C: ".", D: "," },
+    correctAnswer: "D",
   },
 ];
 
