@@ -30,7 +30,7 @@ function CapLevel3() {
   const [index, setIndex] = useState(0);
   const [stars, setStars] = useState(0);
   const [completed, setCompleted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30); // Changed initial time to 30 seconds
+  const [timeLeft, setTimeLeft] = useState(30);
   const [gameOver, setGameOver] = useState(false);
   const [shuffledSentences, setShuffledSentences] = useState<Word3[]>([]);
   const [popKey, setPopKey] = useState(0);
@@ -69,21 +69,22 @@ function CapLevel3() {
       timeLeft > 0 &&
       !completed &&
       !gameOver &&
-      !showFeedback
+      !showFeedback &&
+      questionsAnswered < 10
     ) {
       const timer = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
       return () => clearTimeout(timer);
     }
-    if (timeLeft === 0 && !showFeedback) {
+    if (timeLeft === 0 && !showFeedback && questionsAnswered < 10) {
       setShowFeedback(true);
       setIsCorrect(false);
       setFeedbackSentence(shuffledSentences[index]?.correctSentence || "");
       if (clickEnabled) playWrongSound();
       setTimeout(() => {
-        if (questionsAnswered + 1 < 10) {
+        if (index + 1 < shuffledSentences.length && questionsAnswered < 9) {
           setIndex((i) => i + 1);
           setUserAnswer("");
-          setTimeLeft(30); // Reset time to 30 seconds
+          setTimeLeft(30);
           setShowFeedback(false);
           setIsCorrect(false);
           setFeedbackSentence("");
@@ -93,6 +94,9 @@ function CapLevel3() {
           if (clickEnabled) playLoseSound();
         }
       }, 3000);
+    } else if (timeLeft === 0 && questionsAnswered >= 10 && !completed) {
+      setGameOver(true);
+      if (clickEnabled) playLoseSound();
     }
   }, [
     timeLeft,
@@ -117,18 +121,18 @@ function CapLevel3() {
     }
   }, [showFeedback, inputRef]);
 
+  // Copying the exact approach from Level 2
   useEffect(() => {
-    if (questionsAnswered === 10) {
-      if (stars >= 7 && stars <= 10 && !completed) {
-        setCompleted(true);
-        if (clickEnabled) playWinSound();
-        if (user?.username) {
-          markLevelComplete(user.username, "capitalization", 2, setUser, stars);
-        }
-      } else if (!gameOver) {
-        setGameOver(true);
-        if (clickEnabled) playLoseSound();
+    if (stars >= 7 && stars <= 10 && questionsAnswered === 10 && !completed) {
+      setCompleted(true);
+      if (clickEnabled) playWinSound();
+      if (user?.username) {
+        markLevelComplete(user.username, "capitalization", 2, setUser, stars);
       }
+    } else if (questionsAnswered === 10 && stars < 7 && !gameOver) {
+      // Game over if all questions are answered but not enough stars
+      setGameOver(true);
+      if (clickEnabled) playLoseSound();
     }
   }, [
     stars,
@@ -139,6 +143,7 @@ function CapLevel3() {
     playWinSound,
     gameOver,
     questionsAnswered,
+    playLoseSound,
   ]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -160,46 +165,31 @@ function CapLevel3() {
     const isAnswerCorrect = userAnswer.trim() === currentSentence.trim();
     setIsCorrect(isAnswerCorrect);
     setFeedbackSentence(currentSentence);
-    // setUserAnswer(currentSentence); // Directly put the correct sentence in the input
 
     setTimeout(() => {
+      setQuestionsAnswered((prev) => prev + 1);
       if (isAnswerCorrect) {
         if (clickEnabled) playCorrectSound();
         setTimeLeft((t) => Math.max(t + 5, 0));
         setStars((s) => s + 1);
         setPopKey((k) => k + 1);
-        if (questionsAnswered + 1 < 10) {
+        if (questionsAnswered < 9 && index + 1 < shuffledSentences.length) {
           setIndex((i) => i + 1);
           setUserAnswer("");
-          setTimeLeft(30); // Reset time to 30 seconds
+          setTimeLeft(30);
           setShowFeedback(false);
-          setIsCorrect(false);
-          setFeedbackSentence("");
-          setQuestionsAnswered((prev) => prev + 1);
-        } else if (stars >= 7 && stars <= 10 && !completed) {
-          setCompleted(true);
-        } else if (!gameOver) {
-          setGameOver(true);
-          if (clickEnabled) playLoseSound();
+        } else if (questionsAnswered >= 9) {
+          setShowFeedback(false);
         }
       } else {
         if (clickEnabled) playWrongSound();
-        if (questionsAnswered + 1 < 10) {
+        if (questionsAnswered < 9 && index + 1 < shuffledSentences.length) {
           setIndex((i) => i + 1);
           setUserAnswer("");
-          setTimeLeft(30); // Reset time to 30 seconds
+          setTimeLeft(30);
           setShowFeedback(false);
-          setIsCorrect(false);
-          setFeedbackSentence("");
-          setQuestionsAnswered((prev) => prev + 1);
-          if (inputRef.current) {
-            inputRef.current.focus();
-          }
-        } else if (stars >= 7 && stars <= 10 && !completed) {
-          setCompleted(true);
-        } else if (!gameOver) {
-          setGameOver(true);
-          if (clickEnabled) playLoseSound();
+        } else if (questionsAnswered >= 9) {
+          setShowFeedback(false);
         }
       }
     }, 2000);
@@ -209,7 +199,7 @@ function CapLevel3() {
     const selectedWords = shuffleArray(allWords).slice(0, 10);
     setIndex(0);
     setStars(0);
-    setTimeLeft(30); // Reset time to 30 seconds
+    setTimeLeft(30);
     setCompleted(false);
     setGameOver(false);
     setShuffledSentences(selectedWords as Word3[]);
@@ -226,7 +216,7 @@ function CapLevel3() {
     setShowInstructions(false);
     setIndex(0);
     setStars(0);
-    setTimeLeft(30); // Reset time to 30 seconds
+    setTimeLeft(30);
     setCompleted(false);
     setGameOver(false);
     setUserAnswer("");
@@ -379,7 +369,7 @@ function CapLevel3() {
                 type="text"
                 value={userAnswer}
                 onChange={handleInputChange}
-                className=" w-full border-6 text-5xl font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl
+                className="w-full border-6 text-5xl font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl
                   focus:outline-none focus:ring-2 focus:ring-yellow-800/25 disabled:opacity-50"
                 placeholder="Type your answer here"
                 disabled={completed || gameOver || showFeedback}
