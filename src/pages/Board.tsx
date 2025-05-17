@@ -8,6 +8,7 @@ import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "../utils/localstorage";
+import { downloadCertificatePDF } from "../utils/pdf";
 import type { User, Achievements, AchievementCardProps } from "../types";
 import { FirestoreError } from "firebase/firestore";
 import { getUsers } from "../services/User"; // Import your Firebase functions
@@ -346,12 +347,31 @@ function Board() {
                   {currentUserPoints !== null ? currentUserPoints : "-"} Points
                 </p>
               </div>
-              <button
-                className="bg-yellow-500 text-white px-8 py-4 rounded-xl  text-xl hover:scale-90 mt-4"
-                style={{ fontFamily: "Arco" }}
-              >
-                Download Certificate
-              </button>
+              {currentUserRank !== null &&
+                currentUserName !== null &&
+                currentUserRank <= 3 && (
+                  <button
+                    className={`${
+                      currentUserRank === 1
+                        ? "bg-yellow-500"
+                        : currentUserRank === 2
+                        ? "bg-gray-300"
+                        : "bg-amber-950"
+                    } ${
+                      currentUserRank === 1
+                        ? "text-white"
+                        : currentUserRank === 2
+                        ? "text-black/75"
+                        : "text-white"
+                    } px-8 py-4 rounded-xl  text-xl hover:scale-90 mt-4`}
+                    style={{ fontFamily: "Arco" }}
+                    onClick={() =>
+                      downloadCertificatePDF(currentUserRank, currentUserName)
+                    }
+                  >
+                    Download Certificate
+                  </button>
+                )}
             </div>
           </div>
         ) : (

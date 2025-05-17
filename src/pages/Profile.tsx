@@ -289,14 +289,6 @@ export default function Profile() {
                   >
                     {data?.title || "Locked"}
                   </span>
-                  {data?.description && achieved && (
-                    <span
-                      className="text-sm text-gray-300 text-center"
-                      style={{ fontFamily: "Arco" }}
-                    >
-                      {data.description}
-                    </span>
-                  )}
                 </div>
               );
             })}
