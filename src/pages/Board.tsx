@@ -8,10 +8,7 @@ import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "../utils/localstorage";
-import {
-  downloadCertificatePDF,
-  downloadCompletionCertificatePDF,
-} from "../utils/pdf";
+import { downloadCertificatePDF } from "../utils/pdf";
 import type { User, Achievements, AchievementCardProps } from "../types";
 import { FirestoreError } from "firebase/firestore";
 import { getUsers } from "../services/User"; // Import your Firebase functions
