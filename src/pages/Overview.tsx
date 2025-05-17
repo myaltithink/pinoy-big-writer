@@ -8,7 +8,7 @@ function Overview() {
   const { user } = useUserStore();
 
   return (
-    <div className="w-screen h-screen background ff9288] flex items-center justify-center overflow-hidden">
+    <div className="w-dvw h-dvh background  flex items-center justify-center overflow-hidden">
       <motion.div
         className="w-full h-full overview"
         initial={{ y: -100 }}

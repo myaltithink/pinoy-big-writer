@@ -97,7 +97,7 @@ function Login() {
   };
 
   return (
-    <div className="w-screen h-screen p-4 flex items-center justify-center background">
+    <div className="w-dvw h-dvh p-4 flex items-center justify-center background">
       {step === 1 && (
         <div className="flex flex-col justify-center items-center gap-4">
           <h2
@@ -156,7 +156,7 @@ function Login() {
                 key={avatar}
                 src={avatar}
                 alt="avatar"
-                className={`w-40 h-40 rounded-full cursor-pointer border-6 ${
+                className={`w-[10dvw] h-[10dvw] rounded-full cursor-pointer border-6 ${
                   selectedAvatar === avatar
                     ? "border-yellow-800"
                     : "border-yellow-300"

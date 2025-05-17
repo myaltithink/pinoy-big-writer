@@ -34,11 +34,11 @@ function Loading() {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-hidden flex flex-col items-center justify-center background">
+    <div className="w-dwv h-dvh overflow-hidden flex flex-col items-center justify-center background">
       <motion.img
         src="house.png"
         alt="Loading house"
-        className="w-[600px] h-auto"
+        className="w-[20%] h-auto"
         initial={{ scale: 1, x: 0, y: 0 }}
         animate={
           startZoom
