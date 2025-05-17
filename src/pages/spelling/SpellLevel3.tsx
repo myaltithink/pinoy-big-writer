@@ -46,7 +46,6 @@ function SpellLevel3() {
   const [popKey, setPopKey] = useState(0);
 
   const inputRef = useRef<HTMLInputElement>(null);
-
   const { user, setUser } = useUserStore();
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
@@ -70,7 +69,6 @@ function SpellLevel3() {
   }, [index, showInstructions, completed, gameOver]);
 
   useEffect(() => {
-    // Take the first 10 questions and shuffle them
     const selectedQuestions = shuffleArray(allQuestions).slice(0, 10);
     setShuffledQuestions(selectedQuestions);
   }, [allQuestions]);
@@ -89,11 +87,11 @@ function SpellLevel3() {
       }, 1000);
       return () => {
         clearTimeout(timeoutId);
-        stopSpeakingUtil(); // Stop speaking when the component unmounts or index changes
+        stopSpeakingUtil();
       };
     }
     return () => {
-      stopSpeakingUtil(); // Also stop speaking if shuffledQuestions becomes empty
+      stopSpeakingUtil();
     };
   }, [shuffledQuestions, index]);
 
@@ -113,18 +111,20 @@ function SpellLevel3() {
         setTimeout(() => {
           setIsCorrect(null);
           setTypedAnswer("");
-          if (index + 1 === shuffledQuestions.length && stars < 7) {
-            setGameOver(true);
-            playLoseSound();
-          } else if (index + 1 < shuffledQuestions.length) {
+          if (index + 1 < shuffledQuestions.length) {
             setIndex((i) => i + 1);
             setTimeLeft(20);
-          } else if (stars >= 7) {
-            setCompleted(true);
-            playWinSound();
           } else {
-            setGameOver(true);
-            playLoseSound();
+            if (stars >= 7) {
+              setCompleted(true);
+              playWinSound();
+              if (user?.username) {
+                markLevelComplete(user.username, "spelling", 2, setUser, stars);
+              }
+            } else {
+              setGameOver(true);
+              playLoseSound();
+            }
           }
         }, 2000);
       }
@@ -140,17 +140,9 @@ function SpellLevel3() {
     playWrongSound,
     playLoseSound,
     playWinSound,
+    user,
+    setUser,
   ]);
-
-  useEffect(() => {
-    if (stars >= 7 && !completed) {
-      setCompleted(true);
-      playWinSound();
-      if (user?.username) {
-        markLevelComplete(user.username, "spelling", 2, setUser, stars);
-      }
-    }
-  }, [stars, user, setUser, completed, playWinSound]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTypedAnswer(event.target.value);
@@ -168,34 +160,35 @@ function SpellLevel3() {
       playCorrectSound();
       setStars((s) => s + 1);
       setPopKey((k) => k + 1);
-      setTimeout(() => {
-        setIsCorrect(null);
-        setTypedAnswer("");
-        if (index + 1 < shuffledQuestions.length) {
-          setIndex((i) => i + 1);
-          setTimeLeft(20);
-        } else if (stars + 1 >= 7) {
+    } else {
+      playWrongSound();
+    }
+
+    setTimeout(() => {
+      setIsCorrect(null);
+      setTypedAnswer("");
+      if (index + 1 < shuffledQuestions.length) {
+        setIndex((i) => i + 1);
+        setTimeLeft(20);
+      } else {
+        if (correct && stars + 1 >= 7) {
           setCompleted(true);
           playWinSound();
+          if (user?.username) {
+            markLevelComplete(user.username, "spelling", 2, setUser, stars + 1);
+          }
+        } else if (!correct && stars >= 7) {
+          setCompleted(true);
+          playWinSound();
+          if (user?.username) {
+            markLevelComplete(user.username, "spelling", 2, setUser, stars);
+          }
         } else {
           setGameOver(true);
           playLoseSound();
         }
-      }, 2000);
-    } else {
-      playWrongSound();
-      setTimeout(() => {
-        setIsCorrect(null);
-        setTypedAnswer("");
-        if (index + 1 < shuffledQuestions.length) {
-          setIndex((i) => i + 1);
-          setTimeLeft(20);
-        } else if (stars < 7) {
-          setGameOver(true);
-          playLoseSound();
-        }
-      }, 2000);
-    }
+      }
+    }, 2000);
   };
 
   const handleStartGame = () => {
@@ -237,7 +230,7 @@ function SpellLevel3() {
 
   useEffect(() => {
     return () => {
-      stopSpeakingUtil(); // Stop speaking when the component unmounts
+      stopSpeakingUtil();
     };
   }, []);
 
@@ -304,8 +297,7 @@ function SpellLevel3() {
             <p className="text-justify text-3xl font-medium">
               Listen to the word, and then type the correct spelling of the word
               shown with scrambled letters. You have 20 seconds per question.
-              Get a minimum of 7 correct answers out of 10 to complete the
-              level.
+              Get at least 7 correct answers out of 10 to complete the level.
             </p>
             <button
               onClick={handleStartGame}
