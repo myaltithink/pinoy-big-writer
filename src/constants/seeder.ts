@@ -898,32 +898,12 @@ export const practiceQuestions: Question[] = [
   {
     question: "Which sentence is correctly written?",
     choices: [
-      "The team played hard but lost the game.",
-      "The team played hard, but lost the game.",
-      "the team played hard but lost the game.",
-      "The team played hard, but lost the Game",
-    ],
-    answerIndex: 1,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
       "I visited the musuem last weekend.",
       "i visited the museum last weekend.",
       "I visited the museum last weekend.",
       "I visited the Museum last weekend",
     ],
     answerIndex: 2,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
-      "He wanted a pizza for lunch, but we had pasta.",
-      "He wanted a pizza for lunch but we had pasta.",
-      "He wanted a pizza, for lunch but we had pasta.",
-      "he wanted a pizza for lunch, but we had pasta",
-    ],
-    answerIndex: 0,
   },
   {
     question: "Which sentence is correctly written?",
@@ -1048,16 +1028,6 @@ export const practiceQuestions: Question[] = [
   {
     question: "Which sentence is correctly written?",
     choices: [
-      "I enjoy watching sports on TV.",
-      "i enjoy watching sports on TV.",
-      "I enjoy watching sports on tv.",
-      "I enjoy watching Sports on TV.",
-    ],
-    answerIndex: 0,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
       "We will have a big Party for his birthday.",
       "We will have a big party for his birthday.",
       "We will have a Big party for his Birthday.",
@@ -1084,16 +1054,6 @@ export const practiceQuestions: Question[] = [
       "They went on a Vacation to New York City.",
     ],
     answerIndex: 1,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
-      "A. I cant believe how quickly the time has passed.",
-      "B. i can't believe, how quickly the time has passed.",
-      "C. I can’t believe how quickly the time has passed.",
-      "D. i can’t believe how quickly the time has passed.",
-    ],
-    answerIndex: 2,
   },
   {
     question: "Which sentence is correctly written?",
@@ -1148,16 +1108,6 @@ export const practiceQuestions: Question[] = [
   {
     question: "Which sentence is correctly written?",
     choices: [
-      "The store is Closed on Sunday.",
-      "The store is closed on sunday.",
-      "The store is closed on Sunday.",
-      "The store is closed on Sunday",
-    ],
-    answerIndex: 2,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
       "I want to eat Pizza and pasta for dinner.",
       "I want to eat pizza and Pasta for dinner.",
       "I want to eat pizza and pasta for Dinner.",
@@ -1174,26 +1124,6 @@ export const practiceQuestions: Question[] = [
       "Please take care of the dog while I'm away.",
     ],
     answerIndex: 0,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
-      "Can you help me with this exrcise?",
-      "Can you help me with this excersize?",
-      "Can you help me with this excerzise?",
-      "Can you help me with this exercise?",
-    ],
-    answerIndex: 3,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
-      "We met at the café for a Coffee.",
-      "We met at the Café for a coffee.",
-      "We met at the cafe for a coffee.",
-      "We met at the café for A coffee.",
-    ],
-    answerIndex: 2,
   },
   {
     question: "Which sentence is correctly written?",
@@ -1222,16 +1152,6 @@ export const practiceQuestions: Question[] = [
       "The cat jumped off the sofa.",
       "The cat jumped off the sofa.",
       "The cat jumped off the sofa.",
-    ],
-    answerIndex: 0,
-  },
-  {
-    question: "Which sentence is correctly written?",
-    choices: [
-      "He studies at Harvard University.",
-      "He studies at Harvard University.",
-      "He studies at Harvard University.",
-      "He studies at harvard university.",
     ],
     answerIndex: 0,
   },
