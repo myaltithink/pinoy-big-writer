@@ -68,13 +68,15 @@ function Games() {
 
   return (
     <div
-      className={`w-screen h-screen flex flex-col items-center background ${
+      className={`w-dvw h-dvh flex flex-col items-center background ${
         isMediumScreen ? "p-2" : "p-8"
       }`}
     >
       {/* Top bar */}
       <div
-        className={`w-${isMediumScreen ? "[100%]" : "[90%]"} flex justify-end`}
+        className={`${
+          isMediumScreen ? "w-[100%]" : "w-[90%]"
+        } flex justify-end`}
       >
         <div className="flex items-center gap-14">
           <Link to="/board/achievements">

@@ -97,7 +97,10 @@ export default function Home() {
           }}
         >
           <img src={user?.avatar} alt="" className="w-10 h-10  rounded-full " />
-          <span className="text-2xl text-white" style={{ fontFamily: "Arco" }}>
+          <span
+            className={`${isMediumScreen ? "text-md" : "text-2xl"} text-white`}
+            style={{ fontFamily: "Arco" }}
+          >
             {user?.username}
           </span>
         </motion.div>
