@@ -12,6 +12,7 @@ import { useWindowSize } from "react-use";
 import { MdTimer } from "react-icons/md";
 import useSound from "use-sound";
 import { useSoundContext } from "../../layouts/SoundProvider";
+import { useScreenSize } from "../../layouts/ScreenSizeProvider"; // Import the hook
 
 const correctSoundPath = "/sounds/correct.mp3";
 const wrongSoundPath = "/sounds/wrong.mp3";
@@ -46,6 +47,7 @@ function CapLevel3() {
   const timerControls = useAnimation();
   const inputRef = useRef<HTMLInputElement>(null);
   const { clickEnabled } = useSoundContext();
+  const { isMediumScreen } = useScreenSize(); // Use the hook
 
   const [playCorrectSound] = useSound(correctSoundPath, {
     soundEnabled: clickEnabled,
@@ -121,7 +123,6 @@ function CapLevel3() {
     }
   }, [showFeedback, inputRef]);
 
-  // Copying the exact approach from Level 2
   useEffect(() => {
     if (stars >= 7 && stars <= 10 && questionsAnswered === 10 && !completed) {
       setCompleted(true);
@@ -130,7 +131,6 @@ function CapLevel3() {
         markLevelComplete(user.username, "capitalization", 2, setUser, stars);
       }
     } else if (questionsAnswered === 10 && stars < 7 && !gameOver) {
-      // Game over if all questions are answered but not enough stars
       setGameOver(true);
       if (clickEnabled) playLoseSound();
     }
@@ -244,19 +244,37 @@ function CapLevel3() {
   const progress = (stars / 10) * 100;
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center background p-8">
+    <div
+      className={`w-dvw h-dvh flex flex-col items-center background ${
+        isMediumScreen ? "p-2" : "p-8"
+      }`}
+    >
       {completed && <Confetti width={width} height={height} />}
-      <div className="flex-1 w-full flex flex-col items-center justify-center gap-8 p-8 border-8 rounded-xl border-black/50 bg-black/75">
+      <div
+        className={`flex-1 w-full flex flex-col items-center justify-center ${
+          isMediumScreen ? "gap-4 p-4" : "gap-8 p-8"
+        } border-8 rounded-xl border-black/50 bg-black/75`}
+      >
         {!showInstructions && !completed && !gameOver && (
-          <div className="w-[60%] flex justify-between items-center mb-6">
+          <div
+            className={`flex justify-between items-center ${
+              isMediumScreen ? "w-[80%] mb-3" : "w-[60%] mb-6"
+            }`}
+          >
             <motion.div
               animate={timerControls}
               initial={{ x: 0 }}
               className="flex flex-col items-center gap-0 relative"
             >
-              <MdTimer className="text-red-500 text-2xl" />
+              <MdTimer
+                className={`text-red-500 ${
+                  isMediumScreen ? "text-xl" : "text-2xl"
+                }`}
+              />
               <span
-                className="font-semibold text-2xl text-white"
+                className={`font-semibold ${
+                  isMediumScreen ? "text-xl" : "text-2xl"
+                } text-white`}
                 style={{ fontFamily: "Arco" }}
               >
                 {timeLeft}s
@@ -267,7 +285,9 @@ function CapLevel3() {
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 0.3 }}
-              className="relative w-16 h-16"
+              className={`relative w-16 h-16 ${
+                isMediumScreen ? "w-10 h-10" : ""
+              }`}
             >
               <svg className="w-full h-full transform -rotate-90">
                 <circle
@@ -291,7 +311,11 @@ function CapLevel3() {
                   transition={{ duration: 0.5 }}
                 />
               </svg>
-              <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
+              <div
+                className={`absolute inset-0 flex items-center justify-center ${
+                  isMediumScreen ? "text-base" : "text-xl"
+                } font-bold text-white`}
+              >
                 {stars}⭐
               </div>
             </motion.div>
@@ -299,42 +323,79 @@ function CapLevel3() {
         )}
 
         {showInstructions ? (
-          <div className="flex flex-col gap-4 text-white text-2xl w-[60%]">
-            <span className="text-3xl" style={{ fontFamily: "Arco" }}>
+          <div
+            className={`flex flex-col gap-${
+              isMediumScreen ? "2" : "4"
+            } text-white text-${isMediumScreen ? "xl" : "2xl"} w-[60%]`}
+          >
+            <span
+              className={`${isMediumScreen ? "text-2xl" : "text-3xl "}`}
+              style={{ fontFamily: "Arco" }}
+            >
               Instructions
             </span>
-            <p className="text-justify text-3xl font-medium">
+            <p
+              className={`text-justify font-medium text-${
+                isMediumScreen ? "xl" : "3xl"
+              }`}
+            >
               Type the sentence with correct capitalization. You have 30 seconds
               per question. Get a minimum of 7 stars and a maximum of 10 stars
             </p>
             <button
               onClick={handleStartGame}
-              className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit text-xl"
+              className={`bg-green-500 text-white px-${
+                isMediumScreen ? 3 : 6
+              } py-${
+                isMediumScreen ? 1 : 3
+              } rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit text-${
+                isMediumScreen ? "md" : "xl"
+              }`}
               style={{ fontFamily: "Arco" }}
             >
               Start Game
             </button>
           </div>
         ) : gameOver ? (
-          <div className="text-white text-3xl text-center">
+          <div
+            className={`text-white text-center text-${
+              isMediumScreen ? "2xl" : "3xl"
+            }`}
+          >
             <p style={{ fontFamily: "Arco" }}>Game Over!</p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <button
               onClick={handleRestart}
-              className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+              className={`bg-green-500 text-white mt-4 px-${
+                isMediumScreen ? 3 : 6
+              } py-${
+                isMediumScreen ? 1 : 3
+              } rounded-xl hover:scale-95 transition text-${
+                isMediumScreen ? "md" : "xl"
+              }`}
               style={{ fontFamily: "Arco" }}
             >
               Try Again
             </button>
           </div>
         ) : completed ? (
-          <div className="text-white text-3xl text-center">
+          <div
+            className={`text-white text-center text-${
+              isMediumScreen ? "2xl" : "3xl"
+            }`}
+          >
             <p style={{ fontFamily: "Arco" }}>Level Complete!</p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <div className="flex mt-4 gap-4 justify-center">
               <button
                 onClick={handleRestart}
-                className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                className={`bg-green-500 text-white px-${
+                  isMediumScreen ? 3 : 6
+                } py-${
+                  isMediumScreen ? 1 : 3
+                } rounded-xl hover:scale-95 transition text-${
+                  isMediumScreen ? "md" : "xl"
+                }`}
                 style={{ fontFamily: "Arco" }}
               >
                 Play Again
@@ -342,15 +403,25 @@ function CapLevel3() {
             </div>
           </div>
         ) : shuffledSentences.length > 0 ? (
-          <div className="w-[60%] flex flex-col gap-6 text-white items-center">
+          <div
+            className={`w-[80%] flex flex-col gap-${
+              isMediumScreen ? 4 : 6
+            } text-white items-center`}
+          >
             {!showFeedback && (
-              <p className="text-5xl font-medium text-white text-center">
+              <p
+                className={`text-${
+                  isMediumScreen ? "3xl" : "5xl"
+                } font-medium text-white text-center`}
+              >
                 {shuffledSentences[index].incorrectSentence}
               </p>
             )}
             {showFeedback && (
               <p
-                className={`text-5xl font-medium text-center ${
+                className={`text-${
+                  isMediumScreen ? "3xl" : "5xl"
+                } font-medium text-center ${
                   isCorrect ? "text-green-500" : "text-red-500"
                 }`}
               >
@@ -369,15 +440,25 @@ function CapLevel3() {
                 type="text"
                 value={userAnswer}
                 onChange={handleInputChange}
-                className="w-full border-6 text-5xl font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl
-                  focus:outline-none focus:ring-2 focus:ring-yellow-800/25 disabled:opacity-50"
+                className={`w-full border-6 text-${
+                  isMediumScreen ? "2xl" : "5xl"
+                } font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-${
+                  isMediumScreen ? 2 : 4
+                } rounded-xl
+                  focus:outline-none focus:ring-2 focus:ring-yellow-800/25 disabled:opacity-50`}
                 placeholder="Type your answer here"
                 disabled={completed || gameOver || showFeedback}
               />
             </form>
             <button
               onClick={handleAnswer}
-              className={`w-full bg-blue-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl ${
+              className={`w-full bg-blue-500 text-white px-${
+                isMediumScreen ? 3 : 6
+              } py-${
+                isMediumScreen ? 1 : 3
+              } rounded-xl hover:scale-95 transition text-${
+                isMediumScreen ? "md" : "xl"
+              } ${
                 completed || gameOver || showFeedback || !userAnswer.trim()
                   ? "bg-gray-500"
                   : ""
@@ -399,7 +480,9 @@ function CapLevel3() {
 
       <Link to="/games/capitalization">
         <motion.div
-          className="w-16 h-16 bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4"
+          className={`w-${isMediumScreen ? 12 : 16} h-${
+            isMediumScreen ? 12 : 16
+          } bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           whileHover={{ scale: 0.8 }}

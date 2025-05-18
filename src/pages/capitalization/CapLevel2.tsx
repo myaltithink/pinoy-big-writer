@@ -12,6 +12,7 @@ import { useWindowSize } from "react-use";
 import { MdTimer } from "react-icons/md";
 import useSound from "use-sound";
 import { useSoundContext } from "../../layouts/SoundProvider";
+import { useScreenSize } from "../../layouts/ScreenSizeProvider"; // Import the hook
 
 const correctSoundPath = "/sounds/correct.mp3";
 const wrongSoundPath = "/sounds/wrong.mp3";
@@ -43,7 +44,8 @@ function CapLevel2() {
   const navigate = useNavigate();
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
-  const { clickEnabled } = useSoundContext(); // Get clickEnabled from the context
+  const { clickEnabled } = useSoundContext();
+  const { isMediumScreen } = useScreenSize(); // Use the hook
 
   const [playCorrectSound] = useSound(correctSoundPath, {
     soundEnabled: clickEnabled,
@@ -57,7 +59,6 @@ function CapLevel2() {
   });
 
   useEffect(() => {
-    // Directly use the flat array 'allWords'
     setShuffledWords(shuffleArray<Word2>(allWords));
   }, []);
 
@@ -75,7 +76,7 @@ function CapLevel2() {
     }
     if (timeLeft === 0 && !showFeedback && questionsAnswered < 10) {
       setShowFeedback(true);
-      if (clickEnabled) playWrongSound(); // Play wrong sound on time out if enabled
+      if (clickEnabled) playWrongSound();
       setTimeout(() => {
         if (index + 1 < shuffledWords.length && questionsAnswered < 9) {
           setIndex((i) => i + 1);
@@ -84,9 +85,9 @@ function CapLevel2() {
           setShowFeedback(false);
         } else {
           setGameOver(true);
-          if (clickEnabled) playLoseSound(); // Play lose sound on game over if enabled
+          if (clickEnabled) playLoseSound();
         }
-      }, 3000); // Show feedback for 3 seconds
+      }, 3000);
     } else if (timeLeft === 0 && questionsAnswered >= 10 && !completed) {
       setGameOver(true);
       if (clickEnabled) playLoseSound();
@@ -109,7 +110,7 @@ function CapLevel2() {
   useEffect(() => {
     if (stars >= 7 && stars <= 10 && questionsAnswered === 10 && !completed) {
       setCompleted(true);
-      if (clickEnabled) playWinSound(); // Play win sound on completion if enabled
+      if (clickEnabled) playWinSound();
       if (user?.username) {
         markLevelComplete(user.username, "capitalization", 1, setUser, stars);
       }
@@ -155,7 +156,7 @@ function CapLevel2() {
     setTimeout(() => {
       setQuestionsAnswered((prev) => prev + 1);
       if (selected === correct) {
-        if (clickEnabled) playCorrectSound(); // Play correct sound if enabled
+        if (clickEnabled) playCorrectSound();
         setTimeLeft((t) => Math.max(t + 5, 0));
         setStars((s) => s + 1);
         setPopKey((k) => k + 1);
@@ -168,7 +169,7 @@ function CapLevel2() {
           setShowFeedback(false);
         }
       } else {
-        if (clickEnabled) playWrongSound(); // Play wrong sound if enabled
+        if (clickEnabled) playWrongSound();
         if (questionsAnswered < 9 && index + 1 < shuffledWords.length) {
           setIndex((i) => i + 1);
           setSelectedIndexes([]);
@@ -221,22 +222,40 @@ function CapLevel2() {
   const progress = (stars / 10) * 100;
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center background p-8">
+    <div
+      className={`w-dvw h-dvh flex flex-col items-center background ${
+        isMediumScreen ? "p-2" : "p-8"
+      }`}
+    >
       {completed && <Confetti width={width} height={height} />}
-      <div className="flex-1 w-full flex flex-col items-center justify-center gap-8 p-8 border-8 rounded-xl border-black/50 bg-black/75">
+      <div
+        className={`flex-1 w-full flex flex-col items-center justify-center ${
+          isMediumScreen ? "gap-4 p-4" : "gap-8 p-8"
+        } border-8 rounded-xl border-black/50 bg-black/75`}
+      >
         {!showInstructions &&
           !completed &&
           !gameOver &&
           questionsAnswered < 10 && (
-            <div className="w-[60%] flex justify-between items-center mb-6">
+            <div
+              className={`flex justify-between items-center ${
+                isMediumScreen ? "w-[80%] mb-3" : "w-[60%] mb-6"
+              }`}
+            >
               <motion.div
                 animate={timerControls}
                 initial={{ x: 0 }}
                 className="flex flex-col items-center gap-0 relative"
               >
-                <MdTimer className="text-red-500 text-2xl" />
+                <MdTimer
+                  className={`text-red-500 ${
+                    isMediumScreen ? "text-xl" : "text-2xl"
+                  }`}
+                />
                 <span
-                  className="font-semibold text-2xl text-white"
+                  className={`font-semibold ${
+                    isMediumScreen ? "text-xl" : "text-2xl"
+                  } text-white`}
                   style={{ fontFamily: "Arco" }}
                 >
                   {timeLeft}s
@@ -247,7 +266,9 @@ function CapLevel2() {
                 initial={{ scale: 1 }}
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 0.3 }}
-                className="relative w-16 h-16"
+                className={`relative w-16 h-16 ${
+                  isMediumScreen ? "w-10 h-10" : ""
+                }`}
               >
                 <svg className="w-full h-full transform -rotate-90">
                   <circle
@@ -271,7 +292,11 @@ function CapLevel2() {
                     transition={{ duration: 0.5 }}
                   />
                 </svg>
-                <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
+                <div
+                  className={`absolute inset-0 flex items-center justify-center ${
+                    isMediumScreen ? "text-base" : "text-xl"
+                  } font-bold text-white`}
+                >
                   {stars}⭐
                 </div>
               </motion.div>
@@ -279,50 +304,91 @@ function CapLevel2() {
           )}
 
         {showInstructions ? (
-          <div className="flex flex-col gap-4 text-white text-2xl w-[60%]">
-            <span className="text-3xl" style={{ fontFamily: "Arco" }}>
+          <div
+            className={`flex flex-col gap-${
+              isMediumScreen ? "2" : "4"
+            } text-white text-${isMediumScreen ? "xl" : "2xl"} w-[60%]`}
+          >
+            <span
+              className={`${isMediumScreen ? "text-2xl" : "text-3xl "}`}
+              style={{ fontFamily: "Arco" }}
+            >
               Instructions
             </span>
-            <p className="text-justify text-3xl font-medium">
+            <p
+              className={`text-justify font-medium text-${
+                isMediumScreen ? "xl" : "3xl"
+              }`}
+            >
               Click the words that should be correctly capitalized. You have 15
               seconds per question. Get at least 7 correct answers out of 10 to
               complete the level.
             </p>
             <button
               onClick={handleStartGame}
-              className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit text-xl"
+              className={`bg-green-500 text-white rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit px-${
+                isMediumScreen ? 3 : 6
+              } py-${isMediumScreen ? 1 : 3} text-${
+                isMediumScreen ? "md" : "xl"
+              }`}
               style={{ fontFamily: "Arco" }}
             >
               Start Game
             </button>
           </div>
         ) : gameOver ? (
-          <div className="text-white text-3xl text-center">
+          <div
+            className={`text-white text-center text-${
+              isMediumScreen ? "2xl" : "3xl"
+            }`}
+          >
             <p style={{ fontFamily: "Arco" }}>Game Over!</p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <button
               onClick={handleRestart}
-              className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+              className={`bg-green-500 text-white mt-4 px-${
+                isMediumScreen ? 3 : 6
+              } py-${
+                isMediumScreen ? 1 : 3
+              } rounded-xl hover:scale-95 transition text-${
+                isMediumScreen ? "md" : "xl"
+              }`}
               style={{ fontFamily: "Arco" }}
             >
               Try Again
             </button>
           </div>
         ) : completed ? (
-          <div className="text-white text-3xl text-center">
+          <div
+            className={`text-white text-center text-${
+              isMediumScreen ? "2xl" : "3xl"
+            }`}
+          >
             <p style={{ fontFamily: "Arco" }}>Game Complete!</p>
             <p style={{ fontFamily: "Arco" }}>Stars: {stars} / 10</p>
             <div className="flex mt-4 gap-4 justify-center">
               <button
                 onClick={handleRestart}
-                className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                className={`bg-green-500 text-white px-${
+                  isMediumScreen ? 3 : 6
+                } py-${
+                  isMediumScreen ? 1 : 3
+                } rounded-xl hover:scale-95 transition text-${
+                  isMediumScreen ? "md" : "xl"
+                }`}
                 style={{ fontFamily: "Arco" }}
               >
                 Play Again
               </button>
               <button
                 onClick={() => navigate("/games/capitalization/level-3")}
-                className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                className={`bg-yellow-500 text-white px-${
+                  isMediumScreen ? 3 : 6
+                } py-${
+                  isMediumScreen ? 1 : 3
+                } rounded-xl hover:scale-95 transition text-${
+                  isMediumScreen ? "md" : "xl"
+                }`}
                 style={{ fontFamily: "Arco" }}
               >
                 Continue
@@ -330,24 +396,36 @@ function CapLevel2() {
             </div>
           </div>
         ) : shuffledWords.length > 0 && questionsAnswered < 10 ? (
-          <div className="w-[60%] flex flex-col gap-6 text-white items-center">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-5xl font-medium text-yellow-400 mb-2">
+          <div
+            className={`w-[80%] flex flex-col gap-${
+              isMediumScreen ? 4 : 6
+            } text-white items-center`}
+          >
+            <div
+              className={`flex flex-wrap items-center justify-center gap-${
+                isMediumScreen ? 1 : 2
+              } text-${
+                isMediumScreen ? "3xl" : "5xl"
+              } font-medium text-yellow-400 mb-2`}
+            >
               {shuffledWords[index].prompt.split(" ").map((word, i) => (
                 <button
                   key={i}
                   onClick={() => toggleWord(i)}
-                  className={`px-2 py-1 rounded transition-all duration-150 border-2 border-white ${
+                  className={`px-${isMediumScreen ? 1 : 2} py-${
+                    isMediumScreen ? 0.5 : 1
+                  } rounded transition-all duration-150 border-2 border-white ${
                     showFeedback
                       ? shuffledWords[index].correctIndexes.includes(i)
                         ? selectedIndexes.includes(i)
-                          ? "bg-green-400 text-white capitalize" // Correct capitalization and selected
-                          : "bg-red-500 text-white" // Correct capitalization but not selected
+                          ? "bg-green-400 text-white capitalize"
+                          : "bg-red-500 text-white"
                         : selectedIndexes.includes(i)
-                        ? "bg-red-500 text-white" // Incorrect selection
-                        : "bg-white/20" // Not a correct answer, and not incorrectly selected
+                        ? "bg-red-500 text-white"
+                        : "bg-white/20"
                       : selectedIndexes.includes(i)
-                      ? "bg-yellow-300 underline text-black" // Currently selected
-                      : "bg-white/20" // Default
+                      ? "bg-yellow-300 underline text-black"
+                      : "bg-white/20"
                   }`}
                   disabled={completed || gameOver || showFeedback}
                 >
@@ -357,7 +435,13 @@ function CapLevel2() {
             </div>
             <button
               onClick={handleAnswer}
-              className="w-full bg-blue-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+              className={`w-full bg-blue-500 text-white px-${
+                isMediumScreen ? 3 : 6
+              } py-${
+                isMediumScreen ? 1 : 3
+              } rounded-xl hover:scale-95 transition text-${
+                isMediumScreen ? "md" : "xl"
+              }`}
               style={{ fontFamily: "Arco" }}
               disabled={completed || gameOver || showFeedback}
             >
@@ -365,7 +449,10 @@ function CapLevel2() {
             </button>
           </div>
         ) : (
-          <p className="text-white text-2xl" style={{ fontFamily: "Arco" }}>
+          <p
+            className={`text-white text-${isMediumScreen ? "xl" : "2xl"}`}
+            style={{ fontFamily: "Arco" }}
+          >
             Loading...
           </p>
         )}
@@ -373,7 +460,9 @@ function CapLevel2() {
 
       <Link to="/games/capitalization">
         <motion.div
-          className="w-16 h-16 bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4"
+          className={`w-${isMediumScreen ? 12 : 16} h-${
+            isMediumScreen ? 12 : 16
+          } bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           whileHover={{ scale: 0.8 }}
