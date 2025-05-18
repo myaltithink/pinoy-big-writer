@@ -404,6 +404,7 @@ export default function Settings() {
           </div>
         </div>
       )}
+
       {/* Home Button */}
       <Link to="/home">
         <motion.div

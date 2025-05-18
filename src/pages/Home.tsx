@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col w-screen h-screen background ${
+      className={`flex flex-col w-dvw h-dvh background ${
         isMediumScreen ? "p-4 gap-2" : "p-8 gap-8"
       }`}
     >

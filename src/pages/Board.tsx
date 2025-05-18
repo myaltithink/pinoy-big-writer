@@ -13,6 +13,7 @@ import type { User, Achievements, AchievementCardProps } from "../types";
 import { FirestoreError } from "firebase/firestore";
 import { getUsers } from "../services/User"; // Import your Firebase functions
 import { allAchievementsDisplayData } from "../constants/seeder";
+import { useScreenSize } from "../layouts/ScreenSizeProvider";
 
 type Tab = "Ranking" | "Achievements";
 
@@ -23,6 +24,8 @@ function AchievementCard({
   imageSrc,
   achieved,
 }: AchievementCardProps) {
+  const { isMediumScreen } = useScreenSize();
+
   return (
     <div
       className={`w-full flex items-center justify-center relative rounded-xl overflow-hidden shadow-lg max-w-xs ${
@@ -34,14 +37,20 @@ function AchievementCard({
           achieved ? "" : "bg-black/75"
         } transition-opacity duration-300 flex items-center justify-center`}
       >
-        {!achieved && <FaLock className="text-white text-7xl z-50" />}
+        {!achieved && (
+          <FaLock
+            className={`text-white ${
+              isMediumScreen ? "text-5xl -translate-y-5" : "text-7xl"
+            } z-50`}
+          />
+        )}
       </div>
       <img
         src={imageSrc}
         alt={title}
-        className={`w-[75%] h-auto object-cover ${
-          achieved ? "" : "brightness-50 blur-sm"
-        }`}
+        className={`${
+          isMediumScreen ? "w-[50%] min-h-[150px] " : "w-[75%] max-h-[250px] "
+        } object-cover ${achieved ? "" : "brightness-50 blur-sm"}`}
       />
       <div className="absolute bottom-0 left-0 w-full bg-black/75 text-white p-2">
         <h3 className="font-bold text-lg">{title}</h3>
@@ -69,6 +78,8 @@ function Board() {
   const [displayedAchievementsData, setDisplayedAchievementsData] = useState<
     AchievementCardProps[]
   >([]);
+
+  const { isMediumScreen } = useScreenSize();
 
   useEffect(() => {
     const currentTab = path.substring(7);
@@ -185,11 +196,17 @@ function Board() {
   }, [userAchievements]);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center board p-8">
+    <div
+      className={`w-dvw h-dvh flex flex-col items-center board ${
+        isMediumScreen ? "p-2" : "p-8"
+      }`}
+    >
       {/* Tabs */}
       <div className="w-full flex items-center justify-start">
         <span
-          className={`text-3xl bg-black/50 px-6 py-3 rounded-t-3xl text-white flex items-center gap-4 ${
+          className={`text-${
+            isMediumScreen ? "lg px-2 py-1" : "3xl px-6 py-3"
+          } bg-black/50  rounded-t-3xl text-white flex items-center gap-4 ${
             tab === "Ranking"
               ? "border-8 border-white"
               : "border-8 border-black/50"
@@ -201,7 +218,9 @@ function Board() {
           <FaPenToSquare className="text-[#F3B73F]" />
         </span>
         <span
-          className={`text-3xl bg-black/50 px-6 py-3 rounded-t-3xl text-white flex items-center gap-4 ${
+          className={`text-${
+            isMediumScreen ? "lg px-2 py-1" : "3xl px-6 py-3"
+          } bg-black/50  rounded-t-3xl text-white flex items-center gap-4 ${
             tab === "Achievements"
               ? "border-8 border-white"
               : "border-8 border-black/50"
@@ -231,7 +250,9 @@ function Board() {
 
       {/* Content */}
       <div
-        className={`flex-1 w-full flex items-start justify-around gap-8 p-8 border-8 rounded-xl rounded-tl-none border-black/50 bg-black/75`}
+        className={`flex-1 w-full flex items-start justify-around gap-${
+          isMediumScreen ? "2 p-2 min-h-[250px]" : "8 p-8 "
+        } border-8 rounded-xl rounded-tl-none border-black/50 bg-black/75`}
         style={{ overflowY: "auto" }} // Added overflowY for scrolling if needed
       >
         {tab === "Ranking" ? (
@@ -288,22 +309,28 @@ function Board() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-gray-400 overflow-hidden">
-                        <img
-                          src={rankedUser.avatar}
-                          alt={rankedUser.username}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      {!isMediumScreen && (
+                        <div className="w-8 h-8 rounded-full bg-gray-400 overflow-hidden">
+                          <img
+                            src={rankedUser.avatar}
+                            alt={rankedUser.username}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
                       <span
-                        className="font-medium text-xl"
+                        className={`font-medium ${
+                          isMediumScreen ? "text-base" : "text-xl"
+                        }`}
                         style={{ fontFamily: "Arco" }}
                       >
                         {rankedUser.username}
                       </span>
                     </div>
                     <div
-                      className="text-right font-medium text-xl"
+                      className={`text-right font-medium ${
+                        isMediumScreen ? "text-base" : "text-xl"
+                      }`}
                       style={{ fontFamily: "Arco" }}
                     >
                       {rankedUser.points}
@@ -315,11 +342,19 @@ function Board() {
 
             {/* Current User's Rank */}
             <div className="w-1/2 flex flex-col items-center justify-center bg-black/50 rounded-lg p-8 text-white font-bold text-xl">
-              <div className="flex flex-col items-center mb-4">
-                <div className="w-36 h-36 flex items-center justify-center">
+              <div
+                className={`flex flex-col items-center ${
+                  isMediumScreen ? "mb-0" : "mb-4"
+                }`}
+              >
+                <div className="flex items-center justify-center">
                   {currentUserRank !== null ? (
                     <div
-                      className={`w-32 h-32 flex items-center justify-center text-6xl font-bold text-white ${
+                      className={`${
+                        isMediumScreen
+                          ? "w-24 h-24 text-2xl "
+                          : "w-32 h-32 text-6xl "
+                      } flex items-center justify-center font-bold text-white ${
                         currentUserRank <= 3
                           ? `bg-center bg-cover ${
                               currentUserRank === 1
@@ -351,14 +386,21 @@ function Board() {
                   )}
                 </div>
                 <h3
-                  className="text-3xl mt-2 text-center"
+                  className={` text-center ${
+                    isMediumScreen ? "text-lg mt-2" : "text-2xl mt-4"
+                  }`}
                   style={{ fontFamily: "Arco" }}
                 >
                   {currentUserName}
                 </h3>
               </div>
               <div className="text-center">
-                <p className="text-xl mt-2" style={{ fontFamily: "Arco" }}>
+                <p
+                  className={`${
+                    isMediumScreen ? "text-base mt-1" : "text-xl mt-2"
+                  }`}
+                  style={{ fontFamily: "Arco" }}
+                >
                   {currentUserPoints !== null ? currentUserPoints : "-"} Points
                 </p>
               </div>
@@ -401,13 +443,15 @@ function Board() {
       {/* Home Button */}
       <Link to="/home">
         <motion.div
-          className="w-16 h-16 bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4"
+          className={`w-${isMediumScreen ? 12 : 16} h-${
+            isMediumScreen ? 12 : 16
+          } bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           whileHover={{ scale: 0.8 }}
           transition={{
             type: "spring",
-            stiffness: 10,
+            stiffness: 100,
             damping: 10,
             duration: 0.5,
           }}
@@ -417,7 +461,11 @@ function Board() {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <TiHome className="w-8 h-8" />
+            <TiHome
+              className={`w-${isMediumScreen ? 8 : 8} h-${
+                isMediumScreen ? 8 : 8
+              }`}
+            />
           </motion.div>
         </motion.div>
       </Link>
