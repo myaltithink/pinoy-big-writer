@@ -17,6 +17,7 @@ import {
   stopSpeaking as stopSpeakingUtil,
 } from "../../utils/speech";
 import { HiSpeakerWave } from "react-icons/hi2";
+import { useScreenSize } from "../../layouts/ScreenSizeProvider"; // Import useScreenSize
 
 const correctSoundPath = "/sounds/correct.mp3";
 const wrongSoundPath = "/sounds/wrong.mp3";
@@ -50,6 +51,7 @@ function SpellLevel3() {
   const { width, height } = useWindowSize();
   const timerControls = useAnimation();
   const { clickEnabled } = useSoundContext();
+  const { isMediumScreen } = useScreenSize(); // Use isMediumScreen
 
   const [playCorrectSound] = useSound(correctSoundPath, {
     soundEnabled: clickEnabled,
@@ -235,19 +237,37 @@ function SpellLevel3() {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center spelling p-8">
+    <div
+      className={`w-dvw h-dvh flex flex-col items-center spelling ${
+        isMediumScreen ? "p-2" : "p-8"
+      }`}
+    >
       {completed && <Confetti width={width} height={height} />}
-      <div className="flex-1 w-full flex flex-col items-center justify-center gap-8 p-8 border-8 rounded-xl border-black/50 bg-black/75">
+      <div
+        className={`flex-1 w-full flex flex-col items-center justify-center ${
+          isMediumScreen ? "gap-2 p-2" : "gap-8 p-8"
+        } border-8 rounded-xl border-black/50 bg-black/75`}
+      >
         {!showInstructions && !completed && !gameOver && (
-          <div className="w-[60%] flex justify-between items-center mb-6">
+          <div
+            className={`flex justify-between items-center ${
+              isMediumScreen ? "w-[60%]" : "w-[60%] mb-6"
+            }`}
+          >
             <motion.div
               animate={timerControls}
               initial={{ x: 0 }}
               className="flex flex-col items-center gap-0 relative"
             >
-              <MdTimer className="text-red-500 text-2xl" />
+              <MdTimer
+                className={`text-red-500 ${
+                  isMediumScreen ? "text-xl" : "text-2xl"
+                }`}
+              />
               <span
-                className="font-semibold text-2xl text-white"
+                className={`font-semibold ${
+                  isMediumScreen ? "text-xl" : "text-2xl"
+                } text-white`}
                 style={{ fontFamily: "Arco" }}
               >
                 {timeLeft}s
@@ -258,7 +278,9 @@ function SpellLevel3() {
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 0.3 }}
-              className="relative w-16 h-16"
+              className={`relative w-16 h-16 ${
+                isMediumScreen ? "w-10 h-10" : ""
+              }`}
             >
               <svg className="w-full h-full transform -rotate-90">
                 <circle
@@ -282,7 +304,11 @@ function SpellLevel3() {
                   transition={{ duration: 0.5 }}
                 />
               </svg>
-              <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
+              <div
+                className={`absolute inset-0 flex items-center justify-center ${
+                  isMediumScreen ? "text-base" : "text-2xl"
+                } font-bold text-white`}
+              >
                 {stars}⭐
               </div>
             </motion.div>
@@ -290,18 +316,31 @@ function SpellLevel3() {
         )}
 
         {showInstructions ? (
-          <div className="flex flex-col gap-4 text-white text-2xl w-[60%]">
-            <span className="text-3xl" style={{ fontFamily: "Arco" }}>
+          <div
+            className={`flex flex-col ${
+              isMediumScreen ? "gap-2 w-[60%]" : "gap-4 w-[60%]"
+            } text-white `}
+          >
+            <span
+              className={`${isMediumScreen ? "text-xl" : "text-3xl"}`}
+              style={{ fontFamily: "Arco" }}
+            >
               Instructions
             </span>
-            <p className="text-justify text-3xl font-medium">
+            <p
+              className={`text-justify ${
+                isMediumScreen ? "text-xl" : "text-3xl"
+              } font-medium`}
+            >
               Listen to the word, and then type the correct spelling of the word
               shown with scrambled letters. You have 20 seconds per question.
               Get at least 7 correct answers out of 10 to complete the level.
             </p>
             <button
               onClick={handleStartGame}
-              className="bg-green-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit text-xl"
+              className={`bg-green-500 text-white rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit ${
+                isMediumScreen ? "text-md px-3 py-1 " : "text-xl px-6 py-3 "
+              }`}
               style={{ fontFamily: "Arco" }}
             >
               Start Game
@@ -335,10 +374,16 @@ function SpellLevel3() {
             )}
           </div>
         ) : shuffledQuestions.length > 0 ? (
-          <div className="w-[60%] flex flex-col gap-6 text-white items-center">
+          <div
+            className={`w-[60%] flex flex-col ${
+              isMediumScreen ? "gap-2" : "gap-6"
+            } text-white items-center`}
+          >
             <div className="flex items-center gap-4">
               <p
-                className={`text-5xl font-medium ${
+                className={`font-medium ${
+                  isMediumScreen ? "text-2xl" : "text-5xl"
+                } ${
                   isCorrect === null
                     ? ""
                     : isCorrect
@@ -352,7 +397,9 @@ function SpellLevel3() {
               </p>
               <button
                 onClick={() => speakUtil(shuffledQuestions[index].answer)}
-                className="flex items-center gap-4 text-white text-5xl hover:text-yellow-400 transition"
+                className={`flex items-center gap-4 text-white ${
+                  isMediumScreen ? "text-3xl" : "text-5xl"
+                } hover:text-yellow-400 transition`}
                 aria-label="Repeat Word"
               >
                 <HiSpeakerWave />
@@ -370,7 +417,9 @@ function SpellLevel3() {
                 type="text"
                 value={typedAnswer}
                 onChange={handleInputChange}
-                className=" w-full border-6 text-5xl font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl"
+                className={` w-full border-6 ${
+                  isMediumScreen ? "text-2xl p-2" : "text-5xl p-4"
+                } font-medium bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl`}
                 placeholder="Type your answer here"
                 disabled={isCorrect !== null}
               />
@@ -381,7 +430,7 @@ function SpellLevel3() {
                 isCorrect !== null || typedAnswer.trim() === ""
                   ? "bg-gray-500 text-gray-300"
                   : "bg-blue-500 text-white"
-              }`}
+              } self-start`}
               style={{ fontFamily: "Arco" }}
               disabled={isCorrect !== null || typedAnswer.trim() === ""}
             >
@@ -395,7 +444,9 @@ function SpellLevel3() {
 
       <Link to="/games/spelling">
         <motion.div
-          className="w-16 h-16 bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4"
+          className={`w-${isMediumScreen ? 12 : 16} h-${
+            isMediumScreen ? 12 : 16 // Responsive size
+          } bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-2`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           whileHover={{ scale: 0.8 }}

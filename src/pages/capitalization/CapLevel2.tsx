@@ -326,10 +326,8 @@ function CapLevel2() {
             </p>
             <button
               onClick={handleStartGame}
-              className={`bg-green-500 text-white rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit px-${
-                isMediumScreen ? 3 : 6
-              } py-${isMediumScreen ? 1 : 3} text-${
-                isMediumScreen ? "md" : "xl"
+              className={`bg-green-500 text-white rounded-xl hover:scale-95 transition ease-in-out duration-300 w-fit ${
+                isMediumScreen ? "text-md px-3 py-1 " : "text-xl px-6 py-3 "
               }`}
               style={{ fontFamily: "Arco" }}
             >
@@ -461,7 +459,7 @@ function CapLevel2() {
       <Link to="/games/capitalization">
         <motion.div
           className={`w-${isMediumScreen ? 12 : 16} h-${
-            isMediumScreen ? 12 : 16
+            isMediumScreen ? 12 : 16 // Responsive size
           } bg-black/50 text-white rounded-full flex items-center justify-center cursor-pointer mt-4`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
