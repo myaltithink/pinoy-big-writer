@@ -7,6 +7,8 @@ import defaultSfx from "/sounds/default.mp3";
 import capitalizationSfx from "/sounds/capitalization.mp3";
 import punctuationSfx from "/sounds/punctuation.mp3";
 import spellingSfx from "/sounds/spelling.mp3";
+import vaultSfx from "/sounds/vault.mp3";
+import overviewSfx from "/sounds/overview.mp3";
 
 interface SoundContextType {
   toggleMusic: () => void;
@@ -64,6 +66,17 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
     interrupt: true,
     volume: location.pathname === "/games/spelling/level-3" ? 0.1 : 0.5,
   });
+  // Initialize the new sounds
+  const [playVault, { sound: vaultSound }] = useSound(vaultSfx, {
+    loop: true,
+    volume: 0.5,
+    interrupt: true,
+  });
+  const [playOverview, { sound: overviewSound }] = useSound(overviewSfx, {
+    loop: true,
+    volume: 0.5,
+    interrupt: true,
+  });
 
   // Save preferences
   useEffect(() => {
@@ -88,6 +101,9 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
         capSound?.stop();
         puncSound?.stop();
         spellSound?.stop();
+        // Stop the new sounds as well
+        vaultSound?.stop();
+        overviewSound?.stop();
       }
       return newState;
     });
@@ -113,6 +129,9 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
     capSound?.stop();
     puncSound?.stop();
     spellSound?.stop();
+    // Stop the new sounds when the route changes
+    vaultSound?.stop();
+    overviewSound?.stop();
 
     if (location.pathname.startsWith("/games/capitalization")) {
       playCapitalization();
@@ -120,6 +139,10 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
       playPunctuation();
     } else if (location.pathname.startsWith("/games/spelling")) {
       playSpelling();
+    } else if (location.pathname.startsWith("/vault")) {
+      playVault();
+    } else if (location.pathname.startsWith("/overview")) {
+      playOverview();
     } else {
       playDefault();
     }
@@ -129,6 +152,9 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
       capSound?.stop();
       puncSound?.stop();
       spellSound?.stop();
+      // Ensure new sounds are stopped on unmount or route change
+      vaultSound?.stop();
+      overviewSound?.stop();
     };
   }, [location.pathname, musicEnabled]);
 

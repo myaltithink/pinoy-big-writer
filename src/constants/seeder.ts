@@ -262,6 +262,256 @@ export const capLevel1: Word[] = [
     shouldCapitalize: true,
     correctWord: "Balenciaga",
   },
+  {
+    text: "tree",
+    shouldCapitalize: false,
+    correctWord: "tree",
+  },
+  {
+    text: "orange",
+    shouldCapitalize: false,
+    correctWord: "orange",
+  },
+  {
+    text: "book",
+    shouldCapitalize: false,
+    correctWord: "book",
+  },
+  {
+    text: "cat",
+    shouldCapitalize: false,
+    correctWord: "cat",
+  },
+  {
+    text: "jump",
+    shouldCapitalize: false,
+    correctWord: "jump",
+  },
+  {
+    text: "calm",
+    shouldCapitalize: false,
+    correctWord: "calm",
+  },
+  {
+    text: "earrings",
+    shouldCapitalize: false,
+    correctWord: "earrings",
+  },
+  {
+    text: "pants",
+    shouldCapitalize: false,
+    correctWord: "pants",
+  },
+  {
+    text: "skirt",
+    shouldCapitalize: false,
+    correctWord: "skirt",
+  },
+  {
+    text: "shoes",
+    shouldCapitalize: false,
+    correctWord: "shoes",
+  },
+  {
+    text: "sack",
+    shouldCapitalize: false,
+    correctWord: "sack",
+  },
+  {
+    text: "blue",
+    shouldCapitalize: false,
+    correctWord: "blue",
+  },
+  {
+    text: "red",
+    shouldCapitalize: false,
+    correctWord: "red",
+  },
+  {
+    text: "ruler",
+    shouldCapitalize: false,
+    correctWord: "ruler",
+  },
+  {
+    text: "banana",
+    shouldCapitalize: false,
+    correctWord: "banana",
+  },
+  {
+    text: "grapes",
+    shouldCapitalize: false,
+    correctWord: "grapes",
+  },
+  {
+    text: "pencil",
+    shouldCapitalize: false,
+    correctWord: "pencil",
+  },
+  {
+    text: "peace",
+    shouldCapitalize: false,
+    correctWord: "peace",
+  },
+  {
+    text: "hair",
+    shouldCapitalize: false,
+    correctWord: "hair",
+  },
+  {
+    text: "wind",
+    shouldCapitalize: false,
+    correctWord: "wind",
+  },
+  {
+    text: "bird",
+    shouldCapitalize: false,
+    correctWord: "bird",
+  },
+  {
+    text: "shoes",
+    shouldCapitalize: false,
+    correctWord: "shoes",
+  },
+  {
+    text: "coffee",
+    shouldCapitalize: false,
+    correctWord: "coffee",
+  },
+  {
+    text: "notebook",
+    shouldCapitalize: false,
+    correctWord: "notebook",
+  },
+  {
+    text: "calendar",
+    shouldCapitalize: false,
+    correctWord: "calendar",
+  },
+  {
+    text: "desk",
+    shouldCapitalize: false,
+    correctWord: "desk",
+  },
+  {
+    text: "student",
+    shouldCapitalize: false,
+    correctWord: "student",
+  },
+  {
+    text: "teacher",
+    shouldCapitalize: false,
+    correctWord: "teacher",
+  },
+  {
+    text: "laptop",
+    shouldCapitalize: false,
+    correctWord: "laptop",
+  },
+  {
+    text: "mayor",
+    shouldCapitalize: false,
+    correctWord: "mayor",
+  },
+  {
+    text: "mirror",
+    shouldCapitalize: false,
+    correctWord: "mirror",
+  },
+  {
+    text: "walk",
+    shouldCapitalize: false,
+    correctWord: "walk",
+  },
+  {
+    text: "public market",
+    shouldCapitalize: false,
+    correctWord: "public market",
+  },
+  {
+    text: "tricycle driver",
+    shouldCapitalize: false,
+    correctWord: "tricycle driver",
+  },
+  {
+    text: "rice farmer",
+    shouldCapitalize: false,
+    correctWord: "rice farmer",
+  },
+  {
+    text: "fish vendor",
+    shouldCapitalize: false,
+    correctWord: "fish vendor",
+  },
+  {
+    text: "street food",
+    shouldCapitalize: false,
+    correctWord: "street food",
+  },
+  {
+    text: "mountain trail",
+    shouldCapitalize: false,
+    correctWord: "mountain trail",
+  },
+  {
+    text: "face mask",
+    shouldCapitalize: false,
+    correctWord: "face mask",
+  },
+  {
+    text: "bus station",
+    shouldCapitalize: false,
+    correctWord: "bus station",
+  },
+  {
+    text: "water supply",
+    shouldCapitalize: false,
+    correctWord: "water supply",
+  },
+  {
+    text: "tuition fee",
+    shouldCapitalize: false,
+    correctWord: "tuition fee",
+  },
+  {
+    text: "eyeglasses",
+    shouldCapitalize: false,
+    correctWord: "eyeglasses",
+  },
+  {
+    text: "school paper",
+    shouldCapitalize: false,
+    correctWord: "school paper",
+  },
+  {
+    text: "umbrella",
+    shouldCapitalize: false,
+    correctWord: "umbrella",
+  },
+  {
+    text: "sofa",
+    shouldCapitalize: false,
+    correctWord: "sofa",
+  },
+  {
+    text: "church",
+    shouldCapitalize: false,
+    correctWord: "church",
+  },
+  {
+    text: "duck",
+    shouldCapitalize: false,
+    correctWord: "duck",
+  },
+  {
+    text: "mirror",
+    shouldCapitalize: false,
+    correctWord: "mirror",
+  },
+  {
+    text: "tea cup",
+    shouldCapitalize: false,
+    correctWord: "tea cup",
+  },
 ];
 
 export const capLevel3: Word3[] = [
@@ -1905,12 +2155,6 @@ export const spellLevel2: CorrectWordQuestion[] = [
     correctAnswer: "Illusion",
   },
   {
-    question:
-      "When she said she was busy, did she ______ that she didn’t want to join us",
-    options: ["Imply", "Infer"],
-    correctAnswer: "Infer",
-  },
-  {
     question: "They decided to ______ a new strategy to improve productivity.",
     options: ["Adapt", "Adopt"],
     correctAnswer: "Adopt",
@@ -2002,7 +2246,7 @@ export const spellLevel3: ScrambledWordQuestion[] = [
     answer: "Handkerchief",
   },
   {
-    scrambled: "ctqaneiacn",
+    scrambled: "ctquaneiacn",
     answer: "Acquaintance",
   },
   {
