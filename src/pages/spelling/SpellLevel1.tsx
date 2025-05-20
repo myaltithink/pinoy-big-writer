@@ -107,8 +107,10 @@ function SpellLevel1() {
         setTimeout(() => {
           setSelectedAnswer(null);
           setIsCorrect(null);
-          if (questionCount + 1 === 10) {
+          const nextQuestionCount = questionCount + 1; // Calculate next question count
+          if (nextQuestionCount === 10) {
             if (stars >= 7) {
+              // `stars` value is already updated here
               setCompleted(true);
               playWinSound();
               if (user?.username) {
@@ -122,7 +124,7 @@ function SpellLevel1() {
             setIndex((i) => i + 1);
             setTimeLeft(10); // Reset timer for the next question
           }
-          setQuestionCount((count) => count + 1);
+          setQuestionCount(nextQuestionCount);
         }, 2000);
       }
     }
@@ -170,8 +172,11 @@ function SpellLevel1() {
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
-        if (questionCount + 1 === 10) {
-          if (stars >= 7) {
+        const nextQuestionCount = questionCount + 1; // Calculate next question count
+        const newStars = stars + 1; // Calculate stars after current correct answer
+        if (nextQuestionCount === 10) {
+          if (newStars >= 7) {
+            // Check against `newStars`
             setCompleted(true);
             playWinSound();
           } else {
@@ -182,15 +187,17 @@ function SpellLevel1() {
           setIndex((i) => i + 1);
           setTimeLeft(10); // Reset timer for the next question
         }
-        setQuestionCount((count) => count + 1);
+        setQuestionCount(nextQuestionCount);
       }, 2000);
     } else {
       playWrongSound();
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
-        if (questionCount + 1 === 10) {
+        const nextQuestionCount = questionCount + 1; // Calculate next question count
+        if (nextQuestionCount === 10) {
           if (stars >= 7) {
+            // `stars` value is already updated here
             setCompleted(true);
             playWinSound();
           } else {
@@ -201,7 +208,7 @@ function SpellLevel1() {
           setIndex((i) => i + 1);
           setTimeLeft(10); // Reset timer for the next question
         }
-        setQuestionCount((count) => count + 1);
+        setQuestionCount(nextQuestionCount);
       }, 2000);
     }
   };

@@ -159,13 +159,19 @@ function PuncLevel1() {
 
     if (correct) {
       playCorrectSound();
-      setStars((s) => s + 1);
+      const newStars = stars + 1;
+      setStars(newStars);
       setPopKey((k) => k + 1);
+
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
-        if (index + 1 === shuffledQuestions.length) {
-          if (stars >= 7) {
+
+        const isLastQuestion = index + 1 === shuffledQuestions.length;
+        const didWin = newStars >= 7;
+
+        if (isLastQuestion) {
+          if (didWin) {
             setCompleted(true);
             playWinSound();
             if (user?.username) {
@@ -174,7 +180,7 @@ function PuncLevel1() {
                 "punctuation",
                 0,
                 setUser,
-                stars
+                newStars
               );
             }
           } else {
@@ -183,16 +189,21 @@ function PuncLevel1() {
           }
         } else {
           setIndex((i) => i + 1);
-          setTimeLeft(10); // Reset timer for the next question
+          setTimeLeft(10);
         }
       }, 2000);
     } else {
       playWrongSound();
+
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
-        if (index + 1 === shuffledQuestions.length) {
-          if (stars >= 7) {
+
+        const isLastQuestion = index + 1 === shuffledQuestions.length;
+        const didWin = stars >= 7; // stars isn't incremented on wrong
+
+        if (isLastQuestion) {
+          if (didWin) {
             setCompleted(true);
             playWinSound();
             if (user?.username) {
@@ -210,7 +221,7 @@ function PuncLevel1() {
           }
         } else {
           setIndex((i) => i + 1);
-          setTimeLeft(10); // Reset timer for the next question
+          setTimeLeft(10);
         }
       }, 2000);
     }

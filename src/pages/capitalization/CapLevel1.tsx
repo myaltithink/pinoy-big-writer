@@ -153,69 +153,49 @@ function CapLevel1() {
 
     const shouldBeCapitalized = shuffledWords[index].shouldCapitalize;
     const isUserCorrect = choice === shouldBeCapitalized;
+    const nextStars = isUserCorrect ? stars + 1 : stars;
+
     setSelected(choice);
     setIsCorrect(isUserCorrect);
     setFeedbackWord(shuffledWords[index].correctWord);
 
     if (isUserCorrect) {
       playCorrectSound();
-      setStars((s) => s + 1);
+      setStars(nextStars);
       setPopKey((k) => k + 1);
-      setTimeout(() => {
-        setSelected(null);
-        setIsCorrect(null);
-        setFeedbackWord(null);
-        if (index + 1 === shuffledWords.length) {
-          if (stars >= 7) {
-            setCompleted(true);
-            playWinSound();
-            if (user?.username) {
-              markLevelComplete(
-                user.username,
-                "capitalization",
-                0,
-                setUser,
-                stars
-              );
-            }
-          } else {
-            setGameOver(true);
-            playLoseSound();
-          }
-        } else {
-          setIndex((i) => i + 1);
-          setTimeLeft(10); // Reset timer for the next question
-        }
-      }, 2000);
     } else {
       playWrongSound();
-      setTimeout(() => {
-        setSelected(null);
-        setIsCorrect(null);
-        setFeedbackWord(null);
-        if (index + 1 === shuffledWords.length) {
-          if (stars >= 7) {
-            setCompleted(true);
-            playWinSound();
-            if (user?.username) {
-              markLevelComplete(
-                user.username,
-                "capitalization",
-                0,
-                setUser,
-                stars
-              );
-            }
-          } else {
-            setGameOver(true);
-            playLoseSound();
+    }
+
+    setTimeout(() => {
+      setSelected(null);
+      setIsCorrect(null);
+      setFeedbackWord(null);
+
+      const isLastQuestion = index + 1 === shuffledWords.length;
+
+      if (isLastQuestion) {
+        if (nextStars >= 7) {
+          setCompleted(true);
+          playWinSound();
+          if (user?.username) {
+            markLevelComplete(
+              user.username,
+              "capitalization",
+              0,
+              setUser,
+              nextStars
+            );
           }
         } else {
-          setIndex((i) => i + 1);
-          setTimeLeft(10); // Reset timer for the next question
+          setGameOver(true);
+          playLoseSound();
         }
-      }, 2000);
-    }
+      } else {
+        setIndex((i) => i + 1);
+        setTimeLeft(10);
+      }
+    }, 2000);
   };
 
   const handleStartGame = () => {

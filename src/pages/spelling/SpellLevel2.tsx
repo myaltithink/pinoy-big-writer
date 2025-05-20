@@ -137,21 +137,23 @@ function SpellLevel2() {
 
     if (correct) {
       playCorrectSound();
-      setStars((s) => s + 1);
+      const nextStars = stars + 1; // Predict next value
+      setStars(nextStars);
       setPopKey((k) => k + 1);
+
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
+
         if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
-          setTimeLeft(15); // Reset timer for the next question - CHANGED TO 15
+          setTimeLeft(15);
         } else {
-          // All questions answered, check for completion
-          if (stars >= minStarsToPass) {
+          if (nextStars >= minStarsToPass) {
             setCompleted(true);
             playWinSound();
           } else {
-            setGameOver(true); // If all questions are done but not enough stars
+            setGameOver(true);
             playLoseSound();
           }
         }
@@ -161,11 +163,11 @@ function SpellLevel2() {
       setTimeout(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
+
         if (index + 1 < shuffledQuestions.length) {
           setIndex((i) => i + 1);
-          setTimeLeft(15); // Reset timer for the next question - CHANGED TO 15
+          setTimeLeft(15);
         } else {
-          // All questions answered, check for completion
           if (stars >= minStarsToPass) {
             setCompleted(true);
             playWinSound();

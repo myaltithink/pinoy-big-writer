@@ -90,7 +90,8 @@ function PuncLevel2() {
           setQuestionCount((count) => count + 1); // Increment question count
           if (questionCount + 1 === 10) {
             // After 10 questions, check the score
-            if (stars >= 7) {
+            if (stars + (isCorrect ? 1 : 0) >= 7) {
+              // Check stars with potential correct answer
               setCompleted(true);
               playWinSound();
             } else {
@@ -149,7 +150,8 @@ function PuncLevel2() {
         setQuestionCount((count) => count + 1); // Increment question count
         if (questionCount + 1 === 10) {
           // After 10 questions, check the score
-          if (stars >= 7) {
+          if (stars + 1 >= 7) {
+            // Check stars with the current correct answer
             setCompleted(true);
             playWinSound();
           } else {
@@ -170,6 +172,7 @@ function PuncLevel2() {
         if (questionCount + 1 === 10) {
           // After 10 questions, check the score
           if (stars >= 7) {
+            // Check stars without the current wrong answer
             setCompleted(true);
             playWinSound();
           } else {
