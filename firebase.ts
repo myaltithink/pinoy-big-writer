@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCkBQ5ajmO8myIgFvwAs41HY3rIQybKjtg",
-  authDomain: "pinoy-big-writer.firebaseapp.com",
-  projectId: "pinoy-big-writer",
-  storageBucket: "pinoy-big-writer.firebasestorage.app",
-  messagingSenderId: "728136733028",
-  appId: "1:728136733028:web:bae38fc1bc5f15a21daa71",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

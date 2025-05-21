@@ -34,6 +34,7 @@ import SpellVault from "./pages/spelling/SpellVault";
 import Board from "./pages/Board";
 import RotateScreen from "./pages/RotateScreen"; // Assuming you create this component
 import { ScreenSizeProvider } from "./layouts/ScreenSizeProvider";
+import Terms from "./pages/Terms";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768); // Adjust breakpoint as needed
@@ -63,6 +64,7 @@ const App = () => {
             <Route path="/" element={<Loading />} />
             <Route path="/overview" element={<Overview />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/terms-and-conditions" element={<Terms />} />
 
             {/* Private routes */}
             <Route element={<PrivateRoute />}>

@@ -5,6 +5,9 @@ import { setLocalStorageItem } from "../utils/localstorage";
 import { addUser, getUser, updateUser } from "../services/User";
 import type { User } from "../types";
 import { useAuthRedirect } from "../hooks/useAuthRedirect";
+import bcrypt from "bcryptjs";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // 'fa' stands for Font Awesome
+import { Link } from "react-router-dom";
 
 const avatars = [
   "/avatars/avatar1.png",
@@ -25,6 +28,7 @@ function Login() {
   const [isExistingUser, setIsExistingUser] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
   useAuthRedirect();
 
@@ -55,8 +59,12 @@ function Login() {
         // Login existing user
         const existingUser = await getUser(username);
         if (existingUser && password) {
-          // VERY INSECURE - FOR DEMO ONLY
-          if (existingUser.password === password) {
+          const isPasswordCorrect = await bcrypt.compare(
+            password,
+            existingUser.password
+          );
+
+          if (isPasswordCorrect) {
             const loggedInUser = { ...existingUser, isLoggedIn: true };
             await updateUser(username, { isLoggedIn: true });
             setLocalStorageItem("user", loggedInUser);
@@ -71,9 +79,15 @@ function Login() {
       } else {
         // Create new user
         if (selectedAvatar && username && password) {
+          if (password.length < 4) {
+            setErrorMessage("Password must be at least 4 characters long.");
+            return;
+          }
+          const hashedPassword = await bcrypt.hash(password, 10); // 10 = salt rounds
+
           const newUser: User = {
             username,
-            password, // Store hashed password in real app
+            password: hashedPassword, // store hashed password
             avatar: selectedAvatar,
             ranking: 0,
             points: 0,
@@ -85,6 +99,7 @@ function Login() {
             },
             isLoggedIn: true,
           };
+
           await addUser(newUser);
           setLocalStorageItem("user", newUser);
           setUser(newUser);
@@ -194,15 +209,32 @@ function Login() {
           >
             {isExistingUser ? "Enter your password" : "Choose a password"}
           </h2>
-          <input
-            className="border-6 bg-yellow-200 border-yellow-800 text-yellow-800 p-4 rounded-xl text-2xl
-            focus:outline-none focus:ring-2 focus:ring-yellow-800/25 "
-            type={isExistingUser ? "password" : "text"}
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ fontFamily: "Arco" }}
-          />
+          <div className="relative">
+            <input
+              className="border-6 bg-yellow-200 border-yellow-800 text-yellow-800 p-4 pr-12 rounded-xl text-2xl
+              focus:outline-none focus:ring-2 focus:ring-yellow-800/25"
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              style={{ fontFamily: "Arco" }}
+            />
+            <span
+              className="absolute inset-y-0 right-0 pr-8 flex items-center cursor-pointer text-yellow-800 clear-start text-2xl"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}{" "}
+            </span>
+          </div>
+          <p className="text-white text-xs" style={{ fontFamily: "Arco" }}>
+            Continuing means you accept our{" "}
+            <Link
+              to="/terms-and-conditions"
+              className="underline text-yellow-800 border-b-2"
+            >
+              Terms and Conditions
+            </Link>
+          </p>
           {errorMessage && (
             <p
               className="text-[#FF6467] text-xl"
