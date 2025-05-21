@@ -30,7 +30,7 @@ function Terms() {
       <div
         className={`flex-1 w-full overflow-y-auto border-8 border-black/50 bg-black/25 rounded-xl rounded-tl-none ${
           isMediumScreen ? "gap-2 p-2" : "gap-8 p-8"
-        } flex flex-col`}
+        } flex flex-col text-lg`}
       >
         <h2 className="text-2xl font-bold" style={{ fontFamily: "Arco" }}>
           Welcome to Pinoy Big Writer!
