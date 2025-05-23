@@ -1681,7 +1681,7 @@ export const spellLevel1 = [
   {
     incorrect: "Recieve",
     correct: "Receive",
-    incorrect_alt: "Receive",
+    incorrect_alt: "Riceive",
     definition: "To be given or presented with something.",
   },
   {

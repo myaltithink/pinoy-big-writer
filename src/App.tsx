@@ -32,23 +32,24 @@ import CapVault from "./pages/capitalization/CapVault";
 import PuncVault from "./pages/punctuation/PuncVault";
 import SpellVault from "./pages/spelling/SpellVault";
 import Board from "./pages/Board";
-import RotateScreen from "./pages/RotateScreen"; // Assuming you create this component
+import RotateScreen from "./pages/RotateScreen";
 import { ScreenSizeProvider } from "./layouts/ScreenSizeProvider";
 import Terms from "./pages/Terms";
 
+import { useUserStore } from "./stores/useUserStore";
+import LevelGuard from "./layouts/LevelGuard";
+
 const App = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768); // Adjust breakpoint as needed
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  const { user } = useUserStore();
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768); // Adjust breakpoint as needed
+      setIsSmallScreen(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   if (isSmallScreen && !window.location.pathname.endsWith("3")) {
@@ -80,36 +81,121 @@ const App = () => {
               <Route path="/games/punctuation" element={<Punctuation />} />
               <Route path="/games/spelling" element={<Spelling />} />
 
+              {/* Capitalization Levels */}
               <Route
                 path="/games/capitalization/level-1"
-                element={<CapLevel1 />}
+                element={
+                  <LevelGuard
+                    topic="capitalization"
+                    level={1}
+                    userProgress={user?.progress}
+                  >
+                    <CapLevel1 />
+                  </LevelGuard>
+                }
               />
               <Route
                 path="/games/capitalization/level-2"
-                element={<CapLevel2 />}
+                element={
+                  <LevelGuard
+                    topic="capitalization"
+                    level={2}
+                    userProgress={user?.progress}
+                  >
+                    <CapLevel2 />
+                  </LevelGuard>
+                }
               />
               <Route
                 path="/games/capitalization/level-3"
-                element={<CapLevel3 />}
+                element={
+                  <LevelGuard
+                    topic="capitalization"
+                    level={3}
+                    userProgress={user?.progress}
+                  >
+                    <CapLevel3 />
+                  </LevelGuard>
+                }
               />
 
+              {/* Punctuation Levels */}
               <Route
                 path="/games/punctuation/level-1"
-                element={<PuncLevel1 />}
+                element={
+                  <LevelGuard
+                    topic="punctuation"
+                    level={1}
+                    userProgress={user?.progress}
+                  >
+                    <PuncLevel1 />
+                  </LevelGuard>
+                }
               />
               <Route
                 path="/games/punctuation/level-2"
-                element={<PuncLevel2 />}
+                element={
+                  <LevelGuard
+                    topic="punctuation"
+                    level={2}
+                    userProgress={user?.progress}
+                  >
+                    <PuncLevel2 />
+                  </LevelGuard>
+                }
               />
               <Route
                 path="/games/punctuation/level-3"
-                element={<PuncLevel3 />}
+                element={
+                  <LevelGuard
+                    topic="punctuation"
+                    level={3}
+                    userProgress={user?.progress}
+                  >
+                    <PuncLevel3 />
+                  </LevelGuard>
+                }
               />
 
-              <Route path="/games/spelling/level-1" element={<SpellLevel1 />} />
-              <Route path="/games/spelling/level-2" element={<SpellLevel2 />} />
-              <Route path="/games/spelling/level-3" element={<SpellLevel3 />} />
+              {/* Spelling Levels */}
+              <Route
+                path="/games/spelling/level-1"
+                element={
+                  <LevelGuard
+                    topic="spelling"
+                    level={1}
+                    userProgress={user?.progress}
+                  >
+                    <SpellLevel1 />
+                  </LevelGuard>
+                }
+              />
+              <Route
+                path="/games/spelling/level-2"
+                element={
+                  <LevelGuard
+                    topic="spelling"
+                    level={2}
+                    userProgress={user?.progress}
+                  >
+                    <SpellLevel2 />
+                  </LevelGuard>
+                }
+              />
+              <Route
+                path="/games/spelling/level-3"
+                element={
+                  <LevelGuard
+                    topic="spelling"
+                    level={3}
+                    userProgress={user?.progress}
+                  >
+                    <SpellLevel3 />
+                  </LevelGuard>
+                }
+              />
 
+              {/* Vaults */}
               <Route path="/vault/capitalization" element={<CapVault />} />
               <Route path="/vault/punctuation" element={<PuncVault />} />
               <Route path="/vault/spelling" element={<SpellVault />} />
