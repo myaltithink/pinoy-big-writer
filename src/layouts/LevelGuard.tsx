@@ -16,10 +16,6 @@ const LevelGuard = ({
   children,
 }: LevelGuardProps) => {
   const isUnlocked = userProgress?.[topic]?.[level - 2];
-  console.log("userProgress", userProgress);
-  console.log("topic", topic);
-  console.log("level", level);
-  console.log("isUnlocked", isUnlocked);
 
   if (!isUnlocked && level > 1) {
     return <Navigate to={`/games/${topic}`} replace />;
