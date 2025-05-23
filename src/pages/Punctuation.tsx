@@ -100,7 +100,7 @@ function Punctuation() {
           } bg-black/50 rounded-t-3xl text-white flex items-center gap-4 border-8 border-black/50 cursor-pointer`}
           style={{ fontFamily: "Arco" }}
         >
-          Punctuation Palace
+          Punctuation Zone
           <span
             className={`text-${
               isMediumScreen ? "lg" : "5xl"
