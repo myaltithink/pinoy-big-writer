@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { TiHome } from "react-icons/ti";
 import { FaLock } from "react-icons/fa6";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // 'fa' stands for Font Awesome
 import { useUserStore } from "../stores/useUserStore";
 import {
   getLocalStorageItem,
@@ -17,6 +18,7 @@ import { FirestoreError } from "firebase/firestore";
 import { downloadCompletionCertificatePDF } from "../utils/pdf";
 import { IoMdDownload } from "react-icons/io";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
+import bcrypt from "bcryptjs";
 
 const relevantAchievements: Achievements[] = [
   "completedAllCapitalization",
@@ -30,6 +32,9 @@ export default function Profile() {
   const [currentUserRank, setCurrentUserRank] = useState<number | null>(null);
   const navigate = useNavigate();
   const { isMediumScreen } = useScreenSize();
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     // Hydrate from local storage
@@ -91,6 +96,25 @@ export default function Profile() {
       navigate("/"); // Redirect even if user data is not fully loaded
       console.log("Guest user logged out (local storage cleared).");
     }
+  };
+
+  const handleChangePassword = async () => {
+    if (password.length < 4) {
+      setMessage("Password must be at least 4 characters long.");
+      setTimeout(() => setMessage(""), 3000);
+      return;
+    }
+    if (user?.username) {
+      const hashedPassword = await bcrypt.hash(password, 10); // 10 = salt rounds
+      updateUser(user.username, { password: hashedPassword });
+      setMessage("Password changed successfully.");
+      setPassword("");
+      setTimeout(() => setMessage(""), 3000);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -231,12 +255,23 @@ export default function Profile() {
                   Change Password
                 </span>
                 <div className="w-full flex items-center gap-4">
-                  <input
-                    type="text"
-                    placeholder="New Password"
-                    className="flex-1 px-4 py-2 rounded-xl bg-white text-black/75 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-black/25"
-                    style={{ fontFamily: "Arco" }}
-                  />
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="New Password"
+                      className="flex-1 px-4 py-2 rounded-xl bg-white text-black/75 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-black/25"
+                      style={{ fontFamily: "Arco" }}
+                      onChange={handleChange}
+                      value={password}
+                    />
+                    <span
+                      className="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer text-gray-800 clear-start text-2xl"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}{" "}
+                    </span>
+                  </div>
+
                   <motion.button
                     className="flex-1 px-4 py-2 bg-blue-500 text-white font-bold rounded-xl shadow hover:scale-95 transition-all"
                     whileHover={{ scale: 0.95 }}
@@ -247,14 +282,19 @@ export default function Profile() {
                       duration: 0.5,
                     }}
                     onClick={() => {
-                      // Will implement password change later
-                      console.log("Change password clicked");
+                      handleChangePassword();
                     }}
                     style={{ fontFamily: "Arco" }}
                   >
                     Save
                   </motion.button>
                 </div>
+                <p
+                  className="text-sm text-white/75"
+                  style={{ fontFamily: "Arco" }}
+                >
+                  {message}
+                </p>
               </div>
               <hr className="border-2 border-white/25 w-full" />
               {/* Logout Button */}
@@ -443,12 +483,23 @@ export default function Profile() {
                   Change Password
                 </span>
                 <div className="w-full flex items-center gap-4">
-                  <input
-                    type="text"
-                    placeholder="New Password"
-                    className="flex-1 px-4 py-2 rounded-xl bg-white text-black/75 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-black/25"
-                    style={{ fontFamily: "Arco" }}
-                  />
+                  <div className="relative">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="New Password"
+                      className="flex-1 px-4 py-2 rounded-xl bg-white text-black/75 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-black/25"
+                      style={{ fontFamily: "Arco" }}
+                      onChange={handleChange}
+                      value={password}
+                    />
+                    <span
+                      className="absolute inset-y-0 right-0 pr-2 flex items-center cursor-pointer text-gray-800 clear-start text-2xl"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}{" "}
+                    </span>
+                  </div>
+
                   <motion.button
                     className="flex-1 px-4 py-2 bg-blue-500 text-white font-bold rounded-xl shadow hover:scale-95 transition-all"
                     whileHover={{ scale: 0.95 }}
@@ -459,8 +510,7 @@ export default function Profile() {
                       duration: 0.5,
                     }}
                     onClick={() => {
-                      // Will implement password change later
-                      console.log("Change password clicked");
+                      handleChangePassword();
                     }}
                     style={{ fontFamily: "Arco" }}
                   >
