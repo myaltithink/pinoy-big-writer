@@ -38,6 +38,7 @@ import Terms from "./pages/Terms";
 
 import { useUserStore } from "./stores/useUserStore";
 import LevelGuard from "./layouts/LevelGuard";
+import Rules from "./pages/Rules";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -70,6 +71,7 @@ const App = () => {
             {/* Private routes */}
             <Route element={<PrivateRoute />}>
               <Route path="/home" element={<Home />} />
+              <Route path="/rules" element={<Rules/>}/>
               <Route path="/vault" element={<Vault />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/profile" element={<Profile />} />

@@ -1,20 +1,17 @@
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { FaCaretRight } from "react-icons/fa6";
-import { useUserStore } from "../stores/useUserStore";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
-import { setLocalStorageItem } from "../utils/localstorage";
 
-function Overview() {
+function Rules() {
   const navigate = useNavigate();
-  const { user } = useUserStore();
 
   const { isMediumScreen } = useScreenSize();
 
   return (
     <div className="w-dvw h-dvh background  flex items-center justify-center overflow-hidden">
       <motion.div
-        className="w-full h-full overview"
+        className="w-full h-full rules"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{
@@ -42,16 +39,9 @@ function Overview() {
               repeat: Infinity,
             },
           }}
-          onClick={() => {
-            if (user) {
-              navigate("/home");
-            } else {
-              setLocalStorageItem("skipOverview", true);
-              navigate("/login");
-            }
-          }}
+          onClick={() => navigate("/home")}
         >
-          {user ? "Home" : "Skip"}
+          Home
           <FaCaretRight />
         </motion.button>
       </motion.div>
@@ -59,4 +49,4 @@ function Overview() {
   );
 }
 
-export default Overview;
+export default Rules;

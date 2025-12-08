@@ -26,7 +26,14 @@ function Loading() {
     const timeout = setTimeout(() => {
       setStartZoom(true);
       setTimeout(() => {
-        navigate(user ? "/home" : "/overview");
+        const skipOverview = getLocalStorageItem('skipOverview') ?? false;
+        if (!skipOverview) {
+          navigate("/overview");
+          return;
+        }
+
+        navigate(user ? "/home" : "/login ");
+
       }, 1000); // Wait for zoom animation
     }, 3000); // Initial delay before zoom
 

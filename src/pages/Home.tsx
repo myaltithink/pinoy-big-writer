@@ -238,7 +238,7 @@ export default function Home() {
               </div>
             </motion.div>
           </Link>
-          <Link to="/overview">
+          <Link to="/rules">
             <motion.div
               className="flex flex-col min-h-[180px] min-w-[350px] bg-green-500 rounded-xl border-6 border-black cursor-pointer"
               initial={{ y: -100 }}
@@ -257,7 +257,7 @@ export default function Home() {
                 className="text-center p-2 border-t-4 border-black bg-white text-green-500"
                 style={{ fontFamily: "Arco" }}
               >
-                Game Overview
+                House Rules
               </div>
             </motion.div>
           </Link>
@@ -310,7 +310,7 @@ export default function Home() {
               </div>
             </motion.div>
           </Link>
-          <Link to="/overview">
+          <Link to="/rules">
             <motion.div
               className="flex flex-col min-h-[60px] min-w-[250px] bg-green-500 rounded-xl border-6 border-black cursor-pointer"
               initial={{ y: -100 }}
@@ -329,7 +329,7 @@ export default function Home() {
                 className="text-center p-2 border-t-4 border-black bg-white text-green-500"
                 style={{ fontFamily: "Arco" }}
               >
-                Game Overview
+                House Rules
               </div>
             </motion.div>
           </Link>
