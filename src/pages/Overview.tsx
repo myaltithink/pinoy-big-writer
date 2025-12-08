@@ -43,10 +43,10 @@ function Overview() {
             },
           }}
           onClick={() => {
+            setLocalStorageItem("skipOverview", true);
             if (user) {
               navigate("/home");
             } else {
-              setLocalStorageItem("skipOverview", true);
               navigate("/login");
             }
           }}

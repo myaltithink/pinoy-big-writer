@@ -107,7 +107,7 @@ function Login() {
           await addUser(newUser);
           setLocalStorageItem("user", newUser);
           setUser(newUser);
-          navigate("/home");
+          navigate("/overview");
         } else {
           setErrorMessage("Please choose an avatar and enter a password.");
         }
