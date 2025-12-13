@@ -74,7 +74,7 @@ export default function Home() {
     if (user) {
       doFetchRank();
     }
-  }, [user, setUser]);
+  }, []);
 
   const { isMediumScreen } = useScreenSize();
 
