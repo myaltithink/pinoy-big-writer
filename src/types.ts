@@ -1,3 +1,5 @@
+import type { QuestionType } from "./constants/QuestionType.Enum";
+
 export type Achievements =
   | "completedAllCapitalization"
   | "completedAllPunctuation"
@@ -32,29 +34,12 @@ export interface User {
   isLoggedIn: boolean;
 }
 
-export type Word = {
-  text: string;
-  shouldCapitalize: boolean;
-  correctWord: string;
-};
-
-export type Word3 = {
-  incorrectSentence: string;
-  correctSentence: string;
-};
-
-export type Question = {
+export type PracticeQuestion = {
   question: string;
   choices: string[];
   answerIndex: number;
   reason: string;
 };
-
-export interface Word2 {
-  prompt: string;
-  answer: string;
-  correctIndexes: number[];
-}
 
 // Define the structure for an achievement card
 export interface AchievementCardProps {
@@ -65,31 +50,31 @@ export interface AchievementCardProps {
   achieved: boolean;
 }
 
-export interface SpellingCorrection {
-  incorrect: string;
-  correct: string;
-  incorrect_alt: string;
-  definition: string;
+export interface Quiz {
+  category: string,
+  beginner: SetContainer[],
+  intermidiate: SetContainer[],
+  hard: SetContainer[]
 }
 
-export type CorrectWordQuestion = {
-  question: string;
-  options: string[];
-  correctAnswer: string;
-};
-
-export interface ScrambledWordQuestion {
-  scrambled: string;
-  answer: string;
+export interface SetContainer {
+  label: string,
+  set: QuizSet
 }
 
-export type ChoicesQuestion = {
-  questionText: string;
-  choices: { [key: string]: string };
-  correctAnswer: string;
-};
+export interface QuizSet {
+  instruction: string,
+  questions: QuizQuestion[]
+}
 
-export type QuizChoice = {
-  options: string[];
-  answerIndex: number;
-};
+export interface QuizQuestion {
+  question: string,
+  type: QuestionType,
+  correctAnswer: string,
+  explanation: string,
+
+  // can be used for the following types:
+  // - MCQ
+  // - Image Identification
+  choices?: string[]
+}

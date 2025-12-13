@@ -1,5 +1,5 @@
 import type {
-  Question,
+  PracticeQuestion,
   Achievements,
   AchievementCardProps,
   CorrectWordQuestion,
@@ -994,7 +994,7 @@ export const capLevel2: Word2[] = [
   },
 ];
 
-export const practiceQuestions: Question[] = [
+export const practiceQuestions: PracticeQuestion[] = [
   {
     question: "Which sentence is correctly written?",
     choices: [
