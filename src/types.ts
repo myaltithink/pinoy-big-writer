@@ -70,11 +70,26 @@ export interface QuizSet {
 export interface QuizQuestion {
   question: string,
   type: QuestionType,
-  correctAnswer: string,
+
+  // number value represents index
+  correctAnswer: string | number,
   explanation: string,
 
-  // can be used for the following types:
+  // Can be used for the following types:
   // - MCQ
   // - Image Identification
+  // - Sentence Order (cronological order type)
   choices?: string[]
+  choiceType?: "alpha" | "numeric" | "none"
+
+  // used by Transitional type for choices
+  transitionChoice?: TransitionChoice
+
+  // used to display the direction/instruction of the next section of the set
+  direction?: string
+}
+
+export interface TransitionChoice {
+  first: string[],
+  second: string[]
 }

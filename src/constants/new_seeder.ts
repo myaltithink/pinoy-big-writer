@@ -1,5 +1,6 @@
-import type { AchievementCardProps, Achievements, PracticeQuestion, Quiz, QuizSet } from "../types";
+import type { AchievementCardProps, Achievements, PracticeQuestion, Quiz } from "../types";
 import { ORG_BEGINER_SET } from "./organization/beginner";
+import { ORG_INTERMIDIATE_SET } from "./organization/intermidiate";
 
 export const practiceQuestions: PracticeQuestion[] = [
   {
@@ -525,7 +526,7 @@ export const allAchievementsDisplayData: Record<
 export const ORGANIZATION_QUIZ: Quiz = {
     category: "Organization",
     beginner: ORG_BEGINER_SET,
-    intermidiate: [],
+    intermidiate: ORG_INTERMIDIATE_SET,
     hard: []
 }
 

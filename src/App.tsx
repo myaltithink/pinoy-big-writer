@@ -40,7 +40,7 @@ import { useUserStore } from "./stores/useUserStore";
 import LevelGuard from "./layouts/LevelGuard";
 import Rules from "./pages/Rules";
 import TaskRoom from "./pages/TaskRoom";
-import { ORG_BEGINER_SET } from "./constants/organization/beginner";
+
 import { ORGANIZATION_QUIZ } from "./constants/new_seeder";
 
 const App = () => {
