@@ -1,6 +1,10 @@
 import type { AchievementCardProps, Achievements, PracticeQuestion, Quiz } from "../types";
 import { ORG_BEGINER_SET } from "./organization/beginner";
+import { ORG_ADVANCED_SET } from "./organization/advanced";
 import { ORG_INTERMIDIATE_SET } from "./organization/intermidiate";
+import { GRAMMAR_BEGINNER_SET } from "./grammar/beginner";
+import { GRAMMAR_INTERMIDIATE_SET } from "./grammar/intermidiate";
+import { GRAMMAR_ADVANCED_SET } from "./grammar/advanced";
 
 export const practiceQuestions: PracticeQuestion[] = [
   {
@@ -527,7 +531,14 @@ export const ORGANIZATION_QUIZ: Quiz = {
     category: "Organization",
     beginner: ORG_BEGINER_SET,
     intermidiate: ORG_INTERMIDIATE_SET,
-    hard: []
+    advance: ORG_ADVANCED_SET
+}
+
+export const GRAMMAR_QUIZ: Quiz = {
+  category: "Grammar",
+  beginner: GRAMMAR_BEGINNER_SET,
+  intermidiate: GRAMMAR_INTERMIDIATE_SET,
+  advance: GRAMMAR_ADVANCED_SET
 }
 
 

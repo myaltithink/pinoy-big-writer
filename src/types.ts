@@ -54,7 +54,7 @@ export interface Quiz {
   category: string,
   beginner: SetContainer[],
   intermidiate: SetContainer[],
-  hard: SetContainer[]
+  advance: SetContainer[]
 }
 
 export interface SetContainer {

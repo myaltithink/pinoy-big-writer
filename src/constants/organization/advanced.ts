@@ -863,7 +863,7 @@ const setG: QuizQuestion[] = [
     },
 ]
 
-export const ORG_HARD_SET: SetContainer[] = [
+export const ORG_ADVANCED_SET: SetContainer[] = [
     {
         label: "Set A",
         set: {

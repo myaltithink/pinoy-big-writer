@@ -60,7 +60,7 @@ const App = () => {
     return <RotateScreen />;
   }
 
-  // TODO: remove log
+  // TODO: remove
   console.log(ORGANIZATION_QUIZ)
 
   return (
