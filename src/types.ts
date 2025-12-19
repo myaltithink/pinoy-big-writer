@@ -82,14 +82,9 @@ export interface QuizQuestion {
   choices?: string[]
   choiceType?: "alpha" | "numeric" | "none"
 
-  // used by Transitional type for choices
-  transitionChoice?: TransitionChoice
+  // used by Transitional to dictate how many answer can be selected
+  transitions?: number,
 
   // used to display the direction/instruction of the next section of the set
   direction?: string
-}
-
-export interface TransitionChoice {
-  first: string[],
-  second: string[]
 }

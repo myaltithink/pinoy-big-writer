@@ -5,6 +5,9 @@ import { ORG_INTERMIDIATE_SET } from "./organization/intermidiate";
 import { GRAMMAR_BEGINNER_SET } from "./grammar/beginner";
 import { GRAMMAR_INTERMIDIATE_SET } from "./grammar/intermidiate";
 import { GRAMMAR_ADVANCED_SET } from "./grammar/advanced";
+import { VOCAB_BEGINNER_SET } from "./vocabulary/beginner";
+import { VOCAB_INTERMIDIATE_SET } from "./vocabulary/intermidiate";
+import { VOCAB_ADVANCED_SET } from "./vocabulary/advanced";
 
 export const practiceQuestions: PracticeQuestion[] = [
   {
@@ -541,5 +544,11 @@ export const GRAMMAR_QUIZ: Quiz = {
   advance: GRAMMAR_ADVANCED_SET
 }
 
+export const  VOCAB_QUIZ: Quiz = {
+  category: "Vocabulary",
+  beginner: VOCAB_BEGINNER_SET,
+  intermidiate: VOCAB_INTERMIDIATE_SET,
+  advance: VOCAB_ADVANCED_SET
+}
 
 

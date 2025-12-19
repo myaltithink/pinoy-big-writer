@@ -8,7 +8,10 @@ export const QuestionType = {
 
     // used for transitional words (2) selection
     Transitional: "transitional",
-    CompleteTheSentence: "complete_the_sentence"
+    CompleteTheSentence: "complete_the_sentence",
+
+    WordLevel: "word_level",
+    LetterOrder: "letter_order"
 };
 
 export type QuestionType = typeof QuestionType[keyof typeof QuestionType];
