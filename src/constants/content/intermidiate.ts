@@ -244,16 +244,16 @@ const setB: QuizQuestion[] = [
 const setC: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        direction: "",
+        direction: "Read each statement and determine if it is true or false.",
         question: "",
         explanation: "",
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "1. A conclusion that restates the lesson learned helps connect the experience to personal reflection.",
+        explanation: "True – A conclusion that restates the lesson learned helps the reader connect the main experience to the writer’s personal reflection.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -262,9 +262,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "2. Listing several events in quick sequence often causes missing cause-and-effect relationships.",
+        explanation: "True – Listing events quickly can make it hard to show the cause-and-effect relationship between them.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -273,9 +273,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "3. Leaving out the setting can reduce the reader’s understanding of the event.",
+        explanation: "True – Omitting the setting reduces the reader’s understanding of where and when the events happened.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -284,9 +284,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "4. Using only action verbs (e.g., “we ran, we ate”) typically produces meaningful, detailed content.",
+        explanation: "False – Using only action verbs focuses on what happened but does not provide meaningful details or deeper content.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -295,9 +295,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "5. A main idea that is too broad makes it difficult for supporting details to fully develop the content.",
+        explanation: "True – A broad main idea makes it challenging for supporting details to fully explain or develop the topic.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -306,9 +306,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "6. Leaving out the significance of the moment still results in a meaningful and complete essay.",
+        explanation: "False – Leaving out the significance prevents the essay from conveying why the moment matters.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -317,9 +317,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "7. Restating the same fact in different wording is an effective way to deepen meaning.",
+        explanation: "False – Rewriting the same fact does not deepen meaning; it only repeats information.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -328,9 +328,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "8. Short, undeveloped statements like “I’m happy” provide complete emotional depth even without explanation.",
+        explanation: "False – Short statements like “I’m happy” lack emotional depth and do not explain feelings clearly.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -339,9 +339,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "9. An introduction that includes context and a clear topic helps the writer stay focused.",
+        explanation: "True – Including context and a clear topic in the introduction helps the writer maintain focus throughout the essay.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -350,9 +350,9 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "10. Writing about a contest, then new friends, then confidence, then sadness shows a clear and focused narrative.",
+        explanation: "False – Jumping between unrelated events creates a confusing narrative that lacks clarity and focus.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
