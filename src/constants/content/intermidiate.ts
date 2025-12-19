@@ -364,16 +364,16 @@ const setC: QuizQuestion[] = [
 const setD: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        direction: "",
+        direction: "Read each statement and determine if it is true or false.",
         question: "",
         explanation: "",
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "1. A writer who describes the event but never explains its impact shows lack of personal reflection.",
+        explanation: "True – Describing events without explaining their impact prevents the reader from understanding the writer’s personal reflection.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -382,9 +382,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "2. Repeating phrases like “we all laughed” multiple times adds depth rather than repetition.",
+        explanation: "False – Repeating phrases like “we all laughed” multiple times creates redundancy rather than adding depth.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -393,9 +393,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "3. Including sensory details that are unrelated to feelings effectively enhances emotional depth.",
+        explanation: "False – Sensory details that do not relate to emotions do not contribute to meaningful emotional depth.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -404,9 +404,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "4. Describing events in random order can make the narrative hard to follow.",
+        explanation: "True – Presenting events in random order can confuse the reader and disrupt the narrative flow.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -415,9 +415,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "5. Abruptly stopping mid-thought creates incomplete content.",
+        explanation: "True – Stopping abruptly leaves ideas incomplete and the content underdeveloped.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -426,9 +426,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "6. A paragraph remains coherent even if the topic sentence does not align with its supporting sentences.",
+        explanation: "False – A paragraph loses coherence if the topic sentence does not match its supporting sentences.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -437,9 +437,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "7. Listing many small events instead of developing one main event often results in a lack of focus.",
+        explanation: "True – Listing many small events prevents the narrative from focusing on one main event, weakening clarity.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -448,9 +448,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "8. Explaining emotions with reasons (e.g., “I was sad because…”) increases emotional depth.",
+        explanation: "True – Explaining emotions with reasons helps the reader understand the significance of feelings.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -459,9 +459,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "9. Combining unrelated memories in one paragraph strengthens the organizational flow.",
+        explanation: "False – Combining unrelated memories in one paragraph disrupts organization and confuses the flow.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -470,9 +470,9 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "10. A conclusion without an explanation of what was learned lacks meaningful closure.",
+        explanation: "True – A conclusion that does not explain the lesson learned fails to provide meaningful closure.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
