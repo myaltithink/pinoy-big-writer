@@ -9,7 +9,7 @@ import {
   getLocalStorageItem,
   setLocalStorageItem,
 } from "../utils/localstorage";
-import type { User, Question } from "../types";
+import type { User, PracticeQuestion } from "../types";
 import { practiceQuestions } from "../constants/seeder";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
 
@@ -24,7 +24,7 @@ function Vault() {
   const { user, setUser } = useUserStore();
   const [tab, setTab] = useState<Tab>("Vault");
 
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<PracticeQuestion[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);

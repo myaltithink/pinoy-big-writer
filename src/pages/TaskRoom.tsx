@@ -42,7 +42,7 @@ function TaskRoom() {
                     delay: id * 0.2,
                     type: "spring",
                   }}
-                  whileHover={{ scale: "1.1" }}
+                  whileHover={{ scale: 1.1 }}
                   className={`text-center ${isMediumScreen? "p-10" : "p-20"}`}>
                     <p style={{fontFamily: "Arco", fontSize: `${isMediumScreen? "15px" : "22px"}`}} className="text-[#552b1a]">
                       {selection.label}

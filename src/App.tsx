@@ -41,6 +41,8 @@ import LevelGuard from "./layouts/LevelGuard";
 import Rules from "./pages/Rules";
 import TaskRoom from "./pages/TaskRoom";
 
+import { ORGANIZATION_QUIZ } from "./constants/new_seeder";
+
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
   const { user } = useUserStore();
@@ -57,6 +59,9 @@ const App = () => {
   if (isSmallScreen && !window.location.pathname.endsWith("3")) {
     return <RotateScreen />;
   }
+
+  // TODO: remove
+  console.log(ORGANIZATION_QUIZ)
 
   return (
     <Router>
