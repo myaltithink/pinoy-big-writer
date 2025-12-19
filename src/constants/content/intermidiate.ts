@@ -124,16 +124,16 @@ const setA: QuizQuestion[] = [
 const setB: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        direction: "",
+        direction: "Read each statement and determine if it is true or false.",
         question: "",
         explanation: "",
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "1. A paragraph that lists actions instead of explaining them shows weak content development.",
+        explanation: "True – Listing actions without details or explanations prevents the reader from fully understanding the events, showing weak content development.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -142,9 +142,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "2. Repeating “I enjoyed it” multiple times effectively expands the idea.",
+        explanation: "False – Repeating “I enjoyed it” adds no new information and does not expand the idea meaningfully.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -153,9 +153,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "3. Stating feelings such as “I was sad” without explaining why demonstrates strong emotional depth.",
+        explanation: "False – Simply stating “I was sad” without reasons does not show emotional depth since the cause or context is missing.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -164,9 +164,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "4. Naming people without describing their role in the event provides complete context for the reader.",
+        explanation: "False – Naming people without describing their roles leaves the reader without enough context; the content remains incomplete.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -175,9 +175,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "5. An essay that stops mid-sentence reflects incomplete thinking and weakens the content.",
+        explanation: "True – Stopping mid-sentence reflects unfinished thinking and weakens the narrative’s development.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -186,9 +186,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "6. Repeating “My family makes me happy” several times effectively develops the main idea.",
+        explanation: "False – Repeating “My family makes me happy” does not provide details or examples, failing to develop the main idea effectively.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -197,9 +197,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "7. Including unrelated facts about a trip, without explaining what happened, shows limited detail.",
+        explanation: "True – Including unrelated facts without explanation shows limited detail and makes the narrative unfocused.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -208,9 +208,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "8. Ending with life advice that does not connect to the story can make the conclusion feel weak or missing.",
+        explanation: "True – Ending with advice unrelated to the story disconnects the conclusion from the main events, weakening it.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -219,9 +219,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "9. Writing “we go outside” without description gives the reader enough imagery to understand the event.",
+        explanation: "False – Writing “we go outside” without description does not give enough imagery for the reader to visualize the event.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -230,9 +230,9 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "10. Explaining what happened and why it mattered significantly strengthens the content.",
+        explanation: "True – Explaining both what happened and why it mattered adds depth and clarity, significantly strengthening the content.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
