@@ -484,16 +484,16 @@ const setD: QuizQuestion[] = [
 const setE: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        direction: "",
+        direction: "Read each statement and determine if it is true or false.",
         question: "",
         explanation: "",
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "1. Simply stating “the day I celebrated my birthday” is not enough; the writer still needs to develop the moment and its importance.",
+        explanation: "True - Just mentioning the day without describing what happened or why it mattered does not give the reader a full picture. Development is necessary.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -502,9 +502,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "2. Using general phrases such as “it was nice” repeatedly shows limited description.",
+        explanation: "True - Phrases like “it was nice” are vague and do not give specific details, which weakens the content.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -513,9 +513,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "3. A chronological list of events always forms a convincing narrative even without reflection.",
+        explanation: "False - Listing events in order does not automatically make a story convincing. Reflection, explanation, or context is needed to make the narrative meaningful.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -524,9 +524,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "4. Including every idea the writer remembers often results in unclear and scattered content.",
+        explanation: "True - Putting too many ideas together without organization can confuse the reader and weaken the narrative’s focus.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -535,9 +535,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "5. Shifting between emotions without reasons strengthens emotional depth.",
+        explanation: "False - Randomly switching emotions without context makes the writing confusing and reduces emotional impact rather than strengthening it.",
+        correctAnswer: "False",
         choices: [
             "True",
             "False",
@@ -546,9 +546,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "6. A paragraph cannot stay coherent if each sentence discusses a different topic.",
+        explanation: "True - Coherence requires sentences in a paragraph to relate to a single main idea; otherwise, the paragraph feels scattered.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -557,9 +557,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "7. Adding facts that are unrelated to the main event weakens the narrative’s focus.",
+        explanation: "True - Irrelevant information distracts the reader and makes the narrative less focused.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -568,9 +568,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "8. A reflection that simply repeats the introduction does not add meaning to the ending.",
+        explanation: "True - Effective conclusions or reflections should provide insight, learning, or a deeper meaning, not just restate the introduction.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -579,9 +579,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "9. A memorable-day narrative is incomplete if it never explains what made the day memorable.",
+        explanation: "True - Without explaining why the day was memorable, the narrative lacks significance for the reader.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
@@ -590,9 +590,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "",
-        explanation: "",
-        correctAnswer: "",
+        question: "10. Describing only feelings, without describing the event, leads to incomplete content.",
+        explanation: "True - Feelings alone do not give the reader enough information about what happened. Both the event and the emotions are needed for complete content.",
+        correctAnswer: "True",
         choices: [
             "True",
             "False",
