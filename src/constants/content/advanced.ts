@@ -701,7 +701,7 @@ const setE: QuizQuestion[] = [
     },
 ]
 
-const CONTENT_ADVANCED_SET: SetContainer[] = [
+export const CONTENT_ADVANCED_SET: SetContainer[] = [
     {
         label: "Set A",
         set: {

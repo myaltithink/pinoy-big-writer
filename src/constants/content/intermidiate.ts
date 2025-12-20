@@ -602,7 +602,7 @@ const setE: QuizQuestion[] = [
 ]
 
 
-const CONTENT_INTERMIDIATE_SET: SetContainer[] = [
+export const CONTENT_INTERMIDIATE_SET: SetContainer[] = [
     {
         label: "Set A",
         set: {

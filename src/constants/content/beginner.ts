@@ -1,21 +1,6 @@
 import type { QuizQuestion, SetContainer } from "../../types"
 import { QuestionType } from "../QuestionType.Enum"
 
-// SAMPLE ENCODING:
-
-// {
-//     type: QuestionType.MultipleChoice,
-//     question: "1. sample question",
-//     explanation: "bullshit here bullshit there........",
-//     correctAnswer: "choice c", // yung actual content ng choices and ichcheck ko jan
-//     choices: [
-//         "choice a",
-//         "choice b",
-//         "choice c",
-//         "choice d",
-//     ],
-//     choiceType: "alpha"
-// }
 
 const setA: QuizQuestion[] = [
     {
@@ -718,7 +703,7 @@ const setE: QuizQuestion[] = [
 ]
 
 
-const CONTENT_BEGINNER_SET: SetContainer[] = [
+export const CONTENT_BEGINNER_SET: SetContainer[] = [
     {
         label: "Set A",
         set: {
