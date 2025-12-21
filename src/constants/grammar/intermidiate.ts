@@ -1,4 +1,4 @@
-import type { QuizQuestion, SetContainer } from "../../types"
+import type { QuizQuestion, SetContainer, SetMetadata } from "../../types"
 import { QuestionType } from "../QuestionType.Enum"
 
 const setA: QuizQuestion[] = [
@@ -1212,9 +1212,15 @@ const setJ: QuizQuestion[] = [
     },
 ]
 
+const metadata: SetMetadata = {
+    passingScore: 7,
+    timeLimit: 20
+}
+
 export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     {
         label: "Set A",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setA,
@@ -1222,6 +1228,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set B",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setB,
@@ -1229,6 +1236,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set C",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setC,
@@ -1236,6 +1244,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set D",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setD,
@@ -1243,6 +1252,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set E",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setE,
@@ -1250,6 +1260,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set F",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setF,
@@ -1257,6 +1268,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set G",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setG,
@@ -1264,6 +1276,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set H",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setH,
@@ -1271,6 +1284,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set I",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setI,
@@ -1278,6 +1292,7 @@ export const GRAMMAR_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set J",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setJ,

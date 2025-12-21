@@ -1,4 +1,4 @@
-import type { QuizQuestion, SetContainer } from "../../types"
+import type { QuizQuestion, SetContainer, SetMetadata } from "../../types"
 import { QuestionType } from "../QuestionType.Enum"
 
 const setA: QuizQuestion[] = [
@@ -442,10 +442,15 @@ const setG: QuizQuestion[] = [
     },
 ]
 
+const metadata: SetMetadata = {
+    passingScore: 7,
+    timeLimit: 15
+}
 
 export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     {
         label: "Set A",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setA,
@@ -453,6 +458,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set B",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setB,
@@ -460,6 +466,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set C",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setC,
@@ -467,6 +474,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set D",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setD,
@@ -474,6 +482,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set E",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setE,
@@ -481,6 +490,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set F",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setF,
@@ -488,6 +498,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set G",
+        metadata: metadata,
         set: {
             instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
             questions: setG,

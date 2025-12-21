@@ -1,4 +1,4 @@
-import type { QuizQuestion, SetContainer } from "../../types"
+import type { QuizQuestion, SetContainer, SetMetadata } from "../../types"
 import { QuestionType } from "../QuestionType.Enum"
 
 const setA: QuizQuestion[] = [
@@ -863,9 +863,15 @@ const setG: QuizQuestion[] = [
     },
 ]
 
+const metadata: SetMetadata = {
+    passingScore: 7,
+    timeLimit: 15
+}
+
 export const ORG_ADVANCED_SET: SetContainer[] = [
     {
         label: "Set A",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setA,
@@ -873,6 +879,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set B",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setB,
@@ -880,6 +887,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set C",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setC,
@@ -887,6 +895,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set D",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setD,
@@ -894,6 +903,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set E",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setE,
@@ -901,6 +911,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set F",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setF,
@@ -908,6 +919,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
     },
     {
         label: "Set G",
+        metadata: metadata,
         set: {
             instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
             questions: setG,

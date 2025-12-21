@@ -1,4 +1,4 @@
-import type { QuizQuestion, SetContainer } from "../../types"
+import type { QuizQuestion, SetContainer, SetMetadata } from "../../types"
 import { QuestionType } from "../QuestionType.Enum"
 
 
@@ -702,10 +702,15 @@ const setE: QuizQuestion[] = [
     },
 ]
 
+const metadata: SetMetadata = {
+    passingScore: 7,
+    timeLimit: 20
+}
 
 export const CONTENT_BEGINNER_SET: SetContainer[] = [
     {
         label: "Set A",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setA,
@@ -713,6 +718,7 @@ export const CONTENT_BEGINNER_SET: SetContainer[] = [
     },
     {
         label: "Set B",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setB,
@@ -720,6 +726,7 @@ export const CONTENT_BEGINNER_SET: SetContainer[] = [
     },
     {
         label: "Set C",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setC,
@@ -727,6 +734,7 @@ export const CONTENT_BEGINNER_SET: SetContainer[] = [
     },
     {
         label: "Set D",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setD,
@@ -734,6 +742,7 @@ export const CONTENT_BEGINNER_SET: SetContainer[] = [
     },
     {
         label: "Set E",
+        metadata: metadata,
         set: {
             instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setE,

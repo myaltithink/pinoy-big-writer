@@ -54,12 +54,19 @@ export interface Quiz {
   category: string,
   beginner: SetContainer[],
   intermidiate: SetContainer[],
-  advance: SetContainer[]
+  advance: SetContainer[],
 }
 
 export interface SetContainer {
   label: string,
+  metadata: SetMetadata,
   set: QuizSet
+}
+
+export interface SetMetadata {
+  // time limit is represented in seconds
+  timeLimit: number,
+  passingScore: number,
 }
 
 export interface QuizSet {
@@ -75,10 +82,6 @@ export interface QuizQuestion {
   correctAnswer: string | number,
   explanation: string,
 
-  // Can be used for the following types:
-  // - MCQ
-  // - Image Identification
-  // - Sentence Order (cronological order type)
   choices?: string[]
   choiceType?: "alpha" | "numeric" | "none"
 
