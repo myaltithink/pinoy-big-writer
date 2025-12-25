@@ -29,7 +29,7 @@ import LevelGuard from "./layouts/LevelGuard";
 import Rules from "./pages/Rules";
 import TaskRoom from "./pages/TaskRoom";
 
-import { CONTENT_QUIZ, GRAMMAR_QUIZ, MECHANIC_QUIZ, ORGANIZATION_QUIZ, VOCAB_QUIZ } from "./constants/new_seeder";
+import { CONTENT_QUIZ, GRAMMAR_QUIZ, MECHANIC_QUIZ, ORGANIZATION_QUIZ, VOCAB_QUIZ } from "./constants/seeder";
 import Content from "./pages/tasks/Content";
 import QuizHandler from "./pages/QuizHandler";
 import Grammar from "./pages/tasks/Grammar";

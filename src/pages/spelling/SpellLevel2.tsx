@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { spellLevel2 as allQuestions } from "../../constants/seeder"; // Renamed import
+import { spellLevel2 as allQuestions } from "../../constants/old_seeder"; // Renamed import
 import type { CorrectWordQuestion } from "../../types"; // Updated type import
 import { shuffleArray } from "../../utils/array";
 import { Link, useNavigate } from "react-router-dom";

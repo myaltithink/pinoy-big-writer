@@ -19,7 +19,7 @@ const LevelGuard = ({
   const isUnlocked = userProgress?.[topic]?.[level - 2];
 
   if (!isUnlocked && level > 1) {
-    return <Navigate to={`/games/${topic}`} replace />;
+    return <Navigate to={`/tasks/${topic}`} replace />;
   }
 
   return children;

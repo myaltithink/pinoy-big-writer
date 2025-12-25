@@ -11,13 +11,16 @@ import type {
   Achievements,
 } from "../types";
 
+const levels = ["Beginner", "Intermediate", "Advanced"];
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // Map full-room completion achievements
 const roomToAchievementMap: Record<Room, Achievements> = {
-  capitalization: "completedAllCapitalization",
-  punctuation: "completedAllPunctuation",
-  spelling: "completedAllSpelling",
+  content: "completeAllContent",
+  grammar: "completeAllGrammar",
+  mechanics: "completeAllMechanic",
+  organization: "completeAllOrganization",
+  vocabulary: "completeAllVocabulary"
 };
 export async function markLevelComplete(
   username: string,
@@ -54,9 +57,7 @@ export async function markLevelComplete(
   }
 
   // Per-level achievement
-  const levelKey = `completed${capitalize(room)}Level${
-    levelIndex + 1
-  }` as Achievements;
+  const levelKey = `complete${capitalize(room)}${levels[levelIndex]}` as Achievements;
 
   if (
     updatedRoomLevels[levelIndex] &&

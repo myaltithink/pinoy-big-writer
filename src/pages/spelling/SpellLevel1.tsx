@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { spellLevel1 as allWords } from "../../constants/seeder"; // Renamed import
+import { spellLevel1 as allWords } from "../../constants/old_seeder"; // Renamed import
 import { shuffleArray } from "../../utils/array";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserStore } from "../../stores/useUserStore";

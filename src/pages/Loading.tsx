@@ -96,7 +96,7 @@ function Loading() {
               }
         }
       >
-        Mechanics Edition
+        Writing Proficiency Edition 2.0
       </motion.span>
     </div>
   );

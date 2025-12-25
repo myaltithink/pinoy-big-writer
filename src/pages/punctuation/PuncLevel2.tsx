@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { puncLevel2 as allQuestions } from "../../constants/seeder"; // Updated import to puncLevel2
+import { puncLevel2 as allQuestions } from "../../constants/old_seeder"; // Updated import to puncLevel2
 import type { QuizChoice } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link, useNavigate } from "react-router-dom";

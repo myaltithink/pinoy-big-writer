@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { capLevel2 as allWords } from "../../constants/seeder";
+import { capLevel2 as allWords } from "../../constants/old_seeder";
 import type { Word2 } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link, useNavigate } from "react-router-dom";

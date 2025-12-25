@@ -68,12 +68,14 @@ function QuizHandler(props : QuizProps) {
   // Initialization
   useEffect(() => {
     selectSet();
-  }, []);
+  }, [props.questionSet]);
   
   const selectSet = () => {
     const setIndex = Math.floor(Math.random() * props.questionSet.length);
     const quiz = props.questionSet[setIndex]
   
+    setCompleted(false);
+    setStatus('start');
     setSelectedSet(quiz.set);
     setTimeLimit(quiz.metadata.timeLimit);
     setPassingScore(quiz.metadata.passingScore);
@@ -146,7 +148,8 @@ function QuizHandler(props : QuizProps) {
   }
 
   const nextLevel = () => {
-    navigate(`/tasks/${props.category}/${props.levelIndex + 2}`)
+    navigate(`/tasks/${props.category}/level-${props.levelIndex + 2}`);
+    selectSet();
   }
 
   const save = () => {
@@ -286,13 +289,23 @@ function QuizHandler(props : QuizProps) {
                 >
                   Play Again
                 </button>
-                <button
-                  onClick={nextLevel}
-                  className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
-                  style={{ fontFamily: "Arco" }}
-                >
-                  Continue
-                </button>
+                {props.levelIndex == 2? 
+                  <button
+                    onClick={() => navigate(`/tasks/${props.category}`)}
+                    className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                    style={{ fontFamily: "Arco" }}
+                  >
+                    Levels
+                  </button>
+                : 
+                  <button
+                    onClick={nextLevel}
+                    className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                    style={{ fontFamily: "Arco" }}
+                  >
+                    Continue
+                  </button>
+                }
               </div>
             )}
             {!completed && (
