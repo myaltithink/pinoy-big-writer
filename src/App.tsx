@@ -32,6 +32,7 @@ import TaskRoom from "./pages/TaskRoom";
 import { CONTENT_QUIZ, GRAMMAR_QUIZ, MECHANIC_QUIZ, ORGANIZATION_QUIZ, VOCAB_QUIZ } from "./constants/new_seeder";
 import Content from "./pages/tasks/Content";
 import QuizHandler from "./pages/QuizHandler";
+import Grammar from "./pages/tasks/Grammar";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -72,6 +73,8 @@ const App = () => {
               <Route path="/task-room" element={<TaskRoom/>} />
 
               <Route path="/tasks/content" element={<Content/>}/>
+              <Route path="/tasks/grammar" element={<Grammar/>}/>
+
               <Route
                 path="/games/capitalization"
                 element={<Capitalization />}
@@ -114,7 +117,7 @@ const App = () => {
                   }
                 />
                 <Route
-                  path="/tasks/content/level-1"
+                  path="/tasks/content/level-3"
                   element={
                     <LevelGuard
                       topic='content'
@@ -131,6 +134,57 @@ const App = () => {
                 />
               </>
 
+              {/* Grammar Levels */}
+              <>
+                <Route
+                  path="/tasks/grammar/level-1"
+                  element={
+                    <LevelGuard
+                      topic="grammar"
+                      level={1}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="grammar"
+                          backgroundClass="grammar-bg"
+                          levelIndex={0}
+                          questionSet={GRAMMAR_QUIZ.beginner}
+                        />
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/grammar/level-2"
+                  element={
+                    <LevelGuard
+                      topic="grammar"
+                      level={2}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="grammar"
+                          backgroundClass="grammar-bg"
+                          levelIndex={1}
+                          questionSet={GRAMMAR_QUIZ.intermidiate}
+                        />
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/grammar/level-3"
+                  element={
+                    <LevelGuard
+                      topic="grammar"
+                      level={3}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="grammar"
+                          backgroundClass="grammar-bg"
+                          levelIndex={2}
+                          questionSet={GRAMMAR_QUIZ.advance}
+                        />
+                    </LevelGuard>
+                  }
+                />
+              </>
 
               {/* Vaults */}
               <Route path="/vault/capitalization" element={<CapVault />} />
