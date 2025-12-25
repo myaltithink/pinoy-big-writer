@@ -76,6 +76,13 @@ body {
   background-position: center;
 }
 
+.organization-bg {
+  background-image: url("/organization.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .grammar-bg {
   background-image: url("/grammar.png");
   background-size: cover;

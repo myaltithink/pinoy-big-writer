@@ -33,6 +33,7 @@ import { CONTENT_QUIZ, GRAMMAR_QUIZ, MECHANIC_QUIZ, ORGANIZATION_QUIZ, VOCAB_QUI
 import Content from "./pages/tasks/Content";
 import QuizHandler from "./pages/QuizHandler";
 import Grammar from "./pages/tasks/Grammar";
+import Organization from "./pages/tasks/Organization";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -74,6 +75,7 @@ const App = () => {
 
               <Route path="/tasks/content" element={<Content/>}/>
               <Route path="/tasks/grammar" element={<Grammar/>}/>
+              <Route path="/tasks/organization" element={<Organization/>}/>
 
               <Route
                 path="/games/capitalization"
@@ -185,6 +187,53 @@ const App = () => {
                   }
                 />
               </>
+
+              {/* Organization Levels */}
+              <Route
+                path="/tasks/grammar/level-1"
+                element={
+                  <LevelGuard
+                    topic="organization"
+                    level={1}
+                    userProgress={user?.progress}>
+                      <QuizHandler
+                        category="organization"
+                        backgroundClass="organization-bg"
+                        levelIndex={0}
+                        questionSet={ORGANIZATION_QUIZ.beginner}/>
+                  </LevelGuard>
+                }
+              />
+              <Route
+                path="/tasks/grammar/level-2"
+                element={
+                  <LevelGuard
+                    topic="organization"
+                    level={2}
+                    userProgress={user?.progress}>
+                      <QuizHandler
+                        category="organization"
+                        backgroundClass="organization-bg"
+                        levelIndex={1}
+                        questionSet={ORGANIZATION_QUIZ.intermidiate}/>
+                  </LevelGuard>
+                }
+              />
+              <Route
+                path="/tasks/grammar/level-3"
+                element={
+                  <LevelGuard
+                    topic="organization"
+                    level={3}
+                    userProgress={user?.progress}>
+                      <QuizHandler
+                        category="organization"
+                        backgroundClass="organization-bg"
+                        levelIndex={2}
+                        questionSet={ORGANIZATION_QUIZ.advance}/>
+                  </LevelGuard>
+                }
+              />
 
               {/* Vaults */}
               <Route path="/vault/capitalization" element={<CapVault />} />
