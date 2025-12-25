@@ -146,7 +146,7 @@ function QuizHandler(props : QuizProps) {
   }
 
   const nextLevel = () => {
-    navigate(`/tasks/${props.category}/${props.levelIndex + 2}`)
+    navigate(`/tasks/${props.category}/level-${props.levelIndex + 2}`)
   }
 
   const save = () => {
