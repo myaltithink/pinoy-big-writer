@@ -35,6 +35,7 @@ import QuizHandler from "./pages/QuizHandler";
 import Grammar from "./pages/tasks/Grammar";
 import Organization from "./pages/tasks/Organization";
 import Mechanics from "./pages/tasks/Mechanics";
+import Vocabulary from "./pages/tasks/Vocabulary";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -78,6 +79,7 @@ const App = () => {
               <Route path="/tasks/grammar" element={<Grammar/>}/>
               <Route path="/tasks/organization" element={<Organization/>}/>
               <Route path="/tasks/mechanics" element={<Mechanics/>}/>
+              <Route path="/tasks/vocabulary" element={<Vocabulary/>}/>
 
               <Route
                 path="/games/capitalization"
@@ -288,6 +290,54 @@ const App = () => {
                 />
               </>
 
+              {/* Vocabulary Levels */}
+              <>
+                <Route
+                  path="/tasks/vocabulary/level-1"
+                  element={
+                    <LevelGuard
+                      topic="vocabulary"
+                      level={1}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="vocabulary"
+                          backgroundClass="vocabulary-bg"
+                          levelIndex={0}
+                          questionSet={VOCAB_QUIZ.beginner}/>
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/vocabulary/level-2"
+                  element={
+                    <LevelGuard
+                      topic="vocabulary"
+                      level={2}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="vocabulary"
+                          backgroundClass="vocabulary-bg"
+                          levelIndex={1}
+                          questionSet={VOCAB_QUIZ.beginner}/>
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/vocabulary/level-3"
+                  element={
+                    <LevelGuard
+                      topic="vocabulary"
+                      level={3}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="vocabulary"
+                          backgroundClass="vocabulary-bg"
+                          levelIndex={2}
+                          questionSet={VOCAB_QUIZ.beginner}/>
+                    </LevelGuard>
+                  }
+                />
+              </>
 
               {/* Vaults */}
               <Route path="/vault/capitalization" element={<CapVault />} />

@@ -97,6 +97,13 @@ body {
   background-position: center;
 }
 
+.vocabulary-bg {
+  background-image: url("/vocab.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .board {
   background-image: url("/board.jpg");
   background-size: contain;
