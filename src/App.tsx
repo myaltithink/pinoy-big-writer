@@ -34,6 +34,7 @@ import Content from "./pages/tasks/Content";
 import QuizHandler from "./pages/QuizHandler";
 import Grammar from "./pages/tasks/Grammar";
 import Organization from "./pages/tasks/Organization";
+import Mechanics from "./pages/tasks/Mechanics";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -76,6 +77,7 @@ const App = () => {
               <Route path="/tasks/content" element={<Content/>}/>
               <Route path="/tasks/grammar" element={<Grammar/>}/>
               <Route path="/tasks/organization" element={<Organization/>}/>
+              <Route path="/tasks/mechanics" element={<Mechanics/>}/>
 
               <Route
                 path="/games/capitalization"
@@ -189,51 +191,103 @@ const App = () => {
               </>
 
               {/* Organization Levels */}
-              <Route
-                path="/tasks/grammar/level-1"
-                element={
-                  <LevelGuard
-                    topic="organization"
-                    level={1}
-                    userProgress={user?.progress}>
-                      <QuizHandler
-                        category="organization"
-                        backgroundClass="organization-bg"
-                        levelIndex={0}
-                        questionSet={ORGANIZATION_QUIZ.beginner}/>
-                  </LevelGuard>
-                }
-              />
-              <Route
-                path="/tasks/grammar/level-2"
-                element={
-                  <LevelGuard
-                    topic="organization"
-                    level={2}
-                    userProgress={user?.progress}>
-                      <QuizHandler
-                        category="organization"
-                        backgroundClass="organization-bg"
-                        levelIndex={1}
-                        questionSet={ORGANIZATION_QUIZ.intermidiate}/>
-                  </LevelGuard>
-                }
-              />
-              <Route
-                path="/tasks/grammar/level-3"
-                element={
-                  <LevelGuard
-                    topic="organization"
-                    level={3}
-                    userProgress={user?.progress}>
-                      <QuizHandler
-                        category="organization"
-                        backgroundClass="organization-bg"
-                        levelIndex={2}
-                        questionSet={ORGANIZATION_QUIZ.advance}/>
-                  </LevelGuard>
-                }
-              />
+              <>
+                <Route
+                  path="/tasks/organization/level-1"
+                  element={
+                    <LevelGuard
+                      topic="organization"
+                      level={1}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="organization"
+                          backgroundClass="organization-bg"
+                          levelIndex={0}
+                          questionSet={ORGANIZATION_QUIZ.beginner}/>
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/organization/level-2"
+                  element={
+                    <LevelGuard
+                      topic="organization"
+                      level={2}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="organization"
+                          backgroundClass="organization-bg"
+                          levelIndex={1}
+                          questionSet={ORGANIZATION_QUIZ.intermidiate}/>
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/organization/level-3"
+                  element={
+                    <LevelGuard
+                      topic="organization"
+                      level={3}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="organization"
+                          backgroundClass="organization-bg"
+                          levelIndex={2}
+                          questionSet={ORGANIZATION_QUIZ.advance}/>
+                    </LevelGuard>
+                  }
+                />
+              </>
+
+              {/* Mechanics Levels */}
+              <>
+                <Route
+                  path="/tasks/mechanics/level-1"
+                  element={
+                    <LevelGuard
+                      topic="mechanics"
+                      level={1}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="mechanics"
+                          backgroundClass="mechanics-bg"
+                          levelIndex={0}
+                          questionSet={MECHANIC_QUIZ.beginner}/>
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/mechanics/level-2"
+                  element={
+                    <LevelGuard
+                      topic="mechanics"
+                      level={2}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="mechanics"
+                          backgroundClass="mechanics-bg"
+                          levelIndex={1}
+                          questionSet={MECHANIC_QUIZ.intermidiate}/>
+                    </LevelGuard>
+                  }
+                />
+                <Route
+                  path="/tasks/mechanics/level-3"
+                  element={
+                    <LevelGuard
+                      topic="mechanics"
+                      level={3}
+                      userProgress={user?.progress}>
+                        <QuizHandler
+                          category="mechanics"
+                          backgroundClass="mechanics-bg"
+                          levelIndex={2}
+                          questionSet={MECHANIC_QUIZ.advance}/>
+                    </LevelGuard>
+                  }
+                />
+              </>
+
 
               {/* Vaults */}
               <Route path="/vault/capitalization" element={<CapVault />} />
