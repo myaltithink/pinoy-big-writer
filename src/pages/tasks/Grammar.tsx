@@ -97,7 +97,7 @@ function Grammar() {
           } bg-black/50 rounded-t-3xl text-white flex items-center gap-4 border-8 border-black/50 cursor-pointer`}
           style={{ fontFamily: "Arco" }}
         >
-          Content Station
+          Grammar Station
           <span
             className={`text-${
               isMediumScreen ? "lg" : "4xl"
