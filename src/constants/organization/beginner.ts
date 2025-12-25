@@ -1,4 +1,4 @@
-import type { QuizQuestion, SetContainer } from "../../types";
+import type { QuizQuestion, SetContainer, SetMetadata } from "../../types";
 import { QuestionType } from "../QuestionType.Enum";
 
 const setA: QuizQuestion[] = [
@@ -1452,9 +1452,15 @@ const setG: QuizQuestion[] = [
     },
 ]
 
+const metadata: SetMetadata = {
+    passingScore: 12,
+    timeLimit: 15
+}
+
 export const ORG_BEGINER_SET: SetContainer[] = [
     {
         label: "Set A",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setA,
@@ -1462,6 +1468,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
     },
     {
         label: "Set B",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setB
@@ -1469,6 +1476,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
     },
     {
         label: "Set C",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setC
@@ -1476,6 +1484,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
     },
     {
         label: "Set D",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setD
@@ -1483,6 +1492,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
     },
     {
         label: "Set E",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setE
@@ -1490,6 +1500,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
     },
     {
         label: "Set F",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setF
@@ -1497,6 +1508,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
     },
     {
         label: "Set G",
+        metadata: metadata,
         set: {
             instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
             questions: setG

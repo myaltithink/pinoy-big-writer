@@ -69,6 +69,41 @@ body {
   animation: moveBg 30s linear infinite;
 }
 
+.content-bg {
+  background-image: url("/content.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.organization-bg {
+  background-image: url("/organization.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.grammar-bg {
+  background-image: url("/grammar.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mechanics-bg {
+  background-image: url("/mechanics.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vocabulary-bg {
+  background-image: url("/vocab.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .board {
   background-image: url("/board.jpg");
   background-size: contain;

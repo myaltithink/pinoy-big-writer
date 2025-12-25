@@ -1,4 +1,4 @@
-import type { QuizQuestion, SetContainer } from "../../types"
+import type { QuizQuestion, SetContainer, SetMetadata } from "../../types"
 import { QuestionType } from "../QuestionType.Enum"
 
 const setA: QuizQuestion[] = [
@@ -987,9 +987,15 @@ const setG: QuizQuestion[] = [
     },
 ]
 
+const metadata: SetMetadata = {
+    passingScore: 7,
+    timeLimit: 15
+}
+
 export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     {
         label: "Set A",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setA,
@@ -997,6 +1003,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set B",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setB,
@@ -1004,6 +1011,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set C",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setC,
@@ -1011,6 +1019,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set D",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setD,
@@ -1018,6 +1027,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set E",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setE,
@@ -1025,6 +1035,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set F",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setF,
@@ -1032,6 +1043,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
     },
     {
         label: "Set G",
+        metadata: metadata,
         set: {
             instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
             questions: setG,

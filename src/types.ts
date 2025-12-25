@@ -15,7 +15,7 @@ export type Achievements =
   | "completedSpellingLevel3"
   | "completedAllLevels";
 
-export type Room = "capitalization" | "punctuation" | "spelling";
+export type Room = "content" | "organization" | "vocabulary" | "grammar" | "mechanics";
 
 export type LevelProgress = [boolean, boolean, boolean]; // 3 levels
 
@@ -54,12 +54,19 @@ export interface Quiz {
   category: string,
   beginner: SetContainer[],
   intermidiate: SetContainer[],
-  advance: SetContainer[]
+  advance: SetContainer[],
 }
 
 export interface SetContainer {
   label: string,
+  metadata: SetMetadata,
   set: QuizSet
+}
+
+export interface SetMetadata {
+  // time limit is represented in seconds
+  timeLimit: number,
+  passingScore: number,
 }
 
 export interface QuizSet {
@@ -75,21 +82,12 @@ export interface QuizQuestion {
   correctAnswer: string | number,
   explanation: string,
 
-  // Can be used for the following types:
-  // - MCQ
-  // - Image Identification
-  // - Sentence Order (cronological order type)
   choices?: string[]
   choiceType?: "alpha" | "numeric" | "none"
 
-  // used by Transitional type for choices
-  transitionChoice?: TransitionChoice
+  // used by Transitional to dictate how many answer can be selected
+  transitions?: number,
 
   // used to display the direction/instruction of the next section of the set
   direction?: string
-}
-
-export interface TransitionChoice {
-  first: string[],
-  second: string[]
 }

@@ -5,6 +5,15 @@ import { ORG_INTERMIDIATE_SET } from "./organization/intermidiate";
 import { GRAMMAR_BEGINNER_SET } from "./grammar/beginner";
 import { GRAMMAR_INTERMIDIATE_SET } from "./grammar/intermidiate";
 import { GRAMMAR_ADVANCED_SET } from "./grammar/advanced";
+import { VOCAB_BEGINNER_SET } from "./vocabulary/beginner";
+import { VOCAB_INTERMIDIATE_SET } from "./vocabulary/intermidiate";
+import { VOCAB_ADVANCED_SET } from "./vocabulary/advanced";
+import { CONTENT_BEGINNER_SET } from "./content/beginner";
+import { CONTENT_INTERMIDIATE_SET } from "./content/intermidiate";
+import { CONTENT_ADVANCED_SET } from "./content/advanced";
+import { MECHANICS_BEGINNER_SET } from "./mechanics/beginner";
+import { MECHANICS_INTERMEDIATE_SET } from "./mechanics/intermidiate";
+import { MECHANICS_ADVANCED_SET } from "./mechanics/advanced";
 
 export const practiceQuestions: PracticeQuestion[] = [
   {
@@ -526,7 +535,6 @@ export const allAchievementsDisplayData: Record<
   },
 };
 
-
 export const ORGANIZATION_QUIZ: Quiz = {
     category: "Organization",
     beginner: ORG_BEGINER_SET,
@@ -541,5 +549,24 @@ export const GRAMMAR_QUIZ: Quiz = {
   advance: GRAMMAR_ADVANCED_SET
 }
 
+export const VOCAB_QUIZ: Quiz = {
+  category: "Vocabulary",
+  beginner: VOCAB_BEGINNER_SET,
+  intermidiate: VOCAB_INTERMIDIATE_SET,
+  advance: VOCAB_ADVANCED_SET
+}
 
+export const CONTENT_QUIZ: Quiz = {
+  category: "Content",
+  beginner: CONTENT_BEGINNER_SET,
+  intermidiate: CONTENT_INTERMIDIATE_SET,
+  advance: CONTENT_ADVANCED_SET
+}
+
+export const MECHANIC_QUIZ: Quiz = {
+  category: "Mechanics",
+  beginner: MECHANICS_BEGINNER_SET,
+  intermidiate: MECHANICS_INTERMEDIATE_SET,
+  advance: MECHANICS_ADVANCED_SET
+}
 
