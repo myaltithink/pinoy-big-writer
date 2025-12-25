@@ -9,14 +9,16 @@ interface selection{
   width? : string
 }
 
+const destinationPrefix = "/tasks/";
+
 function TaskRoom() {
 
   const selections: selection[] = [
-    { label: "Content", destination: "" },
-    { label: "Organization", destination: ""},
-    { label: "Vocabulary", destination: ""},
-    { label: "Grammar", destination: "", width: "35%"},
-    { label: "Mechanics", destination: "", width: "35%" }
+    { label: "Content", destination: destinationPrefix + "content" },
+    { label: "Organization", destination: destinationPrefix + "organization"},
+    { label: "Vocabulary", destination: destinationPrefix + "vocabulary"},
+    { label: "Grammar", destination: destinationPrefix + "grammar", width: "35%"},
+    { label: "Mechanics", destination: destinationPrefix + "mechanics", width: "35%" }
   ]
 
   const { isMediumScreen } = useScreenSize();

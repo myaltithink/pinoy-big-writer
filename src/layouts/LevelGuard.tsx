@@ -1,9 +1,10 @@
 // components/LevelGuard.tsx
 import { Navigate } from "react-router-dom";
 import type { ReactNode } from "react";
+import type { Room } from "../types";
 
 type LevelGuardProps = {
-  topic: string;
+  topic: Room;
   level: number;
   userProgress: Record<string, boolean[]> | undefined;
   children: ReactNode;

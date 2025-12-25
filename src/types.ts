@@ -15,7 +15,7 @@ export type Achievements =
   | "completedSpellingLevel3"
   | "completedAllLevels";
 
-export type Room = "capitalization" | "punctuation" | "spelling";
+export type Room = "content" | "organization" | "vocabulary" | "grammar" | "mechanics";
 
 export type LevelProgress = [boolean, boolean, boolean]; // 3 levels
 

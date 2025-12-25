@@ -9,10 +9,11 @@ import { TiHome } from "react-icons/ti";
 import { useUserStore } from "../stores/useUserStore";
 import { useSoundContext } from "../layouts/SoundProvider";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
-import type { QuizQuestion, QuizSet, SetContainer } from "../types";
+import type { QuizQuestion, QuizSet, Room, SetContainer } from "../types";
 import Instruction from "../components/Instruction";
 import { QuestionType } from "../constants/QuestionType.Enum";
 import Question from "../components/Question";
+import { markLevelComplete } from "../utils/game";
 
 const winSoundPath = "/sounds/win.mp3";
 const loseSoundPath = "/sounds/lose.mp3";
@@ -25,18 +26,19 @@ const starColors = [
   "text-red-500",
 ];
 
-type Status = 'start' | 'ongoing' | 'done' | 'gameover';
+type Status = 'start' | 'ongoing' | 'done';
 
 interface QuizProps {
-  category: string,
-  questionSet: SetContainer[]
+  category: Room,
+  questionSet: SetContainer[],
+  backgroundClass: string,
+  levelIndex: number
 }
 
 function QuizHandler(props : QuizProps) {
 
   // STATES
   const [completed, setCompleted] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
   const [status, setStatus] = useState<Status>('start');
   const { isMediumScreen } = useScreenSize();
 
@@ -44,7 +46,7 @@ function QuizHandler(props : QuizProps) {
   const [timeLeft, setTimeLeft] = useState(0); // Timer per question
   const [timeLimit, setTimeLimit] = useState(0);
   const [passingScore, setPassingScore] = useState(0);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(-1);
 
   // QUIZ DATA
   const [selectedSet, setSelectedSet] = useState<QuizSet>();
@@ -65,23 +67,27 @@ function QuizHandler(props : QuizProps) {
 
   // Initialization
   useEffect(() => {
+    selectSet();
+  }, []);
+  
+  const selectSet = () => {
     const setIndex = Math.floor(Math.random() * props.questionSet.length);
     const quiz = props.questionSet[setIndex]
-
+  
     setSelectedSet(quiz.set);
     setTimeLimit(quiz.metadata.timeLimit);
     setPassingScore(quiz.metadata.passingScore);
-  }, []);
+    setScore(0);
+  }
 
-  // TODO: figure out passing score
-  // TODO: figure out what completed & gameOver is
-  // TODO: save info to user account when quiz is finished
   // Listens to score changes (correct answer)
   useEffect(() => {
-    
+    if (score >= passingScore) {
+      setCompleted(true);
+    }
   }, [score])
   
-  // Listens to question and timeLeft changes to handle timer
+  // Listens to question to handle timer
   useEffect(() => {
     const resetTimer = () => {
       if (
@@ -112,6 +118,13 @@ function QuizHandler(props : QuizProps) {
   // called by <Instruction> when the type is QuestionType.Direction
   const nextQuestion = () => {
     const newIndex = quizIndex + 1;
+
+    if (newIndex == selectedSet?.questions.length) {
+      setStatus('done');
+      save();
+      return;
+    }
+
     setQuestion(selectedSet?.questions[newIndex]);
     setQuizIndex(newIndex);
   }
@@ -125,6 +138,27 @@ function QuizHandler(props : QuizProps) {
       resetQuestion();
       nextQuestion()
     }, 3000);
+  }
+
+  const handleRestart = () => {
+    setStatus('start');
+    selectSet();
+  }
+
+  const nextLevel = () => {
+    navigate(`/tasks/${props.category}/${props.levelIndex + 2}`)
+  }
+
+  const save = () => {
+    if (!completed) {
+      playLoseSound();
+      return;
+    }
+
+    if (user?.username) {
+      playWinSound();
+      markLevelComplete(user.username, props.category, props.levelIndex, setUser, score);
+    }
   }
 
   const starColor =
@@ -142,11 +176,11 @@ function QuizHandler(props : QuizProps) {
 
   return (
     <div
-      className={`w-dvw h-dvh flex flex-col items-center overflow-auto spelling ${
+      className={`w-dvw h-dvh flex flex-col items-center overflow-auto ${props.backgroundClass} ${
         isMediumScreen ? "p-2" : "p-8"
       }`}
     >
-      {completed && <Confetti width={width} height={height} />}
+      {(completed && status == 'done') && <Confetti width={width} height={height} />}
       <div
         className={`flex-1 w-full flex flex-col items-center justify-center ${
           isMediumScreen ? "gap-4 p-4" : "gap-8 p-8"
@@ -154,7 +188,7 @@ function QuizHandler(props : QuizProps) {
       >
         {/* Top Bar (Conditional Rendering) */}
         {
-          status != 'start' &&
+          status == 'ongoing' &&
           question?.type != QuestionType.Direction &&
          (
             <div
@@ -237,7 +271,7 @@ function QuizHandler(props : QuizProps) {
             isMediumScreen={isMediumScreen}
           />
 
-        ) : completed || gameOver ? (
+        ) : status == 'done' ? (
           <div className="text-white text-3xl text-center">
             <p style={{ fontFamily: "Arco" }}>
               Game {completed ? "Complete" : "Over"}!
@@ -253,7 +287,7 @@ function QuizHandler(props : QuizProps) {
                   Play Again
                 </button>
                 <button
-                  onClick={() => navigate("/games/spelling/level-2")}
+                  onClick={nextLevel}
                   className="bg-yellow-500 text-white px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
                   style={{ fontFamily: "Arco" }}
                 >
@@ -285,7 +319,7 @@ function QuizHandler(props : QuizProps) {
 
       {/* Home Button */}
 
-      <Link to="/games/spelling">
+      <Link to={`/tasks/${props.category}`}>
         <motion.div
           className={`w-${isMediumScreen ? 12 : 16} h-${
             isMediumScreen ? 12 : 16 // Responsive size

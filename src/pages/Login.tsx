@@ -97,9 +97,11 @@ function Login() {
             points: 0,
             achievements: [],
             progress: {
-              capitalization: [false, false, false],
-              punctuation: [false, false, false],
-              spelling: [false, false, false],
+              content: [false, false, false],
+              grammar: [false, false, false],
+              mechanics: [false, false, false],
+              organization: [false, false, false],
+              vocabulary: [false, false, false],
             },
             isLoggedIn: true,
           };
