@@ -21,9 +21,11 @@ import { useScreenSize } from "../layouts/ScreenSizeProvider";
 import bcrypt from "bcryptjs";
 
 const relevantAchievements: Achievements[] = [
-  "completedAllCapitalization",
-  "completedAllSpelling",
-  "completedAllPunctuation",
+  "completeAllContent",
+  "completeAllGrammar",
+  "completeAllMechanic",
+  "completeAllOrganization",
+  "completeAllVocabulary",
   "completedAllLevels",
 ];
 

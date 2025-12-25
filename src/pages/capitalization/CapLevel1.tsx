@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { capLevel1 as allWords } from "../../constants/seeder"; // Assuming your flat array is named 'capLevel1'
+import { capLevel1 as allWords } from "../../constants/old_seeder"; // Assuming your flat array is named 'capLevel1'
 import type { Word } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link } from "react-router-dom";

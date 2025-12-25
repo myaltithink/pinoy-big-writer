@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { puncLevel3 as allQuestions } from "../../constants/seeder"; // Updated import to puncLevel3
+import { puncLevel3 as allQuestions } from "../../constants/old_seeder"; // Updated import to puncLevel3
 import type { Word3 } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link } from "react-router-dom";

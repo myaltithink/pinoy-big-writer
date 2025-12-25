@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { capLevel3 as allWords } from "../../constants/seeder";
+import { capLevel3 as allWords } from "../../constants/old_seeder";
 import type { Word3 } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link } from "react-router-dom";

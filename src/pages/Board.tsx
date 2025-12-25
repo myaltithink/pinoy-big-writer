@@ -162,15 +162,21 @@ function Board() {
 
   useEffect(() => {
     const allLevelAchievements: Achievements[] = [
-      "completedCapitalizationLevel1",
-      "completedCapitalizationLevel2",
-      "completedCapitalizationLevel3",
-      "completedPunctuationLevel1",
-      "completedPunctuationLevel2",
-      "completedPunctuationLevel3",
-      "completedSpellingLevel1",
-      "completedSpellingLevel2",
-      "completedSpellingLevel3",
+      "completeContentBeginner",
+      "completeContentIntermediate",
+      "completeContentAdvanced",
+      "completeOrganizationBeginner",
+      "completeOrganizationIntermediate",
+      "completeOrganizationAdvanced",
+      "completeVocabularyBeginner",
+      "completeVocabularyIntermediate",
+      "completeVocabularyAdvanced",
+      "completeGrammarBeginner",
+      "completeGrammarIntermediate",
+      "completeGrammarAdvanced",
+      "completeMechanicsBeginner",
+      "completeMechanicsIntermediate",
+      "completeMechanicsAdvanced"
     ];
 
     const hasCompletedAllLevels = allLevelAchievements.every((level) =>

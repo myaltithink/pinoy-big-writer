@@ -15,9 +15,11 @@ const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 // Map full-room completion achievements
 const roomToAchievementMap: Record<Room, Achievements> = {
-  capitalization: "completedAllCapitalization",
-  punctuation: "completedAllPunctuation",
-  spelling: "completedAllSpelling",
+  content: "completeAllContent",
+  grammar: "completeAllGrammar",
+  mechanics: "completeAllMechanic",
+  organization: "completeAllOrganization",
+  vocabulary: "completeAllVocabulary"
 };
 export async function markLevelComplete(
   username: string,

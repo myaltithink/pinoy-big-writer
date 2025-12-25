@@ -10,7 +10,7 @@ import {
   setLocalStorageItem,
 } from "../utils/localstorage";
 import type { User, PracticeQuestion } from "../types";
-import { practiceQuestions } from "../constants/seeder";
+import { practiceQuestions } from "../constants/old_seeder";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
 
 type Tab = "Vault" | "Practice";

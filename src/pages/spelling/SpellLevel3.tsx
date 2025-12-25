@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { spellLevel3 as allQuestions } from "../../constants/seeder";
+import { spellLevel3 as allQuestions } from "../../constants/old_seeder";
 import type { ScrambledWordQuestion } from "../../types";
 import { shuffleArray } from "../../utils/array";
 import { Link } from "react-router-dom";
