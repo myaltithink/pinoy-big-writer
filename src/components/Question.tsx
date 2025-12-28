@@ -176,8 +176,8 @@ function Identification(props: QuestionTypeProps) {
         className={`font-medium ${
           props.data.isMediumScreen ? "text-xl" : "text-4xl"
         }`}
+        dangerouslySetInnerHTML={{ __html: props.data.question.question }}
       >
-        { props.data.question?.question }
       </p>
       
       <div className={`grid gap-${props.data.isMediumScreen ? 2 : 4} `}>
@@ -210,7 +210,7 @@ function Identification(props: QuestionTypeProps) {
       {props.isCorrect !== null &&
        !props.isCorrect &&
       (
-        <p>{props.data.question.explanation}</p>
+        <p dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></p>
       )}
     </div>
   )
@@ -262,8 +262,8 @@ function WordConstruction(props: QuestionTypeProps) {
           className={`font-medium ${
             props.data.isMediumScreen ? "text-xl" : "text-4xl"
           }`}
+          dangerouslySetInnerHTML={{ __html: props.data.question.question }}
         >
-          { props.data.question?.question }
         </p>
         <p><u>Your Answer: {displayOrder}</u></p>
         
@@ -272,7 +272,7 @@ function WordConstruction(props: QuestionTypeProps) {
             (props.data.question.explanation == '')?
               `Correct Answer: ${props.data.question.correctAnswer}`
             :
-              `Explanation: ${props.data.question.explanation}`
+              `Explanation: ${(<span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span>)}`
           : null
           }
         </p>
@@ -362,8 +362,8 @@ function OrderedChoices(props: QuestionTypeProps) {
           className={`font-medium ${
             props.data.isMediumScreen ? "text-xl" : "text-4xl"
           }`}
+          dangerouslySetInnerHTML={{ __html: props.data.question?.question }}
         >
-          { props.data.question?.question }
         </p>
         <p><u>Your Answer: {displayOrder}</u></p>
         
@@ -372,7 +372,7 @@ function OrderedChoices(props: QuestionTypeProps) {
             (props.data.question.explanation == '')?
               `Correct Answer: ${props.data.question.correctAnswer}`
             :
-              `Explanation: ${props.data.question.explanation}`
+              `Explanation: ${<span dangerouslySetInnerHTML={{ __html: props.data.question?.question }}></span>}`
           : null
           }
         </p>
@@ -423,8 +423,8 @@ function MCQ(props: QuestionTypeProps) {
                 className={`font-medium ${
                   props.data.isMediumScreen ? "text-xl" : "text-4xl"
                 }`}
+                dangerouslySetInnerHTML={{ __html: props.data.question?.question }}
               >
-                { props.data.question?.question }
               </p>
             }
             <div className={`grid gap-${props.data.isMediumScreen ? 2 : 4} `}>
@@ -463,7 +463,7 @@ function MCQ(props: QuestionTypeProps) {
             {props.isCorrect !== null &&
              !props.isCorrect &&
             (
-              <p>{props.data.question.explanation}</p>
+              <p dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></p>
             )}
           </div>
     )
