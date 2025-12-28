@@ -4,11 +4,10 @@ import useSound from "use-sound";
 
 import clickSfx from "/sounds/click.mp3";
 import defaultSfx from "/sounds/default.mp3";
-import capitalizationSfx from "/sounds/capitalization.mp3";
-import punctuationSfx from "/sounds/punctuation.mp3";
-import spellingSfx from "/sounds/spelling.mp3";
 import vaultSfx from "/sounds/vault.mp3";
 import overviewSfx from "/sounds/overview.mp3";
+import homeSfx from "/sounds/home.mp3";
+import loginSfx from "/sounds/log_in.mp3";
 
 interface SoundContextType {
   toggleMusic: () => void;
@@ -48,24 +47,19 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
     volume: 0.5,
     interrupt: true,
   });
-  const [playCapitalization, { sound: capSound }] = useSound(
-    capitalizationSfx,
-    {
-      loop: true,
-      volume: 0.5,
-      interrupt: true,
-    }
-  );
-  const [playPunctuation, { sound: puncSound }] = useSound(punctuationSfx, {
+
+  const [playHome, { sound: homeSound }] = useSound(homeSfx, {
     loop: true,
     volume: 0.5,
-    interrupt: true,
+    interrupt: true
   });
-  const [playSpelling, { sound: spellSound }] = useSound(spellingSfx, {
+
+  const [playLogin, { sound: loginSound }] = useSound(loginSfx, {
     loop: true,
-    interrupt: true,
-    volume: location.pathname === "/games/spelling/level-3" ? 0.1 : 0.5,
+    volume: 0.5,
+    interrupt: true
   });
+ 
   // Initialize the new sounds
   const [playVault, { sound: vaultSound }] = useSound(vaultSfx, {
     loop: true,
@@ -98,9 +92,8 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
       const newState = !prev;
       if (!newState) {
         defaultSound?.stop();
-        capSound?.stop();
-        puncSound?.stop();
-        spellSound?.stop();
+        homeSound?.stop();
+        loginSound?.stop();
         // Stop the new sounds as well
         vaultSound?.stop();
         overviewSound?.stop();
@@ -126,32 +119,28 @@ const SoundProvider = ({ children }: SoundProviderProps) => {
 
     // Stop all existing music
     defaultSound?.stop();
-    capSound?.stop();
-    puncSound?.stop();
-    spellSound?.stop();
+    homeSound?.stop();
+    loginSound?.stop();
     // Stop the new sounds when the route changes
     vaultSound?.stop();
     overviewSound?.stop();
 
-    if (location.pathname.startsWith("/games/capitalization")) {
-      playCapitalization();
-    } else if (location.pathname.startsWith("/games/punctuation")) {
-      playPunctuation();
-    } else if (location.pathname.startsWith("/games/spelling")) {
-      playSpelling();
-    } else if (location.pathname.startsWith("/vault")) {
+    if (location.pathname.startsWith("/vault")) {
       playVault();
     } else if (location.pathname.startsWith("/overview")) {
       playOverview();
+    } else if (location.pathname.startsWith("/login")) {
+      playLogin();
+    } else if (location.pathname.startsWith("/home")) {
+      playHome();
     } else {
       playDefault();
     }
 
     return () => {
       defaultSound?.stop();
-      capSound?.stop();
-      puncSound?.stop();
-      spellSound?.stop();
+      homeSound?.stop();
+      loginSound?.stop();
       // Ensure new sounds are stopped on unmount or route change
       vaultSound?.stop();
       overviewSound?.stop();
