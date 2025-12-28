@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 import { MdTimer } from "react-icons/md";
@@ -14,7 +14,7 @@ import Instruction from "../components/Instruction";
 import { QuestionType } from "../constants/QuestionType.Enum";
 import Question from "../components/Question";
 import { markLevelComplete } from "../utils/game";
-import TrophyProvider, { useNewTrophy } from "../layouts/AchievementProvider";
+import { useNewTrophy } from "../layouts/AchievementProvider";
 import { updateUser } from "../services/User";
 
 const winSoundPath = "/sounds/win.mp3";
@@ -76,48 +76,6 @@ function QuizHandler(props : QuizProps) {
   });
 
   const { showTrophy } = useNewTrophy();
-
-  // useEffect(() => {
-  //   let newUser = user;
-  //   console.log(user)
-  //   newUser!.progress = {
-  //     content: [true, true, false],
-  //     grammar: [true, true, true],
-  //     mechanics: [true, true, true],
-  //     organization: [true, true, true],
-  //     vocabulary: [true, true, true],
-  //   }
-    
-  //   newUser!.achievements = [
-  //     "completeContentBeginner",
-  //     "completeContentIntermediate",
-  //     "completeOrganizationBeginner",
-  //     "completeOrganizationIntermediate",
-  //     "completeOrganizationAdvanced",
-  //     "completeVocabularyBeginner",
-  //     "completeVocabularyIntermediate",
-  //     "completeVocabularyAdvanced",
-  //     "completeGrammarBeginner",
-  //     "completeGrammarIntermediate",
-  //     "completeGrammarAdvanced",
-  //     "completeMechanicsBeginner",
-  //     "completeMechanicsIntermediate",
-  //     "completeMechanicsAdvanced",
-  //     "completeAllOrganization",
-  //     "completeAllVocabulary",
-  //     "completeAllGrammar",
-  //     "completeAllMechanic"
-  //   ] as Achievements[]
-
-  //   console.log(newUser)
-
-  //   const update = async () => {
-  //     await updateUser(user!.username, newUser!)
-  //   }
-
-  //   update();
-
-  // }, [])
 
   // Initialization
   useEffect(() => {
