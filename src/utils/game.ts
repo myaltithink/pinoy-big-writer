@@ -26,8 +26,9 @@ export async function markLevelComplete(
   username: string,
   room: Room,
   levelIndex: number,
+  starsAchieved: number, // Add this parameter to receive the number of stars
   setUserState: (u: User) => void,
-  starsAchieved: number // Add this parameter to receive the number of stars
+  showTropy: (t: Achievements, r: Room) => void
 ) {
   const user = getLocalStorageItem("user") as User | null;
   if (!user) {
@@ -74,6 +75,7 @@ export async function markLevelComplete(
   if (updatedRoomLevels.every((v) => v) && !achievements.includes(fullKey)) {
     achievements.push(fullKey);
     console.log(`Achievement unlocked: ${fullKey}`);
+    showTropy(fullKey, room);
     additionalPoints += 30; // Optional: Add bonus points for full room
   }
 
