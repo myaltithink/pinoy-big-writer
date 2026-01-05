@@ -1130,7 +1130,7 @@ export const CONTENT_PRACTICE: PracticeQuiz = {
     week1: [
         {
             lessonNumber: 1,
-            title: "",
+            title: "Parts of a Paragraph",
             sets: [
                 {
                     label: "Content Practice W1 Set A",
@@ -1161,8 +1161,8 @@ export const CONTENT_PRACTICE: PracticeQuiz = {
     ],
     week2: [
         {
-            lessonNumber: 1,
-            title: "",
+            lessonNumber: 2,
+            title: "Quality and Development of Ideas",
             sets: [
                 {
                     label: "Content Practice W2 Set A",
@@ -1193,8 +1193,8 @@ export const CONTENT_PRACTICE: PracticeQuiz = {
     ],
     week3: [
         {
-            lessonNumber: 1,
-            title: "",
+            lessonNumber: 3,
+            title: "Lesson 1 & 2",
             sets: [
                 {
                     label: "Content Practice W3 Set A",

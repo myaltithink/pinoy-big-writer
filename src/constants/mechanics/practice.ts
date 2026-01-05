@@ -1253,7 +1253,7 @@ export const MECH_PRACTICE: PracticeQuiz = {
     ],
     week2: [
         {
-            lessonNumber: 1,
+            lessonNumber: 2,
             title: "Capitalization",
             sets: [
                 {
@@ -1277,7 +1277,7 @@ export const MECH_PRACTICE: PracticeQuiz = {
     ],
     week3: [
         {
-            lessonNumber: 1,
+            lessonNumber: 3,
             title: "Punctuation",
             sets: [
                 {

@@ -1238,7 +1238,7 @@ export const ORG_PRACTICE: PracticeQuiz = {
     ],
     week2: [
         {
-            lessonNumber: 1,
+            lessonNumber: 2,
             title: "",
             sets: [
                 {
@@ -1270,7 +1270,7 @@ export const ORG_PRACTICE: PracticeQuiz = {
     ],
     week3: [
         {
-            lessonNumber: 1,
+            lessonNumber: 3,
             title: "",
             sets: [
                 {

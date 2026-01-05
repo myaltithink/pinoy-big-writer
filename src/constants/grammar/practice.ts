@@ -2594,7 +2594,7 @@ export const GRAMMAR_PRACTICE: PracticeQuiz = {
     ],
     week2: [
         {
-            lessonNumber: 1,
+            lessonNumber: 3,
             title: "Subject-Verb Agreement",
             sets: [
                 {
@@ -2627,7 +2627,7 @@ export const GRAMMAR_PRACTICE: PracticeQuiz = {
             ]
         },
         {
-            lessonNumber: 2,
+            lessonNumber: 4,
             title: "Verb Tense",
             sets: [
                 {
@@ -2662,7 +2662,7 @@ export const GRAMMAR_PRACTICE: PracticeQuiz = {
     ],
     week3: [
         {
-            lessonNumber: 1,
+            lessonNumber: 5,
             title: "Prepositions",
             sets: [
                 {
@@ -2695,7 +2695,7 @@ export const GRAMMAR_PRACTICE: PracticeQuiz = {
             ]
         },
         {
-            lessonNumber: 2,
+            lessonNumber: 6,
             title: "Sentence Fragments",
             sets: [
                 {

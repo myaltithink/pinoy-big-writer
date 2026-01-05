@@ -1984,7 +1984,7 @@ export const VOCAB_PRACTICE: PracticeQuiz = {
     week1: [
         {
             lessonNumber: 1,
-            title: "",
+            title: "Context Clues",
             sets: [
                 {
                     label: "Vocabulary Practice W1 Set A",
@@ -2014,7 +2014,7 @@ export const VOCAB_PRACTICE: PracticeQuiz = {
         },
         {
             lessonNumber: 2,
-            title: "",
+            title: "Choosing Stronger Words",
             sets: [
                 {
                     label: "Vocabulary Practice W1 Set D",
@@ -2037,8 +2037,8 @@ export const VOCAB_PRACTICE: PracticeQuiz = {
     ],
     week2: [
         {
-            lessonNumber: 1,
-            title: "",
+            lessonNumber: 3,
+            title: "Synonyms & Antonyms ",
             sets: [
                 {
                     label: "Vocabulary Practice W2 Set A",
@@ -2069,8 +2069,8 @@ export const VOCAB_PRACTICE: PracticeQuiz = {
     ],
     week3: [
         {
-            lessonNumber: 1,
-            title: "",
+            lessonNumber: 4,
+            title: "Misused Words, Homophones, and Redundancy",
             sets: [
                 {
                     label: "Vocabulary Practice W2 Set A",
