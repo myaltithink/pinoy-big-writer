@@ -1207,7 +1207,7 @@ export const ORG_PRACTICE: PracticeQuiz = {
     week1: [
         {
             lessonNumber: 1,
-            title: "",
+            title: "Signal. Words and Transitionaal Words",
             sets: [
                 {
                     label: "Organization Practice W1 Set A",
@@ -1239,7 +1239,7 @@ export const ORG_PRACTICE: PracticeQuiz = {
     week2: [
         {
             lessonNumber: 2,
-            title: "",
+            title: "Sequence of Events",
             sets: [
                 {
                     label: "Organization Practice W2 Set A",
@@ -1271,7 +1271,7 @@ export const ORG_PRACTICE: PracticeQuiz = {
     week3: [
         {
             lessonNumber: 3,
-            title: "",
+            title: "Lesson 1 & 2",
             sets: [
                 {
                     label: "Organization Practice W3 Set A",
