@@ -25,8 +25,7 @@ function Instruction(props : Props) {
               className={`text-justify font-medium ${
                 props.isMediumScreen ? "text-xl" : "text-3xl "
               }`}
-            >
-              {props.instruction}
+              dangerouslySetInnerHTML={{ __html: props.instruction}}>
             </p>
 
             {(props.isStart) ? 

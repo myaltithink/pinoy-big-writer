@@ -42,7 +42,8 @@ interface QuizProps {
   category: Room,
   questionSet: SetContainer[],
   backgroundClass: string,
-  levelIndex: number
+  levelIndex: number,
+  practiceMode?: boolean
 }
 
 function QuizHandler(props : QuizProps) {
@@ -96,6 +97,7 @@ function QuizHandler(props : QuizProps) {
 
   // Listens to score changes (correct answer)
   useEffect(() => {
+    if (props.practiceMode) return;
     if (score >= passingScore) {
       setCompleted(true);
     }
@@ -135,7 +137,7 @@ function QuizHandler(props : QuizProps) {
 
     if (newIndex == selectedSet?.questions.length) {
       setStatus('done');
-      save();
+      if (!props.practiceMode) save();
       return;
     }
 
@@ -202,7 +204,7 @@ function QuizHandler(props : QuizProps) {
         showTrophy('completedAllLevels', 'all');
       }
     }
-    navigate(`/tasks/${props.category}`);
+    navigate((props.practiceMode)? `/practice/${props.category}` : `/tasks/${props.category}`);
   }
 
   const starColor =
@@ -350,13 +352,30 @@ function QuizHandler(props : QuizProps) {
                 </div>
               )}
               {!completed && (
-                <button
-                  onClick={handleRestart}
-                  className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
-                  style={{ fontFamily: "Arco" }}
-                >
-                  Try Again
-                </button>
+                <>
+                {props.practiceMode && 
+                  <p style={{ fontFamily: "Arco" }} className="text-xl mt-5">Feel free to practice or try again</p>
+                }
+                  <div>
+                    <button
+                      onClick={handleRestart}
+                      className="bg-green-500 text-white mt-4 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                      style={{ fontFamily: "Arco" }}
+                    >
+                      Try Again
+                    </button>
+
+                    {props.practiceMode &&
+                      <button
+                        onClick={() => navigate(`/practice/${props.category}`)}
+                        className="bg-yellow-500 text-white mt-4 ms-5 px-6 py-3 rounded-xl hover:scale-95 transition text-xl"
+                        style={{ fontFamily: "Arco" }}
+                      >
+                        Practice Room
+                      </button>
+                    }
+                  </div>
+                </>
               )}
             </div>
           ) : status == 'ongoing' ? (

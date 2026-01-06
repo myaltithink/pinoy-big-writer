@@ -42,13 +42,6 @@ export interface User {
   isLoggedIn: boolean;
 }
 
-export type PracticeQuestion = {
-  question: string;
-  choices: string[];
-  answerIndex: number;
-  reason: string;
-};
-
 // Define the structure for an achievement card
 export interface AchievementCardProps {
   title: string;
@@ -63,6 +56,19 @@ export interface Quiz {
   beginner: SetContainer[],
   intermidiate: SetContainer[],
   advance: SetContainer[],
+  practice?: PracticeQuiz
+}
+
+export interface PracticeQuiz {
+  week1: Lesson[],
+  week2: Lesson[],
+  week3: Lesson[]
+}
+
+export interface Lesson {
+  lessonNumber: number
+  title: string,
+  sets: SetContainer[]
 }
 
 export interface SetContainer {

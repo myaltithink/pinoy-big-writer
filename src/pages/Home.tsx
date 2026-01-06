@@ -192,7 +192,7 @@ export default function Home() {
 
       {!isMediumScreen ? (
         <div className="flex-1 flex items-center justify-around">
-          <Link to="/vault">
+          <Link to="/vault/vault">
             <motion.div
               className="flex flex-col min-h-[180px] min-w-[350px] bg-blue-500 rounded-xl border-6 border-black cursor-pointer"
               initial={{ y: -100 }}
@@ -264,7 +264,7 @@ export default function Home() {
         </div>
       ) : (
         <div className="flex-1 flex items-center justify-around">
-          <Link to="/vault">
+          <Link to="/vault/vault">
             <motion.div
               className="flex flex-col min-h-[60px] min-w-[250px] bg-blue-500 rounded-xl border-6 border-black cursor-pointer"
               initial={{ y: -100 }}

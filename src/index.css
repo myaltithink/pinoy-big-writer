@@ -133,3 +133,21 @@ body {
 .outlined {
   -webkit-text-stroke: 2px black;
 }
+
+.practice-week {
+  width: calc(95% / 3);
+  height: 100%;
+}
+
+.practice-week .lesson {
+  border: solid 2px;
+  margin: 5px;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.practice-week p {
+  margin-left: 10px;
+}

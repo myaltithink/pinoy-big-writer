@@ -30,13 +30,10 @@ import Rules from "./pages/Rules";
 import TaskRoom from "./pages/TaskRoom";
 
 import { CONTENT_QUIZ, GRAMMAR_QUIZ, MECHANIC_QUIZ, ORGANIZATION_QUIZ, VOCAB_QUIZ } from "./constants/seeder";
-import Content from "./pages/tasks/Content";
 import QuizHandler from "./pages/QuizHandler";
-import Grammar from "./pages/tasks/Grammar";
-import Organization from "./pages/tasks/Organization";
-import Mechanics from "./pages/tasks/Mechanics";
-import Vocabulary from "./pages/tasks/Vocabulary";
+import Tasks from "./pages/Tasks";
 import TrophyProvider from "./layouts/AchievementProvider";
+import PracticeHandler from "./components/PracticeHandler";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -71,17 +68,17 @@ const App = () => {
               <Route element={<PrivateRoute />}>
                 <Route path="/home" element={<Home />} />
                 <Route path="/rules" element={<Rules/>}/>
-                <Route path="/vault" element={<Vault />} />
+                <Route path="/vault/:directory" element={<Vault />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/task-room-entrance" element={<TaskRoomEntrance />} />
                 <Route path="/task-room" element={<TaskRoom/>} />
 
-                <Route path="/tasks/content" element={<Content/>}/>
-                <Route path="/tasks/grammar" element={<Grammar/>}/>
-                <Route path="/tasks/organization" element={<Organization/>}/>
-                <Route path="/tasks/mechanics" element={<Mechanics/>}/>
-                <Route path="/tasks/vocabulary" element={<Vocabulary/>}/>
+                <Route path="/tasks/:category" element={<Tasks/>}/>
+                <Route path="/practice/:category" element={<Tasks isPractice/>}/>
+
+                <Route path="/practice/:category/week/:weekNumber/lesson/:lessonNumber"
+                  element={<PracticeHandler/>}/>
 
                 <Route
                   path="/games/capitalization"
