@@ -30,11 +30,7 @@ import Rules from "./pages/Rules";
 import TaskRoom from "./pages/TaskRoom";
 
 import { CONTENT_QUIZ, GRAMMAR_QUIZ, MECHANIC_QUIZ, ORGANIZATION_QUIZ, VOCAB_QUIZ } from "./constants/seeder";
-import Content from "./pages/tasks/Content";
 import QuizHandler from "./pages/QuizHandler";
-import Grammar from "./pages/tasks/Grammar";
-import Organization from "./pages/tasks/Organization";
-import Mechanics from "./pages/tasks/Mechanics";
 import Tasks from "./pages/Tasks";
 import TrophyProvider from "./layouts/AchievementProvider";
 import PracticeHandler from "./components/PracticeHandler";
