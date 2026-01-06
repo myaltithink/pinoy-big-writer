@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
 
-interface Props {
-
-}
-
 interface Practices {
   title: string,
   bgColor: string,
@@ -43,7 +39,7 @@ const practices: Practices[] = [
   }
 ]
 
-const PracticeStation = (props: Props) => {
+const PracticeStation = () => {
 
     return(
         <div className="flex justify-around items-center w-[100%] h-[80%]">

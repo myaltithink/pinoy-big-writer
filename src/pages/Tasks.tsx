@@ -63,7 +63,6 @@ function Tasks(props: { isPractice?: boolean }) {
 
   useEffect(() => {
     const roomCategory = category! as Room;
-    console.log(roomCategory);
     setRoom({
       category: roomCategory,
       color: colorScheme[roomCategory]
@@ -198,43 +197,61 @@ const Practice = (props: { room: Metadata }) => {
     setWeeks(PRACTICE_QUIZ[props.room.category].practice);
   }, [props.room?.category!]);
 
+  const getUrl = (week: number, lesson: number) => {
+    return `/practice/${props.room.category}/week/${week}/lesson/${lesson}`;
+  }
 
   return (
     <div className="flex justify-around items-center h-[80%] w-[100%]">
       <div className="week1 practice-week">
         <p style={{ fontFamily: "Arco", color: props.room?.color.folder }}>Week 1</p>
         {weeks?.week1.map((lesson, idx) => (
-          <div key={idx} className={`lesson`} style={{ borderColor: props.room.color.folder }}>
-            <FaFolderOpen
-              style={{ color: props.room.color.folder }}
-              className="text-[1.5rem] min-w-[1.5rem]"
-            />
+          <Link 
+            key={idx} 
+            to={getUrl(1, lesson.lessonNumber)}
+            className={`lesson`} 
+            style={{ borderColor: props.room.color.folder }}
+            >
+              <FaFolderOpen
+                style={{ color: props.room.color.folder }}
+                className="text-[1.5rem] min-w-[1.5rem]"
+              />
             <p style={{ fontFamily: "Arco", color: props.room?.color.folder }}>{lesson.lessonNumber} - {lesson.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="week2 practice-week">
         <p style={{ fontFamily: "Arco", color: props.room?.color.folder }}>Week 2</p>
         {weeks?.week2.map((lesson, idx) => (
-          <div key={idx} className={`lesson`} style={{ borderColor: props.room.color.folder }}>
-            <FaFolderOpen
-              style={{ color: props.room.color.folder }}
-              className="text-[1.5rem] min-w-[1.5rem]"
-            />
+          <Link 
+            key={idx} 
+            to={getUrl(2, lesson.lessonNumber)}
+            className={`lesson`} 
+            style={{ borderColor: props.room.color.folder }}
+            >
+              <FaFolderOpen
+                style={{ color: props.room.color.folder }}
+                className="text-[1.5rem] min-w-[1.5rem]"
+              />
             <p style={{ fontFamily: "Arco", color: props.room?.color.folder }}>{lesson.lessonNumber} - {lesson.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="week3 practice-week">
         <p style={{ fontFamily: "Arco", color: props.room?.color.folder}}>Week 3</p>
         {weeks?.week3.map((lesson, idx) => (
-          <div key={idx} className={`lesson`} style={{ borderColor: props.room.color.folder }}>
-            <FaFolderOpen
-              style={{ color: props.room.color.folder }}
-              className="text-[1.5rem] min-w-[1.5rem]"
-            />
+          <Link 
+            key={idx} 
+            to={getUrl(3, lesson.lessonNumber)}
+            className={`lesson`} 
+            style={{ borderColor: props.room.color.folder }}
+            >
+              <FaFolderOpen
+                style={{ color: props.room.color.folder }}
+                className="text-[1.5rem] min-w-[1.5rem]"
+              />
             <p style={{ fontFamily: "Arco", color: props.room?.color.folder }}>{lesson.lessonNumber} - {lesson.title}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

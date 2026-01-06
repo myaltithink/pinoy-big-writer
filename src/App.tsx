@@ -37,6 +37,7 @@ import Organization from "./pages/tasks/Organization";
 import Mechanics from "./pages/tasks/Mechanics";
 import Tasks from "./pages/Tasks";
 import TrophyProvider from "./layouts/AchievementProvider";
+import PracticeHandler from "./components/PracticeHandler";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -79,6 +80,9 @@ const App = () => {
 
                 <Route path="/tasks/:category" element={<Tasks/>}/>
                 <Route path="/practice/:category" element={<Tasks isPractice/>}/>
+
+                <Route path="/practice/:category/week/:weekNumber/lesson/:lessonNumber"
+                  element={<PracticeHandler/>}/>
 
                 <Route
                   path="/games/capitalization"
