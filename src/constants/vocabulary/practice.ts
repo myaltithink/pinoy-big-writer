@@ -704,7 +704,8 @@ const week1SetE: QuizQuestion[] = [
 const week2SetA: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        question: "Choose the word closest in meaning to the underlined word. ",
+        direction: "Choose the word closest in meaning to the underlined word. ",
+        question: "",
         explanation: "",
         correctAnswer: ""
     },
@@ -922,7 +923,8 @@ const week2SetA: QuizQuestion[] = [
 const week2SetB: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        question: "Choose the word closest in meaning to the underlined word. ",
+        direction: "Choose the word closest in meaning to the underlined word. ",
+        question: "",
         explanation: "",
         correctAnswer: ""
     },
@@ -1140,7 +1142,8 @@ const week2SetB: QuizQuestion[] = [
 const week2SetC: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        question: "Choose the word closest in meaning to the underlined word. ",
+        direction: "Choose the word closest in meaning to the underlined word. ",
+        question: "",
         explanation: "",
         correctAnswer: ""
     },
