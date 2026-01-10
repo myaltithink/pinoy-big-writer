@@ -224,7 +224,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. Which is informal? \N\Nfinish — complete",
+        question: "1. Which is informal?",
         explanation: '"Finish" is casual; "Complete" is more formal and precise.',
         correctAnswer: "finish",
         choices: [
@@ -235,7 +235,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. Which is formal? \n\nbegin — initiate",
+        question: "2. Which is formal?",
         explanation: '"Initiate" is formal and often used in writing; "Begin" is everyday language.',
         correctAnswer: "initiate",
         choices: [
@@ -246,7 +246,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. Which is informal? \n\nlook — observe",
+        question: "3. Which is informal?",
         explanation: '"Look" is commonly used in conversation; "Observe" is formal.',
         correctAnswer: "look",
         choices: [
@@ -257,7 +257,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "4. Which is formal? \n\nchoose — select",
+        question: "4. Which is formal?",
         explanation: '"Select" is formal and precise; "Choose" is casual.',
         correctAnswer: "select",
         choices: [
@@ -268,7 +268,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "5. Which is informal? \n\nexplain — clarify",
+        question: "5. Which is informal?",
         explanation: '“Explain” is more common and general, while “clarify” is the more formal and precise term. ',
         correctAnswer: "explain",
         choices: [
@@ -758,7 +758,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "11. Which is informal? \n\ntry - attempt",
+        question: "11. Which is informal?",
         explanation: '"Try" is commonly used in casual conversation. "Attempt" is more formal.',
         correctAnswer: "try",
         choices: [
@@ -769,7 +769,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "12. Which is formal? buy - purchase",
+        question: "12. Which is formal?",
         explanation: '"Purchase" is used in formal writing; "Buy" is everyday language.',
         correctAnswer: "purchase",
         choices: [
@@ -780,7 +780,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "13. Which is informal? get - obtain",
+        question: "13. Which is informal?",
         explanation: '"Get" is casual; "Obtain" is more formal and precise.',
         correctAnswer: "get",
         choices: [
@@ -791,7 +791,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "14. Which is formal? use - utilize",
+        question: "14. Which is formal?",
         explanation: '"Utilize" is formal; "Use" is a simple everyday word.',
         correctAnswer: "utilize",
         choices: [
@@ -802,7 +802,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "15. Which is informal? start - commence",
+        question: "15. Which is informal?",
         explanation: '"Start" is common in speech; "Commence" is formal/written English.',
         correctAnswer: "start",
         choices: [
