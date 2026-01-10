@@ -105,3 +105,15 @@ export interface QuizQuestion {
   // used to display the direction/instruction of the next section of the set
   direction?: string
 }
+
+export interface VaultContent {
+  week1: VaultData[],
+  week2: VaultData[],
+  week3: VaultData[],
+}
+
+export interface VaultData {
+  lessonNumber: number,
+  title: string,
+  src: string
+}

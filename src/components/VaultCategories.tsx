@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
 
 interface Practices {
   title: string,
@@ -9,7 +10,8 @@ interface Practices {
 }
 
 const iconBase = "/practice_station/";
-const destinationBase = "/practice/"
+const practiceBase = "/practice/";
+const vaultBase = "/vault/lessons/";
 const practices: Practices[] = [
   {
       title: "Content",
@@ -39,7 +41,7 @@ const practices: Practices[] = [
   }
 ]
 
-const PracticeStation = () => {
+const VaultCategories = (props: {isPractice?: boolean}) => {
 
     return(
         <div className="flex justify-around items-center w-[100%] h-[80%]">
@@ -57,7 +59,7 @@ const PracticeStation = () => {
                         duration: 0.5,
                         delay: idx * 0.1
                     }}>
-                    <Link to={`${destinationBase}${item.title.toLowerCase()}`}>
+                    <Link to={`${(props.isPractice)? practiceBase : vaultBase}${item.title.toLowerCase()}`}>
                         <div>
                             <div className="flex justify-center">
                                 <img src={item.icon} alt={`${item.title} icon`} width={100}/>
@@ -72,4 +74,4 @@ const PracticeStation = () => {
 }
 
 
-export default PracticeStation;
+export default VaultCategories;

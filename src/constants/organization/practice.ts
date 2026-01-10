@@ -1207,7 +1207,7 @@ export const ORG_PRACTICE: PracticeQuiz = {
     week1: [
         {
             lessonNumber: 1,
-            title: "Signal. Words and Transitionaal Words",
+            title: "Signal Words and Transitional Words",
             sets: [
                 {
                     label: "Organization Practice W1 Set A",

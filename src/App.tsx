@@ -34,6 +34,7 @@ import QuizHandler from "./pages/QuizHandler";
 import Tasks from "./pages/Tasks";
 import TrophyProvider from "./layouts/AchievementProvider";
 import PracticeHandler from "./components/PracticeHandler";
+import StockKnowledge from "./pages/StockKnowledge";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
@@ -68,11 +69,13 @@ const App = () => {
               <Route element={<PrivateRoute />}>
                 <Route path="/home" element={<Home />} />
                 <Route path="/rules" element={<Rules/>}/>
-                <Route path="/vault/:directory" element={<Vault />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/task-room-entrance" element={<TaskRoomEntrance />} />
                 <Route path="/task-room" element={<TaskRoom/>} />
+
+                <Route path="/vault/:directory" element={<Vault />} />
+                <Route path="/vault/lessons/:category" element={<StockKnowledge/>}/>
 
                 <Route path="/tasks/:category" element={<Tasks/>}/>
                 <Route path="/practice/:category" element={<Tasks isPractice/>}/>

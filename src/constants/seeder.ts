@@ -1,4 +1,4 @@
-import type { AchievementCardProps, Achievements, Quiz, Room } from "../types";
+import type { AchievementCardProps, Achievements, Quiz, Room, VaultContent } from "../types";
 import { ORG_BEGINER_SET } from "./organization/beginner";
 import { ORG_ADVANCED_SET } from "./organization/advanced";
 import { ORG_INTERMIDIATE_SET } from "./organization/intermidiate";
@@ -192,4 +192,136 @@ export const PRACTICE_QUIZ: Record<Room, Partial<Quiz>> = {
     category: "Vocabulary Practice",
     practice: VOCAB_PRACTICE
   }
+}
+
+export const VAULT_VIDEOS: Record<Room, VaultContent> = {
+  content: {
+    week1: [
+      {
+        lessonNumber: 1,
+        title: "Parts of a Paragraph",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/MFdHR4z_WqU?si=EQruBf5yg-G8033Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week2: [
+      {
+        lessonNumber: 2,
+        title: "Quality and Development of Ideas",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/RnGCjoWLvJI?si=RTZuBhpLhC7c8i_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week3: []
+  },
+  grammar: {
+    week1: [
+      {
+        lessonNumber: 1,
+        title: "Pronouns",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/oFXZhMPPVcc?si=3S5Lwe7L3PS25qKF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+      {
+        lessonNumber: 2,
+        title: "Articles",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/6At5vOzEpuk?si=8lnatnendPbdIki1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week2: [
+      {
+        lessonNumber: 3,
+        title: "Subject-Verb Agreement",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/cNpLFjGu-_Q?si=-tjdL390YlKXf2JG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+      {
+        lessonNumber: 4,
+        title: "Verb Tense",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/VWVjxhvhspk?si=kQrwbclapgESV7tO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week3: [
+      {
+        lessonNumber: 5,
+        title: "Prepositions",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/4IyFjw3sLf8?si=bsfDfvdOnKQqMHIS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+      {
+        lessonNumber: 6,
+        title: "Sentence Fragments",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/t8Zxndr9oxY?si=lkO4Oe5S9L36GboR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ]
+  },
+  mechanics: {
+    week1: [
+      {
+        lessonNumber: 1,
+        title: "Spelling Rules",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bpfcOMWOJtc?si=Nk9BnbCZZTkn2Fy6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week2: [
+      {
+        lessonNumber: 2,
+        title: "Capitalization",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/lFnMnZUkiGE?si=685oHfUS5BEx3XUB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week3: [
+      {
+        lessonNumber: 3,
+        title: "Punctuation",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/RujlwRWHEHE?si=vAj118916Q5_21i-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ]
+  },
+  
+  organization: {
+    week1: [
+      {
+        lessonNumber: 1.1,
+        title: "Signal Words",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/B4zUay_iQqw?si=VFf9qr30gV-5U_Ji" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+      {
+        lessonNumber: 1.2,
+        title: "Transitional Words",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/4nNauAz-oK8?si=rVsJ_1wENydHVmPM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week2: [
+      {
+        lessonNumber: 2,
+        title: "Sequence of Events",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/FaeqCL9SX5Y?si=zPQGyqYPwz34Jalr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week3: []
+  },
+  vocabulary: {
+    week1: [
+      {
+        lessonNumber: 1,
+        title: "Context Clues",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/H-94BD7fBh8?si=g1V2xV_5GKn44KHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+      {
+        lessonNumber: 2,
+        title: "Choosing Stronger Words",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/ZKMdeObI-0g?si=L8_LLwquT-tGGMOt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week2: [
+      {
+        lessonNumber: 3,
+        title: "Synonyms & Antonyms",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q0BMUeHtM4Y?si=A7uPtZSWWyDrStMr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ],
+    week3: [
+      {
+        lessonNumber: 4,
+        title: "Misused Words, Homophones, and Redundancy",
+        src: '<iframe width="560" height="315" src="https://www.youtube.com/embed/OCrKjIRdnkE?si=BjRyATA26Y2-H1_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+      },
+    ]
+  },
 }

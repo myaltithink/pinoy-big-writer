@@ -11,7 +11,7 @@ import {
 } from "../utils/localstorage";
 import type { User } from "../types";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
-import PracticeStation from "../components/PracticeStation";
+import VaultCategories from "../components/VaultCategories";
 
 type Tab = "vault" | "practice";
 
@@ -114,29 +114,9 @@ function Vault() {
         }`}
       >
         {tab === "vault" ? (
-          <>
-            {/* Vault Cards */}
-            <VaultCard
-              title="Capitalization"
-              bg="#FEECAA"
-              iconColor="text-yellow-400"
-              path="/vault/capitalization"
-            />
-            <VaultCard
-              title="Punctuation"
-              bg="#F8D7D7"
-              iconColor="text-red-400"
-              path="/vault/punctuation"
-            />
-            <VaultCard
-              title="Spelling"
-              bg="#E6FECB"
-              iconColor="text-green-400"
-              path="/vault/spelling"
-            />
-          </>
+          <VaultCategories />
         ) : (
-          <PracticeStation/>
+          <VaultCategories isPractice/>
         )}
       </div>
       {/* Home Button */}
