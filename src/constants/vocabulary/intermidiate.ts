@@ -163,7 +163,7 @@ const setA: QuizQuestion[] = [{
 
 const setB: QuizQuestion[] = [{
         type: QuestionType.Direction,
-        direction: "",
+        direction: "Identify the informal word in the sentence and write the correct formal word that should replace it. ",
         question: "",
         explanation: '',
         correctAnswer: "",

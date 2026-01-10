@@ -597,7 +597,6 @@ const setC: QuizQuestion[] = [
             "Struggling",
             "Tiny",
             "Relaxed",
-            "",
         ],
         choiceType: "none"
     },
@@ -610,7 +609,6 @@ const setC: QuizQuestion[] = [
             "Focused",
             "Wild",
             "Noisy",
-            "",
         ],
         choiceType: "none"
     },
