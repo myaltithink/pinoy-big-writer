@@ -16,6 +16,7 @@ import Question from "../components/Question";
 import { markLevelComplete } from "../utils/game";
 import { useNewTrophy } from "../layouts/AchievementProvider";
 import { updateUser } from "../services/User";
+import { shuffleArray } from "../utils/array";
 
 const winSoundPath = "/sounds/win.mp3";
 const loseSoundPath = "/sounds/lose.mp3";
@@ -85,9 +86,16 @@ function QuizHandler(props : QuizProps) {
     selectSet();
   }, [props.questionSet]);
   
+  const getRandomSet = () => {
+    const sets = props.questionSet.map((i) => i.label);
+    const shuffled = shuffleArray([...sets, ...sets, ...sets]);
+    const selectedSet = shuffled[Math.floor(Math.random() * shuffled.length)];
+    return sets.indexOf(selectedSet);
+  }
+
   const selectSet = () => {
-    const setIndex = Math.floor(Math.random() * props.questionSet.length);
-    const quiz = props.questionSet[setIndex]
+    getRandomSet();
+    const quiz = props.questionSet[getRandomSet()]
   
     let counter = 0;
     quiz.set.questions.map((i) => {
