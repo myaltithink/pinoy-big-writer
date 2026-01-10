@@ -127,7 +127,7 @@ function QuizHandler(props : QuizProps) {
   }, [question])
   
   useEffect(() => {
-    if (timeLeft == 0) return;
+    if (timeLeft == 0 || question?.type == QuestionType.Direction) return;
     const timer = setTimeout(() => setTimeLeft(t => t - 1), 1000)
     return () => clearTimeout(timer);
   }, [timeLeft])
