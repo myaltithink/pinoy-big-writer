@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react";
 
 interface Practices {
   title: string,

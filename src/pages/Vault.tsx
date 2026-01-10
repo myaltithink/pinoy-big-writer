@@ -152,48 +152,4 @@ function Vault() {
   );
 }
 
-function VaultCard({
-  title,
-  bg,
-  iconColor,
-  path,
-}: {
-  title: string;
-  bg: string;
-  iconColor: string;
-  path: string;
-}) {
-  const { isMediumScreen } = useScreenSize();
-
-  return (
-    <Link to={path}>
-      <motion.div
-        className={`flex flex-col items-center gap-4 p-6 rounded-xl border-6 border-white`}
-        style={{ backgroundColor: bg, cursor: "pointer" }}
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        whileHover={{ scale: 0.95 }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-          duration: 0.5,
-        }}
-      >
-        <FaFolderOpen
-          className={`${iconColor} ${
-            isMediumScreen ? "text-[5rem]" : "text-[15rem] "
-          }`}
-        />
-        <span
-          className={`text-black/75 ${isMediumScreen ? "text-xl" : "text-3xl"}`}
-          style={{ fontFamily: "Arco" }}
-        >
-          {title}
-        </span>
-      </motion.div>
-    </Link>
-  );
-}
-
 export default Vault;

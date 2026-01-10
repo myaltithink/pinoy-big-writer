@@ -7,7 +7,6 @@ import { PiVideo } from "react-icons/pi";
 import type { Room, VaultContent, VaultData } from "../types";
 import { useEffect, useState } from "react";
 import { VAULT_VIDEOS } from "../constants/seeder";
-import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useSoundContext } from "../layouts/SoundProvider";
 import { getLocalStorageItem } from "../utils/localstorage";
 
