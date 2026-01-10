@@ -11,14 +11,8 @@ import Profile from "./pages/Profile";
 import TaskRoomEntrance from "./pages/TaskRoomEntrance";
 import NotFound from "./pages/NotFound";
 import PrivateRoute from "./pages/PrivateRoute";
-import Capitalization from "./pages/Capitalization";
-import Punctuation from "./pages/Punctuation";
-import Spelling from "./pages/Spelling";
 
 import SoundProvider from "./layouts/SoundProvider";
-import CapVault from "./pages/capitalization/CapVault";
-import PuncVault from "./pages/punctuation/PuncVault";
-import SpellVault from "./pages/spelling/SpellVault";
 import Board from "./pages/Board";
 import RotateScreen from "./pages/RotateScreen";
 import { ScreenSizeProvider } from "./layouts/ScreenSizeProvider";
@@ -82,13 +76,6 @@ const App = () => {
 
                 <Route path="/practice/:category/week/:weekNumber/lesson/:lessonNumber"
                   element={<PracticeHandler/>}/>
-
-                <Route
-                  path="/games/capitalization"
-                  element={<Capitalization />}
-                />
-                <Route path="/games/punctuation" element={<Punctuation />} />
-                <Route path="/games/spelling" element={<Spelling />} />
 
                 {/* Content Levels */}
                 <>
@@ -340,11 +327,6 @@ const App = () => {
                     }
                   />
                 </>
-
-                {/* Vaults */}
-                <Route path="/vault/capitalization" element={<CapVault />} />
-                <Route path="/vault/punctuation" element={<PuncVault />} />
-                <Route path="/vault/spelling" element={<SpellVault />} />
 
                 <Route path="/board/*" element={<Board />} />
               </Route>
