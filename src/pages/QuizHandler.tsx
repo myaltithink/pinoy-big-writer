@@ -63,6 +63,7 @@ function QuizHandler(props : QuizProps) {
   const [selectedSet, setSelectedSet] = useState<QuizSet>();
   const [question, setQuestion] = useState<QuizQuestion>();
   const [quizIndex, setQuizIndex] = useState(-1);
+  const [totalItems, setTotalItems] = useState(0);
 
   const { user, setUser } = useUserStore();
   const { width, height } = useWindowSize();
@@ -87,6 +88,13 @@ function QuizHandler(props : QuizProps) {
     const setIndex = Math.floor(Math.random() * props.questionSet.length);
     const quiz = props.questionSet[setIndex]
   
+    let counter = 0;
+    quiz.set.questions.map((i) => {
+      if (i.type !== QuestionType.Direction) counter++;
+    });
+    console.log(counter);
+    setTotalItems(counter);
+
     setCompleted(false);
     setStatus('start');
     setSelectedSet(quiz.set);
@@ -322,7 +330,7 @@ function QuizHandler(props : QuizProps) {
               <p style={{ fontFamily: "Arco" }}>
                 Game {completed ? "Complete" : "Over"}!
               </p>
-              <p style={{ fontFamily: "Arco" }}>Stars: {score} / 10</p>
+              <p style={{ fontFamily: "Arco" }}>Stars: {score} / {totalItems}</p>
               {completed && (
                 <div className="flex mt-4 gap-4 justify-center">
                   <button
