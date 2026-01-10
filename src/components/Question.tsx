@@ -8,12 +8,12 @@ interface Props {
     question: QuizQuestion,
     isMediumScreen: boolean,
     timeRemaining: number,
-    answeredCallback: (isCorrect: boolean, reset: () => void) => void,
+    answeredCallback: (isCorrect: boolean) => void,
 }
 
 interface QuestionTypeProps {
     data: Props,
-    handleAnswer: (selectedAnswer: string, cleanUp?: () => void) => void,
+    handleAnswer: (selectedAnswer: string) => void,
     answer: string | null,
     isCorrect: boolean | null
 }
@@ -50,6 +50,10 @@ function Question(props: Props) {
       handleAnswer('-1');
     }, [props.timeRemaining])
 
+    useEffect(() => {
+      resetStates();
+    }, [props.question]);
+
     const resetStates = () => {
       setAnswer(null);
       setCorrect(null);
@@ -62,7 +66,7 @@ function Question(props: Props) {
       setAnswer(selectedAnswer);
       handleSound(correct);
       handlerCleanup();
-      props.answeredCallback(correct, resetStates)
+      props.answeredCallback(correct)
     }
 
     const mcq = () => {
@@ -168,7 +172,7 @@ function Identification(props: QuestionTypeProps) {
   return (
     
     <div
-      className={`w-[60%] flex flex-col gap-${
+      className={` flex flex-col gap-${
         props.data.isMediumScreen ? "2" : "6"
       } text-white`}
     >
@@ -254,7 +258,7 @@ function WordConstruction(props: QuestionTypeProps) {
 
   return (
     <div
-        className={`w-[60%] flex flex-col gap-${
+        className={` flex flex-col gap-${
           props.data.isMediumScreen ? "2" : "6"
         } text-white`}
       >
@@ -354,7 +358,7 @@ function OrderedChoices(props: QuestionTypeProps) {
 
   return (
     <div
-        className={`w-[60%] flex flex-col gap-${
+        className={` flex flex-col gap-${
           props.data.isMediumScreen ? "2" : "6"
         } text-white`}
       >
@@ -409,7 +413,7 @@ function MCQ(props: QuestionTypeProps) {
     const alphabeth = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
     return (
         <div
-            className={`w-[60%] flex flex-col gap-${
+            className={` flex flex-col gap-${
               props.data.isMediumScreen ? "2" : "6"
             } text-white`}
           >

@@ -58,6 +58,7 @@ function QuizHandler(props : QuizProps) {
   const [timeLimit, setTimeLimit] = useState(0);
   const [passingScore, setPassingScore] = useState(0);
   const [score, setScore] = useState(-1);
+  const [disableNext, setDisableNext] = useState(true);
 
   // QUIZ DATA
   const [selectedSet, setSelectedSet] = useState<QuizSet>();
@@ -92,7 +93,6 @@ function QuizHandler(props : QuizProps) {
     quiz.set.questions.map((i) => {
       if (i.type !== QuestionType.Direction) counter++;
     });
-    console.log(counter);
     setTotalItems(counter);
 
     setCompleted(false);
@@ -142,26 +142,22 @@ function QuizHandler(props : QuizProps) {
   // called by <Instruction> when the type is QuestionType.Direction
   const nextQuestion = () => {
     const newIndex = quizIndex + 1;
-
     if (newIndex == selectedSet?.questions.length) {
       setStatus('done');
       if (!props.practiceMode) save();
       return;
     }
 
+    setDisableNext(true);
     setQuestion(selectedSet?.questions[newIndex]);
     setQuizIndex(newIndex);
   }
 
-  const handleNext = (isCorrect: boolean, resetQuestion: () => void) => {
+  const handleScore = (isCorrect: boolean) => {
+    setDisableNext(false);
     if (isCorrect) {
       setScore(s => s + 1);
     }
-
-    setTimeout(() => {
-      resetQuestion();
-      nextQuestion()
-    }, 3000);
   }
 
   const handleRestart = () => {
@@ -387,12 +383,24 @@ function QuizHandler(props : QuizProps) {
               )}
             </div>
           ) : status == 'ongoing' ? (
-            <Question 
-                question={question!} 
-                isMediumScreen={isMediumScreen}
-                answeredCallback={handleNext}
-                timeRemaining={timeLeft}
-              />
+            <div>
+              <Question 
+                  question={question!} 
+                  isMediumScreen={isMediumScreen}
+                  answeredCallback={handleScore}
+                  timeRemaining={timeLeft}
+                />
+                <button
+                  onClick={() => nextQuestion()}
+                  disabled={disableNext}
+                  className={`${disableNext? "bg-gray-500" : "bg-blue-400"} text-white rounded-xl transition ease-in-out duration-300 ${
+                      isMediumScreen ? "text-md px-3 py-1 " : "text-xl px-6 py-3 "
+                  } mt-5 w-[100%]`}
+                  style={{ fontFamily: "Arco" }}
+                  >
+                  Next Question {"-->"}
+                </button>
+            </div>
           ) : (
             <p className="text-white text-2xl">Loading...</p>
           )}
