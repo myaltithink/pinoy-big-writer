@@ -307,7 +307,7 @@ const App = () => {
                             category="vocabulary"
                             backgroundClass="vocabulary-bg"
                             levelIndex={1}
-                            questionSet={VOCAB_QUIZ.beginner}/>
+                            questionSet={VOCAB_QUIZ.intermidiate}/>
                       </LevelGuard>
                     }
                   />
@@ -322,7 +322,7 @@ const App = () => {
                             category="vocabulary"
                             backgroundClass="vocabulary-bg"
                             levelIndex={2}
-                            questionSet={VOCAB_QUIZ.beginner}/>
+                            questionSet={VOCAB_QUIZ.advance}/>
                       </LevelGuard>
                     }
                   />
