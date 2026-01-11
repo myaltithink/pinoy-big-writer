@@ -335,10 +335,12 @@ function OrderedChoices(props: QuestionTypeProps) {
   const answerLength = props.data.question.correctAnswer.toString().split("-").length;
   const [order, setOrder] = useState<string[]>([]);
   const [displayOrder, setDisplayOrder] = useState('');
+  const [answered, setAnswered] = useState(false);
 
   // cleanup
   useEffect(() => {
     setOrder([]);
+    setAnswered(false);
     setDisplayOrder('');
   }, [props.data.question])
 
@@ -364,6 +366,7 @@ function OrderedChoices(props: QuestionTypeProps) {
     setDisplayOrder(newDisplay);
 
     if (order.length == answerLength) {
+      setAnswered(true);
       props.handleAnswer(newDisplay);
     }
   }, [order])
@@ -411,6 +414,32 @@ function OrderedChoices(props: QuestionTypeProps) {
 
             if (order.length === answerLength) {
               bgClass = (props.isCorrect)? correctColor : wrongColor;
+            }
+
+            if (props.data.question.type === QuestionType.Transitional) {
+              const handleBg = (option: string) => {
+                const answers = props.data.question.correctAnswer.toString().split("-");
+
+                if (props.answer != null) {
+                  return (answers.includes(option))? correctColor: wrongColor;
+                }
+
+                return "bg-white/20";
+              }
+              return (
+                <button
+                  key={idx}
+                  onClick={() => optionClicked(option, selected)}
+                  className={`${(selected && !answered)? bgClass : handleBg(option)} border-2 border-white text-${
+                    props.data.isMediumScreen ? "md" : "3xl"
+                  } font-medium px-${props.data.isMediumScreen ? 2 : 4} py-${
+                    props.data.isMediumScreen ? 1 : 2
+                  } rounded-lg text-left transition`}
+                  disabled={props.answer !== null}
+                >
+                  {option}
+                </button>
+              )
             }
             
             return (
