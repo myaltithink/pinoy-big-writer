@@ -380,15 +380,6 @@ function OrderedChoices(props: QuestionTypeProps) {
     setOrder((o) => [...o, choiceNumber]);
   }
 
-  const getExplanation = () => {
-    const hasExplanation = props.data.question.explanation != "";
-
-    if (hasExplanation) {
-      return `Explanation: ${props.data.question.explanation}`;
-    }
-    return `<span className="text-green-500">Correct Answer</span>: ${props.data.question.correctAnswer}`;
-  }
-
   return (
     <div
         className={` flex flex-col gap-${
@@ -403,10 +394,14 @@ function OrderedChoices(props: QuestionTypeProps) {
         >
         </p>
         <p><u>Your Answer: {displayOrder}</u></p>
-        
         {props.isCorrect !== null && !props.isCorrect &&
-          (<p dangerouslySetInnerHTML={{ __html: getExplanation() }}></p>)
-        }
+            (
+              <>
+                <p>Explanation: {props.data.question.explanation}</p>
+                <p><span className="text-green-500">Correct Answer</span>: {props.data.question.correctAnswer}</p>
+              </>
+            )
+          }
         <div className={`grid gap-${props.data.isMediumScreen ? 2 : 4} `}>
           {props.data.question?.choices!.map((option, idx) => {
             const selected = order.includes(option.split(" - ")[0]);
