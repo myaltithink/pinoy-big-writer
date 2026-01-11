@@ -45,7 +45,7 @@ function Question(props: Props) {
 
     // provides gibbering text as an answer that signify that the user ran out of time
     useEffect(() => {
-      if (props.timeRemaining != 0) 
+      if (props.timeRemaining != 0 || answer != null) 
           return;
 
       handleAnswer('-1');
@@ -142,7 +142,6 @@ function Identification(props: QuestionTypeProps) {
 
   // reset internal states when new question is fed as props
   useEffect(() => {
-    getCorrectSentence();
     cleanUp();
   }, [props.data.question])
 
