@@ -1,0 +1,258 @@
+
+.task-room {
+    .selection-container {
+        height: 65dvh;
+        width: 60dvw;
+        margin-top: 50px;
+
+        
+        .top-category {
+            margin-top: 20px;
+            height: 40%;
+
+            .category {
+                padding: 9% 0px;
+            }
+
+            .Content {
+                padding-left: 9%;
+                padding-right: 7%;
+            }
+
+            .Vocabulary {
+                padding-left: 10%;
+                padding-right: 7%;
+            }
+
+            .Organization {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+        }
+
+        .bottom-category {
+            margin-top: 90px;
+
+            .category {
+                padding: 9% 0px;
+            }
+
+            .Grammar {
+                width: 40%;
+            }
+
+            .Mechanics {
+                width: 50%;
+                margin-right: 30px;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and (max-width: 1696px) {
+    .task-room {
+        .selection-container {
+            margin-top: 20px;
+
+            .bottom-category {
+                margin-top: 70px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1644px) {
+    .task-room {
+        .selection-container {
+            margin-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1615px) {
+    .task-room {
+        .selection-container {
+            .bottom-category {
+                margin-top: 60px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1563px) {
+    .task-room {
+        .selection-container {
+            .bottom-category {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1490px) {
+    .task-room {
+        .selection-container {
+            height: 60dvh;
+            margin-bottom: 70px;
+
+            .top-category {
+                .Content {
+                    padding-right: 6%;
+                    padding-left: 6%;
+                }
+
+                .Organization {
+                    padding-left: 4%;
+                    padding-right: 4%;
+                }
+
+                .Vocabulary {
+                    padding-right: 6%;
+                    padding-left: 6%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    .task-room {
+        .selection-container {
+            margin-bottom: 110px;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .task-room {
+        .selection-container {
+            margin-bottom: 120px;
+
+            .bottom-category {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .task-room {
+        .selection-container {
+            width: 65dvw;
+            height: 50dvh;
+            margin-bottom: 180px;
+
+            .bottom-category {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .task-room {
+        .selection-container {
+            width: 69dvw;
+        }
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .task-room {
+        .selection-container {
+            width: 75dvw;
+
+            .top-category {
+                .Content {
+                    padding-left: 8%;
+                    padding-right: 8%;
+                }
+                .Vocabulary {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .task-room {
+        .selection-container {
+            width: 80dvw;
+        }
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .task-room {
+        .selection-container {
+            width: 87dvw;
+        }
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .task-room {
+        .selection-container {
+            width: 95dvw;
+        }
+    }
+}
+
+@media screen and (max-height: 775px) {
+    .task-room {
+        .selection-container {
+            height: 70dvh;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-height: 675px) {
+    .task-room {
+        .selection-container {
+            height: 60dvh;
+            margin-bottom: 70px;
+        }
+    }
+}
+
+@media screen and (max-height: 640px) {
+    .task-room {
+        .selection-container {
+            width: 60dvw;
+
+            .top-category {
+                .Vocabulary {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 580px) {
+    .task-room {
+        .selection-container {
+            margin-bottom: 100px;
+
+            .bottom-category {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .task-room {
+        .selection-container {
+            height: 70dvh;
+            width: 65dvw;
+            margin-bottom: 0;
+
+            
+        }
+    }
+}

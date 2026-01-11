@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
 import { motion } from "framer-motion";
 import { TiHome } from "react-icons/ti";
+import type { Room } from "../types";
 
-interface selection{
+import "../assets/styles/taskroom.css";
+
+interface Categories{
   label: string,
   destination: string,
   width? : string
@@ -13,45 +16,33 @@ const destinationPrefix = "/tasks/";
 
 function TaskRoom() {
 
-  const selections: selection[] = [
-    { label: "Content", destination: destinationPrefix + "content" },
-    { label: "Organization", destination: destinationPrefix + "organization"},
-    { label: "Vocabulary", destination: destinationPrefix + "vocabulary"},
-    { label: "Grammar", destination: destinationPrefix + "grammar", width: "35%"},
-    { label: "Mechanics", destination: destinationPrefix + "mechanics", width: "35%" }
-  ]
+  const selections: Record<Room, Categories> = {
+    content: { label: "Content", destination: destinationPrefix + "content" },
+    organization: { label: "Organization", destination: destinationPrefix + "organization"},
+    vocabulary: { label: "Vocabulary", destination: destinationPrefix + "vocabulary"},
+    grammar: { label: "Grammar", destination: destinationPrefix + "grammar", width: "35%"},
+    mechanics: { label: "Mechanics", destination: destinationPrefix + "mechanics", width: "35%" }
+  }
+  
 
   const { isMediumScreen } = useScreenSize();
   
   return (
 
-    <div className={`w-dvw h-dvh flex flex-col justify-center items-center task-room ${
+    <div className={`task-room w-dvw h-dvh flex flex-col justify-center items-center task-room ${
         isMediumScreen ? "p-2" : "p-8"
       }`}>
 
-        <div className={`flex justify-evenly items-center flex-wrap 
-            ${isMediumScreen ? "w-[70dvw] h-[75dvh] mt-10 me-10" : "w-[65dvw] h-[63dvh] mb-[60px] me-20"}`}
-          >
-          {selections.map((selection, id) => (
-            <Link to={selection.destination} key={id}
-              className={`${isMediumScreen? "w-[28%]" : `w-[${ selection.width ?? "30%"}]`}`}
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 1,
-                    delay: id * 0.2,
-                    type: "spring",
-                  }}
-                  whileHover={{ scale: 1.1 }}
-                  className={`text-center ${isMediumScreen? "p-10" : "p-20"}`}>
-                    <p style={{fontFamily: "Arco", fontSize: `${isMediumScreen? "15px" : "22px"}`}} className="text-[#552b1a]">
-                      {selection.label}
-                    </p>
-                </motion.div>
-            </Link>
-          ))}
+        <div className="selection-container">
+            <div className="top-category flex justify-between">
+              <Category category={selections.content} id={1}/>
+              <Category category={selections.organization} id={2}/>
+              <Category category={selections.vocabulary} id={3}/>
+            </div>
+            <div className="bottom-category flex justify-between">
+              <Category category={selections.grammar} id={4}/>
+              <Category category={selections.mechanics} id={5}/>
+            </div>
         </div>
 
           <Link to="/home" className="absolute bottom-10">
@@ -85,6 +76,32 @@ function TaskRoom() {
 
     </div>
   );
+}
+
+function Category(props: { category: Categories, id: number }) {
+
+  const { isMediumScreen } = useScreenSize();
+
+  return(
+    <Link to={props.category.destination}
+      className={`category ${props.category.label}`}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            delay: props.id * 0.2,
+            type: "spring",
+          }}
+          whileHover={{ scale: 1.1 }}
+          className={`text-center`}>
+            <p style={{fontFamily: "Arco", fontSize: `${isMediumScreen? "15px" : "22px"}`}} className="text-[#552b1a]">
+              {props.category.label}
+            </p>
+        </motion.div>
+    </Link>
+  )
 }
 
 export default TaskRoom;
