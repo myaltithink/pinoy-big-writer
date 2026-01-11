@@ -397,6 +397,7 @@ function QuizHandler(props : QuizProps) {
           ) : status == 'ongoing' ? (
             <div>
               <Question 
+                  category={props.category}
                   question={question!} 
                   isMediumScreen={isMediumScreen}
                   answeredCallback={handleScore}

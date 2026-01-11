@@ -797,7 +797,7 @@ const setH: QuizQuestion[] = [{
     {
         type: QuestionType.Identification,
         question: "1. They're family owns a sari-sari store in Bulacan.",
-        explanation: 'Their shows possession. “There” refers to a place.',
+        explanation: 'Their shows possession. “They\'re” refers to a place.',
         correctAnswer: "their",
     },
     {

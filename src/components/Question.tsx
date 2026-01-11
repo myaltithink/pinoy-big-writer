@@ -1,10 +1,11 @@
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { QuestionType } from "../constants/QuestionType.Enum";
-import type { QuizQuestion } from "../types";
+import type { QuizQuestion, Room } from "../types";
 import { useSoundContext } from "../layouts/SoundProvider";
 import useSound from "use-sound";
 
 interface Props {
+    category: Room,
     question: QuizQuestion,
     isMediumScreen: boolean,
     timeRemaining: number,
@@ -141,6 +142,7 @@ function Identification(props: QuestionTypeProps) {
 
   // reset internal states when new question is fed as props
   useEffect(() => {
+    getCorrectSentence();
     cleanUp();
   }, [props.data.question])
 
@@ -167,6 +169,20 @@ function Identification(props: QuestionTypeProps) {
     if (submitted) return;
     setSubmitted(true);
     props.handleAnswer(answer.trim());
+  }
+
+  const getCorrectSentence = () => {
+    const question = props.data.question.question;
+    const explanation = props.data.question.explanation
+    const startIndex = explanation.indexOf("“") + 1;
+    const endIndex = explanation.indexOf("”");
+    const word = explanation.substring(startIndex, endIndex).toLowerCase();
+
+    const text = question.substring(2).toLowerCase();
+    const correctWord = `<b>${props.data.question.correctAnswer.toString()}</b>`
+    const correctSentence = text.replace(word, correctWord).trim();
+    const formatted = correctSentence[0].toUpperCase() + correctSentence.substring(1);
+    return formatted;
   }
 
   return (
@@ -214,7 +230,12 @@ function Identification(props: QuestionTypeProps) {
       {props.isCorrect !== null &&
        !props.isCorrect &&
       (
-        <p dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></p>
+        <>
+          <p dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></p>
+          {props.data.category === "vocabulary" && 
+          (<p><b className="text-green-500">Correct Answer</b>: <u dangerouslySetInnerHTML={{__html: getCorrectSentence()}}></u></p>)
+          }
+        </>
       )}
     </div>
   )
