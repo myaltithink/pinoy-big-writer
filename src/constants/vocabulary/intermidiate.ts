@@ -24,7 +24,7 @@ const setA: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. The farmers in Bukidnon faced an arid season, so their crops barely grew.",
+        question: "1. The farmers in Bukidnon faced an <u>arid</u> season, so their crops barely grew.",
         explanation: 'The context mentions that the "crops barely grew," which is a direct consequence of a dry (arid) season.',
         correctAnswer: "dry",
         choices: [
@@ -37,7 +37,7 @@ const setA: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. The barangay tanod showed great valor when he rescued children during the flood.",
+        question: "2. The barangay tanod showed great <u>valor</u> when he rescued children during the flood.",
         explanation: 'The act of rescuing children during a flood requires great courage and bravery (valor).',
         correctAnswer: "courage",
         choices: [
@@ -50,7 +50,7 @@ const setA: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. The instructions for joining the Palarong Pambansa were so convoluted that many students got confused.",
+        question: "3. The instructions for joining the Palarong Pambansa were so <u>convoluted</u> that many students got confused.",
         explanation: 'The result was that "many students got confused," indicating the instructions were difficult to understand, or complex.',
         correctAnswer: "complex",
         choices: [
@@ -63,7 +63,7 @@ const setA: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "4. The artisan painted the parol with meticulous attention to detail.",
+        question: "4. The artisan painted the parol with <u>meticulous</u> attention to detail.",
         explanation: 'Painting with great "attention to detail" means being extremely precise and careful (meticulous).',
         correctAnswer: "precise",
         choices: [
@@ -433,7 +433,7 @@ const setE: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. The comedians at the Sinulog festival were so hilarious that the crowd couldn’t stop laughing. ",
+        question: "1. The comedians at the Sinulog festival were so <u>hilarious</u> that the crowd couldn’t stop laughing. ",
         explanation: '“Extremely funny” matches the context of the crowd laughing; other options are inappropriate.',
         correctAnswer: "extremely funny",
         choices: [
@@ -446,7 +446,7 @@ const setE: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. After carrying rice sacks, Mang Canor felt exhausted and had to rest. ",
+        question: "2. After carrying rice sacks, Mang Canor felt <u>exhausted</u> and had to rest. ",
         explanation: '“Tired” fits because the context shows fatigue from physical work.',
         correctAnswer: "tired",
         choices: [
@@ -459,7 +459,7 @@ const setE: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. The teacher gave a concise explanation of the Rizal lesson. ",
+        question: "3. The teacher gave a <u>concise</u> explanation of the Rizal lesson. ",
         explanation: '“Brief and clear” is correct because “concise” means expressing ideas in few words.',
         correctAnswer: "brief and clear",
         choices: [
@@ -472,7 +472,7 @@ const setE: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "4. The typhoon caused inevitable damage to the coastal barangays. ",
+        question: "4. The typhoon caused <u>inevitable</u> damage to the coastal barangays. ",
         explanation: '“Certain to happen” fits because “inevitable” means unavoidable.',
         correctAnswer: "certain to happen",
         choices: [
@@ -485,7 +485,7 @@ const setE: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "5. The artist used vivid colors in her painting of Mayon Volcano. ",
+        question: "5. The artist used <u>vivid</u> colors in her painting of Mayon Volcano. ",
         explanation: '“Bright and clear” is correct; “vivid” describes strong, lively colors.',
         correctAnswer: "bright and clear",
         choices: [
@@ -655,7 +655,7 @@ const setG: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. The volunteer group was benevolent, always helping victims of the Taal eruption. ",
+        question: "1. The volunteer group was <u>benevolent</u>, always helping victims of the Taal eruption. ",
         explanation: '“Benevolent” means kind and helpful, matching the context of volunteering.',
         correctAnswer: "kind and generous",
         choices: [
@@ -668,7 +668,7 @@ const setG: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. The instructions for making bibingka were ambiguous, leaving the students unsure what to do. ",
+        question: "2. The instructions for making bibingka were <u>ambiguous</u>, leaving the students unsure what to do. ",
         explanation: '“Ambiguous” means unclear or interpretable in more than one way.',
         correctAnswer: "open to more than one interpretation",
         choices: [
@@ -681,7 +681,7 @@ const setG: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. The scientist made a groundbreaking discovery about the Philippine eagle’s nesting habits. ",
+        question: "3. The scientist made a <u>groundbreaking</u> discovery about the Philippine eagle’s nesting habits. ",
         explanation: '“Groundbreaking” means very important or innovative, fitting the discovery.',
         correctAnswer: "revolutionary",
         choices: [
@@ -694,7 +694,7 @@ const setG: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "4. The government brochure explained the Batanes tourism rules in lucid language. ",
+        question: "4. The government brochure explained the Batanes tourism rules in <u>lucid</u> language. ",
         explanation: '“Lucid” means easy to understand; “clear” is the correct choice.',
         correctAnswer: "clear",
         choices: [
@@ -707,7 +707,7 @@ const setG: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "5. The children in a barangay fiesta were very gregarious, always playing together. ",
+        question: "5. The children in a barangay fiesta were very <u>gregarious</u>, always playing together. ",
         explanation: '“Gregarious” means outgoing and social, matching the context of children playing together.',
         correctAnswer: "sociable",
         choices: [
@@ -881,7 +881,7 @@ const setH: QuizQuestion[] = [{
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "10. The folklore story of the aswang was enigmatic, leaving children curious. ",
+        question: "10. The folklore story of the aswang was <u>enigmatic</u>, leaving children curious. ",
         explanation: '"Enigmatic" means mysterious or puzzling; the story leaves questions.',
         correctAnswer: "mysterious",
         choices: [

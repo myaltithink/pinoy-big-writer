@@ -286,7 +286,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "6. The jeepney was crowded during rush hour, so many passengers had to stand. What does crowded mean?",
+        question: "6. The jeepney was crowded during rush hour, so many passengers had to stand. What does <u>crowded</u> mean?",
         explanation: ' Crowded describes a place that has many people in it, leaving little or no space.',
         correctAnswer: "Full of people",
         choices: [
@@ -299,7 +299,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "7. The barangay captain celebrated their success after organizing a clean-up drive around the rivers of Marikina. What does success mean?",
+        question: "7. The barangay captain celebrated their success after organizing a clean-up drive around the rivers of Marikina. What does <u>success</u> mean?",
         explanation: 'Success means the accomplishment of a goal or purpose, which is an achievement.',
         correctAnswer: "Achievement",
         choices: [
@@ -312,7 +312,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "8. Liza practices basketball every afternoon at the gymnasium near her house to improve her skills for the Liga ng Kabataan. What does practice mean?",
+        question: "8. Liza practices basketball every afternoon at the gymnasium near her house to improve her skills for the Liga ng Kabataan. What does <u>practice</u> mean?",
         explanation: 'The goal of the action is "to improve her skills." Practice involves repeated effort (try) to get better at something.',
         correctAnswer: "Try and improve",
         choices: [
@@ -463,14 +463,14 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read each sentence carefully and use the context to determine the meaning of the underlined word. Select the correct answer from the choices provided. ",
+        direction: "Read each sentence carefully and click the correct answer from the choices given. ",
         question: "",
         explanation: '',
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "5. The mountaineers had to ascend Mount Apo slowly and carefully due to the steep and challenging trail. What does ascend mean?",
+        question: "5. The mountaineers had to ascend Mount Apo slowly and carefully due to the steep and challenging trail. What does <u>ascend</u> mean?",
         explanation: 'Mount Apo is a mountain, and the fact that the trail is steep means the mountaineers were moving toward the top, which means to climb up.',
         correctAnswer: "To climb up",
         choices: [
@@ -483,7 +483,7 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "6. The fragrant sampaguita flower is often used to make garlands for religious statues during a fiesta. What does fragrant mean?",
+        question: "6. The fragrant sampaguita flower is often used to make garlands for religious statues during a fiesta. What does <u>fragrant</u> mean?",
         explanation: 'Sampaguita is known as the national flower and is famed for its appealing, sweet odor, which is the definition of fragrant.',
         correctAnswer: "Having a pleasant, sweet smell",
         choices: [
@@ -496,7 +496,7 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "7.  The fisherman was able to catch a giant lapu-lapu (grouper) that weighed more than he did! What does giant mean?",
+        question: "7.  The fisherman was able to catch a giant lapu-lapu (grouper) that weighed more than he did! What does <u>giant</u> mean?",
         explanation: 'The context emphasizes that the fish was so big it weighed more than the fisherman, indicating it was very large.',
         correctAnswer: "Very large or huge",
         choices: [
@@ -509,7 +509,7 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "8. She was eager to try the new Filipino restaurant because her friends said the adobo was excellent. What does eager mean?",
+        question: "8. She was eager to try the new Filipino restaurant because her friends said the adobo was excellent. What does <u>eager</u> mean?",
         explanation: 'Since her friends recommended the restaurant, she would likely be very keen and excited to try it.',
         correctAnswer: "Very keen and excited",
         choices: [
@@ -522,7 +522,7 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. The children found a shelter under the big mango tree when the heavy rain suddenly poured. What does shelter mean?",
+        question: "9. The children found a shelter under the big mango tree when the heavy rain suddenly poured. What does <u>shelter</u> mean?",
         explanation: 'Since the children went under the tree when the heavy rain suddenly poured, the tree served as a protective covering, or shelter.',
         correctAnswer: "A place that offers protection from bad weather and keeps people safe",
         choices: [
@@ -679,14 +679,14 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read each sentence carefully and use the context to determine the meaning of the underlined word. Select the correct answer from the choices provided. ",
+        direction: "Read each sentence carefully and click the correct answer from the choices given. ",
         question: "",
         explanation: '',
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "6.  We must conserve electricity by turning off the lights when we leave the room to help save on our electric bill.  What does conserve mean? ",
+        question: "6.  We must conserve electricity by turning off the lights when we leave the room to help save on our electric bill.  What does <u>conserve</u> mean? ",
         explanation: 'Turning off the lights to help save the bill is an act of using electricity sparingly or saving it, which means to conserve.',
         correctAnswer: "To use sparingly or save",
         choices: [
@@ -699,7 +699,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "7. Rico is curious about animals in the Philippine Eagle Center. He often asks questions about how they live.  What does curious mean? ",
+        question: "7. Rico is curious about animals in the Philippine Eagle Center. He often asks questions about how they live.  What does <u>curious</u> mean? ",
         explanation: 'The phrase "He often asks questions" shows that Rico has a strong desire to know or learn something, which is the definition of curious.',
         correctAnswer: "Eager to learn",
         choices: [
@@ -712,7 +712,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "8. The farmer uses an efficient irrigation system that saves water and helps his rice fields grow faster and better.  What does efficient mean? ",
+        question: "8. The farmer uses an efficient irrigation system that saves water and helps his rice fields grow faster and better.  What does <u>efficient</u> mean? ",
         explanation: 'The system is described as saving water and helping the fields grow faster and better, meaning it performs its function without waste and works well.',
         correctAnswer: "Working well and quickly",
         choices: [
@@ -725,7 +725,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. Carlos is very patient. He waits calmly in line at the LRT station every morning without complaining. What does patient mean? ",
+        question: "9. Carlos is very patient. He waits calmly in line at the LRT station every morning without complaining. What does <u>patient</u> mean? ",
         explanation: 'The context states he waits calmly and without complaining, which perfectly describes a person who is patient.',
         correctAnswer: "Calm and tolerant",
         choices: [
@@ -738,7 +738,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "10. The teacher gave a simple explanation about Filipino heroes so that all students in the class could understand easily. What does simple mean? ",
+        question: "10. The teacher gave a simple explanation about Filipino heroes so that all students in the class could understand easily. What does <u>simple</u> mean? ",
         explanation: 'The explanation was given so that "all students could understand easily," meaning it was not complicated or confusing.',
         correctAnswer: "Easy to understand",
         choices: [
@@ -1006,7 +1006,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. Taal Volcano is not very tall, but its eruption was powerful. Which word can replace tall? ",
+        question: "1. Taal Volcano is not very <u>tall</u>, but its eruption was powerful. Which word can replace tall? ",
         explanation: 'Tall and high describe vertical measurement. While not the tallest, Taal is high above the lake.',
         correctAnswer: "high",
         choices: [
@@ -1019,7 +1019,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. Everyone cheered when the team began to win the championship game. Which word can replace win? ",
+        question: "2. Everyone cheered when the team began to <u>win</u> the championship game. Which word can replace win? ",
         explanation: 'To win a game is to achieve success or succeed in a competition.',
         correctAnswer: "succeed",
         choices: [
@@ -1032,7 +1032,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. The family wanted to buy a new television for their living room. Which word can replace buy? ",
+        question: "3. The family wanted to <u>buy</u> a new television for their living room. Which word can replace buy? ",
         explanation: 'Buy means to acquire something by paying for it; purchase is a direct and slightly more formal synonym.',
         correctAnswer: "purchase",
         choices: [
@@ -1045,7 +1045,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "4. The students must reply to the questions at the end of the chapter.  Which word can replace reply? ",
+        question: "4. The students must <u>reply</u> to the questions at the end of the chapter.  Which word can replace reply? ",
         explanation: 'Answer means to respond to a question.',
         correctAnswer: "answer",
         choices: [
@@ -1058,7 +1058,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "5. It is important to hold your promises to your friends. Which word can replace hold? ",
+        question: "5. It is important to <u>hold</u> your promises to your friends. Which word can replace hold? ",
         explanation: 'To keep a promise means to fulfill it. In general, to keep something means to hold possession of it.',
         correctAnswer: "keep",
         choices: [
@@ -1205,7 +1205,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. The teacher asked the child to display her drawing to the class. Which word can replace display? ",
+        question: "1. The teacher asked the child to <u>display</u> her drawing to the class. Which word can replace display? ",
         explanation: 'To show something is to make something visible to others.',
         correctAnswer: "show",
         choices: [
@@ -1218,7 +1218,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. The path through the forest was dark because the sun could not reach the ground.  Which word can replace dark? ",
+        question: "2. The path through the forest was <u>dark</u> because the sun could not reach the ground.  Which word can replace dark? ",
         explanation: 'Dim means not shining brightly or lacking light, making it a good synonym for dark.',
         correctAnswer: "dim",
         choices: [
@@ -1231,7 +1231,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. After the marathon, Juan felt very tired and needed to rest. Which word can replace tired?",
+        question: "3. After the marathon, Juan felt very <u>tired</u> and needed to rest. Which word can replace tired?",
         explanation: 'Weary is a common synonym for feeling tired or exhausted.',
         correctAnswer: "weary",
         choices: [
@@ -1244,7 +1244,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "4. I need to fix the broken wheel on my bicycle before I can ride it. Which word can replace fix?",
+        question: "4. I need to <u>fix</u> the broken wheel on my bicycle before I can ride it. Which word can replace fix?",
         explanation: 'Fix means to repair or mend something that is broken.',
         correctAnswer: "repair",
         choices: [
@@ -1257,7 +1257,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "5. The water felt cold when I jumped into the swimming pool. Which word can replace cold?",
+        question: "5. The water felt <u>cold</u> when I jumped into the swimming pool. Which word can replace cold?",
         explanation: 'Icy means extremely cold, and it is a common synonym to describe the feeling of cold water.',
         correctAnswer: "icy",
         choices: [
@@ -1270,14 +1270,14 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read each sentence carefully and use the context to determine the meaning of the underlined word. Select the correct answer from the choices provided. ",
+        direction: "Read each sentence carefully and click the correct answer from the choices given. ",
         question: "",
         explanation: '',
         correctAnswer: "",
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "6. The jeepney drivers decided to protest the fare increase by holding a motorcade along EDSA to show their strong disagreement with the new policy.  What does protest mean? ",
+        question: "6. The jeepney drivers decided to protest the fare increase by holding a motorcade along EDSA to show their strong disagreement with the new policy.  What does <u>protest</u> mean? ",
         explanation: 'The context says the drivers used a "motorcade along EDSA to show their strong disagreement," which is the definition of a public protest.',
         correctAnswer: "To make a public display of objection",
         choices: [
@@ -1290,7 +1290,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "7. The family felt a deep sense of nostalgia whenever they looked at old photos of their provincial home and the rice fields where they grew up. What does nostalgia mean? ",
+        question: "7. The family felt a deep sense of nostalgia whenever they looked at old photos of their provincial home and the rice fields where they grew up. What does <u>nostalgia</u> mean? ",
         explanation: 'The context links the feeling to "old photos of their provincial home and the rice fields," showing a strong desire or fondness for a cherished time in the past.',
         correctAnswer: "A sentimental longing for the past",
         choices: [
@@ -1303,7 +1303,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "8. The barangay captain called a special meeting to disclose the full details of the community fund distribution to ensure transparency. What does disclose mean?",
+        question: "8. The barangay captain called a special meeting to disclose the full details of the community fund distribution to ensure transparency. What does <u>disclose</u> mean?",
         explanation: 'The context states the goal was to "ensure transparency," which means the captain needed to make the details public or known (disclose).',
         correctAnswer: "To reveal",
         choices: [
@@ -1316,7 +1316,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. Every year during the fiesta, the town holds an elaborate procession where the statue of the patron saint is carried through the streets. What does procession mean? ",
+        question: "9. Every year during the fiesta, the town holds an elaborate procession where the statue of the patron saint is carried through the streets. What does <u>procession</u> mean? ",
         explanation: 'The context describes the statue being "carried through the streets," implying a formal, moving line of people, which is a procession.',
         correctAnswer: "A group of people or vehicles moving in an orderly way",
         choices: [
@@ -1329,7 +1329,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "10.  Filipinos are known for their resilience because they always manage to recover quickly and smile, even after being struck by a severe typhoon.  What does resilience mean?",
+        question: "10.  Filipinos are known for their resilience because they always manage to recover quickly and smile, even after being struck by a severe typhoon.  What does <u>resilience</u> mean?",
         explanation: 'The context explains that Filipinos "manage to recover quickly and smile, even after being struck by a severe typhoon," which perfectly describes the trait of resilience.',
         correctAnswer: "The ability to withstand difficulties",
         choices: [
