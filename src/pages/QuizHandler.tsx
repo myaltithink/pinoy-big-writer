@@ -60,6 +60,7 @@ function QuizHandler(props : QuizProps) {
   const [passingScore, setPassingScore] = useState(0);
   const [score, setScore] = useState(-1);
   const [disableNext, setDisableNext] = useState(true);
+  const [answered, setAnswered] = useState(false);
 
   // QUIZ DATA
   const [selectedSet, setSelectedSet] = useState<QuizSet>();
@@ -135,6 +136,7 @@ function QuizHandler(props : QuizProps) {
   }, [question])
   
   useEffect(() => {
+    if (answered) return;
     if (timeLeft == 0 || question?.type == QuestionType.Direction) {
       setTimeLeft(0);
       return;
@@ -162,11 +164,13 @@ function QuizHandler(props : QuizProps) {
     setDisableNext(true);
     setQuestion(selectedSet?.questions[newIndex]);
     setQuizIndex(newIndex);
+    setAnswered(false);
     setTimeLeft(timeLimit);
   }
 
   const handleScore = (isCorrect: boolean) => {
     setDisableNext(false);
+    setAnswered(true);
     if (isCorrect) {
       setScore(s => s + 1);
     }
