@@ -89,7 +89,7 @@ const App = () => {
                           category="vocabulary"
                           backgroundClass="content-bg"
                           levelIndex={0}
-                          questionSet={VOCAB_QUIZ.intermidiate}/>
+                          questionSet={VOCAB_QUIZ.advance}/>
                       </LevelGuard>
                     }
                   />
