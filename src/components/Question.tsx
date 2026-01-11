@@ -166,7 +166,7 @@ function Identification(props: QuestionTypeProps) {
 
     if (submitted) return;
     setSubmitted(true);
-    props.handleAnswer(answer);
+    props.handleAnswer(answer.trim());
   }
 
   return (
