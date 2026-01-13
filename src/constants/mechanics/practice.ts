@@ -399,7 +399,7 @@ const week1SetB: QuizQuestion[] = [
 const week2SetA: QuizQuestion[] = [
     {
         type: QuestionType.Direction,
-        direction: "",
+        direction: "Choose the sentence with the correct capitalization.",
         question: "",
         explanation: "",
         correctAnswer: "",
@@ -704,7 +704,7 @@ const week2SetB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "8. When should a school subject be capitalized?",
         explanation: "",
-        correctAnswer: "",
+        correctAnswer: "When it is a language or part of a course title",
         choices: [
             "Always",
             "When it is difficult",
