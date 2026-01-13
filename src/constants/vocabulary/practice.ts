@@ -956,7 +956,7 @@ const week2SetB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. The classroom was <u>very</u> messy after the activity. ",
+        question: "3. The classroom was <u>very messy</u> after the activity. ",
         explanation: "Dirty clearly describes the messy state more precisely than “very messy.”",
         correctAnswer: "dirty",
         choices: [
