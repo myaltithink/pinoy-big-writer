@@ -340,7 +340,11 @@ function QuizHandler(props : QuizProps) {
           ) : status == 'done' ? (
             <div className="text-white text-3xl text-center">
               <p style={{ fontFamily: "Arco" }}>
-                Game {completed ? "Complete" : "Over"}!
+                {props.practiceMode? 
+                  `${score >= (totalItems/2)? "Very Good" : "Try Again"}`
+                : 
+                  `Game ${completed ? "Complete" : "Over"}!`
+                }
               </p>
               <p style={{ fontFamily: "Arco" }}>Stars: {score} / {totalItems}</p>
               {completed && (
@@ -373,9 +377,6 @@ function QuizHandler(props : QuizProps) {
               )}
               {!completed && (
                 <>
-                {props.practiceMode && 
-                  <p style={{ fontFamily: "Arco" }} className="text-xl mt-5">Feel free to practice or try again</p>
-                }
                   <div>
                     <button
                       onClick={handleRestart}
