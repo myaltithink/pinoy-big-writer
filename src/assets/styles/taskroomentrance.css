@@ -1,0 +1,47 @@
+
+.task-room-entrance {
+    .door {
+        width: 9dvw;
+        margin-bottom: 130px;
+    }
+}
+
+@media screen and (max-width: 1630px) {
+    .task-room-entrance {
+        .door {
+            margin-bottom: 100px;       
+        }
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    .task-room-entrance {
+        .door {
+            margin-bottom: 60px;       
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .task-room-entrance {
+        .door {
+            width: 11dvw;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .task-room-entrance {
+        .door {
+            width: 13dvw;     
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .task-room-entrance {
+        .door {
+            margin-bottom: 20px;       
+        }
+    }
+}

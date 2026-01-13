@@ -18,6 +18,8 @@ import doorCloseSfx from "/sounds/door-close.mp3";
 import { useSoundContext } from "../layouts/SoundProvider";
 import { useScreenSize } from "../layouts/ScreenSizeProvider";
 
+import "../assets/styles/taskroomentrance.css"
+
 function TaskRoomEntrance() {
   const { user, setUser } = useUserStore();
   const [hovered, setHovered] = useState<boolean>(false);
@@ -111,6 +113,7 @@ function TaskRoomEntrance() {
           >
             <Link
               to={taskRoom.path}
+              className="door"
               >
               <motion.img
                 // 3a. onMouseEnter: mark hovered, play open SFX
@@ -126,7 +129,6 @@ function TaskRoomEntrance() {
                 src={
                   hovered ? `${taskRoom.src}-open.png` : `${taskRoom.src}.png`
                 }
-                className={`${isMediumScreen ? "w-[80px] mb-5" : "w-[130px] mb-20"}`}
                 transition={{ duration: 0.3 }}
               />
             </Link>

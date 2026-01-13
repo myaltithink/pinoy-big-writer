@@ -86,10 +86,10 @@ const App = () => {
                         userProgress={user?.progress}
                       >
                         <QuizHandler
-                          category="vocabulary"
+                          category="mechanics"
                           backgroundClass="content-bg"
                           levelIndex={0}
-                          questionSet={ORGANIZATION_QUIZ.intermidiate}/>
+                          questionSet={MECHANIC_QUIZ.advance}/>
                       </LevelGuard>
                     }
                   />
