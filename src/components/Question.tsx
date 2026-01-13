@@ -230,7 +230,7 @@ function Identification(props: QuestionTypeProps) {
        !props.isCorrect &&
       (
         <>
-          <p className="text-xl"><b>Explanation</b>:<span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span></p>
+          <p className="text-xl"><b>Explanation</b>: <span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span></p>
           {props.data.category === "vocabulary" && 
           (<p className="text-xl"><b className="text-green-500">Correct Answer</b>: <u dangerouslySetInnerHTML={{__html: getCorrectSentence()}}></u></p>)
           }
@@ -515,7 +515,7 @@ function MCQ(props: QuestionTypeProps) {
             {props.isCorrect !== null &&
              !props.isCorrect &&
             (
-              <p className="text-xl"><b>xEplanation</b>: <span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span></p>
+              <p className="text-xl"><b>Explanation</b>: <span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span></p>
             )}
           </div>
     )
