@@ -1472,14 +1472,14 @@ const week3SetA: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. Their house is bigger than ___ across the street. ",
+        question: "9. ___ house is bigger than  across the street. ",
         explanation: "Their is the possessive form showing ownership.",
-        correctAnswer: "their",
+        correctAnswer: "Their",
         choices: [
-            "there ",
-            "they're ",
-            "their",
-            "they",
+            "There ",
+            "They're ",
+            "Their",
+            "They",
         ],
         choiceType: "alpha"
     },
