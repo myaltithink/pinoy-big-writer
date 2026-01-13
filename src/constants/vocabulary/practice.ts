@@ -1586,14 +1586,14 @@ const week3SetB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "2. He prefers to read ____ books than watch movies. ",
+        question: "2. He prefers to read books ____ watch movies. ",
         explanation: "Than is used for comparisons.",
-        correctAnswer: "that",
+        correctAnswer: "than",
         choices: [
             "then ",
             "those ",
             "that",
-            "than ",
+            "than",
         ],
         choiceType: "alpha"
     },
