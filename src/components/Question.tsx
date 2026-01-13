@@ -230,9 +230,9 @@ function Identification(props: QuestionTypeProps) {
        !props.isCorrect &&
       (
         <>
-          <p dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></p>
+          <p className="text-xl"><b>Explanation</b>:<span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span></p>
           {props.data.category === "vocabulary" && 
-          (<p><b className="text-green-500">Correct Answer</b>: <u dangerouslySetInnerHTML={{__html: getCorrectSentence()}}></u></p>)
+          (<p className="text-xl"><b className="text-green-500">Correct Answer</b>: <u dangerouslySetInnerHTML={{__html: getCorrectSentence()}}></u></p>)
           }
         </>
       )}
@@ -296,8 +296,8 @@ function WordConstruction(props: QuestionTypeProps) {
           {props.isCorrect !== null && !props.isCorrect &&
             (
               <>
-                <p>Explanation: {props.data.question.explanation}</p>
-                <p><span className="text-green-500">Correct Answer</span>: {props.data.question.correctAnswer}</p>
+                <p className="text-xl"><b>Explanation</b>: {props.data.question.explanation}</p>
+                <p className="text-xl"><span className="text-green-500">Correct Answer</span>: {props.data.question.correctAnswer}</p>
               </>
             )
           }
@@ -397,8 +397,8 @@ function OrderedChoices(props: QuestionTypeProps) {
         {props.isCorrect !== null && !props.isCorrect &&
             (
               <>
-                <p>Explanation: {props.data.question.explanation}</p>
-                <p><span className="text-green-500">Correct Answer</span>: {props.data.question.correctAnswer}</p>
+                <p className="text-xl"><b>Explanation</b>: {props.data.question.explanation}</p>
+                <p className="text-xl"><span className="text-green-500">Correct Answer</span>: {props.data.question.correctAnswer}</p>
               </>
             )
           }
@@ -515,7 +515,7 @@ function MCQ(props: QuestionTypeProps) {
             {props.isCorrect !== null &&
              !props.isCorrect &&
             (
-              <p dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></p>
+              <p className="text-xl"><b>xEplanation</b>: <span dangerouslySetInnerHTML={{ __html: props.data.question.explanation }}></span></p>
             )}
           </div>
     )
