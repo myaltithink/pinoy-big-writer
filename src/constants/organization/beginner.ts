@@ -3,6 +3,13 @@ import { QuestionType } from "../QuestionType.Enum";
 
 const setA: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. This essay will explore the role of jeepneys in Philippine transportation. Jeepneys represent our unique creativity and daily life. Which part of the essay is this?",
         explanation: "The introduction presents the topic and a thesis statement outlining main ideas, often with general statements to engage the reader",
@@ -212,6 +219,13 @@ const setA: QuizQuestion[] = [
 
 const setB: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. Overall, typhoons highlight Filipino strength and the need for better disaster plans. We always rise stronger. Which part of the essay is this?",
         explanation: "Conclusions summarize arguments and end with a final thought or call to action.",
@@ -418,6 +432,13 @@ const setB: QuizQuestion[] = [
 ]
 
 const setC: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
     {
         type: QuestionType.MultipleChoice,
         question: "1. This essay will highlight the significance of the jeepney in everyday Filipino life. Jeepneys reflect our ingenuity and vibrant streets. Which part of the essay is this?",
@@ -626,6 +647,13 @@ const setC: QuizQuestion[] = [
 
 const setD: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. Ultimately, bayanihan fosters unity and hope in the Philippines, proving our enduring strength. It remains vital today. Which part of the essay is this?",
         explanation: "Conclusions summarize arguments and provide closure with a strong final statement.",
@@ -833,6 +861,13 @@ const setD: QuizQuestion[] = [
 
 const setE: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. In the end, the carabao symbolizes hard work and sustainability in Philippine agriculture. It continues to support farmers despite machinery advances.  Which part of the essay is this?",
         explanation: "Conclusions wrap up main ideas with a final reflection, tying back to the thesis without new evidence.",
@@ -1039,6 +1074,13 @@ const setE: QuizQuestion[] = [
 ]
 
 const setF: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
      {
         type: QuestionType.MultipleChoice,
         question: "1. Found in Mindanao forests, the Philippine eagle nests high and hunts monkeys for food. Habitat loss threatens its survival. Which part of the essay is this?",
@@ -1247,6 +1289,13 @@ const setF: QuizQuestion[] = [
 
 const setG: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. This essay will analyze the influence of the palay harvest on rural Filipino life. Palay harvest sustains farmers and families. Which part of the essay is this?",
         explanation: "Introductions set the essay's purpose through topic introduction and thesis.",
@@ -1453,8 +1502,8 @@ const setG: QuizQuestion[] = [
 ]
 
 const metadata: SetMetadata = {
-    passingScore: 12,
-    timeLimit: 15
+    passingScore: 8,
+    timeLimit: 20
 }
 
 export const ORG_BEGINER_SET: SetContainer[] = [
@@ -1462,7 +1511,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setA,
         }
     },
@@ -1470,7 +1519,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setB
         }
     },
@@ -1478,7 +1527,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setC
         }
     },
@@ -1486,7 +1535,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setD
         }
     },
@@ -1494,7 +1543,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setE
         }
     },
@@ -1502,7 +1551,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setF
         }
     },
@@ -1510,7 +1559,7 @@ export const ORG_BEGINER_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "Select the correct essay section whether it is Introduction, Body, or Conclusion for the given passage.",
+            instruction: "Answer and complete the following items. You have 20 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setG
         }
     },

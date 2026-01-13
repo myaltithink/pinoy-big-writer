@@ -3,6 +3,13 @@ import { QuestionType } from "../QuestionType.Enum"
 
 const setA: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Conclusion phrase doesn't belong in introduction.  ",
@@ -143,6 +150,13 @@ const setA: QuizQuestion[] = [
 ]
 
 const setB: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
     {
         type: QuestionType.MultipleChoice,
         question: "1. Body",
@@ -285,6 +299,13 @@ const setB: QuizQuestion[] = [
 
 const setC: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Unrelated food tradition from different cultural essay.",
@@ -424,6 +445,13 @@ const setC: QuizQuestion[] = [
 ]
 
 const setD: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
     {
         type: QuestionType.MultipleChoice,
         question: "1. Conclusion",
@@ -566,6 +594,13 @@ const setD: QuizQuestion[] = [
 
 const setE: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Off-topic jeepney fact; does not fit introduction ",
@@ -706,6 +741,13 @@ const setE: QuizQuestion[] = [
 ]
 
 const setF: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
     {
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
@@ -848,6 +890,13 @@ const setF: QuizQuestion[] = [
 
 const setG: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Jeepneys are not part of the Kadayawan celebration. ",
@@ -988,8 +1037,8 @@ const setG: QuizQuestion[] = [
 ]
 
 const metadata: SetMetadata = {
-    passingScore: 7,
-    timeLimit: 15
+    passingScore: 8,
+    timeLimit: 30
 }
 
 export const ORG_INTERMIDIATE_SET: SetContainer[] = [
@@ -997,7 +1046,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setA,
         }
     },
@@ -1005,7 +1054,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setB,
         }
     },
@@ -1013,7 +1062,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setC,
         }
     },
@@ -1021,7 +1070,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setD,
         }
     },
@@ -1029,7 +1078,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setE,
         }
     },
@@ -1037,7 +1086,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setF,
         }
     },
@@ -1045,7 +1094,7 @@ export const ORG_INTERMIDIATE_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "\"Spot the Intruder\". Read the 5 mixed sentences labeled as Introduction. Click or identify the irrelevant sentence (the \"intruder\") that doesn't belong. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setG,
         }
     },

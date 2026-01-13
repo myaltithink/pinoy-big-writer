@@ -3,6 +3,13 @@ import { QuestionType } from "../QuestionType.Enum"
 
 const setA: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.Identification,
         question: "1. Recycling reduces the amount of waste in landfills, which can prevent pollution and diseases. It also saves natural resources by reusing materials like plastic and paper. Filipinos can help lead to a cleaner country by practicing recycling in their homes and schools.",
         explanation: "",
@@ -127,6 +134,13 @@ const setA: QuizQuestion[] = [
 
 const setB: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.Identification,
         question: "1. To conclude, the family remains the foundation of Filipino society. Respecting and nurturing these relationships preserve our cultural identity.",
         explanation: "",
@@ -249,6 +263,13 @@ const setB: QuizQuestion[] = [
 ]
 
 const setC: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
     {
         type: QuestionType.Identification,
         question: "1. Social media is widely used by Filipino teenagers today. It affects how young people communicate and spend their time. This essay explores the positive and negative effects of social media on Filipino youth.",
@@ -373,6 +394,13 @@ const setC: QuizQuestion[] = [
 
 const setD: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.Identification,
         question: "1. English is widely used in the Philippines and learning it offers many advantages. It is one of the official languages and is important in education and jobs. This essay explains the benefits of learning English in our country.",
         explanation: "",
@@ -495,6 +523,13 @@ const setD: QuizQuestion[] = [
 ]
 
 const setE: QuizQuestion[] = [
+    {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
     {
         type: QuestionType.Identification,
         question: "1. The Philippines is home to many unique animals and plants. Protecting wildlife is important for biodiversity and ecological balance. This essay highlights the need to protect Philippine wildlife.",
@@ -619,6 +654,13 @@ const setE: QuizQuestion[] = [
 
 const setF: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.Identification,
         question: "1. Overall, OFWs are heroes who sacrifice for their families and country. Their contributions deserve respect and support.",
         explanation: "",
@@ -742,6 +784,13 @@ const setF: QuizQuestion[] = [
 
 const setG: QuizQuestion[] = [
     {
+        type: QuestionType.Direction,
+        direction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+        question: "",
+        explanation: "",
+        correctAnswer: ""
+    },
+    {
         type: QuestionType.Identification,
         question: "1. Jeepneys are a unique and popular means of transportation in the Philippines. They have been part of Filipino culture for decades. This essay talks about the role jeepneys play in daily life and challenges they face.",
         explanation: "",
@@ -864,8 +913,8 @@ const setG: QuizQuestion[] = [
 ]
 
 const metadata: SetMetadata = {
-    passingScore: 7,
-    timeLimit: 15
+    passingScore: 8,
+    timeLimit: 40
 }
 
 export const ORG_ADVANCED_SET: SetContainer[] = [
@@ -873,7 +922,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setA,
         }
     },
@@ -881,7 +930,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setB,
         }
     },
@@ -889,7 +938,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setC,
         }
     },
@@ -897,7 +946,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setD,
         }
     },
@@ -905,7 +954,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setE,
         }
     },
@@ -913,7 +962,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setF,
         }
     },
@@ -921,7 +970,7 @@ export const ORG_ADVANCED_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "Read each statement carefully and determine if it belongs to the introduction, body, or conclusion section of an essay.",
+            instruction: "Answer and complete the following items. You have 40 seconds to answer each one. Get 8 correct answers to complete the level successfully.",
             questions: setG,
         }
     },
