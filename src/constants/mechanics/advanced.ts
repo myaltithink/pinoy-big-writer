@@ -444,7 +444,7 @@ const setG: QuizQuestion[] = [
 
 const metadata: SetMetadata = {
     passingScore: 7,
-    timeLimit: 15
+    timeLimit: 120
 }
 
 export const MECHANICS_ADVANCED_SET: SetContainer[] = [
@@ -452,7 +452,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setA,
         }
     },
@@ -460,7 +460,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setB,
         }
     },
@@ -468,7 +468,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setC,
         }
     },
@@ -476,7 +476,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setD,
         }
     },
@@ -484,7 +484,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setE,
         }
     },
@@ -492,7 +492,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setF,
         }
     },
@@ -500,7 +500,7 @@ export const MECHANICS_ADVANCED_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "Rewrite the sentences with correct capitalization, spelling, and punction if needed. ",
+            instruction: "Rewrite the sentences with correct capitalization, spelling, and punctuation if needed.",
             questions: setG,
         }
     },
