@@ -13,7 +13,7 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Conclusion phrase doesn't belong in introduction.  ",
-        correctAnswer: 2,
+        correctAnswer: "In conclusion, bayanihan defines our national character.",
         choices: [
             "Bayanihan unites Filipinos during house-moving celebrations.",
             "This essay explores bayanihan's role in modern communities.",
@@ -26,7 +26,7 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Body",
         explanation: "Summary phrase belongs in conclusion, not body evidence.",
-        correctAnswer: 2,
+        correctAnswer: "Overall, our resilience comes from this tradition.",
         choices: [
             "During typhoons, bayanihan clears debris from flooded streets.",
             "Families share rice and canned goods with neighbors in need.",
@@ -39,7 +39,7 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Conclusion",
         explanation: "Off-topic detail from different essay.",
-        correctAnswer: 1,
+        correctAnswer: "Jeepneys display vibrant art from post-war creativity.",
         choices: [
             "Bayanihan proves Filipino unity creates lasting strength.",
             "Jeepneys display vibrant art from post-war creativity.",
@@ -161,7 +161,7 @@ const setB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Body",
         explanation: "Conclusion phrase doesn't belong in body details.",
-        correctAnswer: 2,
+        correctAnswer: "To sum up, jeepneys define our urban identity.",
         choices: [
             "Jeepneys carry 20 passengers with colorful religious paintings.",
             "Drivers play loud OPM music during rush hour traffic.",
@@ -174,7 +174,7 @@ const setB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Introduction",
         explanation: "Summary phrase belongs in conclusion, not body evidence.",
-        correctAnswer: 2,
+        correctAnswer: "During fiestas, vendors sell them parked roadside.",
         choices: [
             "Jeepneys symbolize Filipino ingenuity after World War II.",
             "This essay examines their cultural and practical importance.",
@@ -187,7 +187,7 @@ const setB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Conclusion",
         explanation: "Unrelated food topic from different essay.",
-        correctAnswer: 1,
+        correctAnswer: "Adobo varies from vinegar-heavy Ilocano to soy Visayan.",
         choices: [
             "Jeepneys preserve our vibrant street culture forever.",
             "Adobo varies from vinegar-heavy Ilocano to soy Visayan.",
@@ -309,7 +309,7 @@ const setC: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Unrelated food tradition from different cultural essay.",
-        correctAnswer: 2,
+        correctAnswer: "Kamayan feasts feature rice served on banana leaves communally.",
         choices: [
             "Sinulog celebrates Santo Niño with street dancing in Cebu every January.",
             "This essay examines how Sinulog preserves faith and cultural identity.",
@@ -322,7 +322,7 @@ const setC: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Body",
         explanation: "Conclusion summary phrase misplaced in body details.",
-        correctAnswer: 2,
+        correctAnswer: "Overall, Sinulog unites Cebuano heritage across generations.",
         choices: [
             "Street parades feature rhythmic drums and chants of \"Viva Santo Niño!\"",
             "Participants paint faces black honoring Ati-Malay peace treaty.",
@@ -335,7 +335,7 @@ const setC: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Conclusion",
         explanation: "Using authentic Filipino harvest festival contexts, the information provided is off-topic.",
-        correctAnswer: 1,
+        correctAnswer: "Pahiyas decorates houses with colorful rice wafer kipping.",
         choices: [
             "Sinulog ensures Cebuano traditions thrive for future youth.",
             "Pahiyas decorates houses with colorful rice wafer kipping.",
@@ -456,7 +456,7 @@ const setD: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Conclusion",
         explanation: "Specific body description, not conclusion summary.",
-        correctAnswer: 1,
+        correctAnswer: "Houses glow with colorful kipping made from rice wafers.",
         choices: [
             "Pahiyas celebrates bountiful harvests with gratitude to San Isidro Labrador.",
             "Houses glow with colorful kipping made from rice wafers.",
@@ -469,7 +469,7 @@ const setD: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Body",
         explanation: "Conclusion phrase misplaced among body examples.",
-        correctAnswer: 2,
+        correctAnswer: "In summary, Pahiyas showcases Quezon's artistic harvest spirit.",
         choices: [
             "Kipping decorations hang from roofs in red, green, and yellow patterns.",
             "Farmers display vegetables, fruits, and handicrafts outside homes.",
@@ -482,7 +482,7 @@ const setD: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Introduction",
         explanation: "Authentic Pahiyas details test recognition of misplaced body specifics or off-topic traditions in 5-sentence sets.",
-        correctAnswer: 1,
+        correctAnswer: "Kamayan feasts serve rice on banana leaves communally.",
         choices: [
             "Pahiyas Festival transforms Lucban into a harvest art wonderland yearly.",
             "Kamayan feasts serve rice on banana leaves communally.",
@@ -604,7 +604,7 @@ const setE: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Off-topic jeepney fact; does not fit introduction ",
-        correctAnswer: 3,
+        correctAnswer: "Jeepneys are a common mode of transportation in Manila streets.",
         choices: [
             "Kadayawan Festival is a celebration of bountiful harvests in Davao City.",
             "This essay explores Kadayawan's significance in promoting indigenous cultures.",
@@ -617,11 +617,11 @@ const setE: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Body",
         explanation: "The conclusion phrase is misplaced in the body of the paragraph.",
-        correctAnswer: 2,
+        correctAnswer: "In conclusion, Kadayawan showcases Davao's rich cultural tapestry.",
         choices: [
             "The festival features street dancing competitions with vibrant costumes.",
             "Tribes prepare traditional music and rituals ahead of celebrations.",
-            "In conclusion, Kadayawan showcases Davao’s rich cultural tapestry.",
+            "In conclusion, Kadayawan showcases Davao's rich cultural tapestry.",
             "Local farmers display their best fruits during the harvest fair.",
             "The event promotes peace and understanding among diverse groups.",
         ]
@@ -630,7 +630,7 @@ const setE: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Conclusion",
         explanation: "Off-topic Sinulog festival it is unrelated conclusion detail. ",
-        correctAnswer: 1,
+        correctAnswer: "Sinulog is celebrated every January in Cebu City.",
         choices: [
             "Kadayawan festival strengthens Filipino indigenous identity and pride.",
             "Sinulog is celebrated every January in Cebu City.",
@@ -752,7 +752,7 @@ const setF: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Kamayan feasts - unrelated food tradition",
-        correctAnswer: 2,
+        correctAnswer: "Kamayan feasts feature rice served on banana leaves communally.",
         choices: [
             "Sinulog celebrates Santo Niño with street dancing in Cebu every January.",
             "This essay examines how Sinulog preserves faith and cultural identity.",
@@ -765,7 +765,7 @@ const setF: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Body",
         explanation: "Conclusion phrase misplaced in body",
-        correctAnswer: 2,
+        correctAnswer: "Overall, Sinulog unites Cebuano heritage across generations.",
         choices: [
             "Street parades feature rhythmic drums and chanting \"Viva Santo Niño!\"",
             "Participants paint faces black honoring Ati-Malay peace treaty.",
@@ -778,7 +778,7 @@ const setF: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Conclusion",
         explanation: "Pahiyas is a different harvest festival. ",
-        correctAnswer: 1,
+        correctAnswer: "Pahiyas decorates houses with colorful rice wafer kipping.",
         choices: [
             "Sinulog ensures Cebuano traditions thrive for future youth.",
             "Pahiyas decorates houses with colorful rice wafer kipping.",
@@ -900,7 +900,7 @@ const setG: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. Introduction",
         explanation: "Jeepneys are not part of the Kadayawan celebration. ",
-        correctAnswer: 3,
+        correctAnswer: "Jeepneys are common in Manila streets.",
         choices: [
             "Kadayawan celebrates bountiful harvests in Davao.",
             "This essay explores Kadayawan's role in promoting indigenous cultures.",
@@ -913,7 +913,7 @@ const setG: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "2. Body",
         explanation: "Conclusion phrase misplaced in body",
-        correctAnswer: 2,
+        correctAnswer: "In conclusion, Kadayawan showcases cultural tapestry.",
         choices: [
             "Street dancing competitions feature vibrant costumes.",
             "Tribes prepare traditional music and rituals.",
@@ -926,7 +926,7 @@ const setG: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "3. Conclusion",
         explanation: "Sinulog festival is not related to the topic.",
-        correctAnswer: 1,
+        correctAnswer: "Sinulog is celebrated every January in Cebu.",
         choices: [
             "Kadayawan strengthens indigenous identity and pride.",
             "Sinulog is celebrated every January in Cebu.",

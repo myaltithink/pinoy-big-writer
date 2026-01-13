@@ -93,7 +93,7 @@ export interface QuizQuestion {
   type: QuestionType,
 
   // number value represents index
-  correctAnswer: string | number,
+  correctAnswer: string,
   explanation: string,
 
   choices?: string[]
