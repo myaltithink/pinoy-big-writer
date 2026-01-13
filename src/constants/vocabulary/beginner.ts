@@ -332,7 +332,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. The bakery sells bread and uses rice ___ instead of wheat sometimes.” ",
+        question: "9. “The bakery sells bread and uses rice ___ instead of wheat sometimes.” ",
         explanation: 'Flour is the ingredient (ground grain) used to bake bread.',
         correctAnswer: "flour",
         choices: [
@@ -343,7 +343,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "10. I can ___ the boats floating on Manila Bay.” ",
+        question: "10. “I can ___ the boats floating on Manila Bay.” ",
         explanation: 'See is the verb meaning to perceive with your eyes.',
         correctAnswer: "see",
         choices: [
@@ -354,7 +354,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "11. She ___ that the festival would be fun last year.” ",
+        question: "11. “She ___ that the festival would be fun last year.” ",
         explanation: 'Knew is the past tense verb needed for an action that happened "last year."',
         correctAnswer: "knew",
         choices: [
@@ -365,7 +365,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "12. I bought a ___ of shoes for the school event.” ",
+        question: "12. “I bought a ___ of shoes for the school event.” ",
         explanation: 'A pair refers to the set of two matching items, like shoes.',
         correctAnswer: "pair",
         choices: [
@@ -376,7 +376,7 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "13. The students are not ___ to use their phones inside the classroom.” ",
+        question: "13. “The students are not ___ to use their phones inside the classroom.” ",
         explanation: 'Allowed is the verb meaning to be given permission.',
         correctAnswer: "allowed",
         choices: [
