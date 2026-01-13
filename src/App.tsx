@@ -77,22 +77,7 @@ const App = () => {
                 <Route path="/practice/:category/week/:weekNumber/lesson/:lessonNumber"
                   element={<PracticeHandler/>}/>
 
-                  <Route
-                    path="/tasks/test"
-                    element={
-                      <LevelGuard
-                        topic='content'
-                        level={1}
-                        userProgress={user?.progress}
-                      >
-                        <QuizHandler
-                          category="mechanics"
-                          backgroundClass="content-bg"
-                          levelIndex={0}
-                          questionSet={MECHANIC_QUIZ.advance}/>
-                      </LevelGuard>
-                    }
-                  />
+                  
                 {/* Content Levels */}
                 <>
                   <Route
