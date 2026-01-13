@@ -244,10 +244,10 @@ const week1SetB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "8. A student reads a paragraph about cats. Which sentence gives the paragraph a sense of closure?",
         explanation: "The last sentence completes the thought and gives the paragraph a clear ending.",
-        correctAnswer: "The last sentence.",
+        correctAnswer: "The last sentence",
         choices: [
             "First sentence",
-            "The last sentence.",
+            "The last sentence",
             "Middle sentence",
             "Any random sentence"
         ],
@@ -257,9 +257,9 @@ const week1SetB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "9. What is the main role of supporting sentences in a paragraph?",
         explanation: "Supporting sentences expand the main idea by giving clear details and explanations.",
-        correctAnswer: "To provide details that explain the main idea.",
+        correctAnswer: "To provide details that explain the main idea",
         choices: [
-            "Provide details that explain the main idea.",
+            "To provide details that explain the main idea",
             "State main idea",
             "Summarize",
             "Give a title"
@@ -791,7 +791,7 @@ const week2SetC: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "7. A student writes about Philippine folk tales but only lists titles like Ibong Adarna and Alamat ng Pinya without providing any summaries, lessons, or cultural significance. Which of the following should the student include in their content?",
         explanation: "Listing only the titles of folk tales does not provide sufficient detail or clear information, making the content shallow. Proper development of ideas in folk tales should include summaries, moral lessons, and cultural significance to provide meaningful and informative content.",
-        correctAnswer: "A summary of  Ibong Adarna , its moral lessons, and its cultural importance",
+        correctAnswer: "A summary of Ibong Adarna, its moral lessons, and its cultural importance.",
         choices: [
             "A summary of Ibong Adarna, its moral lessons, and its cultural importance.",
             "Only a list of other folk tale titles without details.",
@@ -1071,7 +1071,7 @@ const week3SetB: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "7. A reader finishes a paragraph and still has many questions. Which content quality is likely missing?",
         explanation: "When information feels lacking, the paragraph does not fully explain the topic.",
-        correctAnswer: "Accuracy and completeness.",
+        correctAnswer: "Accuracy and completeness",
         choices: [
             "Accuracy and completeness",
             "Relevance",
