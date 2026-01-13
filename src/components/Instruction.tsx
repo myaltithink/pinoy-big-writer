@@ -19,7 +19,7 @@ function Instruction(props : Props) {
               className={`${props.isMediumScreen ? "text-xl" : "text-3xl "}`}
               style={{ fontFamily: "Arco" }}
             >
-                {props.isStart? "General Instruction" : "Instruction"}
+                {props.isStart? "General Instructions" : "Instructions"}
             </span>
             <p
               className={`text-justify font-medium ${
