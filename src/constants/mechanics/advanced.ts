@@ -413,8 +413,8 @@ const setG: QuizQuestion[] = [
     {
         type: QuestionType.ReWriteSentence,
         question: "6. the lucban quezon's pahiyas festival showcases colorful decorations every my 15",
-        correctAnswer: "the lucban quezons pahiyas festival showcases colorful decorations every may 15",
-        explanation: "the lucban quezons pahiyas festival showcases colorful decorations every may 15",
+        correctAnswer: "The Lucban Quezon's Pahiyas Festival showcases colorful decorations every May 15.",
+        explanation: "The Lucban Quezon's Pahiyas Festival showcases colorful decorations every May 15.",
     },
     {
         type: QuestionType.ReWriteSentence,

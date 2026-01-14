@@ -92,7 +92,7 @@ const setA: QuizQuestion[] = [
         choices: [
             "narrative",
             "narrativ",
-            "narrativee",
+            "narrative",
             "narrattive",
         ],
         choiceType: "alpha"
@@ -339,7 +339,7 @@ const setB: QuizQuestion[] = [
         correctAnswer: "their",
         choices: [
             "thier",
-            "there",
+            "theire",
             "their",
             "they'r",
         ],
@@ -765,7 +765,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read the statements and identify the purpose of the first punctuation mark used. ",
+        direction: "Read the question about the punctuation marks. Choose the correct purpose of the first  punctuation mark from the options provided.",
         question: '',
         explanation: '',
         correctAnswer: "",
@@ -974,7 +974,7 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read the statements and select the correct purpose of the underlined punctuation mark from the options provided.",
+        direction: "Read the question about the punctuation marks. Choose the correct purpose of the first  punctuation mark from the options provided.",
         question: '',
         explanation: '',
         correctAnswer: "",
@@ -1183,7 +1183,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read the question or statements and select the correct purpose of the underlined punctuation mark from the options provided.",
+        direction: "Read the question about the punctuation marks. Choose the correct purpose of the first  punctuation mark from the options provided.",
         question: '',
         explanation: '',
         correctAnswer: "",
@@ -1392,7 +1392,7 @@ const setG: QuizQuestion[] = [
     },
     {
         type: QuestionType.Direction,
-        direction: "Read the statement and choose the correct purpose of the underlined punctuation mark from the options provided.",
+        direction: "Read the question about the punctuation marks. Choose the correct purpose of the first  punctuation mark from the options provided.",
         question: '',
         explanation: '',
         correctAnswer: "",
@@ -1474,7 +1474,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setA,
         }
     },
@@ -1482,7 +1482,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setB,
         }
     },
@@ -1490,7 +1490,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setC,
         }
     },
@@ -1498,7 +1498,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setD,
         }
     },
@@ -1506,7 +1506,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setE,
         }
     },
@@ -1514,7 +1514,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setF,
         }
     },
@@ -1522,7 +1522,7 @@ export const MECHANICS_BEGINNER_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 12/15 to proceed to the next level",
             questions: setG,
         }
     },

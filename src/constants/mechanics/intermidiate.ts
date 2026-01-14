@@ -59,10 +59,10 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: '4. Maria forgot her celphone at home.',
         explanation: 'c-e-l-l-p-h-o-n-e is the correct spelling',
-        correctAnswer: "cellphone",
+        correctAnswer: "celphone",
         choices: [
             "at",
-            "cellphone",
+            "celphone",
             "forgot",
             "Maria",
         ],
@@ -72,10 +72,10 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: '5.  I always try to beleive in myself.',
         explanation: 'b-e-l-i-e-v-e is the correct spelling',
-        correctAnswer: "believe",
+        correctAnswer: "beleive",
         choices: [
             "always",
-            "believe",
+            "beleive",
             "myself",
             "try",
         ],
@@ -85,12 +85,12 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: '6. We will meet again tommorow.',
         explanation: 't-o-m-o-r-r-o-w is the correct spelling',
-        correctAnswer: "tomorrow",
+        correctAnswer: "tommorow",
         choices: [
+            "We",
+            "meet",
+            "again",
             "tommorow",
-            "tommoroww",
-            "tomorow",
-            "tomorrow",
         ],
         choiceType: 'alpha'
     },
@@ -640,7 +640,7 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: '2. the festival in paombong attracts many visitors.',
+        question: '2. The festival in paombong attracts many visitors.',
         explanation: 'The festival in Paombong attracts many visitors.',
         correctAnswer: "paombong",
         choices: [
@@ -692,7 +692,7 @@ const setE: QuizQuestion[] = [
         choices: [
             "adviser",
             "documents",
-            "necessary",
+            "reviewed",
             "neccesary",
         ],
         choiceType: 'alpha'
@@ -704,7 +704,7 @@ const setE: QuizQuestion[] = [
         correctAnswer: "propposal",
         choices: [
             "group",
-            "proposal",
+            "time",
             "propposal",
             "written",
         ],
@@ -807,7 +807,7 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: '3. the science fair in bustos was successful.',
+        question: '3. The science fair in bustos was successful.',
         explanation: 'The science fair in Bustos was successful.',
         correctAnswer: "bustos",
         choices: [
@@ -888,7 +888,7 @@ const setF: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: '8. Please prepare the following items__ bond paper, pen, and folder.',
         explanation: 'Please prepare the following items: bond paper, pen, and folder.',
-        correctAnswer: ";",
+        correctAnswer: ":",
         choices: [
             "!",
             ",",
@@ -912,8 +912,8 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: '10. Jose_who is my classmate  friend_helped me finish my assignment.',
-        explanation: 'Jose —who is my classmate  friend—helped me finish my assignment.',
+        question: '10. Jose_who is my classmate _helped me finish my assignment.',
+        explanation: 'Jose —who is my classmate —helped me finish my assignment.',
         correctAnswer: "—",
         choices: [
             "!",
@@ -986,7 +986,7 @@ const setG: QuizQuestion[] = [
         correctAnswer: "invitasion",
         choices: [
             "event",
-            "invitation",
+            "their",
             "invitasion",
             "students",
         ],
@@ -999,7 +999,7 @@ const setG: QuizQuestion[] = [
         correctAnswer: "perfomance",
         choices: [
             "checked",
-            "performance",
+            "student",
             "perfomance",
             "task",
         ],
