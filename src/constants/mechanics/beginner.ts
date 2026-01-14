@@ -92,7 +92,7 @@ const setA: QuizQuestion[] = [
         choices: [
             "narrative",
             "narrativ",
-            "narrative",
+            "narretive",
             "narrattive",
         ],
         choiceType: "alpha"
