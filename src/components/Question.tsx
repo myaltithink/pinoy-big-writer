@@ -62,7 +62,15 @@ function Question(props: Props) {
 
     const handleAnswer = (selectedAnswer: string, handlerCleanup: () => void = () => {}) => {
       const answer = (props.question.type == QuestionType.LetterOrder)? correctAnswer.toString().toUpperCase() : correctAnswer;
-      const correct = selectedAnswer == answer;
+      
+      const correct = (
+        props.category == "organization" && 
+        props.question.type == QuestionType.Identification
+      )? 
+        selectedAnswer.toLowerCase() == answer.toLowerCase() 
+      : 
+        selectedAnswer == answer;
+
       setCorrect(correct);
       setAnswer(selectedAnswer);
       handleSound(correct);
