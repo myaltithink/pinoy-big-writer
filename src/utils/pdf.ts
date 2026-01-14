@@ -70,17 +70,17 @@ export const generateCertificateCanvas = async (
 
       if (type === "rank") {
         // Date styling based on certificate type
-        ctx.font = "44px 'Arial', sans-serif";
+        ctx.font = "bold 44px 'Arial', sans-serif";
         let formattedDate = "";
 
         formattedDate = new Date(date).toLocaleDateString("en-GB", {
           day: "2-digit",
-          month: "2-digit",
+          month: "long",
           year: "numeric",
         });
         ctx.fillText(
           formattedDate,
-          canvas.width / 2 - 370,
+          canvas.width / 2 - 170,
           canvas.height * 0.81
         );
       } else if (type === "completion") {
