@@ -602,7 +602,7 @@ const setD: QuizQuestion[] = [
         correctAnswer: "incite-insight",
         choices: [
             "insight",
-            "incite",
+            "indite",
             "incite",
             "invite",
         ],
