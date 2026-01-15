@@ -185,11 +185,22 @@ function Identification(props: QuestionTypeProps) {
     const endIndex = explanation.indexOf("”");
     const word = explanation.substring(startIndex, endIndex).toLowerCase();
 
-    const text = question.substring(2).toLowerCase();
+    const sentenceStart = getSentenceIndex(question) ?? 2;
+    const text = (props.data.category === 'vocabulary')? question.substring(sentenceStart) : question.substring(sentenceStart).toLowerCase();
     const correctWord = `<b>${props.data.question.correctAnswer.toString()}</b>`
     const correctSentence = text.replace(word, correctWord).trim();
     const formatted = correctSentence[0].toUpperCase() + correctSentence.substring(1);
     return formatted;
+  }
+
+  const getSentenceIndex = (question: string) => {
+    const regex = /[a-zA-Z]/;
+    for (let i = 0; i < question.length; i++) {
+      const letter = question[i];
+      if (regex.test(letter)) {
+        return i;
+      }
+    }
   }
 
   return (
