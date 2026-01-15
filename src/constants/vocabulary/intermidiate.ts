@@ -208,31 +208,31 @@ const setB: QuizQuestion[] = [{
     {
         type: QuestionType.Identification,
         question: "6. I want to bye a new book at the mall.",
-        explanation: '“Buy” means to purchase something. “Bye” is used to say farewell.',
+        explanation: '"Buy" means to purchase something. “Bye” is used to say farewell.',
         correctAnswer: "buy",
     },
     {
         type: QuestionType.Identification,
         question: "7. My little brother is already too years old.",
-        explanation: '“Two” is the number. “Too” means also or excessively.',
+        explanation: '"Two" is the number. “Too” means also or excessively.',
         correctAnswer: "two",
     },
     {
         type: QuestionType.Identification,
         question: "8. Please walk over their and wait for me.",
-        explanation: '“There” refers to a place. “Their” shows possession.',
+        explanation: '"There" refers to a place. “Their” shows possession.',
         correctAnswer: "there",
     },
     {
         type: QuestionType.Identification,
         question: "9. Did you here the loud thunder last night?",
-        explanation: '“Hear” means to listen. “Here” refers to a location.',
+        explanation: '"Hear" means to listen. “Here” refers to a location.',
         correctAnswer: "hear",
     },
     {
         type: QuestionType.Identification,
         question: "10. We will sea the results tomorrow.",
-        explanation: '“See” means to observe. “Sea” is a large body of water.',
+        explanation: '"See" means to observe. “Sea” is a large body of water.',
         correctAnswer: "see",
     },
 ]
@@ -376,14 +376,14 @@ const setD: QuizQuestion[] = [{
     {
         type: QuestionType.Identification,
         question: "4. Renz said, “Gimme the ball so I can play basketball.”",
-        explanation: '“Gimme” is the informal contraction of “give me.”',
-        correctAnswer: "give me",
+        explanation: '“Gimme” is the informal contraction of “Give me.”',
+        correctAnswer: "Give me",
     },
     {
         type: QuestionType.Identification,
         question: "5. Toni said, “Lemme check the schedule for the school carnival first.",
-        explanation: '“Lemme” is the informal contraction of “let me.”',
-        correctAnswer: "let me",
+        explanation: '“Lemme” is the informal contraction of “Let me.”',
+        correctAnswer: "Let me",
     },
     {
         type: QuestionType.Direction,
@@ -568,7 +568,7 @@ const setF: QuizQuestion[] = [{
     },
     {
         type: QuestionType.Identification,
-        question: "5. The noise was so allowed that I couldn't hear the announcements.",
+        question: "5. Mario read the poem allowed to the class.",
         explanation: 'Aloud means audibly or out loud. “Allowed” means permitted.',
         correctAnswer: "aloud",
     },
@@ -595,7 +595,7 @@ const setF: QuizQuestion[] = [{
     {
         type: QuestionType.MultipleChoice,
         question: "7. The principal of a school admired her student’s ______ attitude in joining the Brigada Eskwela clean-up activities. ",
-        explanation: '“Proactive” is correct; she takes initiative instead of waiting to be told.',
+        explanation: '“Proactive” means taking initiative, which describes the student’s attitude in participating actively.',
         correctAnswer: "proactive",
         choices: [
             "passive",
@@ -682,7 +682,7 @@ const setG: QuizQuestion[] = [{
     {
         type: QuestionType.MultipleChoice,
         question: "3. The scientist made a <u>groundbreaking</u> discovery about the Philippine eagle’s nesting habits. ",
-        explanation: '“Groundbreaking” means very important or innovative, fitting the discovery.',
+        explanation: '<b>Revolutionary</b> is the correct answer because it is a synonym for <b>groundbreaking</b>, meaning the discovery is highly innovative and changes our understanding of the subject.',
         correctAnswer: "revolutionary",
         choices: [
             "minor ",
@@ -798,7 +798,7 @@ const setH: QuizQuestion[] = [{
         type: QuestionType.Identification,
         question: "1. They're family owns a sari-sari store in Bulacan.",
         explanation: 'Their shows possession. “They\'re” refers to a place.',
-        correctAnswer: "their",
+        correctAnswer: "Their",
     },
     {
         type: QuestionType.Identification,
@@ -1008,9 +1008,9 @@ const setJ: QuizQuestion[] = [{
     },
     {
         type: QuestionType.Identification,
-        question: "1. The mayor gave his principle approval for the new barangay project.",
-        explanation: 'Principal means the most important or the head of a school. “Principle” means a moral rule.',
-        correctAnswer: "principal",
+        question: "1. The lawyer presented the principal argument in court.",
+        explanation: '"Principle" means a fundamental rule or belief, while “Principal” usually refers to the head of a school or something most important.',
+        correctAnswer: "principle",
     },
     {
         type: QuestionType.Identification,

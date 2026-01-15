@@ -322,7 +322,7 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.LetterOrder,
-        question: "1. C-N-O-C-I-P-U-S-O-U \n\nHint: easily noticed",
+        question: "1. C-N-O-C-I-P-U-S-O-U-S \n\nHint: easily noticed",
         explanation: 'Something that stands out or attracts attention.',
         correctAnswer: "Conspicuous",
         choices: [
@@ -336,6 +336,7 @@ const setC: QuizQuestion[] = [
             "S",
             "O",
             "U",
+            "S",
         ],
         choiceType: "none"
     },
@@ -358,26 +359,25 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.LetterOrder,
-        question: "3. R-E-L-U-S-I-V-E \n\nHint: hard to catch ",
+        question: "3. U-S-I-V-E-E-L \n\nHint: hard to catch ",
         explanation: 'Difficult to find, understand, or achieve.',
         correctAnswer: "Elusive",
         choices: [
-            "R",
-            "E",
-            "L",
             "U",
             "S",
             "I",
             "V",
             "E",
+            "E",
+            "L",
         ],
         choiceType: "none"
     },
     {
         type: QuestionType.LetterOrder,
         question: "4. T-U-T-R-A-L-I-C-E-A \n\nHint: explain clearly ",
-        explanation: 'Articulate',
-        correctAnswer: "Able to express ideas clearly in words.",
+        explanation: "Able to express ideas clearly in words.",
+        correctAnswer: 'Articulate',
         choices: [
             "T",
             "U",
@@ -395,8 +395,8 @@ const setC: QuizQuestion[] = [
     {
         type: QuestionType.LetterOrder,
         question: "5. T-E-M-I-U-C-L-U-O-S \n\nHint: very careful, precise ",
-        explanation: 'Meticulous',
-        correctAnswer: "Extremely careful about details.",
+        explanation: "Extremely careful about details.",
+        correctAnswer: 'Meticulous',
         choices: [
             "T",
             "E",
@@ -555,7 +555,7 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.Transitional,
-        question: "6. After climbing Taal Volcano, she felt _____, yet the street performer executed a clever _____ that amazed the crowd. ",
+        question: "6. During the crowded festival, she felt ______ from the heat, but the magician’s clever ______ with the cards made everyone cheer and distracted her from her dizziness",
         explanation: '“Faint” means weak or dizzy, while “feint” is a deceptive move, often in performance or combat.',
         correctAnswer: "faint-feint",
         choices: [
@@ -635,8 +635,8 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.Transitional,
-        question: "1. The television network had to _____ the politically sensitive scene, but the smoke _____ in the kitchen still went off during the fiesta preparations. ",
-        explanation: '“Censor” refers to suppressing content, while “sensor” is a device detecting changes (like smoke).',
+        question: "1. The firefighters had to _____ the sparks from the welding area, but the smoke ______ in the workshop still went off, triggering the alarm.",
+        explanation: '“Censor” means to control or remove the sparks, and “sensor” is the device that detects the smoke, so both fit the safety scenario.',
         correctAnswer: "censor-sensor",
         choices: [
             "sensor",
@@ -677,9 +677,9 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.Transitional,
-        question: "4. The politician's speech seemed _____ to the attentive crowd, yet the nurse noticed a swollen _____ in his hand during the health inspection. ",
+        question: "4. The nurse noticed the swollen _____, yet the doctor’s warning seemed _____ to the patient, who ignored the instructions.",
         explanation: '“Vain” means ineffective or futile, while “vein” is a blood vessel.',
-        correctAnswer: "vain-vein",
+        correctAnswer: "vein-vain",
         choices: [
             "vein",
             "vain",
@@ -922,9 +922,9 @@ const setG: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "1. The governor's sudden announcement seemed intended (to  pacify / overlook/ exacerbate ) public concern about the approaching typhoon.",
         explanation: '“Exacerbate” means to make a situation worse or increase concern. “Pacify” means to calm, and “overlook” means to ignore—both are opposite in meaning.',
-        correctAnswer: "exacerbate",
+        correctAnswer: "to pacify",
         choices: [
-            "to  pacify",
+            "to pacify",
             "overlook",
             "exacerbate",
         ],
@@ -1148,7 +1148,7 @@ const setH: QuizQuestion[] = [
     },
     {
         type: QuestionType.Transitional,
-        question: "6. The organizers promised a _____ event for all barangay participants, but the bus _____ for the coastal trip cost more than expected. ",
+        question: "6. The organizers promised a ______ event for all barangay participants, but the bus ___ for the trip to the coastal area was higher than expected.",
         explanation: '“Fair” means just or equitable; “fare” is the price of transportation.',
         correctAnswer: "fair-fare",
         choices: [
@@ -1256,9 +1256,9 @@ const setI: QuizQuestion[] = [
     },
     {
         type: QuestionType.Transitional,
-        question: "3. Before the festival, everyone wanted to _____ their best traditional attire, but the question remained: _____ would attend the opening parade? ",
-        explanation: '“Wear” (verb) = to don clothing; “where” (adverb) = question about location.',
-        correctAnswer: "wear-where",
+        question: "3. Before the festival, everyone wanted to ______ their finest traditional attire, while a stall displayed beautiful handmade ceramic _______ for everyone to admire.",
+        explanation: '“Wear” refers to putting on clothes, while “ware” refers to a product or item for sale.',
+        correctAnswer: "wear-ware",
         choices: [
             "where",
             "ware",
@@ -1339,11 +1339,10 @@ const setI: QuizQuestion[] = [
     },
     {
         type: QuestionType.LetterOrder,
-        question: "8. C-T-I-C-P-E-D-L-A-R-B-E-I \n\nHint: able to guess",
+        question: "8. T-I-C-P-E-D-L-A-R-B-E \n\nHint: able to guess",
         explanation: 'Something that can be foreseen.',
         correctAnswer: "Predictable",
         choices: [
-            "C",
             "T",
             "I",
             "C",
@@ -1355,13 +1354,12 @@ const setI: QuizQuestion[] = [
             "R",
             "B",
             "E",
-            "I",
         ],
         choiceType: "none"
     },
     {
         type: QuestionType.LetterOrder,
-        question: "9. D-C-F-I-N-E-T-O-N-T \n\nHint: sure of oneself",
+        question: "9. D-C-F-I-N-E-T-O-N \n\nHint: sure of oneself",
         explanation: 'Feeling sure about your abilities.',
         correctAnswer: "Confident",
         choices: [
@@ -1374,7 +1372,6 @@ const setI: QuizQuestion[] = [
             "T",
             "O",
             "N",
-            "T",
         ],
         choiceType: "none"
     },
@@ -1480,51 +1477,51 @@ const setJ: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "6. The diplomat's cryptic statement seemed designed to (provoke / instigate / manipulate / placate) tensions without overtly blaming any party.",
-        explanation: '“Provoke” fits the context of subtly stirring tensions. “Instigate” suggests actively urging action, ',
-        correctAnswer: "provoke",
+        question: "6. The diplomat's cryptic statement seemed designed to (placate / exacerbate / inflame / agitate) tensions without overtly blaming any party.",
+        explanation: '“Placate” means to calm or soothe tensions, fitting the context.',
+        correctAnswer: "placate",
         choices: [
-            "provoke",
-            "instigate",
-            "manipulate",
             "placate",
+            "exacerbate",
+            "inflame",
+            "agitate",
         ],
         choiceType: "none"
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "7.	The committee finally (conceded / dismissed/ acknowledged  / repudiated) the discrepancies in the project budget after reviewing the documents.",
-        explanation: '“Acknowledged” means formally recognizing a problem. “Conceded” implies reluctant admission, “dismissed” rejects it, and “repudiated” is a strong denial.',
+        question: "7.	The committee finally (acknowledged / dismissed / repudiated / overlooked) the discrepancies in the project budget after reviewing the documents.",
+        explanation: '“Acknowledged” means formally recognizing a problem.',
         correctAnswer: "acknowledged",
         choices: [
-            "conceded",
-            "dismissed",
             "acknowledged",
+            "dismissed",
             "repudiated",
+            "overlooked",
         ],
         choiceType: "none"
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "8. Completing the manuscript revisions gave the author a profound sense of (fulfillment / gratification / contentment / exoneration) after months of work.",
-        explanation: '“Fulfillment” conveys satisfaction from achievement. “Gratification” is pleasure, “contentment” is milder satisfaction, and “exoneration” is clearing blame, unrelated here.',
+        question: "8.	Completing the manuscript revisions gave the author a profound sense of (fulfillment / gratification / contentment / satisfaction) after months of work.",
+        explanation: '“Fulfillment” conveys deep satisfaction from achievement, stronger than general pleasure.',
         correctAnswer: "fulfillment",
         choices: [
             "fulfillment",
             "gratification",
             "contentment",
-            "exoneration",
+            "satisfaction",
         ],
         choiceType: "none"
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. The mayor carefully (endorsed / affirmed / sanctioned / authorized) the urban redevelopment plan without committing municipal funds immediately.",
-        explanation: '“Affirmed” conveys verbal support without action. “Endorsed” or “sanctioned” implies stronger approval; “authorized” implies formal allocation of power/resources.',
+        question: "9.	The mayor carefully (affirmed / endorsed / sanctioned / authorized) the urban redevelopment plan without committing municipal funds immediately.",
+        explanation: '“Affirmed” conveys verbal support without immediate action; others imply stronger or formal commitments.',
         correctAnswer: "affirmed",
         choices: [
-            "endorsed",
             "affirmed",
+            "endorsed",
             "sanctioned",
             "authorized",
         ],
@@ -1532,14 +1529,14 @@ const setJ: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "10.	The conservation group accused the corporation of (undermining / obscuring / defiling / desecrating) the ecological integrity of the mangrove forest.",
-        explanation: '“Desecrating” implies severe disrespect or harm to something valued. “Undermining” is indirect, “obscuring” is hiding, and “defiling” is often physical contamination.',
+        question: "10.	The conservation group accused the corporation of (undermining / defiling / desecrating / obscuring) the ecological integrity of the mangrove forest.",
+        explanation: '“Undermining” means weakening or damaging, which correctly describes the ecological threat.',
         correctAnswer: "desecrating",
         choices: [
             "undermining",
-            "obscuring",
             "defiling",
             "desecrating",
+            "obscuring",
         ],
         choiceType: "none"
     },

@@ -80,11 +80,11 @@ const setA: QuizQuestion[] = [
         type: QuestionType.MultipleChoice,
         question: "5. “___ going to celebrate the barangay fiesta today.” ",
         explanation: "“They're” is the contraction of “they are,” which fits the sentence.",
-        correctAnswer: "they're",
+        correctAnswer: "They're",
         choices: [
-            "they're",
-            "their",
-            "there",
+            "They're",
+            "Their",
+            "There",
         ],
         choiceType: "none"
     },
@@ -546,7 +546,7 @@ const setC: QuizQuestion[] = [
         explanation: '',
         correctAnswer: "Parade",
         choices: [
-            "Festival",
+            "Birthday",
             "Parade",
             "Party",
         ],
