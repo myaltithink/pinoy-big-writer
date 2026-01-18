@@ -1089,7 +1089,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setA,
         }
     },
@@ -1097,7 +1097,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setB,
         }
     },
@@ -1105,7 +1105,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setC,
         }
     },
@@ -1113,7 +1113,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setD,
         }
     },
@@ -1121,7 +1121,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setE,
         }
     },
@@ -1129,7 +1129,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setF,
         }
     },
@@ -1137,7 +1137,7 @@ export const MECHANICS_INTERMEDIATE_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "Read each item carefully and choose the correct answer. ",
+            instruction: "Read each item carefully and choose the correct answer. Get as score of 7/10 to proceed to the next level",
             questions: setG,
         }
     },
