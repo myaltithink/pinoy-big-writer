@@ -90,7 +90,7 @@ function Login() {
           const hashedPassword = await bcrypt.hash(password, 10); // 10 = salt rounds
 
           const newUser: User = {
-            username,
+            username: username.trim(),
             password: hashedPassword, // store hashed password
             avatar: selectedAvatar,
             ranking: 0,
@@ -135,7 +135,6 @@ function Login() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             disabled={loading}
-            style={{ fontFamily: "Arco" }}
           />
           {loading && (
             <p className="text-xl text-white" style={{ fontFamily: "Arco" }}>
