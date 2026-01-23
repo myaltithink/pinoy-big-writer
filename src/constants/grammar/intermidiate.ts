@@ -101,14 +101,14 @@ const setA: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. Which of the following is a complete sentence: \n\nA. Running quickly down the street. \n\nB. She ran quickly down the street.",
+        question: "9. Which of the following is a complete sentence",
         explanation: "\"B. She ran quickly down the street\" is a complete sentence because it contains a subject (She) and a finite verb (ran), expressing a complete thought. A is a fragment because it lacks a subject.",
-        correctAnswer: "B",
+        correctAnswer: "She ran quickly down the street.",
         choices: [
-            "A",
-            "B",
+            "Running quickly down the street.",
+            "She ran quickly down the street."
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
     {
         type: QuestionType.MultipleChoice,
@@ -133,14 +133,14 @@ const setB: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. Which of the following is a complete sentence: \n\nA. Waiting impatiently by the door, tapping his foot. \n\nB. He waited impatiently by the door, tapping his foot.",
+        question: "1. Which of the following is a complete sentence",
         explanation: "\"B. He waited impatiently by the door, tapping his foot\" is a complete sentence because it contains a subject (He) and a finite verb (waited), expressing a complete thought. A is a fragment because it lacks a subject and its main verb is a participle (Waiting).",
-        correctAnswer: "B",
+        correctAnswer: "He waited impatiently by the door, tapping his foot.",
         choices: [
-            "A",
-            "B",
+            "Waiting impatiently by the door, tapping his foot.",
+            "He waited impatiently by the door, tapping his foot.",
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
     {
         type: QuestionType.MultipleChoice,
@@ -255,14 +255,14 @@ const setC: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. Which of the following is a complete sentence: \n\nA. To attend the important event scheduled for Monday. \n\nB. We planned to attend the important event scheduled for Monday.",
+        question: "1. Which of the following is a complete sentence",
         explanation: "\"B. We planned to attend the important event scheduled for Monday\" is a complete sentence because it contains a subject (We) and a finite verb (planned), expressing a complete thought. A is a fragment, as it is an infinitive phrase lacking a main subject and main verb.",
-        correctAnswer: "B",
+        correctAnswer: "We planned to attend the important event scheduled for Monday.",
         choices: [
-            "A",
-            "B",
+            "To attend the important event scheduled for Monday.",
+            "We planned to attend the important event scheduled for Monday.",
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
     {
         type: QuestionType.MultipleChoice,
@@ -476,14 +476,14 @@ const setD: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "10. Which of the following is a complete sentence: \n\nA. The explorers set out to explore the new territory. \n\nB. To explore the new territory for weeks.",
+        question: "10. Which of the following is a complete sentence",
         explanation: "\"A. The explorers set out to explore the new territory\" is a complete sentence because it contains a clear subject (explorers) and a finite verb (set out), expressing a complete thought. B is a fragment, as it is an infinitive phrase lacking a main subject and main verb.",
-        correctAnswer: "A",
+        correctAnswer: "The explorers set out to explore the new territory.",
         choices: [
-            "A",
-            "B",
+            "The explorers set out to explore the new territory.",
+            "To explore the new territory for weeks.",
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
 ]
 
@@ -585,14 +585,14 @@ const setE: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "9. Which of the following is a complete sentence: \n\nA. Smiling brightly despite the bad weather. \n\nB. They were smiling brightly despite the bad weather.",
+        question: "9. Which of the following is a complete sentence",
         explanation: "\"B. They were smiling brightly despite the bad weather\" is a complete sentence because it has a subject (They) and a finite verb (were smiling). A is a fragment because it lacks a subject and the verb is a participle (Smiling).",
-        correctAnswer: "B",
+        correctAnswer: "They were smiling brightly despite the bad weather.",
         choices: [
-            "A",
-            "B",
+            "Smiling brightly despite the bad weather.",
+            "They were smiling brightly despite the bad weather.",
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
     {
         type: QuestionType.MultipleChoice,
@@ -639,14 +639,14 @@ const setF: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "3. Which of the following is a complete sentence: \n\nA. Having successfully passed the civil service examination. \n\nB. She celebrated having successfully passed the civil service examination.",
+        question: "3. Which of the following is a complete sentence",
         explanation: "\"B. She celebrated having successfully passed the civil service examination\" is a complete sentence because it contains a clear subject (She) and a finite verb (celebrated). A is a fragment because the main verb is a participle (Having) and the sentence lacks an independent clause.",
-        correctAnswer: "B",
+        correctAnswer: "She celebrated having successfully passed the civil service examination.",
         choices: [
-            "A",
-            "B",
+            "Having successfully passed the civil service examination.",
+            "She celebrated having successfully passed the civil service examination.",
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
     {
         type: QuestionType.MultipleChoice,
@@ -981,14 +981,14 @@ const setI: QuizQuestion[] = [
     },
     {
         type: QuestionType.MultipleChoice,
-        question: "1. Which of the following is a complete sentence: \n\nA. Because the class cancellation was announced at the last minute. \n\nB. The class cancellation was announced at the last minute.",
+        question: "1. Which of the following is a complete sentence",
         explanation: "\"B. The class cancellation was announced at the last minute\" is a complete sentence because it contains a clear subject (cancellation) and a finite verb (was announced). A is a fragment because the word Because makes it a dependent clause that cannot stand alone.",
-        correctAnswer: "B",
+        correctAnswer: "The class cancellation was announced at the last minute.",
         choices: [
-            "A",
-            "B",
+            "Because the class cancellation was announced at the last minute. ",
+            "The class cancellation was announced at the last minute.",
         ],
-        choiceType: 'none'
+        choiceType: 'alpha'
     },
     {
         type: QuestionType.MultipleChoice,
