@@ -1544,7 +1544,7 @@ const setJ: QuizQuestion[] = [
 
 const metadata: SetMetadata = {
     passingScore: 7,
-    timeLimit: 15
+    timeLimit: 30
 }
 
 export const VOCAB_ADVANCED_SET: SetContainer[] = [
@@ -1552,7 +1552,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set A",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setA,
         }
     },
@@ -1560,7 +1560,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set B",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setB,
         }
     },
@@ -1568,7 +1568,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set C",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setC,
         }
     },
@@ -1576,7 +1576,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set D",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setD,
         }
     },
@@ -1584,7 +1584,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set E",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setE,
         }
     },
@@ -1592,7 +1592,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set F",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setF,
         }
     },
@@ -1600,7 +1600,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set G",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setG,
         }
     },
@@ -1608,7 +1608,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set H",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setH,
         }
     },
@@ -1616,7 +1616,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set I",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setI,
         }
     },
@@ -1624,7 +1624,7 @@ export const VOCAB_ADVANCED_SET: SetContainer[] = [
         label: "Set J",
         metadata: metadata,
         set: {
-            instruction: "Answer and complete the following items. You have 15 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
+            instruction: "Answer and complete the following items. You have 30 seconds to answer each one. Get 7 correct answers to complete the level successfully. ",
             questions: setJ,
         }
     },
