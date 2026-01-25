@@ -435,6 +435,9 @@ function OrderedChoices(props: QuestionTypeProps) {
                 const answers = props.data.question.correctAnswer.toString().split("-");
 
                 if (props.answer != null) {
+                  if (props.isCorrect) {
+                    return (answers.includes(option))? correctColor: ""; 
+                  }
                   return (answers.includes(option))? correctColor: wrongColor;
                 }
 
