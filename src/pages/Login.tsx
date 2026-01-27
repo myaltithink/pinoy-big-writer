@@ -35,9 +35,10 @@ function Login() {
   const handleNext = async () => {
     setErrorMessage(null); // Clear any previous errors
     if (step === 1) {
-      if (username.trim()) {
+      const cleanedUsername = username.trim();
+      if (cleanedUsername) {
         setLoading(true);
-        const existingUser = await getUser(username);
+        const existingUser = await getUser(cleanedUsername);
         setLoading(false);
         if (existingUser) {
           setIsExistingUser(true);
